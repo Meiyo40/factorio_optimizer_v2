@@ -1,0 +1,102 @@
+{
+    "box": {
+        "w": 41,
+        "h": 41
+    },
+    "inputs": [
+        {
+            "item": "iron-plate",
+            "rate": 3.7777777777777777,
+            "fluid": false,
+            "x": 5,
+            "y": 41,
+            "edge": "south",
+            "lane": "left"
+        },
+        {
+            "item": "battery",
+            "rate": 5.666666666666668,
+            "fluid": false,
+            "x": 5,
+            "y": 41,
+            "edge": "south",
+            "lane": "right"
+        },
+        {
+            "item": "stone",
+            "rate": 1.6796296296296298,
+            "fluid": false,
+            "x": 19,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "stone",
+            "rate": 1.2481481481481485,
+            "fluid": false,
+            "x": -1,
+            "y": 17,
+            "edge": "west"
+        },
+        {
+            "item": "copper-cable",
+            "rate": 5.333333333333332,
+            "fluid": false,
+            "x": 41,
+            "y": 35,
+            "edge": "east"
+        },
+        {
+            "item": "holmium-ore",
+            "rate": 1.6333333333333333,
+            "fluid": false,
+            "x": 13,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "ice",
+            "rate": 0.5194444444444444,
+            "fluid": false,
+            "x": 38,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 0.4444444444444443,
+            "fluid": false,
+            "x": 41,
+            "y": 10,
+            "edge": "east",
+            "lane": "left"
+        },
+        {
+            "item": "plastic-bar",
+            "rate": 0.4444444444444443,
+            "fluid": false,
+            "x": 41,
+            "y": 10,
+            "edge": "east",
+            "lane": "right"
+        },
+        {
+            "item": "heavy-oil",
+            "rate": 24.074074074074076,
+            "fluid": true,
+            "x": 20,
+            "y": -1,
+            "edge": "north"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "electromagnetic-science-pack",
+            "rate": 1.5,
+            "fluid": false,
+            "x": -1,
+            "y": 28,
+            "edge": "west"
+        }
+    ]
+}

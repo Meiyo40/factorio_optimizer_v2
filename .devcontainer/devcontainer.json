@@ -1,0 +1,15 @@
+{
+  "name": "factorio_optimizer_v2 (Kotlin, Java 25)",
+  "image": "mcr.microsoft.com/devcontainers/java:25-trixie",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle"
+      ]
+    }
+  },
+  "hostRequirements": { "cpus": 4, "memory": "8gb" },
+  "postCreateCommand": "./gradlew --no-daemon compileTestKotlin"
+}

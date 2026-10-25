@@ -1,0 +1,40 @@
+{
+  "targets": [
+    {
+      "name": "electromagnetic-science-pack",
+      "amount": 1.5
+    }
+  ],
+  "machines": [
+    "electromagnetic-plant",
+    "assembling-machine-3",
+    "chemical-plant",
+    "oil-refinery",
+    "electric-furnace"
+  ],
+  "raw_resources": [
+    "heavy-oil",
+    "holmium-ore",
+    "ice",
+    "stone",
+    "battery",
+    "steel-plate",
+    "iron-gear-wheel",
+    "copper-cable",
+    "solid-fuel",
+    "concrete",
+    "low-density-structure",
+    "processing-unit",
+    "iron-plate",
+    "copper-plate",
+    "plastic-bar"
+  ],
+  "belt_tier": "express",
+  "lane_sharing": true,
+  "search": {
+    "time_budget_s": 900,
+    "seeds_per_size": 10,
+    "threads": 10,
+    "seed": 2026
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "targets": [{ "name": "iron-gear-wheel", "amount": 1.0 }],
+  "sources": [{ "name": "iron-plate", "edge": "west" }]
+}

@@ -1,0 +1,14 @@
+{
+  "targets": [
+    {
+      "name": "chemical-science-pack",
+      "amount": 0.5
+    }
+  ],
+  "search": {
+    "time_budget_s": 900,
+    "seeds_per_size": 10,
+    "threads": 10,
+    "seed": 2026
+  }
+}

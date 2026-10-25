@@ -1,0 +1,34 @@
+{
+  "targets": [
+    {
+      "name": "metallurgic-science-pack",
+      "amount": 4.0
+    }
+  ],
+  "machines": [
+    "foundry",
+    "assembling-machine-3",
+    "chemical-plant",
+    "electric-furnace"
+  ],
+  "raw_resources": [
+    "lava",
+    "calcite",
+    "coal",
+    "tungsten-ore",
+    "sulfuric-acid"
+  ],
+  "tuning": {
+    "planner": {
+      "surplus_cost_item": 0.0001
+    }
+  },
+  "belt_tier": "express",
+  "lane_sharing": true,
+  "search": {
+    "time_budget_s": 900,
+    "seeds_per_size": 10,
+    "threads": 10,
+    "seed": 2026
+  }
+}

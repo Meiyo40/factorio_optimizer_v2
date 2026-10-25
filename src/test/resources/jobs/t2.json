@@ -1,0 +1,7 @@
+{
+  "targets": [{ "name": "electronic-circuit", "amount": 2.0 }],
+  "sources": [
+    { "name": "iron-plate", "edge": "west" },
+    { "name": "copper-plate", "edge": "west" }
+  ]
+}

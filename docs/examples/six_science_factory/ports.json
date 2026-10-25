@@ -1,0 +1,210 @@
+{
+    "box": {
+        "w": 179,
+        "h": 67
+    },
+    "inputs": [
+        {
+            "item": "copper-plate",
+            "rate": 22.434782608695652,
+            "fluid": false,
+            "x": 22,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 22.434782608695652,
+            "fluid": false,
+            "x": 11,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 13.130434782608695,
+            "fluid": false,
+            "x": 23,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 13.499999999999998,
+            "fluid": false,
+            "x": 35,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 17.499999999999996,
+            "fluid": false,
+            "x": 38,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "coal",
+            "rate": 8.666666666666666,
+            "fluid": false,
+            "x": 13,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "petroleum-gas",
+            "rate": 205.83333333333337,
+            "fluid": true,
+            "x": 10,
+            "y": 0,
+            "edge": "north"
+        },
+        {
+            "item": "water",
+            "rate": 65.83333333333348,
+            "fluid": true,
+            "x": 21,
+            "y": 0,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 20.5,
+            "fluid": false,
+            "x": 93,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 4.5,
+            "fluid": false,
+            "x": 119,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "steel-plate",
+            "rate": 2.583333333333333,
+            "fluid": false,
+            "x": 87,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "stone-brick",
+            "rate": 5.0,
+            "fluid": false,
+            "x": 83,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "coal",
+            "rate": 5.0,
+            "fluid": false,
+            "x": 102,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 134,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 14.333333333333334,
+            "fluid": false,
+            "x": 165,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "steel-plate",
+            "rate": 9.666666666666664,
+            "fluid": false,
+            "x": 139,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "stone-brick",
+            "rate": 3.333333333333331,
+            "fluid": false,
+            "x": 135,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "stone",
+            "rate": 5.0,
+            "fluid": false,
+            "x": 145,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "heavy-oil",
+            "rate": 4.999999999999999,
+            "fluid": true,
+            "x": 160,
+            "y": 0,
+            "edge": "north"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "military-science-pack",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 71,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "utility-science-pack",
+            "rate": 0.9999999999999999,
+            "fluid": false,
+            "x": 97,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "automation-science-pack",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 126,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "chemical-science-pack",
+            "rate": 0.9999999999999999,
+            "fluid": false,
+            "x": 156,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "logistic-science-pack",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 166,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "production-science-pack",
+            "rate": 0.9999999999999999,
+            "fluid": false,
+            "x": 150,
+            "y": -1,
+            "edge": "north"
+        }
+    ]
+}

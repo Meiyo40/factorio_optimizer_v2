@@ -1,0 +1,126 @@
+{
+    "net": {
+        "belt_utilisation": 0.9
+    },
+    "place": {
+        "alpha": 1.0,
+        "beta": 20.0,
+        "beta2": 1.0,
+        "gamma": 12.0,
+        "delta": 6.0,
+        "rudy_bin": 4,
+        "q_table": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.0
+            ],
+            [
+                3.0,
+                1.0
+            ],
+            [
+                4.0,
+                1.0
+            ],
+            [
+                5.0,
+                1.263157894736842
+            ],
+            [
+                6.0,
+                1.330157894736842
+            ],
+            [
+                7.0,
+                1.391857894736842
+            ],
+            [
+                8.0,
+                1.448057894736842
+            ],
+            [
+                9.0,
+                1.508657894736842
+            ],
+            [
+                10.0,
+                1.558857894736842
+            ],
+            [
+                15.0,
+                1.799457894736842
+            ],
+            [
+                20.0,
+                2.001957894736842
+            ],
+            [
+                25.0,
+                2.183857894736842
+            ],
+            [
+                30.0,
+                2.342957894736842
+            ],
+            [
+                35.0,
+                2.499057894736842
+            ],
+            [
+                40.0,
+                2.645157894736842
+            ],
+            [
+                45.0,
+                2.772057894736842
+            ],
+            [
+                50.0,
+                2.902857894736842
+            ]
+        ],
+        "shift_share": 0.6,
+        "swap_share": 0.3,
+        "t0_factor": 20.0,
+        "moves_per_temp_factor": 10.0,
+        "stop_factor": 0.005,
+        "target_acceptance": 0.44,
+        "max_moves": 2000000,
+        "feedback_rounds": 3,
+        "feedback_t0_divisor": 20.0
+    },
+    "route": {
+        "belt_base": 1.0,
+        "turn_penalty": 0.2,
+        "ug_penalty": 2.0,
+        "ug_penalty_per_tile": 0.1,
+        "inserter_base": 0.5,
+        "long_inserter_base": 0.6,
+        "chest_base": 0.5,
+        "pin_reservation": 1.5,
+        "own_consumer_reservation": 3.0,
+        "start_attempts": 3,
+        "max_backtracks": 12,
+        "max_chain_visits": 12,
+        "repair_restarts": 40,
+        "dead_end_conflict": 1.0,
+        "p_fac_first": 0.5,
+        "p_mult": 1.1,
+        "p_fac_max": 1000.0,
+        "h_fac": 0.5,
+        "max_iterations": 120,
+        "stagnation_stop": 40,
+        "full_reroute_iterations": 5,
+        "heuristic_weight": 1.2,
+        "turn_after_ug_exit": true
+    },
+    "search": {
+        "area_factor": 2.375,
+        "warm_t0_divisor": 10.0,
+        "extra_rounds": 1000
+    }
+}

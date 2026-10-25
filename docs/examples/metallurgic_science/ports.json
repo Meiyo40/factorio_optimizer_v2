@@ -1,0 +1,90 @@
+{
+    "box": {
+        "w": 46,
+        "h": 46
+    },
+    "inputs": [
+        {
+            "item": "coal",
+            "rate": 8.0,
+            "fluid": false,
+            "x": -1,
+            "y": 29,
+            "edge": "west"
+        },
+        {
+            "item": "coal",
+            "rate": 8.0,
+            "fluid": false,
+            "x": 0,
+            "y": 46,
+            "edge": "west"
+        },
+        {
+            "item": "calcite",
+            "rate": 1.517037037037037,
+            "fluid": false,
+            "x": 45,
+            "y": -1,
+            "edge": "east"
+        },
+        {
+            "item": "tungsten-ore",
+            "rate": 14.222222222222221,
+            "fluid": false,
+            "x": 46,
+            "y": 24,
+            "edge": "east"
+        },
+        {
+            "item": "tungsten-ore",
+            "rate": 15.999999999999996,
+            "fluid": false,
+            "x": -1,
+            "y": 15,
+            "edge": "west"
+        },
+        {
+            "item": "sulfuric-acid",
+            "rate": 239.99999999999997,
+            "fluid": true,
+            "x": 5,
+            "y": 46,
+            "edge": "south"
+        },
+        {
+            "item": "lava",
+            "rate": 758.5185185185185,
+            "fluid": true,
+            "x": -1,
+            "y": 4,
+            "edge": "west"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "metallurgic-science-pack",
+            "rate": 4.0,
+            "fluid": false,
+            "x": -1,
+            "y": 30,
+            "edge": "west"
+        },
+        {
+            "item": "stone",
+            "rate": 16.71111111111111,
+            "fluid": false,
+            "x": 20,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "stone",
+            "rate": 16.71111111111111,
+            "fluid": false,
+            "x": -1,
+            "y": 8,
+            "edge": "west"
+        }
+    ]
+}

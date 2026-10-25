@@ -1,0 +1,10 @@
+{
+  "targets": [
+    { "name": "automation-science-pack", "amount": 0.5 },
+    { "name": "logistic-science-pack", "amount": 0.5 }
+  ],
+  "sources": [
+    { "name": "iron-plate", "edge": "west" },
+    { "name": "copper-plate", "edge": "west" }
+  ]
+}

@@ -1,0 +1,6 @@
+{ "job": "jobs/fork.json", "w": 26, "h": 26,
+  "machines": [
+    { "recipe": "iron-gear-wheel", "x": 12, "y": 11 },
+    { "recipe": "iron-gear-wheel", "x": 12, "y": 1 },
+    { "recipe": "iron-gear-wheel", "x": 12, "y": 21 }
+  ] }

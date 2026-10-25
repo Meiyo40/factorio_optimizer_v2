@@ -1,0 +1,8 @@
+{
+  "targets": [{ "name": "sulfuric-acid", "amount": 50.0 }],
+  "sources": [
+    { "name": "sulfur", "edge": "west" },
+    { "name": "iron-plate", "edge": "west" },
+    { "name": "water", "edge": "north" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "targets": [
+    { "name": "iron-gear-wheel", "amount": 1.0 },
+    { "name": "copper-cable", "amount": 1.0 }
+  ],
+  "sources": [
+    { "name": "iron-plate", "edge": "west", "from": 4, "to": 4 },
+    { "name": "copper-plate", "edge": "north", "from": 4, "to": 4 }
+  ]
+}

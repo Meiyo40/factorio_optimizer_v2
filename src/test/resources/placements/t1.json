@@ -1,0 +1,2 @@
+{ "job": "jobs/t1.json", "w": 10, "h": 8,
+  "machines": [ { "recipe": "iron-gear-wheel", "x": 4, "y": 2 } ] }

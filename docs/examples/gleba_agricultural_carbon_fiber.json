@@ -1,0 +1,43 @@
+{
+  "targets": [
+    {
+      "name": "agricultural-science-pack",
+      "amount": 5.0
+    },
+    {
+      "name": "carbon-fiber",
+      "amount": 5.0
+    }
+  ],
+  "machines": [
+    "biochamber",
+    "foundry",
+    "electromagnetic-plant",
+    "assembling-machine-3",
+    "electric-furnace",
+    "chemical-plant",
+    "oil-refinery"
+  ],
+  "raw_resources": [
+    "iron-ore",
+    "copper-ore",
+    "stone",
+    "coal",
+    "crude-oil",
+    "water",
+    "calcite",
+    "yumako",
+    "jellynut",
+    "pentapod-egg",
+    "spoilage",
+    "heavy-oil"
+  ],
+  "belt_tier": "express",
+  "lane_sharing": true,
+  "search": {
+    "time_budget_s": 900,
+    "seeds_per_size": 10,
+    "threads": 10,
+    "seed": 2026
+  }
+}

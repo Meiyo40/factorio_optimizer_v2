@@ -1,0 +1,6 @@
+{ "job": "jobs/t2.json", "w": 16, "h": 10,
+  "machines": [
+    { "recipe": "copper-cable", "x": 2, "y": 3 },
+    { "recipe": "electronic-circuit", "x": 6, "y": 3 },
+    { "recipe": "copper-cable", "x": 10, "y": 3 }
+  ] }

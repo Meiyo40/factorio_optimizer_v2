@@ -1,0 +1,58 @@
+{
+    "box": {
+        "w": 36,
+        "h": 36
+    },
+    "inputs": [
+        {
+            "item": "copper-ore",
+            "rate": 3.7499999999999996,
+            "fluid": false,
+            "x": 21,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-ore",
+            "rate": 5.999999999999999,
+            "fluid": false,
+            "x": -1,
+            "y": 7,
+            "edge": "west"
+        },
+        {
+            "item": "coal",
+            "rate": 0.7499999999999999,
+            "fluid": false,
+            "x": 36,
+            "y": 23,
+            "edge": "east"
+        },
+        {
+            "item": "water",
+            "rate": 29.23076923076922,
+            "fluid": true,
+            "x": 36,
+            "y": 6,
+            "edge": "east"
+        },
+        {
+            "item": "crude-oil",
+            "rate": 19.230769230769226,
+            "fluid": true,
+            "x": 27,
+            "y": -1,
+            "edge": "north"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "chemical-science-pack",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 30,
+            "y": 36,
+            "edge": "south"
+        }
+    ]
+}

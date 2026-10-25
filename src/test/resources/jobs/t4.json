@@ -1,0 +1,26 @@
+{
+  "targets": [
+    {
+      "name": "processing-unit",
+      "amount": 0.2
+    }
+  ],
+  "sources": [
+    {
+      "name": "iron-plate",
+      "edge": "west"
+    },
+    {
+      "name": "copper-plate",
+      "edge": "west"
+    },
+    {
+      "name": "plastic-bar",
+      "edge": "north"
+    },
+    {
+      "name": "sulfuric-acid",
+      "edge": "south"
+    }
+  ]
+}

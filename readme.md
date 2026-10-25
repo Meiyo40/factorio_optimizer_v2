@@ -1,0 +1,432 @@
+# Factorio layout optimizer
+
+See also: [factorio_optimizer](https://github.com/SeezoCode/factorio_optimizer), the original version, a
+CP-SAT bot-mall model that places machines on a macro grid and connects them with requester and provider
+chests.
+
+Generates importable Factorio 2.0 blueprints for production blocks. A linear program picks recipes and machine
+counts (by-products included), simulated annealing places the machines, a router lays belts (with splitters
+and several belts per item), undergrounds, inserters and pipes between them, poles are added, an independent
+validator checks the result, and an outer loop shrinks the box for as long as it has time. Inputs and outputs
+are ports on the block's edge, listed in `ports.json`, so you connect blocks yourself. Every valid improvement
+is written as a blueprint string. Jobs too big for one block are built as a [factory of
+blocks](#big-jobs-a-factory-of-blocks).
+
+**Space Age (experimental):** foundries, electromagnetic plants, cryogenic plants, biochambers, crushers and
+recyclers, with their built-in productivity, research productivity and space-platform jobs (see
+[Space Age](#space-age)). Gleba layouts are the hardest to route, since every biochamber also needs a nutrient
+belt; spoilage is not modelled, and neither is Aquilo's heating (heat pipes).
+
+## Examples
+
+Each folder in [docs/examples](docs/examples) has the blueprint string (`best_output_string.txt`, paste it into
+Factorio 2.0 with Import string), a render, `ports.json` (where to feed it and where products leave) and the
+job file next to it, and most have a screenshot of the layout built in game. All were run with 10 threads
+(M5).
+
+Compared with my most compact hand-built layouts, the generated ones take 110–120% of their area. More compute
+closes only a little of that; the rest is the algorithm. Hand builds run one belt down a whole column of
+machines, put two inputs on one belt, and feed everything from a bus, while the router still treats each item
+as separate chains between scattered machines.
+
+| Example | Machines | Box | Search ran | Best layout found after | Job |
+|---------|---------:|----:|-----------:|------------------------:|-----|
+| [Red + green science, 0.5/s each](docs/examples/red_green_science) | 10 | 16 × 16 | 5 min | 5 s | [red_green_science.json](docs/examples/red_green_science.json) |
+| [Red + green science, 0.5/s each, two items per belt](docs/examples/red_green_science_shared) | 10 | 15 × 15 | 5 min | 2 min 48 s | [red_green_science_shared.json](docs/examples/red_green_science_shared.json) |
+| [Chemical science 0.5/s from ore and crude oil](docs/examples/chemical_science) | 43 | 36 × 36 | 15 min | 10 min (36 × 36 first at 5 min 20 s) | [chemical_science.json](docs/examples/chemical_science.json) |
+| [Six science 1/s each from plates, as a factory of 3 blocks](docs/examples/six_science_factory) | 177 | 179 × 67 | 3 h 16 min | 3 h 16 min | [six_science_factory.json](docs/examples/six_science_factory.json) |
+| [Electromagnetic science 1.5/s (Space Age, Fulgora)](docs/examples/electromagnetic_science) (at the bottom of the page) | 36 | 41 × 41 | 15 min | 13 min 35 s (41 × 41 first at 6 min 26 s) | [electromagnetic_science.json](docs/examples/electromagnetic_science.json) |
+| [Metallurgic science 4/s (Space Age, Vulcanus)](docs/examples/metallurgic_science) (at the bottom of the page) | 38 | 46 × 46 | 15 min | 14 min 41 s (46 × 46 first at 5 min 34 s) | [metallurgic_science.json](docs/examples/metallurgic_science.json) |
+| [Agricultural science 5/s + carbon fiber 5/s (Space Age, Gleba)](docs/examples/gleba_agricultural_carbon_fiber) (at the bottom of the page) | 43 | 50 × 50 | 15 min | 15 min | [gleba_agricultural_carbon_fiber.json](docs/examples/gleba_agricultural_carbon_fiber.json) |
+| [Six science 1/s each from ore, as a factory of 10 blocks](docs/status/six_science_9_blocks) (at the bottom of the page) | 618 | 317 × 137 | 41 min | 30 min | [six_science_9_blocks.json](docs/status/six_science_9_blocks.json) |
+
+The six-science factory's three blocks were searched one after another, then stitched:
+
+| Block | Machines | Box | Search ran | Best layout found after |
+|-------|---------:|----:|-----------:|------------------------:|
+| 1 | 60 | 63 × 63 | 66 min | 66 min |
+| 2 | 57 | 56 × 56 | 63 min | 35 min |
+| 3 | 60 | 53 × 53 | 66 min | 63 min |
+
+Stitching and compaction took under a second; the run then spent another 3.8 hours repacking and merging
+blocks, which found nothing smaller (not counted above).
+
+Each render next to the same blueprint built in game. Red + green was generated with belt sharing on
+(`lane_sharing`, two items per belt, one per lane), chemical science with it off (one item per belt).
+
+![Red and green science, render and in game](docs/examples/red_green_science_shared/side_by_side.png)
+
+*Red and green science at 0.5/s each (15 × 15): iron and copper plates enter on the west edge, copper on the
+left lane of a belt it shares with an item made inside. In the render, belts are coloured per chain and brown
+dots are poles.*
+
+![Chemical science, render and in game](docs/examples/chemical_science/side_by_side.png)
+
+The six-science factory (render only); block borders are drawn as floor tiles in the blueprint:
+
+![Six science factory](docs/examples/six_science_factory/best.png)
+
+## How to run
+
+Java 25 (LTS) with Gradle 9.8.2 (the wrapper downloads it) and Kotlin 2.4; it runs on macOS, Linux and
+Windows. Point `JAVA_HOME` at a JDK 25, for example on macOS:
+
+```sh
+export JAVA_HOME=$(/usr/libexec/java_home -v 25)
+```
+
+on Linux (Debian/Ubuntu package `openjdk-25-jdk`, or any JDK 25 build such as Temurin or Zulu):
+
+```sh
+export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
+```
+
+On Windows use `gradlew.bat` instead of `./gradlew`.
+
+Or open the folder in VS Code with the Dev Containers extension: `.devcontainer/` uses the Java 25 image and
+compiles everything on creation.
+
+Run a job (the job file is a classpath resource name or a path):
+
+```sh
+./gradlew run --args="--config=src/test/resources/jobs/t3.json"
+```
+
+Results go to `src/main/resources/solves/<time> - sa/` (or `--out=<dir>`):
+
+| File | Contents |
+|------|----------|
+| `best_output_string.txt` | Blueprint string of the best layout so far |
+| `best_blueprint.json` | The same blueprint as readable JSON |
+| `best.png`, `renders/` | Render of the best layout, and one per improvement |
+| `allSolves/` | Blueprint string of every improvement |
+| `scores.tsv`, `score_vs_time.svg` | Score log and graph |
+| `plan.json` | Stage 1 output: machines, terminals, nets and rates |
+| `ports.json` | Where each input and output enters or leaves the block (tile, edge, item, rate) |
+| `log.txt` | Search log |
+
+Ctrl-C stops the search and rewrites the best result first. Other flags:
+
+- `--print-tuning`: every tuning knob with the value the job uses.
+- `--tuning=<file>`: a tuning file instead of the built-in defaults.
+- `--calibrate=<job>,<job>,... --budget=<s>`: refits `tuning.json` from short searches.
+- `--verify-kit=<dir>`: in-game check blueprints (see [docs/VERIFY.md](docs/VERIFY.md)).
+- `--render=<dir>`: redraws `best.png` of an output folder from its blueprint and `ports.json`.
+
+Renders show each machine's name and recipe, and mark every input (green) and output (red) with a number on its
+tile, listed underneath with item, rate and tile. Input belts also say which lane the item goes on: "both lanes"
+for a belt of its own, "left lane" or "right lane" when it shares the belt with a second item, seen looking
+along the belt into the block (for a belt entering from the west, left is the north side).
+
+## Job config
+
+Unknown keys are an error. Everything except `targets` has a default.
+
+```json
+{
+  "targets": [{ "name": "electronic-circuit", "amount": 2.0 }],
+  "machine": "assembling-machine-3",
+  "machines": ["assembling-machine-3", "electric-furnace", "chemical-plant", "oil-refinery", "centrifuge"],
+  "belt_tier": "fast",
+  "weave_tier": "auto",
+  "lane_sharing": false,
+  "inserters": { "allowed": ["inserter", "long-handed-inserter", "fast-inserter"], "belt_pickup_derate": 0.7 },
+  "research": { "inserter_capacity": 0, "productivity": { "steel-plate": 0.2 } },
+  "raw_resources": null,
+  "sources": [
+    { "name": "iron-plate", "edge": "west", "from": 0, "to": 20 },
+    { "name": "copper-plate", "x": -1, "y": 12 },
+    { "name": "crude-oil", "edge": "south" }
+  ],
+  "outputs": [{ "name": "electronic-circuit", "edge": "east" }],
+  "box": { "aspect": 1.0, "fixed_width": null, "start_size": null, "max_size": 80 },
+  "sinks": { "mode": "port" },
+  "fluids": { "mode": "pipes" },
+  "power": { "mode": "set-cover", "pole": "medium-electric-pole", "allow_outside_ring": true },
+  "search": { "time_budget_s": 300, "seeds_per_size": 3, "threads": 4, "seed": 12345, "verbose": true },
+  "score": { "belt": 0.3, "underground": 1.0, "inserter": 0.2 },
+  "test_mode": false,
+  "blocks": { "max_machines": 120, "split_at": ["iron-plate", "copper-plate"], "corridor": 4,
+              "link_belt_share": 0.9, "split_at_weight": 0.1, "block_time_share": 0.9,
+              "compact": true, "repack": false, "repack_share": 0.25, "merge": false, "merge_share": 0.3 },
+  "reserved": [{ "w": 10, "h": 8, "corner": "south-east" }],
+  "ports_on_ring": true,
+  "marker_tile": "hazard-concrete-left",
+  "tuning": { "route": { "p_mult": 1.1 }, "place": { "beta2": 1.0 } }
+}
+```
+
+- Amounts are items (or fluid units) per second. Anything listed in `sources` enters the block at a port (a
+  fixed tile, an edge segment, or `"edge": "any"`); everything else is made inside from ores, crude oil and
+  water, which enter at ports anywhere on the edge. A port one tile wide carries one belt, which branches with
+  splitters to all its consumers; give a busy input a few tiles of edge so it can enter on several belts.
+  Fluid ports may touch: the generator starts them with pipe-to-ground, which you feed through its open side.
+- Products and surplus by-products leave through output ports (`outputs` pins their edge; otherwise the
+  generator picks one and reports it in `ports.json`). `"sinks": {"mode": "chest"}` puts products into chests
+  instead, as in v1.
+- Fluids are routed in pipes and pipe-to-ground (`"fluids": {"mode": "infinity-pipe"}` puts an infinity pipe on
+  every fluid connection instead, `"manual"` leaves the connection tiles free).
+- `box.max_size` caps the box (the side of a square of the box's area): the search starts there and, if it
+  fails, keeps trying new seeds at that size instead of growing. `box.start_size` sets where it starts
+  (default: `max_size`, else twice the estimate from machine area). Either way it then shrinks the box.
+- `weave_tier` is the second underground tier that may cross under the main tier's undergrounds ("auto":
+  express under fast belts; "none" turns weaving off). `lane_sharing: true` lets two items share a belt, one
+  per lane (opt-in until the drop-lane facts are checked in game, see docs/VERIFY.md).
+- `research.inserter_capacity` (0–7) sets inserter hand sizes; `machines` picks one machine per recipe category.
+- `research.productivity` adds research productivity per recipe on top of the machine's own (+50% in a foundry,
+  electromagnetic plant or biochamber), capped at the recipe's maximum. Rates and machine counts follow from it.
+- `raw_resources` lists what may enter without a listed source. By default that is ores, stone, coal, wood, crude
+  oil, water and fish; `[]` means only `sources` enter (a space platform).
+- `reserved` keeps empty areas for building by hand later: `w` × `h` at a `corner` (`north-west`, `north-east`,
+  `south-west`, `south-east`; by default the corners in turn) or at a fixed `x`, `y`. Nothing is placed there,
+  the box grows to fit, and the border is marked. In a factory of blocks they sit east of the blocks.
+- `ports_on_ring` (default on) moves every input and output one tile out of the box, onto the ring around it,
+  so ports stand out. `marker_tile` is the floor tile drawn around blocks and reserved areas in the blueprint
+  (`"none"` for no tiles, e.g. on a space platform, where concrete cannot be placed).
+- `test_mode` feeds every input from infinity chests or pipes outside the box and empties every output into
+  void chests or drains, for testing in the editor.
+- `tricks` toggles individual techniques (I1–I13, B1–B13, F1, F2, P1, P2, H1); v1 ones are on by default.
+- The old CP-SAT fields (`forbidden_places`, source `force`) are still accepted so old job files load, but do nothing.
+
+### Big jobs: a factory of blocks
+
+With a `blocks` section, a job with more than `max_machines` machines is built as several blocks connected by
+belts, in one blueprint:
+
+1. The whole job is planned once, so every rate is exact, then split into blocks of at most `max_machines`
+   machines that trade as little as possible. Machines joined by pipes stay in one block. Items in `split_at`
+   are preferred cut points (plates are a natural choice).
+2. Blocks are ordered upstream first and laid out in one row (up to three blocks) or two (`rows` overrides), so
+   every block touches the outer edge, where raw inputs enter and products leave.
+3. Every belt between two blocks is a link with an exact rate (at most 90% of a belt). Each block is generated
+   on its own, with its link ports on the edge facing the block it trades with, and its share of the time
+   budget.
+4. The blocks are placed in their rows with `corridor` tiles between them, the link belts are routed through
+   the corridors, poles cover the whole factory, and the result is validated end to end against the full plan.
+   If the corridor belts do not fit, the corridors widen and it tries again.
+5. Rows and columns that only straight belts, straight pipes or underground spans cross are removed
+   (`compact`, on by default; the factory is validated again, and kept as stitched if that ever fails).
+6. With `repack`, every block is searched again at a common height per row (the row's tallest block, and
+   heights that make the factory about square), and each row is kept repacked if the factory gets smaller.
+7. With `merge`, until the time budget runs out, two neighbouring blocks of a row become one block, searched
+   starting from their placements side by side, kept if the factory gets smaller (merged blocks have at most
+   `merge_max_machines`, default twice `max_machines`).
+
+Every smaller valid factory is saved as it is found, so stopping the run early keeps the best so far.
+
+The output folder holds the factory (`best_output_string.txt`, `best.png`, `ports.json`, `factory.txt` with the
+split and the links) and each block in `block_<n>/`. Fluids are never piped between blocks; a pipe-joined group
+larger than `max_machines` stays one block (with a warning).
+
+### Space Age
+
+The foundry, electromagnetic plant, cryogenic plant, biochamber, crusher and recycler are supported (their
+sizes and fluid connections come from the 2.0 game data). List them in `machines`, in the order you prefer them
+for recipes several machines can make. The planner counts their built-in productivity, a biochamber burns
+nutrients like a furnace burns coal, and a machine with several products (asteroid crushing returns part of
+its chunk) gets one filtered output inserter per product.
+
+There is no special mode for space platforms; the normal options describe one:
+
+```json
+{
+  "targets": [{ "name": "iron-gear-wheel", "amount": 2.0 }, { "name": "copper-cable", "amount": 4.0 }],
+  "machines": ["crusher", "electric-furnace", "assembling-machine-3"],
+  "raw_resources": [],
+  "sources": [{ "name": "metallic-asteroid-chunk", "edge": "west" }],
+  "forbidden_recipes": ["metallic-asteroid-reprocessing"],
+  "research": { "productivity": { "iron-gear-wheel": 0.1 } },
+  "box": { "fixed_width": 24, "max_size": 40 },
+  "forbidden_tiles": [{ "x": 0, "y": 0, "w": 8, "h": 8 }],
+  "reserved": [{ "w": 6, "h": 6, "corner": "north-east" }],
+  "marker_tile": "none",
+  "power": { "pole": "medium-electric-pole" }
+}
+```
+
+`raw_resources: []` keeps ore from simply entering, so the crushers make it (here advanced crushing, the only
+platform source of copper); `sources` are where the chunks
+arrive (an edge, or exact tiles next to your collectors); `forbidden_recipes` and `recipe_overrides` decide
+which recipes may be used; `box`, `forbidden_tiles` and `reserved` fit the layout to the platform's shape and
+leave room for what you build by hand. Not modelled: spoilage, the stack inserter's belt stacking, quality
+outputs, and the space platform foundation itself.
+
+### Tuning knobs
+
+Every algorithm knob (placer, router, search) has a measured default in `src/main/resources/tuning.json`. A
+job overrides any of them in its `tuning` section, with the same layout and only the keys it changes; unknown
+keys are an error. `--print-tuning` prints every knob with the value the job would use, and each run saves the
+values it used as `tuning.json` in its output folder. The ones that matter most:
+
+| Knob | Default | What it does |
+|------|--------:|--------------|
+| `route.p_mult` | 1.1 | How fast the price of a contested tile rises per routing iteration. Slower finds more solutions but needs more iterations (1.5 was the old default; 1.05 routes a bit more per trial but is slower per minute). |
+| `route.max_iterations`, `route.stagnation_stop` | 120, 40 | Routing iterations, and how many without improvement end them early. Raise both with a lower `p_mult`. |
+| `route.endgame_rounds`, `route.endgame_time_factor` | 30, 2 | Rip-up-and-reroute rounds after negotiation stalls, and their time cap (multiple of the negotiation's time). |
+| `route.ug_penalty`, `route.turn_penalty` | 2.0, 0.2 | Cost of an underground pair and of a belt turn, in belt tiles: shape preferences. |
+| `route.weave_penalty` | 1.0 | Extra cost of a second-tier underground (weaving). |
+| `route.max_chain_visits` | 12 | Inserters one belt chain serves before an item's net is split into several chains. A port gets no more chains than it has tiles, so a one-tile port feeds a single belt that branches with splitters. |
+| `route.chain_belt_share` | 0.9 | Share of a belt one chain may carry before the item gets another belt. |
+| `route.unrouted_penalty` | 10 | How many tile conflicts one unrouted chain counts as when routing iterations and rounds are compared. |
+| `route.max_expansions` | 3000000 | Search states one belt or pipe path search may expand before giving up. |
+| `place.access_demand` | 1.0 | Room kept around machines for the belts that serve them (0 turns it off). |
+| `place.beta2` | 1.0 | How strongly a failed route's congestion map moves machines in the next placement round. |
+| `place.feedback_rounds` | 3 | Placement and routing rounds per trial before it counts as failed. |
+| `place.moves_per_machine` | 20000 | Annealing effort per machine. |
+| `place.near_miss_max`, `place.near_miss_attempts` | 4, 4 | A trial that ends within this many conflicts nudges a machine and retries this many times. |
+| `place.initial` | random | Starting placement: "random", "columns" (machines of a recipe stacked in columns with belt corridors between them, `column_gap`, `column_spacing`, `column_moves_only`, `column_swap_across`, `column_t0_scale`), or "mixed" (columns on even seeds). Columns matched the random start in benchmarks; worth trying per job. |
+| `place.belt_cost`, `place.path_weight` | hpwl, 1.0 | How a net's belt length is estimated: bounding box x q(k), or "path" (bounding box plus the detours of a path between the machines). |
+| `search.grow_factor`, `search.grow_rounds` | 1.25, 2 | Box growth after a failed size, and seed rounds per size before growing. |
+| `planner.access_share` | 0.75 | Share of the tiles around a machine its inserters may take; a recipe that would need more gets extra machines (fast Space Age machines with productivity hit this). |
+
+The full list with explanations is in `src/main/kotlin/config/Tuning.kt`; measurements in
+[docs/TUNING.md](docs/TUNING.md). The block options `link_belt_share` (a link between blocks above this share
+of a belt gets a second belt), `split_at_weight` (how much `split_at` items' traffic counts when grouping
+machines into blocks) and `block_time_share` (budget share for generating blocks; the rest is for stitching)
+sit in the job's `blocks` section.
+
+### What the terminal shows
+
+At the start the search prints the plan: machines per recipe, and per item its rate, inserters, belts and port
+(with its tiles, and a note when one belt has to serve more inserters than `route.max_chain_visits`). Then, with
+`search.verbose` (default on), one line per finished trial:
+
+```
+[   18.1s]   14x14 try 1: no route in 18.0s, 4 routing runs; closest: 3 conflicts, unrouted [copper-cable] (copper-plate/iron-plate x2 near (5,9))
+[   41.0s]   14x14 try 3: ok in 6.5s, 2 routing runs, score 618.0
+```
+
+"closest" is the routing run that came nearest: tile conflicts left, chains it could not route, and where the
+conflicts are, grouped by the items that meet there. After each box size comes the history of every box tried,
+smallest first, with its tries, successes, and best score or closest miss. The same lines go to `log.txt`, and
+every trial is a row of `attempts.tsv` (box, seed, stage, seconds, routing runs, conflicts, unrouted items,
+score, where). A box that fails every seed at the same spot, whatever the size, points at the job (a port too
+narrow, fluids pinned side by side) rather than the box.
+
+## How it works
+
+| Stage | Package | What it does |
+|-------|---------|--------------|
+| 1 | `plan` | LP over recipe rates (by-products, recipe choice) → machine instances, terminals, nets and ports |
+| 2 | `place` | Simulated annealing (VPR schedule) on HPWL × q(k), RUDY congestion, pin access, direct-insertion bonus, rotation and mirroring, fluid connection legality |
+| 3 | `route` | Negotiated-congestion routing: belt chains leg by leg with A* over (tile, heading, belt/underground), splitter branches, pipe trees with pipe-to-ground, and a rip-up-and-reroute endgame around the last conflicts |
+| 4 | `power` | Pole set cover and MST wiring (lattice fallback), test-mode harness |
+| 5 | `search` | Box size search (gentle growth to a first success, then bisection), K seeds per size in parallel, warm starts, anytime outputs, calibration |
+| — | `validate` | Re-derives belts, lanes, splitters, underground pairing, items, order-aware rates, power, fluid networks and ports from the entity list alone |
+| — | `emit`, `viz` | Blueprint 2.0 encode/decode, PNG renders |
+
+Two things go beyond the original plan and are described in [docs/TUNING.md](docs/TUNING.md): nets with many
+inserter visits are split into several belt chains, and chains may interleave producers and consumers when the
+supply upstream already covers a consumer.
+
+## Tests
+
+```sh
+./gradlew test
+```
+
+The suite covers Stage 1 counts (T1–T4), blueprint round trips, one fixture per validator check, router
+fixtures and random belt and fluid instances, placer properties, full trials and the search loop.
+
+Three diagnostics are skipped unless their environment variable is set: `DiagTest` (`DIAG=<job>,<size>,<seeds>`)
+runs single trials and prints why routing fails (`DIAG_ITEM=<item>` lists the plan's terminals of an item,
+`DIAG_AT=<x>,<y>,<radius>` the entities around a tile); `SweepTest` (`SWEEP=<spec file>`) runs many trials in
+parallel for parameter sweeps (see [docs/TUNING.md](docs/TUNING.md)); `JobFuzzTest` (`FUZZ=<minutes>`, with
+`FUZZ_THREADS`, `FUZZ_SEED`, `FUZZ_OUT`) makes random jobs (base game, Space Age, space platform), builds each at
+a roomy size and records every planner or trial exception, invalid layout or failed blueprint round trip in
+`results.tsv`, saving the job for `DiagTest`. Run them with `--rerun -i`.
+
+## Status
+
+[docs/STATUS.md](docs/STATUS.md) maps every milestone acceptance test to the code. T1–T4 produce validated
+layouts in seconds. Chemical science at 0.5/s from ore and crude oil (43 machines, oil processing included)
+validates at 36 × 36 in about 5 minutes, and red + green + chemical science at 1/s from ore (110 machines) at
+64 × 64 within 20 minutes. Six science at 1/s each from ore (618 machines) is built as a factory of 10 blocks
+at 317 × 137 in 30 minutes (see [More layouts](#more-layouts)).
+
+Space Age layouts for Vulcanus, Fulgora and Gleba are in [More layouts](#more-layouts). Cryogenic science is
+not shown: Aquilo needs heat pipes to keep machines warm, and the generator does not place them.
+
+## When the planner outsmarts you
+
+The planner is a linear program that minimises machine area plus small costs for inputs and larger ones for
+by-products leaving the block. It takes those costs literally, and several jobs came back technically optimal
+and practically useless:
+
+- **Vulcanus stone.** Melting lava for iron and copper leaves stone. Asked to make metallurgic science, the
+  planner turned the stone into landfill, because three landfill machines cost less than stone leaving the
+  block. Landfill forbidden: it made stone bricks and walls (27 furnaces). Those forbidden: stone furnaces.
+  The fix was to make leftovers almost free (`planner.surplus_cost_item`), so stone simply leaves.
+- **Sulfuric acid on Vulcanus.** With sulfuric acid allowed in as a raw resource and also asked for as a
+  product, the cheapest "factory" was a pipe from the input to the output, which could not even be routed.
+  Targets are now always made, never passed through.
+- **Space platforms.** Asked for iron on a platform, it ignored the crushers and imported iron ore, since ore
+  was on the default list of raw resources. `raw_resources` now says exactly what may come in.
+- **Fulgora plastic.** Electromagnetic science needs superconductors, superconductors need plastic, plastic
+  needs coal, and Fulgora has none: no plan at all until plastic (from recycling) was allowed in.
+
+## Not verified in game yet
+
+Some 2.0 facts are marked `VERIFY` in `data/GameConstants.kt` (inserter rates, underground pairing details,
+fluid input side, wire format, Space Age fluid connections, inserter filters). [docs/VERIFY.md](docs/VERIFY.md)
+has a blueprint for each.
+
+## More layouts
+
+Electromagnetic science at 1.5/s (Space Age, Fulgora): electromagnetic plants with assemblers, chemical plants
+and an oil refinery, no machines from other planets. Fulgora's real input is scrap, and a recycler turns it
+into about a dozen products at once, too many for one block to take out, so the block is fed what Fulgora's
+recyclers deliver instead: holmium ore, ice, stone, batteries, plastic, iron and copper plates, copper cable,
+plus heavy oil from the ocean.
+
+![Electromagnetic science](docs/examples/electromagnetic_science/best.png)
+
+Built in game:
+
+![Electromagnetic science, in game](docs/examples/electromagnetic_science/in_game.png)
+
+Metallurgic science at 4/s (Space Age, Vulcanus), from what Vulcanus has: lava, calcite, coal, tungsten ore and
+sulfuric acid. Foundries melt lava into molten iron and copper and cast tungsten plate and carbide, chemical
+plants make carbon from coal. Melting lava leaves stone, which leaves the block as a by-product (33/s); the job
+lowers `planner.surplus_cost_item` so the planner lets it go instead of turning it into landfill or walls.
+
+![Metallurgic science](docs/examples/metallurgic_science/best.png)
+
+Built in game:
+
+![Metallurgic science, in game](docs/examples/metallurgic_science/in_game.png)
+
+Agricultural science at 5/s and carbon fiber at 5/s (Space Age, Gleba): biochambers fed nutrients, foundries and
+chemical plants. Yumako and jellynut seeds come out as by-products of processing the fruit (here 0.49 and 0.06
+seeds/s, through output ports); to get more, add them to `targets` with the amount you want (for example
+`{"name": "yumako-seed", "amount": 2.0}`), and the planner processes more fruit to make them.
+
+![Agricultural science and carbon fiber](docs/examples/gleba_agricultural_carbon_fiber/best.png)
+
+Built in game:
+
+![Agricultural science and carbon fiber, in game](docs/examples/gleba_agricultural_carbon_fiber/in_game.png)
+
+Six science at 1/s each from ore (618 machines) does not fit one block; as a factory of 10 blocks of at most
+69 machines (10 threads (M5), belt sharing on) it validates at 317 × 137 after 30 minutes. The blocks are dense,
+but 37% of the factory is still space between blocks: the two rows differ in width, and repacking left too
+little room for the links between blocks.
+
+| Block | Machines | Box | Search ran |
+|-------|---------:|----:|-----------:|
+| 1 | 32 | 28 × 28 | 1 min 28 s |
+| 2 | 39 | 32 × 32 | 1 min 46 s |
+| 3 | 69 | 45 × 45 | 3 min 15 s |
+| 4 | 69 | 45 × 45 | 3 min 10 s |
+| 5 | 64 | 55 × 55 | 2 min 57 s |
+| 6 | 69 | 51 × 51 | 3 min 16 s |
+| 7 | 69 | 53 × 53 | 3 min 20 s |
+| 8 | 69 | 53 × 53 | 3 min 11 s |
+| 9 | 69 | 66 × 66 | 4 min 6 s |
+| 10 | 69 | 78 × 78 | 3 min 24 s |
+
+![Six science, 10 blocks](docs/status/six_science_9_blocks/best.png)
+
+Built in game:
+
+![Six science, 10 blocks, in game](docs/status/six_science_9_blocks/in_game.jpg)

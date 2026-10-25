@@ -1,0 +1,25 @@
+{
+  "_comment": "Hand calculation for T3 (0.5/s red + 0.5/s green, assembling-machine-3 at speed 1.25). machines = ceil(r * energy / (amount * 1.25)). Net flow = sum of consumer demand plus the output port rate.",
+  "machines": {
+    "automation-science-pack": 2,
+    "logistic-science-pack": 3,
+    "inserter": 1,
+    "transport-belt": 1,
+    "iron-gear-wheel": 1,
+    "electronic-circuit": 1,
+    "copper-cable": 1
+  },
+  "nets": {
+    "iron-plate":        { "flow": 3.75, "producers": 0, "sources": 1, "consumers": 4 },
+    "copper-plate":      { "flow": 1.25, "producers": 0, "sources": 1, "consumers": 3 },
+    "iron-gear-wheel":   { "flow": 1.25, "producers": 1, "sources": 0, "consumers": 4 },
+    "inserter":          { "flow": 0.5,  "producers": 1, "sources": 0, "consumers": 3 },
+    "transport-belt":    { "flow": 0.5,  "producers": 1, "sources": 0, "consumers": 3 },
+    "electronic-circuit":{ "flow": 0.5,  "producers": 1, "sources": 0, "consumers": 1 },
+    "copper-cable":      { "flow": 1.5,  "producers": 1, "sources": 0, "consumers": 1 },
+    "automation-science-pack": { "flow": 0.5, "producers": 2, "sources": 0, "consumers": 0 },
+    "logistic-science-pack":   { "flow": 0.5, "producers": 3, "sources": 0, "consumers": 0 }
+  },
+  "outputs": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+  "raw": { "iron-plate": 3.75, "copper-plate": 1.25 }
+}

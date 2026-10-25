@@ -1,0 +1,32 @@
+[    0.0s] 177 machines in 3 blocks (1 row(s)): block 1: 60, block 2: 57, block 3: 60
+[    0.0s]   block 2 -> block 3: advanced-circuit 3.81/s (1 belt(s))
+[    0.0s]   block 2 -> block 1: advanced-circuit 0.51/s (1 belt(s))
+[    0.0s]   block 1 -> block 2: battery 0.67/s (1 belt(s)), copper-cable 17.27/s (1 belt(s)), electronic-circuit 9.63/s (1 belt(s)), plastic-bar 13.63/s (1 belt(s)), processing-unit 0.67/s (1 belt(s))
+[    0.0s]   block 1 -> block 3: copper-cable 4.11/s (1 belt(s)), electronic-circuit 5.39/s (1 belt(s)), plastic-bar 2.06/s (1 belt(s)), sulfur 0.50/s (1 belt(s))
+[    0.0s]   block 3 -> block 2: electric-engine-unit 0.33/s (1 belt(s))
+[    0.1s] block 1: 60 machines, 3954 s
+[ 3979.5s] block 1: 63 x 63
+[ 3979.5s] block 2: 57 machines, 3756 s
+[ 7765.0s] block 2: 56 x 56
+[ 7765.0s] block 3: 60 machines, 3954 s
+[11743.7s] block 3: 53 x 53
+[11744.2s] factory, corridor 4: 179 x 67, valid; compacted: 0 rows and 1 columns removed from 180 x 67
+[11744.3s] factory: 179 x 67 (11993 tiles), saved
+[11744.3s] repack (tallest): rows at height [63]
+[12913.5s] repack block 2: 56 x 63 (was 56 x 56)
+[14154.0s] repack block 3: 50 x 63 (was 53 x 53)
+[14154.2s] repacked (tallest) rows [0], corridor 4: the belts between blocks did not route
+[14154.4s] repacked (tallest) rows [0], corridor 7: 181 x 67, valid; compacted: 3 rows and 2 columns removed from 183 x 70
+[14154.4s] repacked factory: 181 x 67 is not smaller than 179 x 67
+[14154.4s] repack (square): rows at height [111]
+[15456.7s] repack block 1: 45 x 111 (was 63 x 63)
+[16643.2s] repack block 2: 35 x 111 (was 56 x 56)
+[17897.6s] repack block 3: 32 x 111 (was 53 x 53)
+[17897.9s] repacked (square) rows [0], corridor 4: 120 x 115, valid
+[17897.9s] repacked factory: 120 x 115 is not smaller than 179 x 67
+[17897.9s] merge blocks 1 and 2 (117 machines) from 123 x 63, 3600 s
+[21828.9s] merge blocks 1 and 2: no layout
+[21828.9s] merge blocks 2 and 3 (117 machines) from 113 x 56, 3600 s
+[25572.3s] merge blocks 2 and 3: no layout
+[25572.3s] merge: no more pairs to try
+[25572.3s] done: 179 x 67 (11993 tiles)
