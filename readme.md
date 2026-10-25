@@ -30,7 +30,7 @@ closes only a little of that; the rest is the algorithm. Hand builds run one bel
 machines, put two inputs on one belt, and feed everything from a bus, while the router still treats each item
 as separate chains between scattered machines.
 
-| Example | Machines | Box | Search ran | Best layout found after | Job |
+| Example | Machines | Box | Search ran | Best layout found after | J*b |
 |---------|---------:|----:|-----------:|------------------------:|-----|
 | [Red + green science, 0.5/s each](docs/examples/red_green_science) | 10 | 16 × 16 | 5 min | 5 s | [details](docs/examples/red_green_science.json) |
 | [Red + green science, 0.5/s each, two items per belt](docs/examples/red_green_science_shared) | 10 | 15 × 15 | 5 min | 2 min 48 s | [details](docs/examples/red_green_science_shared.json) |
