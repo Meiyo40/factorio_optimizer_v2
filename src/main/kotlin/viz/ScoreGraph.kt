@@ -12,6 +12,9 @@ import org.jetbrains.letsPlot.themes.themeMinimal
 
 data class timestampToScore(val timestamp: Long, val score: Double)
 
+// The graph is optional; report a failure once per run instead of on every improvement.
+private var exportFailureReported = false
+
 
 fun generateScoreGraph(
     timestampToScore: List<timestampToScore>,
@@ -52,6 +55,9 @@ fun generateScoreGraph(
         // Try saving as PNG (requires lets-plot-image-export jar)
         ggsave(plot, outputFileName, path = path)
     } catch (e: Throwable) {
-        println("SVG Export failed")
+        if (!exportFailureReported) {
+            exportFailureReported = true
+            println("Score graph not written (the layouts are unaffected): $e")
+        }
     }
 }

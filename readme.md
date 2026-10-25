@@ -12,10 +12,11 @@ are ports on the block's edge, listed in `ports.json`, so you connect blocks you
 is written as a blueprint string. Jobs too big for one block are built as a [factory of
 blocks](#big-jobs-a-factory-of-blocks).
 
-**Space Age (experimental):** foundries, electromagnetic plants, cryogenic plants, biochambers, crushers and
-recyclers, with their built-in productivity, research productivity and space-platform jobs (see
-[Space Age](#space-age)). Gleba layouts are the hardest to route, since every biochamber also needs a nutrient
-belt; spoilage is not modelled, and neither is Aquilo's heating (heat pipes).
+**Space Age (experimental):** foundries, electromagnetic plants and biochambers work, with their built-in
+productivity, research productivity and space-platform jobs (see [Space Age](#space-age)). Others only partly:
+crushers only on space platforms, cryogenic plants without Aquilo's heating (heat pipes are not modelled), and
+recyclers not at all (the planner never uses recycling recipes). Gleba layouts are the hardest to route, since
+every biochamber also needs a nutrient belt, and spoilage is not modelled.
 
 ## Examples
 
@@ -31,25 +32,14 @@ as separate chains between scattered machines.
 
 | Example | Machines | Box | Search ran | Best layout found after | Job |
 |---------|---------:|----:|-----------:|------------------------:|-----|
-| [Red + green science, 0.5/s each](docs/examples/red_green_science) | 10 | 16 × 16 | 5 min | 5 s | [red_green_science.json](docs/examples/red_green_science.json) |
-| [Red + green science, 0.5/s each, two items per belt](docs/examples/red_green_science_shared) | 10 | 15 × 15 | 5 min | 2 min 48 s | [red_green_science_shared.json](docs/examples/red_green_science_shared.json) |
-| [Chemical science 0.5/s from ore and crude oil](docs/examples/chemical_science) | 43 | 36 × 36 | 15 min | 10 min (36 × 36 first at 5 min 20 s) | [chemical_science.json](docs/examples/chemical_science.json) |
-| [Six science 1/s each from plates, as a factory of 3 blocks](docs/examples/six_science_factory) | 177 | 179 × 67 | 3 h 16 min | 3 h 16 min | [six_science_factory.json](docs/examples/six_science_factory.json) |
-| [Electromagnetic science 1.5/s (Space Age, Fulgora)](docs/examples/electromagnetic_science) (at the bottom of the page) | 36 | 41 × 41 | 15 min | 13 min 35 s (41 × 41 first at 6 min 26 s) | [electromagnetic_science.json](docs/examples/electromagnetic_science.json) |
-| [Metallurgic science 4/s (Space Age, Vulcanus)](docs/examples/metallurgic_science) (at the bottom of the page) | 38 | 46 × 46 | 15 min | 14 min 41 s (46 × 46 first at 5 min 34 s) | [metallurgic_science.json](docs/examples/metallurgic_science.json) |
-| [Agricultural science 5/s + carbon fiber 5/s (Space Age, Gleba)](docs/examples/gleba_agricultural_carbon_fiber) (at the bottom of the page) | 43 | 50 × 50 | 15 min | 15 min | [gleba_agricultural_carbon_fiber.json](docs/examples/gleba_agricultural_carbon_fiber.json) |
-| [Six science 1/s each from ore, as a factory of 10 blocks](docs/status/six_science_9_blocks) (at the bottom of the page) | 618 | 317 × 137 | 41 min | 30 min | [six_science_9_blocks.json](docs/status/six_science_9_blocks.json) |
-
-The six-science factory's three blocks were searched one after another, then stitched:
-
-| Block | Machines | Box | Search ran | Best layout found after |
-|-------|---------:|----:|-----------:|------------------------:|
-| 1 | 60 | 63 × 63 | 66 min | 66 min |
-| 2 | 57 | 56 × 56 | 63 min | 35 min |
-| 3 | 60 | 53 × 53 | 66 min | 63 min |
-
-Stitching and compaction took under a second; the run then spent another 3.8 hours repacking and merging
-blocks, which found nothing smaller (not counted above).
+| [Red + green science, 0.5/s each](docs/examples/red_green_science) | 10 | 16 × 16 | 5 min | 5 s | [details](docs/examples/red_green_science.json) |
+| [Red + green science, 0.5/s each, two items per belt](docs/examples/red_green_science_shared) | 10 | 15 × 15 | 5 min | 2 min 48 s | [details](docs/examples/red_green_science_shared.json) |
+| [Chemical science 0.5/s from ore and crude oil](docs/examples/chemical_science) | 43 | 36 × 36 | 15 min | 10 min (36 × 36 first at 5 min 20 s) | [details](docs/examples/chemical_science.json) |
+| [Six science 1/s each from plates, as a factory of 3 blocks](docs/examples/six_science_factory) | 177 | 179 × 67 | 3 h 16 min | 3 h 16 min | [details](docs/examples/six_science_factory.json) |
+| [Electromagnetic science 1.5/s (Space Age, Fulgora)](docs/examples/electromagnetic_science) (at the bottom of the page) | 36 | 41 × 41 | 15 min | 13 min 35 s (41 × 41 first at 6 min 26 s) | [details](docs/examples/electromagnetic_science.json) |
+| [Metallurgic science 4/s (Space Age, Vulcanus)](docs/examples/metallurgic_science) (at the bottom of the page) | 38 | 46 × 46 | 15 min | 14 min 41 s (46 × 46 first at 5 min 34 s) | [details](docs/examples/metallurgic_science.json) |
+| [Agricultural science 5/s + carbon fiber 5/s (Space Age, Gleba)](docs/examples/gleba_agricultural_carbon_fiber) (at the bottom of the page) | 43 | 50 × 50 | 15 min | 15 min | [details](docs/examples/gleba_agricultural_carbon_fiber.json) |
+| [Six science 1/s each from ore, as a factory of 10 blocks](docs/status/six_science_9_blocks) (at the bottom of the page) | 618 | 317 × 137 | 41 min | 30 min | [details](docs/status/six_science_9_blocks.json) |
 
 Each render next to the same blueprint built in game. Red + green was generated with belt sharing on
 (`lane_sharing`, two items per belt, one per lane), chemical science with it off (one item per belt).
@@ -61,6 +51,17 @@ left lane of a belt it shares with an item made inside. In the render, belts are
 dots are poles.*
 
 ![Chemical science, render and in game](docs/examples/chemical_science/side_by_side.png)
+
+The six-science factory's three blocks were searched one after another, then stitched:
+
+| Block | Machines | Box | Search ran | Best layout found after |
+|-------|---------:|----:|-----------:|------------------------:|
+| 1 | 60 | 63 × 63 | 66 min | 66 min |
+| 2 | 57 | 56 × 56 | 63 min | 35 min |
+| 3 | 60 | 53 × 53 | 66 min | 63 min |
+
+Stitching and compaction took under a second; the run then spent another 3.8 hours repacking and merging
+blocks, which found nothing smaller (not counted above).
 
 The six-science factory (render only); block borders are drawn as floor tiles in the blueprint:
 
@@ -75,16 +76,21 @@ Windows. Point `JAVA_HOME` at a JDK 25, for example on macOS:
 export JAVA_HOME=$(/usr/libexec/java_home -v 25)
 ```
 
-on Linux (Debian/Ubuntu package `openjdk-25-jdk`, or any JDK 25 build such as Temurin or Zulu):
+on Linux (Debian/Ubuntu package `openjdk-25-jdk`, or any JDK 25 build such as Temurin or Zulu), point it at
+the JDK that `java` runs from:
 
 ```sh
-export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
+export JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")"
 ```
+
+Rendering needs FreeType and fontconfig, which minimal Linux images leave out (Debian/Ubuntu:
+`sudo apt-get install -y libfreetype6 fontconfig fonts-dejavu-core`).
 
 On Windows use `gradlew.bat` instead of `./gradlew`.
 
-Or open the folder in VS Code with the Dev Containers extension: `.devcontainer/` uses the Java 25 image and
-compiles everything on creation.
+Or open the folder in a GitHub Codespace or in VS Code with the Dev Containers extension: `.devcontainer/` uses
+the Java 25 image (`JAVA_HOME` is already set), installs the font libraries and compiles everything on
+creation.
 
 Run a job (the job file is a classpath resource name or a path):
 
@@ -220,11 +226,13 @@ larger than `max_machines` stays one block (with a warning).
 
 ### Space Age
 
-The foundry, electromagnetic plant, cryogenic plant, biochamber, crusher and recycler are supported (their
-sizes and fluid connections come from the 2.0 game data). List them in `machines`, in the order you prefer them
-for recipes several machines can make. The planner counts their built-in productivity, a biochamber burns
-nutrients like a furnace burns coal, and a machine with several products (asteroid crushing returns part of
-its chunk) gets one filtered output inserter per product.
+The foundry, electromagnetic plant and biochamber are supported (their sizes and fluid connections come from
+the 2.0 game data). The crusher works on space platforms only. The cryogenic plant is placed like any other
+machine, but Aquilo's heating is not modelled. The recycler is not supported: recycling recipes are left out
+of the plan, so Fulgora jobs list what recyclers would deliver as raw resources instead. List them in
+`machines`, in the order you prefer them for recipes several machines can make. The planner counts their
+built-in productivity, a biochamber burns nutrients like a furnace burns coal, and a machine with several
+products (asteroid crushing returns part of its chunk) gets one filtered output inserter per product.
 
 There is no special mode for space platforms; the normal options describe one:
 
@@ -357,9 +365,10 @@ and practically useless:
   planner turned the stone into landfill, because three landfill machines cost less than stone leaving the
   block. Landfill forbidden: it made stone bricks and walls (27 furnaces). Those forbidden: stone furnaces.
   The fix was to make leftovers almost free (`planner.surplus_cost_item`), so stone simply leaves.
-- **Sulfuric acid on Vulcanus.** With sulfuric acid allowed in as a raw resource and also asked for as a
-  product, the cheapest "factory" was a pipe from the input to the output, which could not even be routed.
-  Targets are now always made, never passed through.
+- **Selling the input back.** A test job asked for sulfuric acid and also allowed sulfuric acid in as a raw
+  resource. The planner's cheapest "factory" was no machines at all: take the acid in on one edge and send it
+  straight out the other, a bare pipe that the router could not even build. Targets are now always made inside
+  the block, never passed through.
 - **Space platforms.** Asked for iron on a platform, it ignored the crushers and imported iron ore, since ore
   was on the default list of raw resources. `raw_resources` now says exactly what may come in.
 - **Fulgora plastic.** Electromagnetic science needs superconductors, superconductors need plastic, plastic
@@ -430,3 +439,10 @@ little room for the links between blocks.
 Built in game:
 
 ![Six science, 10 blocks, in game](docs/status/six_science_9_blocks/in_game.jpg)
+
+## License
+
+Copyright © 2026 Filip Hostinský. Licensed under the [GNU General Public License v3.0](LICENSE): you may use,
+change and share this program, including commercially, as long as anything you distribute that is based on it
+is also released under GPL-3.0 with its source code. `recipes.json` is extracted from Factorio's game data,
+which belongs to Wube Software and is not covered by this license.
