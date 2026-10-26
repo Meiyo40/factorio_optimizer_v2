@@ -123,6 +123,23 @@ object GameConstants {
     /** Lane an inserter drops onto when it stands in line with the belt (0 left, 1 right). [P] VERIFY (v2) */
     const val PARALLEL_DROP_LANE = 1
 
+    /**
+     * Lane (0 left, 1 right of [out]) an inserter swinging [swing] drops onto a belt that items enter heading
+     * [into] and leave heading [out] (the same for a straight belt). Straight: the far lane, or
+     * [PARALLEL_DROP_LANE] for an inserter in line with the belt. Curve: always the far side, so the inside lane
+     * from outside the bend (the side straight ahead of [into], or behind [out]) and the outside lane from inside
+     * it (long-handed, across the belt before or after the curve).
+     */
+    fun dropLane(swing: geom.Dir, into: geom.Dir, out: geom.Dir): Int {
+        if (into == out || into == out.opposite) return when (swing) {
+            out.cw -> 1          // coming from the belt's left, lands on the right lane
+            out.ccw -> 0
+            else -> PARALLEL_DROP_LANE
+        }
+        val inside = if (out == into.ccw) 0 else 1
+        return if (swing == into.opposite || swing == out) inside else 1 - inside
+    }
+
     // ---------------- pipes ----------------
     const val PIPE = "pipe"
     const val PIPE_TO_GROUND = "pipe-to-ground"

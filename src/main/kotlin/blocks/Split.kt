@@ -11,10 +11,16 @@ import plan.Terminal
 import kotlin.math.abs
 import kotlin.math.ceil
 
-/** [rate] of [item] going from block [from] to block [to]; -1 is the factory's outer edge (raw inputs, products). */
-data class Link(val id: Int, val item: String, val rate: Double, val from: Int, val to: Int, val fluid: Boolean) {
+/**
+ * [rate] of [item] going from block [from] to block [to]; -1 is the factory's outer edge (raw inputs, products).
+ * [routed]: an edge link whose block does not touch an edge the job allows for it, so it runs through the
+ * corridors to the factory's edge instead of leaving the block directly.
+ */
+data class Link(val id: Int, val item: String, val rate: Double, val from: Int, val to: Int, val fluid: Boolean, val routed: Boolean = false) {
     /** Between two blocks: one belt, routed through the corridors. Edge links leave or enter a block directly. */
     val inner: Boolean get() = from >= 0 && to >= 0
+    /** One belt (or pipe) through the corridors: between two blocks, or between a block and the factory's edge. */
+    val throughCorridor: Boolean get() = inner || routed
 }
 
 /** A block's place in the factory grid; blocks snake through the rows so neighbours in order sit side by side. */
@@ -109,8 +115,14 @@ fun splitPlan(plan: ProductionPlan, cfg: BlocksConfig, beltThroughput: Double): 
     val blockOf = IntArray(n).also { a -> blocks.forEachIndexed { b, ms -> ms.forEach { a[it] = b } } }
 
     // 5. Links: per item, block surpluses to block deficits (nearest first), the edge supplying raw inputs
-    //    and taking products.
+    //    and taking products. An edge link goes straight out of its block when the block touches an edge the job
+    //    allows for the item (any edge, or its whole side); otherwise it is routed through the corridors.
     val links = ArrayList<Link>()
+    fun routed(item: String, output: Boolean, b: Int): Boolean {
+        val specs = plan.ports.firstOrNull { it.item == item && it.output == output }?.specs ?: return false
+        val side = outerSide(rows, slots[b])
+        return specs.none { it.edge == "any" || (it.edge == side && it.from == null && it.to == null) }
+    }
     fun dist(a: Int, b: Int): Int = if (a < 0 || b < 0) 0 else abs(slots[a].row - slots[b].row) * 2 + abs(slots[a].col - slots[b].col)
     plan.nets.forEach { net ->
         val ts = plan.netTerminals(net)
@@ -142,8 +154,9 @@ fun splitPlan(plan: ProductionPlan, cfg: BlocksConfig, beltThroughput: Double): 
             if (net.fluid && a >= 0 && b >= 0) {
                 warnings += "${net.item} would have to be piped between blocks ${a + 1} and ${b + 1}; fluids are not stitched yet"
             }
-            val pieces = if (a >= 0 && b >= 0 && !net.fluid) maxOf(1, ceil(r / (cfg.linkBeltShare * beltThroughput) - 1e-9).toInt()) else 1
-            repeat(pieces) { links += Link(links.size, net.item, r / pieces, a, b, net.fluid) }
+            val viaCorridor = when { a < 0 -> routed(net.item, false, b); b < 0 -> routed(net.item, true, a); else -> false }
+            val pieces = if ((a >= 0 && b >= 0 || viaCorridor) && !net.fluid) maxOf(1, ceil(r / (cfg.linkBeltShare * beltThroughput) - 1e-9).toInt()) else 1
+            repeat(pieces) { links += Link(links.size, net.item, r / pieces, a, b, net.fluid, viaCorridor) }
         }
     }
     return Split(blocks, slots, rows, cols, links, warnings)
@@ -175,15 +188,24 @@ fun mergeBlocks(split: Split, a: Int, b: Int): Split {
     return Split(blocks, slots, split.rows, cols, links, split.warnings)
 }
 
-/** The edge of block [b] that a link's port goes on: towards its partner block, or the factory's outer edge. */
+/** The factory edge a block in [slot] touches: the top for the first row, the bottom for the second. */
+fun outerSide(rows: Int, slot: Slot): String = if (rows == 1 || slot.row == 0) "north" else "south"
+
+/** The side of a block in [slot] that faces the corridor along the rows (below a single row, between two rows). */
+fun corridorSide(rows: Int, slot: Slot): String = if (rows == 1 || slot.row == 0) "south" else "north"
+
+/**
+ * The edge of block [b] that a link's port goes on: towards its partner block, the factory's outer edge, or the
+ * corridor for links routed through it.
+ */
 fun edgeFor(split: Split, link: Link, b: Int): String {
     val me = split.slots[b]
     val other = if (link.from == b) link.to else link.from
-    if (other < 0) return if (split.rows == 1 || me.row == 0) "north" else "south"
+    if (other < 0) return if (link.routed) corridorSide(split.rows, me) else outerSide(split.rows, me)
     val o = split.slots[other]
     if (o.row == me.row && abs(o.col - me.col) == 1) return if (o.col > me.col) "east" else "west"
-    // Not side by side: through the corridor along the rows (below a single row, between two rows).
-    return if (split.rows == 1 || me.row == 0) "south" else "north"
+    // Not side by side: through the corridor along the rows.
+    return corridorSide(split.rows, me)
 }
 
 /** One block as a plan of its own: local machine ids, a port per link, and which link each port serves. */
@@ -202,7 +224,7 @@ fun blockPlan(full: ProductionPlan, split: Split, b: Int, tuning: Tuning): Block
     val linkOfPort = HashMap<Int, Int>()
     split.links.filter { it.from == b || it.to == b }.forEach { l ->
         val out = l.from == b
-        val port = Port(ports.size, l.item, listOf(ConfigSource(l.item, edge = edgeFor(split, l, b))), fluid = l.fluid, output = out, single = l.inner)
+        val port = Port(ports.size, l.item, listOf(ConfigSource(l.item, edge = edgeFor(split, l, b))), fluid = l.fluid, output = out, single = l.throughCorridor)
         ports += port
         linkOfPort[port.id] = l.id
         terminals += Terminal(terminals.size, if (out) Role.OUTPUT else Role.SOURCE, l.item, l.rate, 1, port = port.id, fluid = l.fluid)

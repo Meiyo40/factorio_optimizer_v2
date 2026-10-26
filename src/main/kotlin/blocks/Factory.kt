@@ -68,6 +68,9 @@ class Factory(
  */
 fun runFactory(data: RootData, config: RunConfiguration, tuning: Tuning, plan: ProductionPlan, out: File): Factory? {
     val cfg = config.blocks!!
+    require(plan.ports.none { p -> p.specs.any { it.edge == null } }) {
+        "a factory of blocks takes its inputs and outputs by edge (with from and to), not by x and y"
+    }
     out.mkdirs()
     val logFile = File(out, "factory.txt")
     logFile.writeText("")
@@ -89,7 +92,7 @@ fun runFactory(data: RootData, config: RunConfiguration, tuning: Tuning, plan: P
     var bps = split.blocks.indices.map { blockPlan(plan, split, it, tuning) }
     val later = (if (cfg.repack) cfg.repackShare else 0.0) + (if (cfg.merge) cfg.mergeShare else 0.0)
     fun blockConfig(budget: Double, fixedHeight: Int? = null, startSize: Int? = null) = config.copy(
-        blocks = null, laneSharing = false, testMode = false, reserved = emptyList(),
+        blocks = null, testMode = false, reserved = emptyList(),
         box = config.box.copy(startSize = startSize, maxSize = null, fixedHeight = fixedHeight, fixedWidth = if (fixedHeight != null) null else config.box.fixedWidth),
         search = config.search.copy(timeBudgetS = budget),
     )
@@ -112,9 +115,12 @@ fun runFactory(data: RootData, config: RunConfiguration, tuning: Tuning, plan: P
     var best: Factory? = null
     fun stitchAny(sp: Split, bpl: List<BlockPlan>, res: List<TrialResult>, what: String): Factory? {
         var last: Factory? = null
+        // Inputs and outputs routed to the factory's edge share the corridor along the rows: one track per belt, two
+        // per pipe (pipes of different fluids may not touch). Compaction takes out what stays empty.
+        val tracks = sp.links.filter { it.routed }.sumOf { if (it.fluid) 2 else 1 } * (if (config.testMode) 5 else 1)
         for (attempt in 0..3) {
             val corridor = cfg.corridor + 3 * attempt
-            val f = runCatching { stitch(data, config, tuning, plan, sp, bpl, res, corridor) }
+            val f = runCatching { stitch(data, config, tuning, plan, sp, bpl, res, corridor, corridor + tracks) }
                 .getOrElse { e -> say("$what, corridor $corridor: failed with $e"); null } ?: run {
                 say("$what, corridor $corridor: the belts between blocks did not route"); null
             } ?: continue
@@ -225,11 +231,11 @@ fun runFactory(data: RootData, config: RunConfiguration, tuning: Tuning, plan: P
 /** Places the finished blocks, routes the belts between them, adds poles (and the test harness) and validates. */
 fun stitch(
     data: RootData, config: RunConfiguration, tuning: Tuning, plan: ProductionPlan, split: Split,
-    bps: List<BlockPlan>, results: List<TrialResult>, corridor: Int,
+    bps: List<BlockPlan>, results: List<TrialResult>, corridor: Int, rowCorridor: Int = corridor,
 ): Factory? {
     val k = bps.size
     // Geometry: every row left to right in slot order with a corridor between blocks, row 0 against the top
-    // edge, row 1 against the bottom.
+    // edge, row 1 against the bottom, and [rowCorridor] along the rows (below a single row, between two).
     val rowH = IntArray(split.rows)
     split.slots.forEachIndexed { b, s -> rowH[s.row] = maxOf(rowH[s.row], results[b].h) }
     val ox = IntArray(k)
@@ -243,7 +249,7 @@ fun stitch(
     var rx = widest + corridor
     val reservedRects = config.reserved.map { r -> geom.Rect(rx, 0, r.w, r.h).also { rx += r.w + corridor } }
     val W = reservedRects.lastOrNull()?.let { it.x2 + 1 } ?: widest
-    val H = maxOf(rowH[0] + corridor + (if (split.rows == 2) rowH[1] else 0), reservedRects.maxOfOrNull { it.h } ?: 0)
+    val H = maxOf(rowH[0] + rowCorridor + (if (split.rows == 2) rowH[1] else 0), reservedRects.maxOfOrNull { it.h } ?: 0)
     val oy = IntArray(k) { if (split.slots[it].row == 0) 0 else H - results[it].h }
     fun inBlock(b: Int, t: Tile) = t.x >= ox[b] && t.x < ox[b] + results[b].w && t.y >= oy[b] && t.y < oy[b] + results[b].h
 
@@ -259,7 +265,8 @@ fun stitch(
     }
     val byTile = HashMap<Tile, PlacedEntity>().also { m -> entities.forEach { e -> e.rect.tiles().forEach { m[it] = e } } }
 
-    // Link ends: an output belt of one block, an input belt of another; edge links are the factory's ports.
+    // Link ends: an output belt of one block, an input belt of another; edge links are the factory's ports, either
+    // where they leave their block or, routed through the corridors, on the factory edge the job asks for.
     val starts = HashMap<Int, Pair<Tile, Dir>>()   // link -> first tile outside the exporting block, the way its belt points
     val ends = HashMap<Int, Pair<Tile, Dir>>()     // link -> last tile outside the importing block, the way into it
     val sources = ArrayList<SourceSpec>()
@@ -268,32 +275,44 @@ fun stitch(
         results[b].outputs.forEach { o ->
             val l = split.links[bps[b].linkOfPort[o.port] ?: return@forEach]
             val t = Tile(o.tile.x + ox[b], o.tile.y + oy[b])
-            if (!l.inner) { outputs += o.copy(tile = t, port = -1); return@forEach }
-            val d = if (o.fluid) return@forEach else byTile[t]?.dir ?: return null
+            if (!l.throughCorridor) { outputs += o.copy(tile = t, port = -1); return@forEach }
+            val d = if (o.fluid) sideOf(o.tile, results[b].w, results[b].h) else byTile[t]?.dir ?: return null
             starts[l.id] = (t + d) to d
         }
         results[b].sources.forEach { s ->
             val l = split.links[bps[b].linkOfPort[s.port] ?: return@forEach]
             val t = Tile(s.tile.x + ox[b], s.tile.y + oy[b])
-            if (!l.inner) { sources += s.copy(tile = t, port = -1); return@forEach }
+            if (!l.throughCorridor) { sources += s.copy(tile = t, port = -1); return@forEach }
             // The side the port is on, as the block was searched (after a merge a neighbour may sit elsewhere).
             val out = sideOf(s.tile, results[b].w, results[b].h)
             ends[l.id] = (t + out) to out.opposite
         }
     }
-    val inner = split.links.filter { it.inner }
-    if (inner.any { it.id !in starts || it.id !in ends }) return null
+    val corridorLinks = split.links.filter { it.throughCorridor }
+    if (corridorLinks.any { (it.from >= 0 && it.id !in starts) || (it.to >= 0 && it.id !in ends) }) return null
 
-    // The belts between blocks: one net per link, from a fixed start tile to a fixed end tile, through the corridors.
+    // The belts (pipes) through the corridors: one net per link, from a fixed start tile (or the factory edge the
+    // job asks for) to a fixed end tile (or that edge).
     val ports = ArrayList<Port>(); val terminals = ArrayList<Terminal>(); val nets = ArrayList<Net>()
-    inner.forEach { l ->
-        val (s, sd) = starts.getValue(l.id)
-        val (e, ed) = ends.getValue(l.id)
-        val p1 = Port(ports.size, l.item, listOf(ConfigSource(l.item, x = s.x, y = s.y, dir = sd.opposite.name)), single = true).also { ports += it }
-        val p2 = Port(ports.size, l.item, listOf(ConfigSource(l.item, x = e.x, y = e.y, dir = ed.name)), output = true, single = true).also { ports += it }
-        val t1 = Terminal(terminals.size, Role.SOURCE, l.item, l.rate, 1, port = p1.id).also { terminals += it }
-        val t2 = Terminal(terminals.size, Role.OUTPUT, l.item, l.rate, 1, port = p2.id).also { terminals += it }
-        nets += Net(nets.size, l.item, l.rate, listOf(t1.id, t2.id), 1)
+    val edgePorts = HashSet<Int>()
+    fun edgeSpecs(item: String, output: Boolean): List<ConfigSource> {
+        val specs = plan.ports.first { it.item == item && it.output == output }.specs
+        if (!config.testMode) return specs
+        // Test mode: every fifth tile of the edge only, so each port's harness (a feeder with inserters and chests
+        // on both sides) has room next to its neighbours.
+        return place.portCandidates(specs, W, H).filter { (t, d) -> (if (d == Dir.N || d == Dir.S) t.x else t.y) % 5 == 2 }
+            .map { (t, d) -> ConfigSource(item, x = t.x, y = t.y, dir = d?.name) }
+    }
+    corridorLinks.forEach { l ->
+        val p1 = if (l.from < 0) Port(ports.size, l.item, edgeSpecs(l.item, false), fluid = l.fluid, single = true).also { edgePorts += it.id }
+            else starts.getValue(l.id).let { (s, sd) -> Port(ports.size, l.item, listOf(ConfigSource(l.item, x = s.x, y = s.y, dir = sd.opposite.name)), fluid = l.fluid, single = true) }
+        ports += p1
+        val p2 = if (l.to < 0) Port(ports.size, l.item, edgeSpecs(l.item, true), fluid = l.fluid, output = true, single = true).also { edgePorts += it.id }
+            else ends.getValue(l.id).let { (e, ed) -> Port(ports.size, l.item, listOf(ConfigSource(l.item, x = e.x, y = e.y, dir = ed.name)), fluid = l.fluid, output = true, single = true) }
+        ports += p2
+        val t1 = Terminal(terminals.size, Role.SOURCE, l.item, l.rate, 1, port = p1.id, fluid = l.fluid).also { terminals += it }
+        val t2 = Terminal(terminals.size, Role.OUTPUT, l.item, l.rate, 1, port = p2.id, fluid = l.fluid).also { terminals += it }
+        nets += Net(nets.size, l.item, l.rate, listOf(t1.id, t2.id), 1, fluid = l.fluid)
     }
     val stitchPlan = ProductionPlan(emptyList(), ports, terminals, nets, emptyMap(), emptyMap(), emptyMap(), plan.beltTier, emptyList())
     val blockTiles = HashSet<Tile>()
@@ -306,10 +325,18 @@ fun stitch(
     val stitchConfig = config.copy(blocks = null, laneSharing = false)
     // Everything the blocks put outside their boxes (ring ports) is in the way too.
     val entityTiles = entities.flatMap { it.rect.tiles() }
+    // A corridor pipe beside a block's pipe would join it: keep those tiles free, except where a pipe link ends.
+    val besidePipes = if (corridorLinks.none { it.fluid }) emptyList() else {
+        val linkTiles = (starts.values + ends.values).map { it.first }.toSet()
+        entities.filter { it.kind == Kind.PIPE || it.kind == Kind.PIPE_UG }.flatMap { it.rect.tiles() }
+            .flatMap { t -> Dir.entries.map { t + it } }.filter { it !in blockTiles && it !in linkTiles }
+    }
     val routed = route(RouteProblem(stitchPlan, stitchConfig, tuning.route, Placement(W, H, emptyList()),
-        obstacles = blockTiles + entityTiles + pointedAt, noTunnel = blockTiles))
+        obstacles = blockTiles + entityTiles + pointedAt + besidePipes, noTunnel = blockTiles))
     if (!routed.success) return null
     entities += routed.entities.map { it.copy(net = global(it, stitchPlan)) }
+    sources += routed.sources.filter { it.port in edgePorts }.map { it.copy(port = -1) }
+    outputs += routed.outputs.filter { it.port in edgePorts }.map { it.copy(port = -1) }
 
     val blockRects = (0 until k).map { b -> geom.Rect(ox[b], oy[b], results[b].w, results[b].h) }
 

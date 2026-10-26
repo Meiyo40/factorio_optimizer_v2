@@ -30,12 +30,12 @@ closes only a little of that; the rest is the algorithm. Hand builds run one bel
 machines, put two inputs on one belt, and feed everything from a bus, while the router still treats each item
 as separate chains between scattered machines.
 
-| Example | Machines | Box | Search ran | Best layout found after | Job |
+| Example | Machines | Box | Search ran | Best layout found after | J\*b |
 |---------|---------:|----:|-----------:|------------------------:|-----|
 | [Red + green science, 0.5/s each](docs/examples/red_green_science) | 10 | 16 × 16 | 5 min | 5 s | [details](docs/examples/red_green_science.json) |
 | [Red + green science, 0.5/s each, two items per belt](docs/examples/red_green_science_shared) | 10 | 15 × 15 | 5 min | 2 min 48 s | [details](docs/examples/red_green_science_shared.json) |
 | [Chemical science 0.5/s from ore and crude oil](docs/examples/chemical_science) | 43 | 36 × 36 | 15 min | 10 min (36 × 36 first at 5 min 20 s) | [details](docs/examples/chemical_science.json) |
-| [Six science 1/s each from plates, as a factory of 3 blocks](docs/examples/six_science_factory) | 177 | 179 × 67 | 3 h 16 min | 3 h 16 min | [details](docs/examples/six_science_factory.json) |
+| [Six science 1/s each from plates, as a factory of 3 blocks, inputs west and products east](docs/examples/six_science_factory) | 177 | 182 × 79 | 4 h 57 min | 4 h 57 min | [details](docs/examples/six_science_factory.json) |
 | [Electromagnetic science 1.5/s (Space Age, Fulgora)](docs/examples/electromagnetic_science) (at the bottom of the page) | 36 | 41 × 41 | 15 min | 13 min 35 s (41 × 41 first at 6 min 26 s) | [details](docs/examples/electromagnetic_science.json) |
 | [Metallurgic science 4/s (Space Age, Vulcanus)](docs/examples/metallurgic_science) (at the bottom of the page) | 38 | 46 × 46 | 15 min | 14 min 41 s (46 × 46 first at 5 min 34 s) | [details](docs/examples/metallurgic_science.json) |
 | [Agricultural science 5/s + carbon fiber 5/s (Space Age, Gleba)](docs/examples/gleba_agricultural_carbon_fiber) (at the bottom of the page) | 43 | 50 × 50 | 15 min | 15 min | [details](docs/examples/gleba_agricultural_carbon_fiber.json) |
@@ -52,20 +52,32 @@ dots are poles.*
 
 ![Chemical science, render and in game](docs/examples/chemical_science/side_by_side.png)
 
-The six-science factory's three blocks were searched one after another, then stitched:
+The six-science factory's three blocks were searched one after another with belt sharing on, then stitched:
 
 | Block | Machines | Box | Search ran | Best layout found after |
 |-------|---------:|----:|-----------:|------------------------:|
-| 1 | 60 | 63 × 63 | 66 min | 66 min |
-| 2 | 57 | 56 × 56 | 63 min | 35 min |
-| 3 | 60 | 53 × 53 | 66 min | 63 min |
+| 1 | 60 | 57 × 57 | 1 h 40 min | 1 h 37 min |
+| 2 | 57 | 57 × 57 | 1 h 35 min | 1 h 31 min |
+| 3 | 60 | 54 × 54 | 1 h 40 min | 16 min |
 
-Stitching and compaction took under a second; the run then spent another 3.8 hours repacking and merging
-blocks, which found nothing smaller (not counted above).
+All 19 inputs (plates, steel, bricks, stone, coal, and pipes of petroleum gas, heavy oil and water) enter on the
+west edge and run along the corridor under the blocks; the six science packs leave on the east edge. Stitching
+and compaction took under a minute. Repack and merge were off: in earlier runs they never found a smaller
+factory, so the blocks got the whole budget.
 
-The six-science factory (render only); block borders are drawn as floor tiles in the blueprint:
+The six-science factory; block borders are drawn as floor tiles in the blueprint:
 
 ![Six science factory](docs/examples/six_science_factory/best.png)
+
+Built in game:
+
+![Six science factory, in game](docs/examples/six_science_factory/in_game.jpg)
+
+Building it showed a bug: near the utility science assemblers, a few inserters
+dropping onto a belt curve put their items on the wrong lane. On a curve an inserter drops onto the far side of
+the bend, the inside lane when it stands outside the curve, and the router and validator did not model that.
+It is fixed now; this blueprint was generated before the fix (9 of its 206 belt drops land on a curve's other
+lane).
 
 ## How to run
 
@@ -203,13 +215,18 @@ belts, in one blueprint:
    machines that trade as little as possible. Machines joined by pipes stay in one block. Items in `split_at`
    are preferred cut points (plates are a natural choice).
 2. Blocks are ordered upstream first and laid out in one row (up to three blocks) or two (`rows` overrides), so
-   every block touches the outer edge, where raw inputs enter and products leave.
+   every block touches the outer edge: the top for the first row, the bottom for the second.
 3. Every belt between two blocks is a link with an exact rate (at most 90% of a belt). Each block is generated
    on its own, with its link ports on the edge facing the block it trades with, and its share of the time
    budget.
 4. The blocks are placed in their rows with `corridor` tiles between them, the link belts are routed through
    the corridors, poles cover the whole factory, and the result is validated end to end against the full plan.
    If the corridor belts do not fit, the corridors widen and it tries again.
+
+   Inputs and outputs take the edges in `sources` and `outputs`, belts and pipes alike, as for a single block.
+   A block that touches an allowed edge (`"any"`, or the whole side its row is on) uses it directly; otherwise
+   each input or output gets its own belt (or pipe) through the corridors to that edge, `from` and `to`
+   counting tiles of the factory as stitched. Factory jobs take edges only, not `x` and `y`.
 5. Rows and columns that only straight belts, straight pipes or underground spans cross are removed
    (`compact`, on by default; the factory is validated again, and kept as stitched if that ever fails).
 6. With `repack`, every block is searched again at a common height per row (the row's tallest block, and
@@ -221,8 +238,8 @@ belts, in one blueprint:
 Every smaller valid factory is saved as it is found, so stopping the run early keeps the best so far.
 
 The output folder holds the factory (`best_output_string.txt`, `best.png`, `ports.json`, `factory.txt` with the
-split and the links) and each block in `block_<n>/`. Fluids are never piped between blocks; a pipe-joined group
-larger than `max_machines` stays one block (with a warning).
+split and the links) and each block in `block_<n>/`. Fluids are never piped from one block to another (only between a block and the
+factory's edge); a pipe-joined group larger than `max_machines` stays one block (with a warning).
 
 ### Space Age
 

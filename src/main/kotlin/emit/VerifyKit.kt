@@ -33,7 +33,7 @@ object VerifyKit {
             "v2-inserter-lanes", "Which lane an inserter drops on",
             "Row 0: belt runs north, inserter drops from the west (perpendicular): expected far (east) lane. " +
                 "Row 1: belt runs east, away from the inserter (parallel). Row 2: belt runs west, toward the inserter. " +
-                "Row 3: inserter drops onto a curve. Note the lane each row fills.",
+                "Row 3: inserter drops onto a left turn from behind it: expected the inside (west) lane. Note the lane each row fills.",
             Layout(10, 16, listOf(
                 // Perpendicular: belt heading N at x=3, inserter at x=2 dropping east.
                 e("infinity-chest", 0, 1, item = "iron-plate"), e("inserter", 1, 1, Dir.W), e("transport-belt", 2, 1, Dir.N),

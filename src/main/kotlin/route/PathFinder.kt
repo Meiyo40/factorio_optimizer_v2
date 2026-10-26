@@ -484,22 +484,25 @@ class PathFinder(internal val p: RouteProblem) {
     private val laneLoad = DoubleArray(2)
     private val laneCap get() = tier.throughput / 2 * 0.98
 
-    /** Lane option [o]'s inserter drops onto when the belt at its tile heads [d] (the far lane, as the validator models it). */
-    private fun dropLane(o: Int, d: Int): Int {
+    /**
+     * Lane option [o]'s inserter drops onto when the belt at its tile heads [d] and items enter it heading [into]
+     * (a curve when they differ), as the validator models it ([GameConstants.dropLane]).
+     */
+    private fun dropLane(o: Int, d: Int, into: Int = d): Int {
         // Long-handed options sit two tiles from their belt, so compare by direction only.
         val dx = Integer.signum(dims.x(optBelt[o]) - dims.x(optIns[o])); val dy = Integer.signum(dims.y(optBelt[o]) - dims.y(optIns[o]))
-        val swing = Dir.entries.first { it.dx == dx && it.dy == dy }.ordinal
-        return when (swing) { (d + 1) % 4 -> 1; (d + 3) % 4 -> 0; else -> GameConstants.PARALLEL_DROP_LANE }
+        val swing = Dir.entries.first { it.dx == dx && it.dy == dy }
+        return GameConstants.dropLane(swing, Dir.entries[into], Dir.entries[d])
     }
 
     /**
      * A producer option is usable only if its lane still has room, and on a shared belt only if it drops onto
      * its item's lane; consumers take from either lane.
      */
-    private fun laneOk(o: Int, d: Int): Boolean {
+    private fun laneOk(o: Int, d: Int, into: Int = d): Boolean {
         val v = optTerm[o]
         if (vts[v].role != Role.PRODUCER) return true
-        val lane = dropLane(o, d)
+        val lane = dropLane(o, d, into)
         if (paired && lane != vts[v].slot) return false
         return laneLoad[lane] + share(v) <= laneCap + 1e-9
     }
@@ -587,7 +590,9 @@ class PathFinder(internal val p: RouteProblem) {
                 for (k in atBeltStart[t] until atBeltStart[t + 1]) {
                     val o = atBeltList[k]
                     val term = optTerm[o]
-                    if (termNet[term] != n.idx || !claimable(term) || (legTarget >= 0 && term != legTarget) || !laneOk(o, d)) continue
+                    // Items enter this tile heading the way the previous state heads: a curve when that differs.
+                    val into = if (par[s] != -1) (par[s] ushr 1) and 3 else d
+                    if (termNet[term] != n.idx || !claimable(term) || (legTarget >= 0 && term != legTarget) || !laneOk(o, d, into)) continue
                     val ins = optIns[o]
                     if (!goalUsable(o, leg1)) continue
                     val extra: Float = if (final) {
@@ -760,13 +765,13 @@ class PathFinder(internal val p: RouteProblem) {
         r.tiles += t
     }
 
-    private fun claim(r: Routed, o: Int, d: Int) {
+    private fun claim(r: Routed, o: Int, d: Int, into: Int = d) {
         r.claims += o
         occupy(r, optIns[o], false)
         val v = optTerm[o]
         need[v]--
         surplus[vts[v].slot] += if (vts[v].role == Role.PRODUCER) share(v) else -share(v)
-        if (vts[v].role == Role.PRODUCER) laneLoad[dropLane(o, d)] += share(v)
+        if (vts[v].role == Role.PRODUCER) laneLoad[dropLane(o, d, into)] += share(v)
         else if (paired) laneLoad[vts[v].slot] = maxOf(0.0, laneLoad[vts[v].slot] - share(v))
         else {
             val total = laneLoad[0] + laneLoad[1]
@@ -866,15 +871,16 @@ class PathFinder(internal val p: RouteProblem) {
                 if (leg1) { val so = startOpt[t]; if (so >= 0) claim(r, so, d) else r.sourceTile = t }
                 continue
             }
-            if (goalOpt >= 0 && i == states.size - 1 && claimable(optTerm[goalOpt]) && ownStamp[optIns[goalOpt]] != stamp && laneOk(goalOpt, d)) claim(r, goalOpt, d)
+            val into = (states[i - 1] ushr 1) and 3
+            if (goalOpt >= 0 && i == states.size - 1 && claimable(optTerm[goalOpt]) && ownStamp[optIns[goalOpt]] != stamp && laneOk(goalOpt, d, into)) claim(r, goalOpt, d, into)
             for (k in atBeltStart[t] until atBeltStart[t + 1]) {
                 val o = atBeltList[k]
                 val term = optTerm[o]
-                if (termNet[term] != n.idx || !claimable(term) || !laneOk(o, d)) continue
+                if (termNet[term] != n.idx || !claimable(term) || !laneOk(o, d, into)) continue
                 val ins = optIns[o]
                 if (ownStamp[ins] == stamp || allowNet[ins] == -2 || ins == next) continue
                 if (occTile[ins] > 0 && (lastFree[term] ?: -1) >= i) continue
-                claim(r, o, d)
+                claim(r, o, d, into)
             }
         }
     }
@@ -1488,8 +1494,8 @@ class PathFinder(internal val p: RouteProblem) {
     /**
      * Two items per belt: merges pairs of single chains whose consumer machines mostly coincide and whose flow
      * fits one lane each into one chain carrying one item per lane (slot 0 left, slot 1 right). A port-fed item
-     * takes slot 0; two port-fed items need an edge tile both ports allow. Chains with fixed-tile ports or
-     * output ports keep a belt of their own.
+     * takes slot 0; two port-fed items need an edge tile both ports allow. Chains with fixed-tile ports, output
+     * ports or single-belt ports (links between the blocks of a factory) keep a belt of their own.
      */
     private fun pairChains() {
         fun flow(n: RNet) = n.sourceRate + n.terms.filter { vts[it].role == Role.PRODUCER }.sumOf { vts[it].rate }
@@ -1497,7 +1503,8 @@ class PathFinder(internal val p: RouteProblem) {
         fun edgePorts(n: RNet) = n.portTiles.indices.associate { n.portTiles[it] to n.portOut[it] }
         val chainsOf = nets.groupingBy { it.planId }.eachCount()
         val cand = nets.filter { n ->
-            chainsOf[n.planId] == 1 && n.outTiles.isEmpty() && flow(n) <= laneCap && consumers(n).size >= 2 && n.portOut.none { it < 0 }
+            chainsOf[n.planId] == 1 && n.outTiles.isEmpty() && flow(n) <= laneCap && consumers(n).size >= 2 && n.portOut.none { it < 0 } &&
+                (n.srcPort < 0 || !plan.ports[n.srcPort].single)
         }
         class Cand(val a: RNet, val b: RNet, val score: Double)
         val found = ArrayList<Cand>()

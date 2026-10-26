@@ -224,7 +224,7 @@ class Validator(private val layout: Layout, private val spec: ValidationSpec) {
                 if (e.kind != Kind.INSERTER) return@forEachIndexed
                 val d = indexAt(e.dropTile) ?: return@forEachIndexed
                 if (ents[d].kind != Kind.BELT) return@forEachIndexed
-                carriedByInserter(e)?.let { inject(d, it, dropLane(e, ents[d])) }
+                carriedByInserter(e)?.let { inject(d, it, dropLane(e, d, this)) }
             }
             // Fixpoint: items flow downstream along next, lane by lane.
             val queue = ArrayDeque<Int>()
@@ -247,7 +247,7 @@ class Validator(private val layout: Layout, private val spec: ValidationSpec) {
                 val d = indexAt(e.dropTile) ?: return@forEach
                 if (ents[d].kind != Kind.BELT) return@forEach
                 val mine = carriedByInserter(e) ?: return@forEach
-                val lane = dropLane(e, ents[d])
+                val lane = dropLane(e, d, this)
                 val there = arriving(d, lane).flatten().toSet()
                 if (there.any { it != mine }) err(ErrorType.INSERTER_WRONG_ITEM, e.tile, "${e.name} drops $mine onto a lane of ${there.sorted()}")
             }
@@ -506,7 +506,7 @@ class Validator(private val layout: Layout, private val spec: ValidationSpec) {
         }
         beltRate.forEach { (ins, r) ->
             val b = dropIdx(ins)?.takeIf { ents[it].kind == Kind.BELT } ?: return@forEach
-            if (dropLane(ents[ins], ents[b]) == 0) addL.merge(b, r, Double::plus) else addR.merge(b, r, Double::plus)
+            if (dropLane(ents[ins], b, belts) == 0) addL.merge(b, r, Double::plus) else addR.merge(b, r, Double::plus)
         }
         // Expected draw per belt and item (a machine's share spread over its pickups), for splitting at splitters.
         val est = HashMap<Int, HashMap<String, Double>>()
@@ -596,14 +596,22 @@ class Validator(private val layout: Layout, private val spec: ValidationSpec) {
         }
     }
 
-    /** Lane (0 left, 1 right of the belt's heading) an inserter drops onto: the far one. [P] VERIFY (v2) */
-    private fun dropLane(ins: PlacedEntity, belt: PlacedEntity): Int {
-        val d = ins.dir.opposite   // the way the inserter swings: pickup side -> drop side
-        return when (d) {
-            belt.dir.cw -> 1        // coming from the belt's left, lands on the right lane
-            belt.dir.ccw -> 0
-            else -> GameConstants.PARALLEL_DROP_LANE
-        }
+    /**
+     * Lane (0 left, 1 right of the belt's heading) inserter [ins] drops onto belt entity [b]: the far one, on a
+     * curve the far side of the bend (see [GameConstants.dropLane]). [P] VERIFY (v2)
+     */
+    private fun dropLane(ins: PlacedEntity, b: Int, belts: BeltGraph): Int {
+        val belt = ents[b]
+        return GameConstants.dropLane(ins.dir.opposite, curveInto(b, belts) ?: belt.dir, belt.dir)
+    }
+
+    /** The heading items enter belt [b] with when it is a curve (fed from one side only), else null. */
+    private fun curveInto(b: Int, belts: BeltGraph): Dir? {
+        val f = ents[b]
+        if (f.kind != Kind.BELT) return null
+        val feeders = belts.prev[b] ?: return null
+        if (feeders.size != 1 || feeders.any { ents[it].dir == f.dir }) return null
+        return ents[feeders[0]].dir
     }
 
     /**

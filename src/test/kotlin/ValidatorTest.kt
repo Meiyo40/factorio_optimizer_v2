@@ -276,4 +276,36 @@ class ValidatorTest {
 
     @Suppress("unused")
     private fun List<PlacedEntity>.at(x: Int, y: Int) = first { it.x == x && it.y == y }
+
+    @Test
+    fun `an inserter drops onto the far side of a curve`() {
+        // Straight belts: far lane, or the right lane in line with the belt.
+        assertEquals(1, data.GameConstants.dropLane(Dir.E, Dir.N, Dir.N))
+        assertEquals(0, data.GameConstants.dropLane(Dir.W, Dir.N, Dir.N))
+        assertEquals(data.GameConstants.PARALLEL_DROP_LANE, data.GameConstants.dropLane(Dir.N, Dir.N, Dir.N))
+        // Left turn (east, then north): from outside the bend (south or east of it) onto the inside lane, the left.
+        assertEquals(0, data.GameConstants.dropLane(Dir.N, Dir.E, Dir.N))
+        assertEquals(0, data.GameConstants.dropLane(Dir.W, Dir.E, Dir.N))
+        // From inside the bend (long-handed, across the belt before or after it) onto the outside lane.
+        assertEquals(1, data.GameConstants.dropLane(Dir.E, Dir.E, Dir.N))
+        assertEquals(1, data.GameConstants.dropLane(Dir.S, Dir.E, Dir.N))
+        // Right turn (west, then north): the inside lane is the right one.
+        assertEquals(1, data.GameConstants.dropLane(Dir.N, Dir.W, Dir.N))
+        assertEquals(1, data.GameConstants.dropLane(Dir.E, Dir.W, Dir.N))
+    }
+
+    @Test
+    fun `cable dropped onto a left turn from behind lands on the inside lane`() {
+        // Iron on one lane runs east and turns north at (2,3); a cable assembler below drops cable onto the curve
+        // from the south, onto the inside (left) lane.
+        fun layout() = Layout(6, 8, listOf(
+            belt(0, 3, Dir.E, 1), belt(1, 3, Dir.E, 1), belt(2, 3, Dir.N, 1), belt(2, 2, Dir.N, 1), belt(2, 1, Dir.N, 1),
+            e("fast-inserter", 2, 4, Dir.S),
+            e("assembling-machine-3", 1, 5, recipe = "copper-cable"),
+        ))
+        val left = check("curve_drop_inside", layout(), base.copy(sources = listOf(SourceSpec(Tile(0, 3), "iron-plate", 1.0, lane = 0))))
+        assertHas(left, ErrorType.INSERTER_WRONG_ITEM, Tile(2, 4))
+        val right = check("curve_drop_free", layout(), base.copy(sources = listOf(SourceSpec(Tile(0, 3), "iron-plate", 1.0, lane = 1))))
+        assertTrue(right.none { it.type == ErrorType.INSERTER_WRONG_ITEM }, "$right")
+    }
 }

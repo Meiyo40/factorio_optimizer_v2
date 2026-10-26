@@ -274,9 +274,10 @@ internal class PipeRouter(private val pf: PathFinder) {
         routed[i] = r
         val left = n.groups.toMutableList()
         fun fail(why: String): Boolean { pf.log += "fluid ${n.fluid}: $why"; ripUp(i); return false }
-        // First leg: from the port (any candidate tile) or from the first terminal.
+        // First leg: from the port (any candidate tile) or from the first terminal. A net with no machines (a pipe
+        // between blocks of a factory) runs from its port straight to its output.
         if (n.portTiles.isNotEmpty()) {
-            if (left.isEmpty()) return fail("no consumers")
+            if (left.isEmpty() && n.outTiles.isEmpty()) return fail("no consumers")
             // An edge port tile is entered from just outside the box, heading in, so it can hold a pipe or a
             // pipe-to-ground open to the outside: that joins nothing beside it, so ports of other fluids may touch.
             val entries = ArrayList<Int>()
@@ -289,7 +290,8 @@ internal class PipeRouter(private val pf: PathFinder) {
                     q to 0f
                 } else if (pipeOk(t, n.idx)) t to pipeCost(t, true) else null
             }
-            val s = leg(n, starts, left.flatMap { it.toList() }.toSet())
+            val goal = if (left.isEmpty()) n.outTiles.filter { pipeOk(it, n.idx) }.toSet() else left.flatMap { it.toList() }.toSet()
+            val s = leg(n, starts, goal)
             if (s >= 0) {
                 commit(n, r, s)
                 var c = s; while (pf.par[c] != -1) c = pf.par[c]
