@@ -1,6 +1,6 @@
 # Factorio layout optimizer v2
 
-See also: [factorio_optimizer](https://github.com/SeezoCode/factorio_optimizer), the original version, a
+> See also: [factorio_optimizer](https://github.com/SeezoCode/factorio_optimizer), the original version, a
 CP-SAT bot-mall model that places machines on a macro grid and connects them with requester and provider
 chests.
 
