@@ -1,0 +1,329 @@
+{
+    "upstream": "022c312",
+    "case": "t3_feedback_24_s6",
+    "job": "src/test/resources/jobs/t3.json",
+    "plan": "plans/t3.plan.json",
+    "w": 24,
+    "h": 24,
+    "seed": 6,
+    "start": "random",
+    "place_tuning": {
+        "alpha": 1.0,
+        "beta": 20.0,
+        "beta2": 1.0,
+        "gamma": 12.0,
+        "delta": 6.0,
+        "rudy_bin": 4,
+        "access_demand": 1.0,
+        "access_belt_tiles": 3.0,
+        "access_range": 2,
+        "q_table": [
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.0
+            ],
+            [
+                3.0,
+                1.0
+            ],
+            [
+                4.0,
+                1.0
+            ],
+            [
+                5.0,
+                1.263157894736842
+            ],
+            [
+                6.0,
+                1.330157894736842
+            ],
+            [
+                7.0,
+                1.391857894736842
+            ],
+            [
+                8.0,
+                1.448057894736842
+            ],
+            [
+                9.0,
+                1.508657894736842
+            ],
+            [
+                10.0,
+                1.558857894736842
+            ],
+            [
+                15.0,
+                1.799457894736842
+            ],
+            [
+                20.0,
+                2.001957894736842
+            ],
+            [
+                25.0,
+                2.183857894736842
+            ],
+            [
+                30.0,
+                2.342957894736842
+            ],
+            [
+                35.0,
+                2.499057894736842
+            ],
+            [
+                40.0,
+                2.645157894736842
+            ],
+            [
+                45.0,
+                2.772057894736842
+            ],
+            [
+                50.0,
+                2.902857894736842
+            ]
+        ],
+        "shift_share": 0.6,
+        "swap_share": 0.3,
+        "t0_factor": 20.0,
+        "moves_per_temp_factor": 10.0,
+        "stop_factor": 0.005,
+        "target_acceptance": 0.44,
+        "max_moves": 2000000,
+        "moves_per_machine": 20000,
+        "feedback_rounds": 3,
+        "near_miss_max": 4,
+        "near_miss_attempts": 4,
+        "near_miss_endgame_factor": 3.0,
+        "spread_max": 0,
+        "spread_attempts": 3,
+        "spread_radius": 3,
+        "feedback_t0_divisor": 20.0,
+        "belt_cost": "hpwl",
+        "path_weight": 1.0,
+        "initial": "random",
+        "column_gap": 3,
+        "column_spacing": 1,
+        "column_share": 0.1,
+        "column_moves_only": false,
+        "column_swap_across": true,
+        "column_t0_scale": 0.05,
+        "column_start_range": 3
+    },
+    "steps": [
+        {
+            "t0": null,
+            "t0_last_divisor": null,
+            "max_moves": 200000,
+            "start_range": null,
+            "refine": false,
+            "t0_scale": 1.0,
+            "beta2": 0.0
+        },
+        {
+            "t0": null,
+            "t0_last_divisor": 20.0,
+            "max_moves": 100000,
+            "start_range": 3,
+            "refine": false,
+            "t0_scale": 1.0,
+            "beta2": 1.0,
+            "history": [
+                {
+                    "x": 5,
+                    "y": 5,
+                    "v": 3.0
+                },
+                {
+                    "x": 10,
+                    "y": 12,
+                    "v": 1.5
+                },
+                {
+                    "x": 6,
+                    "y": 5,
+                    "v": 0.5
+                },
+                {
+                    "x": 11,
+                    "y": 12,
+                    "v": 2.0
+                },
+                {
+                    "x": 3,
+                    "y": 20,
+                    "v": 1.0
+                }
+            ]
+        }
+    ],
+    "initial": {
+        "placement": [
+            {
+                "id": 0,
+                "x": 2,
+                "y": 12,
+                "code": 0
+            },
+            {
+                "id": 1,
+                "x": 20,
+                "y": 18,
+                "code": 0
+            },
+            {
+                "id": 2,
+                "x": 6,
+                "y": 5,
+                "code": 0
+            },
+            {
+                "id": 3,
+                "x": 6,
+                "y": 20,
+                "code": 0
+            },
+            {
+                "id": 4,
+                "x": 15,
+                "y": 13,
+                "code": 0
+            },
+            {
+                "id": 5,
+                "x": 16,
+                "y": 5,
+                "code": 0
+            },
+            {
+                "id": 6,
+                "x": 4,
+                "y": 2,
+                "code": 0
+            },
+            {
+                "id": 7,
+                "x": 17,
+                "y": 1,
+                "code": 0
+            },
+            {
+                "id": 8,
+                "x": 1,
+                "y": 1,
+                "code": 0
+            },
+            {
+                "id": 9,
+                "x": 6,
+                "y": 16,
+                "code": 0
+            }
+        ],
+        "terms": {
+            "wl": 248.57894736842104,
+            "cong": 358.0634457590505,
+            "pin": 0.0,
+            "di": 0.05411255411255411,
+            "fb": 0.0,
+            "cost": 7409.523187224756
+        }
+    },
+    "result": {
+        "placement": [
+            {
+                "id": 0,
+                "x": 19,
+                "y": 20,
+                "code": 0
+            },
+            {
+                "id": 1,
+                "x": 19,
+                "y": 14,
+                "code": 0
+            },
+            {
+                "id": 2,
+                "x": 2,
+                "y": 13,
+                "code": 0
+            },
+            {
+                "id": 3,
+                "x": 6,
+                "y": 19,
+                "code": 0
+            },
+            {
+                "id": 4,
+                "x": 12,
+                "y": 19,
+                "code": 0
+            },
+            {
+                "id": 5,
+                "x": 10,
+                "y": 12,
+                "code": 0
+            },
+            {
+                "id": 6,
+                "x": 13,
+                "y": 2,
+                "code": 0
+            },
+            {
+                "id": 7,
+                "x": 19,
+                "y": 8,
+                "code": 0
+            },
+            {
+                "id": 8,
+                "x": 20,
+                "y": 2,
+                "code": 0
+            },
+            {
+                "id": 9,
+                "x": 10,
+                "y": 7,
+                "code": 0
+            }
+        ],
+        "terms": {
+            "wl": 166.36842105261843,
+            "cong": 0.08297211597338182,
+            "pin": 0.0,
+            "di": 0.6338899196041999,
+            "fb": 27.136017929438477,
+            "cost": 191.36054178389935
+        },
+        "stats": [
+            {
+                "initial_cost": 7409.523187224756,
+                "final_cost": 176.1581191833104,
+                "t0": 31712.490876908818,
+                "moves": 28124,
+                "temperatures": 166
+            },
+            {
+                "initial_cost": 251.1367313118509,
+                "final_cost": 191.36054178389935,
+                "t0": 1585.624543845441,
+                "moves": 24233,
+                "temperatures": 122
+            }
+        ],
+        "last_t0": 1585.624543845441
+    }
+}
