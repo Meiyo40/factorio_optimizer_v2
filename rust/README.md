@@ -15,8 +15,8 @@ cargo test
 | 1 foundations | `data`, `config`, `geom`, `emit` (blueprint codec) | done |
 | 2 planner | `plan` | done (LP on `microlp`) |
 | 3 placer | `place` | done, same-seed parity with Kotlin (see below) |
-| 4 validator, power | `validate`, `power` | |
-| 5 router | `route` | |
+| 4 validator, power | `validate`, `power` | done, same verdicts and messages as Kotlin (see below) |
+| 5 router | `route` | next: the router is most of a trial's time (see below) |
 | 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | |
 | 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | |
 
@@ -40,6 +40,54 @@ Two details that exactness depends on, both easy to break:
   because at perfect cubes one ulp decides between 160 and 159.
 
 The goldens are in `tests/golden/place/`, made by `tools/kotlin/GoldenPlaceTest.kt` from upstream `022c312`.
+
+## The validator matches Kotlin exactly
+
+`tests/validate_golden.rs` validates each of the eight committed blueprints as committed, and five of them also with
+28 to 31 seeded mutations each (a dropped, turned or moved entity, a refiltered inserter, up to two at once). Rust's
+error list must equal Kotlin's: same errors, same order, same message text. The blueprints as committed give 0 to 1433
+errors (the 1433 is a blueprint from before the curve-lane fix), so agreeing on failing layouts is covered as well.
+`tests/power_golden.rs` does the same for pole placement (five placements on each of three blueprints, three of those
+fifteen failing) and for the test harness, and checks the placer against the validator. `tests/power.rs` covers bridge
+poles between machines out of wire reach, which no golden reaches. The goldens are in `tests/golden/validate/` and
+`tests/golden/power/`, made by `tools/kotlin/GoldenValidateTest.kt`.
+
+What exactness depended on, and what the differential tests found:
+
+- Kotlin's `HashMap()`, `HashSet()` and `hashSetOf()` iterate in `java.util.HashMap` order; `mutableMapOf`, `associate*`,
+  `groupBy` and `toSet` in insertion order. The validator numbers its flow graph and sums floats in that order, so
+  `util/java_hash.rs` (`JMap`, `JSet`) reproduces the Java order, and `tests/java_golden.rs` checks it against
+  orders Java itself produced for int, string, pair and tile keys. One thing is not modelled: a ninth key in one bucket
+  makes Java resize or treeify the table. Debug builds assert that no bucket gets that full.
+- Java's `%.2f` rounds half up on the shortest decimal digits of the double (0.285 prints 0.29), Rust's `{:.2}` rounds
+  the exact binary value. `util/text.rs` `fmt2` follows Java, checked against 150+ samples Java formatted.
+- Rust's `Iterator::sum::<f64>()` starts from `-0.0`, Kotlin's `sum` and `sumOf` from `+0.0`, so an empty sum printed
+  `-0.00` instead of `0.00`. Only the differential test saw it. Use `util::sum_f64` for float sums.
+- `maxByOrNull` and `minByOrNull` return the first extremum, Rust's `max_by` the last, so those are plain loops.
+
+Regenerate the goldens (Docker Desktop running, repo root):
+
+```sh
+rust/tools/docker.sh sync
+rust/tools/docker.sh run 'VALIDATE_OUT=/work/out/validate-golden bash ./gradlew --no-daemon test --rerun --tests GoldenValidateTest.dumpValidatorAndPowerGoldens'
+rust/tools/docker.sh out rust/bench-results
+cp -r rust/bench-results/validate-golden/. rust/tests/golden/
+```
+
+## Where a trial's time goes
+
+`tools/kotlin/TimeSplitTest.kt` runs real Kotlin trials under Java Flight Recorder (`tools/timesplit.sh`) and
+attributes each sample to routing, placing, validating or powering:
+
+| Box | Routing | Placing |
+|-----|--------:|--------:|
+| chemical 40, electromagnetic 46 (comfortable) | 29% | 69% |
+| chemical 36, electromagnetic 41 (the tight frontier, trials of 14 to 27 s) | 89% | 11% |
+
+The search spends its time at the frontier, so the router decides how much of the placer's speed-up survives. Its top
+leaf frames there are `PathFinder.searchOnce` (23%), `java.util.HashMap.getNode` (22%, boxed-key lookups inside the A*
+loop), `MinHeap.push` and `pop` (10% each) and `relax` (9%). A Rust router can use flat arrays for what Kotlin keeps in
+hash maps, which is the main place to win in stage 5.
 
 ## Speed against the JVM
 

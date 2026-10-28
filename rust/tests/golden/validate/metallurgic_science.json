@@ -1,0 +1,1147 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/metallurgic_science",
+    "job": "docs/examples/metallurgic_science.json",
+    "w": 46,
+    "h": 46,
+    "spec": {
+        "pole_ring": 1,
+        "require_power": true,
+        "fluid_mode": "pipes",
+        "check_rates": true,
+        "inserter_rate": {
+            "inserter": [
+                0.83,
+                0.581
+            ],
+            "long-handed-inserter": [
+                1.2,
+                0.84
+            ],
+            "fast-inserter": [
+                2.31,
+                1.617
+            ],
+            "bulk-inserter": [
+                4.62,
+                3.234
+            ]
+        },
+        "machines": [
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 43
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 43
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 12,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 2.0
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 17,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 32,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 33
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 33
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 33
+                },
+                "spec": {
+                    "product": "metallurgic-science-pack",
+                    "ingredients": [
+                        "tungsten-carbide",
+                        "tungsten-plate"
+                    ],
+                    "output_rate": 0.5714285714285714,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-carbide": 1.1428571428571428,
+                        "tungsten-plate": 0.7619047619047619
+                    },
+                    "needs_fluid": "molten-copper",
+                    "fluid_in": {
+                        "molten-copper": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 29,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 5,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 39,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 17,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 9,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 5.333333333333334,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.23703703703703705
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-copper": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 33,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "stone",
+                    "ingredients": [
+                        "calcite"
+                    ],
+                    "output_rate": 1.422222222222222,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "calcite": 0.09481481481481481
+                    },
+                    "needs_fluid": "lava",
+                    "fluid_in": {
+                        "lava": 1
+                    },
+                    "fluid_out": {
+                        "molten-iron": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 23
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "tungsten-carbide",
+                    "ingredients": [
+                        "carbon",
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 1.1428571428571428,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 1.1428571428571428,
+                        "tungsten-ore": 2.2857142857142856
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 33,
+                    "y": 16
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 33,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 40,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 33,
+                    "y": 23
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "tungsten-plate",
+                    "ingredients": [
+                        "tungsten-ore"
+                    ],
+                    "output_rate": 0.5925925925925926,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "tungsten-ore": 1.5802469135802468
+                    },
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            }
+        ],
+        "sources": [
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 29
+                },
+                "item": "coal",
+                "rate": 8.0,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 46
+                },
+                "item": "coal",
+                "rate": 8.0,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 45,
+                    "y": -1
+                },
+                "item": "calcite",
+                "rate": 1.517037037037037,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 24
+                },
+                "item": "tungsten-ore",
+                "rate": 14.222222222222221,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 15
+                },
+                "item": "tungsten-ore",
+                "rate": 15.999999999999996,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 5,
+                    "y": 46
+                },
+                "item": "sulfuric-acid",
+                "rate": 239.99999999999997,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 4
+                },
+                "item": "lava",
+                "rate": 758.5185185185185,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            }
+        ],
+        "outputs": [
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 30
+                },
+                "item": "metallurgic-science-pack",
+                "rate": 4.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 20,
+                    "y": -1
+                },
+                "item": "stone",
+                "rate": 16.71111111111111,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 8
+                },
+                "item": "stone",
+                "rate": 16.71111111111111,
+                "fluid": false,
+                "port": -1
+            }
+        ],
+        "outside_allowed": [
+            {
+                "x": 20,
+                "y": -1
+            },
+            {
+                "x": 45,
+                "y": -1
+            },
+            {
+                "x": -1,
+                "y": 4
+            },
+            {
+                "x": -1,
+                "y": 8
+            },
+            {
+                "x": -1,
+                "y": 15
+            },
+            {
+                "x": 46,
+                "y": 24
+            },
+            {
+                "x": -1,
+                "y": 29
+            },
+            {
+                "x": -1,
+                "y": 30
+            },
+            {
+                "x": 0,
+                "y": 46
+            },
+            {
+                "x": 5,
+                "y": 46
+            }
+        ]
+    },
+    "cases": [
+        {
+            "name": "as committed",
+            "ops": [],
+            "errors": []
+        }
+    ]
+}

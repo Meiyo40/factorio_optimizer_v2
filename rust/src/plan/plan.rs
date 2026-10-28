@@ -4,6 +4,7 @@ use crate::config::tuning::Tuning;
 use crate::data::data_model::RootData;
 use crate::data::game_constants as gc;
 use crate::util::json::to_pretty_string;
+use crate::util::sum_f64;
 use anyhow::{Context, Result, anyhow};
 use indexmap::{IndexMap, IndexSet};
 use serde::{Deserialize, Serialize};
@@ -365,7 +366,7 @@ fn terminals_and_nets(
         let demand_of = |m: &MachineInstance| m.demand.get(item).or_else(|| m.fluid_demand.get(item)).copied();
         let consumers: Vec<&MachineInstance> = machines.iter().filter(|m| demand_of(m).unwrap_or(0.0) > 1e-12).collect();
         let out_total = lp.output.get(item).copied().unwrap_or(0.0);
-        let produced: f64 = producers.iter().map(|m| m.products[item]).sum();
+        let produced = sum_f64(producers.iter().map(|m| m.products[item]));
         let out_port = ports.iter().find(|p| p.item == *item && p.output);
         let mut net_terminals: Vec<Terminal> = Vec::new();
         let mut add_terminal = |role: Role, rate: f64, k: i32, machine: Option<usize>, port: Option<usize>| -> Terminal {
@@ -401,7 +402,7 @@ fn terminals_and_nets(
 
         let takes = |t: &&Terminal| matches!(t.role, Role::Consumer | Role::Output);
         if net_terminals.len() >= 2 && net_terminals.iter().any(|t| takes(&t)) {
-            let flow: f64 = net_terminals.iter().filter(takes).map(|t| t.rate).sum();
+            let flow = sum_f64(net_terminals.iter().filter(takes).map(|t| t.rate));
             let belts = if fluid { 1 } else { ((flow / (tuning.net.belt_utilisation * belt_tier.throughput) - 1e-9).ceil() as i32).max(1) };
             nets.push(Net {
                 id: nets.len(),

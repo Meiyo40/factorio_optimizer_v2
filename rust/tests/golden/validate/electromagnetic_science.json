@@ -1,0 +1,3613 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/electromagnetic_science",
+    "job": "docs/examples/electromagnetic_science.json",
+    "w": 41,
+    "h": 41,
+    "spec": {
+        "pole_ring": 1,
+        "require_power": true,
+        "fluid_mode": "pipes",
+        "check_rates": true,
+        "inserter_rate": {
+            "inserter": [
+                0.83,
+                0.581
+            ],
+            "long-handed-inserter": [
+                1.2,
+                0.84
+            ],
+            "fast-inserter": [
+                2.31,
+                1.617
+            ],
+            "bulk-inserter": [
+                4.62,
+                3.234
+            ]
+        },
+        "machines": [
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "accumulator",
+                    "ingredients": [
+                        "battery",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.4,
+                        "battery": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 22,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "accumulator",
+                    "ingredients": [
+                        "battery",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.4,
+                        "battery": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 7,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "accumulator",
+                    "ingredients": [
+                        "battery",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.4,
+                        "battery": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 32
+                },
+                "spec": {
+                    "product": "accumulator",
+                    "ingredients": [
+                        "battery",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.4,
+                        "battery": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "accumulator",
+                    "ingredients": [
+                        "battery",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.4,
+                        "battery": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 22,
+                    "y": 0
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 3,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 28,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 17,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 23,
+                    "y": 14
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "electrolyte",
+                    "ingredients": [
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.35185185185185186
+                    },
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {
+                        "electrolyte": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "electromagnetic-science-pack",
+                    "ingredients": [
+                        "accumulator",
+                        "supercapacitor"
+                    ],
+                    "output_rate": 0.30000000000000004,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "supercapacitor": 0.2,
+                        "accumulator": 0.2
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "electromagnetic-science-pack",
+                    "ingredients": [
+                        "accumulator",
+                        "supercapacitor"
+                    ],
+                    "output_rate": 0.30000000000000004,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "supercapacitor": 0.2,
+                        "accumulator": 0.2
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 24
+                },
+                "spec": {
+                    "product": "electromagnetic-science-pack",
+                    "ingredients": [
+                        "accumulator",
+                        "supercapacitor"
+                    ],
+                    "output_rate": 0.30000000000000004,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "supercapacitor": 0.2,
+                        "accumulator": 0.2
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "electromagnetic-science-pack",
+                    "ingredients": [
+                        "accumulator",
+                        "supercapacitor"
+                    ],
+                    "output_rate": 0.30000000000000004,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "supercapacitor": 0.2,
+                        "accumulator": 0.2
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 21
+                },
+                "spec": {
+                    "product": "electromagnetic-science-pack",
+                    "ingredients": [
+                        "accumulator",
+                        "supercapacitor"
+                    ],
+                    "output_rate": 0.30000000000000004,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "supercapacitor": 0.2,
+                        "accumulator": 0.2
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1,
+                        "holmium-solution": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 37
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 1.7777777777777775,
+                        "copper-cable": 5.333333333333332
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 31,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "light-oil",
+                    "ingredients": [],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1,
+                        "heavy-oil": 2
+                    },
+                    "fluid_out": {
+                        "light-oil": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 31,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "holmium-plate",
+                    "ingredients": [],
+                    "output_rate": 0.8888888888888887,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "holmium-solution",
+                    "fluid_in": {
+                        "holmium-solution": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 7
+                },
+                "spec": {
+                    "product": "holmium-plate",
+                    "ingredients": [],
+                    "output_rate": 0.8888888888888887,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "holmium-solution",
+                    "fluid_in": {
+                        "holmium-solution": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 7
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 15,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 12
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 3,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 5,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "holmium-solution",
+                    "ingredients": [
+                        "holmium-ore",
+                        "stone"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 0.09074074074074073,
+                        "holmium-ore": 0.18148148148148147
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "holmium-solution": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 0
+                },
+                "spec": {
+                    "product": "water",
+                    "ingredients": [
+                        "ice"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "ice": 0.5194444444444444
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {
+                        "water": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "supercapacitor",
+                    "ingredients": [
+                        "battery",
+                        "electronic-circuit",
+                        "holmium-plate",
+                        "superconductor"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "battery": 0.16666666666666666,
+                        "electronic-circuit": 0.6666666666666666,
+                        "holmium-plate": 0.3333333333333333,
+                        "superconductor": 0.3333333333333333
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "supercapacitor",
+                    "ingredients": [
+                        "battery",
+                        "electronic-circuit",
+                        "holmium-plate",
+                        "superconductor"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "battery": 0.16666666666666666,
+                        "electronic-circuit": 0.6666666666666666,
+                        "holmium-plate": 0.3333333333333333,
+                        "superconductor": 0.3333333333333333
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 21
+                },
+                "spec": {
+                    "product": "supercapacitor",
+                    "ingredients": [
+                        "battery",
+                        "electronic-circuit",
+                        "holmium-plate",
+                        "superconductor"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "battery": 0.16666666666666666,
+                        "electronic-circuit": 0.6666666666666666,
+                        "holmium-plate": 0.3333333333333333,
+                        "superconductor": 0.3333333333333333
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "supercapacitor",
+                    "ingredients": [
+                        "battery",
+                        "electronic-circuit",
+                        "holmium-plate",
+                        "superconductor"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "battery": 0.16666666666666666,
+                        "electronic-circuit": 0.6666666666666666,
+                        "holmium-plate": 0.3333333333333333,
+                        "superconductor": 0.3333333333333333
+                    },
+                    "needs_fluid": "electrolyte",
+                    "fluid_in": {
+                        "electrolyte": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 37,
+                    "y": 5
+                },
+                "spec": {
+                    "product": "superconductor",
+                    "ingredients": [
+                        "copper-plate",
+                        "holmium-plate",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.6666666666666665,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.22222222222222215,
+                        "plastic-bar": 0.22222222222222215,
+                        "holmium-plate": 0.22222222222222215
+                    },
+                    "needs_fluid": "light-oil",
+                    "fluid_in": {
+                        "light-oil": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 37,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "superconductor",
+                    "ingredients": [
+                        "copper-plate",
+                        "holmium-plate",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.6666666666666665,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.22222222222222215,
+                        "plastic-bar": 0.22222222222222215,
+                        "holmium-plate": 0.22222222222222215
+                    },
+                    "needs_fluid": "light-oil",
+                    "fluid_in": {
+                        "light-oil": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            }
+        ],
+        "sources": [
+            {
+                "tile": {
+                    "x": 5,
+                    "y": 41
+                },
+                "item": "iron-plate",
+                "rate": 3.7777777777777777,
+                "fluid": false,
+                "lane": 0,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 5,
+                    "y": 41
+                },
+                "item": "battery",
+                "rate": 5.666666666666668,
+                "fluid": false,
+                "lane": 1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": -1
+                },
+                "item": "stone",
+                "rate": 1.6796296296296298,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 17
+                },
+                "item": "stone",
+                "rate": 1.2481481481481485,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 35
+                },
+                "item": "copper-cable",
+                "rate": 5.333333333333332,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 13,
+                    "y": -1
+                },
+                "item": "holmium-ore",
+                "rate": 1.6333333333333333,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 38,
+                    "y": -1
+                },
+                "item": "ice",
+                "rate": 0.5194444444444444,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 10
+                },
+                "item": "copper-plate",
+                "rate": 0.4444444444444443,
+                "fluid": false,
+                "lane": 0,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": 10
+                },
+                "item": "plastic-bar",
+                "rate": 0.4444444444444443,
+                "fluid": false,
+                "lane": 1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 20,
+                    "y": -1
+                },
+                "item": "heavy-oil",
+                "rate": 24.074074074074076,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            }
+        ],
+        "outputs": [
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 28
+                },
+                "item": "electromagnetic-science-pack",
+                "rate": 1.5,
+                "fluid": false,
+                "port": -1
+            }
+        ],
+        "outside_allowed": [
+            {
+                "x": 13,
+                "y": -1
+            },
+            {
+                "x": 19,
+                "y": -1
+            },
+            {
+                "x": 20,
+                "y": -1
+            },
+            {
+                "x": 38,
+                "y": -1
+            },
+            {
+                "x": 41,
+                "y": 10
+            },
+            {
+                "x": -1,
+                "y": 17
+            },
+            {
+                "x": -1,
+                "y": 28
+            },
+            {
+                "x": 41,
+                "y": 35
+            },
+            {
+                "x": 5,
+                "y": 41
+            }
+        ]
+    },
+    "cases": [
+        {
+            "name": "as committed",
+            "ops": [],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 0: remove #354",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 354,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 1,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 3,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 17,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 15,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 19,
+                    "y": 7,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 12,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 0,
+                    "y": 11,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 10,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 3,
+                    "y": 11,
+                    "message": "holmium-solution gets no holmium-ore"
+                }
+            ]
+        },
+        {
+            "name": "mutation 1: remove #341",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 341,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 35,
+                    "y": 37,
+                    "message": "electronic-circuit needs 5.33/s of copper-cable, its inserters move 4.85/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 35,
+                    "y": 35,
+                    "message": "consumers here need 5.33/s of copper-cable but only 4.85/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 2: remove #725",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 725,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 31,
+                    "y": 11,
+                    "message": "chemical-plant is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 36,
+                    "y": 15,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 35,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 20,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 25,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 39,
+                    "y": 33,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 30,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 41,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 34,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 22,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 3: rotate #301",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 301,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 8,
+                    "y": 15,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 8,
+                    "y": 10,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 7,
+                    "y": 7,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 12,
+                    "y": 6,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 6,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 15,
+                    "message": "electrolyte gets no stone"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 10,
+                    "message": "holmium-solution gets no stone"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 0,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 5,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                }
+            ]
+        },
+        {
+            "name": "mutation 4: rotate #331",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 331,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 12,
+                    "y": 5,
+                    "message": "inserter picks from nothing at (11,5)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 12,
+                    "y": 5,
+                    "message": "inserter drops into nothing at (13,5)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                }
+            ]
+        },
+        {
+            "name": "mutation 5: move #15",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 15,
+                    "dx": -1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 22,
+                    "message": "electromagnetic-plant and pipe share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 23,
+                    "message": "electromagnetic-plant and pipe share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 21,
+                    "message": "electromagnetic-plant and pipe-to-ground share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 24,
+                    "message": "electromagnetic-plant and pipe-to-ground share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 13,
+                    "y": 25,
+                    "message": "long-handed-inserter drops into nothing at (13,23)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 14,
+                    "y": 24,
+                    "message": "inserter drops into nothing at (13,24)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": -1,
+                    "y": 28,
+                    "message": "the electromagnetic-science-pack output port gets 1.20/s of 1.50/s"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 13,
+                    "y": 22,
+                    "message": "electromagnetic-science-pack gets no electrolyte here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 8,
+                    "y": 23,
+                    "message": "electromagnetic-science-pack gets no holmium-solution here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 6: set_item #199",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 199,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 7: remove #319",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 319,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 11,
+                    "y": 6,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 12,
+                    "y": 6,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 6,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 0,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 2,
+                    "message": "holmium-solution gets no stone"
+                }
+            ]
+        },
+        {
+            "name": "mutation 8: remove #493",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 493,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 26,
+                    "y": 1,
+                    "message": "electrolyte gets no holmium-solution here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 32,
+                    "y": 2,
+                    "message": "electrolyte gets no holmium-solution here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 27,
+                    "y": 6,
+                    "message": "holmium-plate gets no holmium-solution here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 9: remove #104",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 104,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 31,
+                    "message": "supercapacitor gets no holmium-plate"
+                }
+            ]
+        },
+        {
+            "name": "mutation 10: remove #290",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 290,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 15,
+                    "y": 1,
+                    "message": "holmium-solution gets no stone"
+                }
+            ]
+        },
+        {
+            "name": "mutation 11: remove #723",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 723,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 1,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 7,
+                    "y": 1,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 35,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 20,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 38,
+                    "y": 11,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 25,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 10,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 39,
+                    "y": 33,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 30,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 28,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 41,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 3,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 34,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 17,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 22,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 12: rotate #231",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 231,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 27,
+                    "y": 39,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 22,
+                    "y": 37,
+                    "message": "accumulator needs 0.40/s of iron-plate, its inserters move 0.00/s"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 22,
+                    "y": 37,
+                    "message": "accumulator needs 1.00/s of battery, its inserters move 0.84/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 28,
+                    "y": 40,
+                    "message": "consumers here need 1.00/s of battery but only 0.44/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 13: rotate #399",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 399,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 37,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from nothing at (39,14)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 14: move #35",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 35,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OUT_OF_BOUNDS",
+                    "x": 41,
+                    "y": 15,
+                    "message": "electromagnetic-plant lies outside the box"
+                },
+                {
+                    "type": "OUT_OF_BOUNDS",
+                    "x": 41,
+                    "y": 16,
+                    "message": "electromagnetic-plant lies outside the box"
+                },
+                {
+                    "type": "OUT_OF_BOUNDS",
+                    "x": 41,
+                    "y": 17,
+                    "message": "electromagnetic-plant lies outside the box"
+                },
+                {
+                    "type": "OUT_OF_BOUNDS",
+                    "x": 41,
+                    "y": 18,
+                    "message": "electromagnetic-plant lies outside the box"
+                },
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 37,
+                    "y": 20,
+                    "message": "long-handed-inserter picks from nothing at (37,18)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 35,
+                    "y": 17,
+                    "message": "long-handed-inserter drops into nothing at (37,17)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 37,
+                    "y": 14,
+                    "message": "long-handed-inserter drops into nothing at (37,16)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 36,
+                    "y": 15,
+                    "message": "inserter drops into nothing at (37,15)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 22,
+                    "message": "supercapacitor gets no superconductor"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 28,
+                    "y": 26,
+                    "message": "consumers here need 0.33/s of superconductor but only 0.00/s arrives (net null)"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 39,
+                    "y": 14,
+                    "message": "superconductor gets no light-oil here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 15: set_item #84",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 84,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 11,
+                    "y": 29,
+                    "message": "inserter is filtered to iron-plate, which electromagnetic-science-pack does not make"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 17,
+                    "y": 27,
+                    "message": "inserter drops electromagnetic-science-pack onto a lane of [electromagnetic-science-pack, iron-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 4,
+                    "y": 26,
+                    "message": "long-handed-inserter drops electromagnetic-science-pack onto a lane of [electromagnetic-science-pack, iron-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 16,
+                    "y": 27,
+                    "message": "items [electromagnetic-science-pack, iron-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 10,
+                    "y": 30,
+                    "message": "electromagnetic-science-pack makes 0.30/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": -1,
+                    "y": 28,
+                    "message": "the electromagnetic-science-pack output port gets 1.20/s of 1.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 16: remove #57",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 57,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 19,
+                    "y": 37,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 21,
+                    "y": 29,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 13,
+                    "y": 27,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 7,
+                    "y": 25,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 24,
+                    "message": "electromagnetic-science-pack gets no accumulator"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 1,
+                    "y": 22,
+                    "message": "electromagnetic-science-pack gets no accumulator"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 21,
+                    "message": "electromagnetic-science-pack gets no accumulator"
+                }
+            ]
+        },
+        {
+            "name": "mutation 17: remove #567",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 567,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 2,
+                    "y": 29,
+                    "message": "electromagnetic-science-pack gets no holmium-solution here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 19,
+                    "y": 28,
+                    "message": "electromagnetic-science-pack gets no holmium-solution here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 32,
+                    "y": 20,
+                    "message": "holmium-plate gets no holmium-solution here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 18: remove #111",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 111,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 31,
+                    "y": 32,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 32,
+                    "y": 25,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 31,
+                    "y": 24,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 25,
+                    "y": 31,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 22,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 25,
+                    "y": 21,
+                    "message": "supercapacitor gets no electronic-circuit"
+                }
+            ]
+        },
+        {
+            "name": "mutation 19: remove #291",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 291,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 19,
+                    "y": 7,
+                    "message": "holmium-solution gets no stone"
+                }
+            ]
+        },
+        {
+            "name": "mutation 20: remove #704",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 704,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 6,
+                    "y": 39,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 4,
+                    "y": 39,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 4,
+                    "y": 38,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 6,
+                    "y": 38,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 35,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 20,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 38,
+                    "y": 11,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 25,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 10,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 39,
+                    "y": 33,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 4,
+                    "y": 14,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 14,
+                    "y": 26,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 30,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 1,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 28,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 5,
+                    "y": 34,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 41,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 9,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 3,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 34,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 32,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 17,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": -1,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 22,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 21: rotate #117",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 117,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 31,
+                    "y": 24,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 25,
+                    "y": 21,
+                    "message": "supercapacitor gets no electronic-circuit"
+                }
+            ]
+        },
+        {
+            "name": "mutation 22: rotate #379",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 379,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 3,
+                    "y": 10,
+                    "message": "long-handed-inserter picks from pipe at (5,10)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 3,
+                    "y": 10,
+                    "message": "long-handed-inserter drops into long-handed-inserter at (1,10)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 3,
+                    "y": 11,
+                    "message": "holmium-solution gets no holmium-ore"
+                }
+            ]
+        },
+        {
+            "name": "mutation 23: move #11",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 11,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 5,
+                    "y": 32,
+                    "message": "electromagnetic-plant and inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": -1,
+                    "y": 28,
+                    "message": "the electromagnetic-science-pack output port gets 1.20/s of 1.50/s"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 3,
+                    "y": 29,
+                    "message": "electromagnetic-science-pack gets no holmium-solution here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 24: set_item #129",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 129,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 29,
+                    "y": 8,
+                    "message": "long-handed-inserter is filtered to iron-plate, which holmium-plate does not make"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 36,
+                    "y": 8,
+                    "message": "long-handed-inserter feeds superconductor from a belt of [iron-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 35,
+                    "y": 21,
+                    "message": "long-handed-inserter feeds supercapacitor from a belt of [iron-plate]"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 26,
+                    "y": 7,
+                    "message": "holmium-plate makes 0.89/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 35,
+                    "y": 22,
+                    "message": "supercapacitor needs 0.67/s of electronic-circuit, its inserters move 0.51/s"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 37,
+                    "y": 5,
+                    "message": "superconductor gets no holmium-plate"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 32,
+                    "y": 25,
+                    "message": "consumers here need 0.33/s of holmium-plate but only 0.17/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 25: remove #365",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 365,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 0,
+                    "y": 7,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 1,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 3,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 17,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 15,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 19,
+                    "y": 7,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 12,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 0,
+                    "y": 11,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 10,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 3,
+                    "y": 11,
+                    "message": "holmium-solution gets no holmium-ore"
+                }
+            ]
+        },
+        {
+            "name": "mutation 26: remove #420",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 420,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 27,
+                    "y": 25,
+                    "message": "supercapacitor gets no electrolyte here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 27: remove #213, move #18",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 213,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "move",
+                    "index": 18,
+                    "dx": -1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 30,
+                    "y": 19,
+                    "message": "assembling-machine-3 and pipe-to-ground share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 35,
+                    "y": 17,
+                    "message": "long-handed-inserter picks from nothing at (33,17)"
+                },
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 33,
+                    "y": 20,
+                    "message": "inserter picks from nothing at (33,19)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 37,
+                    "y": 19,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 38,
+                    "y": 28,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 40,
+                    "y": 38,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 40,
+                    "y": 39,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 28,
+                    "y": 40,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 27,
+                    "y": 39,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 22,
+                    "y": 37,
+                    "message": "accumulator gets no iron-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 22,
+                    "y": 37,
+                    "message": "accumulator gets no battery"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 37,
+                    "message": "electronic-circuit gets no iron-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 22,
+                    "message": "supercapacitor gets no battery"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 31,
+                    "message": "supercapacitor gets no battery"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 37,
+                    "y": 15,
+                    "message": "superconductor gets no holmium-plate"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 31,
+                    "y": 32,
+                    "message": "consumers here need 0.33/s of holmium-plate but only 0.00/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 33,
+                    "y": 32,
+                    "message": "consumers here need 0.33/s of holmium-plate but only 0.00/s arrives (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 30,
+                    "y": 17,
+                    "message": "assembling-machine-3 is outside every pole's supply area"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 31,
+                    "y": 20,
+                    "message": "holmium-plate gets no holmium-solution here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 28: remove #730, remove #371",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 730,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 371,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 4,
+                    "y": 8,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 17,
+                    "y": 8,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 15,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 19,
+                    "y": 7,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 12,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 10,
+                    "message": "holmium-solution gets no holmium-ore"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 4,
+                    "y": 29,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 35,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 20,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 38,
+                    "y": 11,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 25,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 10,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 39,
+                    "y": 33,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 4,
+                    "y": 14,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 14,
+                    "y": 26,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 30,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 1,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 28,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 41,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 9,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 24,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 3,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 20,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 32,
+                    "y": 34,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 17,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": -1,
+                    "y": 4,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 22,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 29: rotate #398, remove #108",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 398,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 108,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 34,
+                    "y": 33,
+                    "message": "fast-inserter picks from nothing at (33,33)"
+                },
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 38,
+                    "y": 9,
+                    "message": "inserter picks from nothing at (37,9)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 38,
+                    "y": 9,
+                    "message": "inserter drops into inserter at (39,9)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 33,
+                    "y": 32,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 31,
+                    "y": 32,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 32,
+                    "y": 25,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 31,
+                    "y": 24,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 25,
+                    "y": 31,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 22,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 25,
+                    "y": 21,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 31,
+                    "message": "supercapacitor gets no electronic-circuit"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 31,
+                    "message": "supercapacitor gets no holmium-plate"
+                }
+            ]
+        },
+        {
+            "name": "mutation 30: set_item #138, remove #714",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 138,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                },
+                {
+                    "op": "remove",
+                    "index": 714,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 39,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 34,
+                    "y": 38,
+                    "message": "fast-inserter drops electronic-circuit onto a lane of [electronic-circuit, holmium-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 33,
+                    "y": 39,
+                    "message": "items [electronic-circuit, holmium-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 13,
+                    "y": 25,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 25,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 29,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 17,
+                    "y": 27,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 14,
+                    "y": 24,
+                    "message": "inserter is outside every pole's supply area"
+                }
+            ]
+        }
+    ]
+}

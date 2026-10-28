@@ -1,0 +1,5049 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/six_science_factory",
+    "job": "docs/examples/six_science_factory.json",
+    "w": 182,
+    "h": 79,
+    "spec": {
+        "pole_ring": 1,
+        "require_power": true,
+        "fluid_mode": "pipes",
+        "check_rates": true,
+        "inserter_rate": {
+            "inserter": [
+                1.66,
+                1.162
+            ],
+            "long-handed-inserter": [
+                2.4,
+                1.68
+            ],
+            "fast-inserter": [
+                4.62,
+                3.234
+            ],
+            "bulk-inserter": [
+                13.86,
+                9.701999999999998
+            ]
+        },
+        "machines": [
+            {
+                "tile": {
+                    "x": 52,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 44,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 51,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 21
+                },
+                "spec": {
+                    "product": "battery",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.22222222222222301,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.22222222222222301,
+                        "copper-plate": 0.22222222222222301
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "battery",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.22222222222222301,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.22222222222222301,
+                        "copper-plate": 0.22222222222222301
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 16
+                },
+                "spec": {
+                    "product": "battery",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.22222222222222301,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.22222222222222301,
+                        "copper-plate": 0.22222222222222301
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 38,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 52,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 39
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 39,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 31,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 16
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 52,
+                    "y": 23
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 53,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 53,
+                    "y": 16
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 51,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 39,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 53,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 51,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 46,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 43
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 46
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 4.985507246376811,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 2.4927536231884053
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 46
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 39
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 8,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 8,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 2.499999999999999,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.499999999999999,
+                        "copper-cable": 7.499999999999997
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 3
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 7,
+                    "y": 44
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 7,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 7,
+                    "y": 50
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "plastic-bar",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 1.9259259259259258,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 0.9629629629629629
+                    },
+                    "needs_fluid": "petroleum-gas",
+                    "fluid_in": {
+                        "petroleum-gas": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 25,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 29,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 38,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 39,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 30,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "processing-unit",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 2.2222222222222223,
+                        "advanced-circuit": 0.2222222222222222
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 3,
+                    "y": 40
+                },
+                "spec": {
+                    "product": "sulfur",
+                    "ingredients": [],
+                    "output_rate": 1.0833333333333357,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1,
+                        "petroleum-gas": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "sulfur",
+                    "ingredients": [],
+                    "output_rate": 1.0833333333333357,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1,
+                        "petroleum-gas": 2
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "sulfuric-acid",
+                    "ingredients": [
+                        "iron-plate",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.3333333333333343,
+                        "sulfur": 1.6666666666666716
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "sulfuric-acid": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 64,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 105,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 95,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 105,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 108,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 64,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 80,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 74,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 99,
+                    "y": 7
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 96,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 91,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 75,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 107,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 76,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 108,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 91,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 83,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 86,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 71,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 108,
+                    "y": 14
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 99,
+                    "y": 12
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 110,
+                    "y": 39
+                },
+                "spec": {
+                    "product": "firearm-magazine",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.5,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 76,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 77,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 83,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 70,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 83,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 70,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "flying-robot-frame",
+                    "ingredients": [
+                        "battery",
+                        "electric-engine-unit",
+                        "electronic-circuit",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.05555555555555555,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.05555555555555555,
+                        "battery": 0.1111111111111111,
+                        "electronic-circuit": 0.16666666666666666,
+                        "electric-engine-unit": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 117,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "grenade",
+                    "ingredients": [
+                        "coal",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.125,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.25,
+                        "iron-plate": 0.625
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 114,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "grenade",
+                    "ingredients": [
+                        "coal",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.125,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.25,
+                        "iron-plate": 0.625
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 116,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "grenade",
+                    "ingredients": [
+                        "coal",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.125,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.25,
+                        "iron-plate": 0.625
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 113,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "grenade",
+                    "ingredients": [
+                        "coal",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.125,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.25,
+                        "iron-plate": 0.625
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 92,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 98,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 91,
+                    "y": 40
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 98,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 98,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 98,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 98,
+                    "y": 46
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 86,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 90,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 86,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 86,
+                    "y": 49
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 93,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "low-density-structure",
+                    "ingredients": [
+                        "copper-plate",
+                        "plastic-bar",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.0833333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 1.666666666666666,
+                        "steel-plate": 0.1666666666666666,
+                        "plastic-bar": 0.4166666666666665
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 116,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "military-science-pack",
+                    "ingredients": [
+                        "grenade",
+                        "piercing-rounds-magazine",
+                        "stone-wall"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "piercing-rounds-magazine": 0.125,
+                        "grenade": 0.125,
+                        "stone-wall": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 106,
+                    "y": 50
+                },
+                "spec": {
+                    "product": "military-science-pack",
+                    "ingredients": [
+                        "grenade",
+                        "piercing-rounds-magazine",
+                        "stone-wall"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "piercing-rounds-magazine": 0.125,
+                        "grenade": 0.125,
+                        "stone-wall": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 106,
+                    "y": 45
+                },
+                "spec": {
+                    "product": "military-science-pack",
+                    "ingredients": [
+                        "grenade",
+                        "piercing-rounds-magazine",
+                        "stone-wall"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "piercing-rounds-magazine": 0.125,
+                        "grenade": 0.125,
+                        "stone-wall": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 116,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "military-science-pack",
+                    "ingredients": [
+                        "grenade",
+                        "piercing-rounds-magazine",
+                        "stone-wall"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "piercing-rounds-magazine": 0.125,
+                        "grenade": 0.125,
+                        "stone-wall": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 106,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "piercing-rounds-magazine",
+                    "ingredients": [
+                        "copper-plate",
+                        "firearm-magazine",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "steel-plate": 0.125,
+                        "firearm-magazine": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 106,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "piercing-rounds-magazine",
+                    "ingredients": [
+                        "copper-plate",
+                        "firearm-magazine",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "steel-plate": 0.125,
+                        "firearm-magazine": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 106,
+                    "y": 54
+                },
+                "spec": {
+                    "product": "stone-wall",
+                    "ingredients": [
+                        "stone-brick"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone-brick": 5.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 78,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 78,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 71,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 66,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 71,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 66,
+                    "y": 52
+                },
+                "spec": {
+                    "product": "utility-science-pack",
+                    "ingredients": [
+                        "flying-robot-frame",
+                        "low-density-structure",
+                        "processing-unit"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "processing-unit": 0.1111111111111111,
+                        "flying-robot-frame": 0.05555555555555555,
+                        "low-density-structure": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 33
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 36
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 46
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 131,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "advanced-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "electronic-circuit",
+                        "plastic-bar"
+                    ],
+                    "output_rate": 0.20555555555555552,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "plastic-bar": 0.41111111111111104,
+                        "copper-cable": 0.8222222222222221,
+                        "electronic-circuit": 0.41111111111111104
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 138,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 144,
+                    "y": 39
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 138,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 144,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 155,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 161,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 150,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 163,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 155,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 163,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 158,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 163,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 157,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 149,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "chemical-science-pack",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "engine-unit",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.1,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "sulfur": 0.05,
+                        "advanced-circuit": 0.15000000000000002,
+                        "engine-unit": 0.1
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 5
+                },
+                "spec": {
+                    "product": "electric-engine-unit",
+                    "ingredients": [
+                        "electronic-circuit",
+                        "engine-unit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.2222222222222222,
+                        "engine-unit": 0.1111111111111111
+                    },
+                    "needs_fluid": "lubricant",
+                    "fluid_in": {
+                        "lubricant": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "electric-engine-unit",
+                    "ingredients": [
+                        "electronic-circuit",
+                        "engine-unit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.2222222222222222,
+                        "engine-unit": 0.1111111111111111
+                    },
+                    "needs_fluid": "lubricant",
+                    "fluid_in": {
+                        "lubricant": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "electric-engine-unit",
+                    "ingredients": [
+                        "electronic-circuit",
+                        "engine-unit"
+                    ],
+                    "output_rate": 0.1111111111111111,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.2222222222222222,
+                        "engine-unit": 0.1111111111111111
+                    },
+                    "needs_fluid": "lubricant",
+                    "fluid_in": {
+                        "lubricant": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 146,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "electric-furnace",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "steel-plate",
+                        "stone-brick"
+                    ],
+                    "output_rate": 0.1666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 1.666666666666666,
+                        "advanced-circuit": 0.833333333333333,
+                        "stone-brick": 1.666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 151,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "electric-furnace",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "steel-plate",
+                        "stone-brick"
+                    ],
+                    "output_rate": 0.1666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 1.666666666666666,
+                        "advanced-circuit": 0.833333333333333,
+                        "stone-brick": 1.666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 178,
+                    "y": 21
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 170,
+                    "y": 21
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 177,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 166,
+                    "y": 5
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 171,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 178,
+                    "y": 8
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 177,
+                    "y": 5
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 171,
+                    "y": 15
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 177,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 166,
+                    "y": 8
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 171,
+                    "y": 5
+                },
+                "spec": {
+                    "product": "engine-unit",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "pipe",
+                        "steel-plate"
+                    ],
+                    "output_rate": 0.1212121212121212,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "steel-plate": 0.1212121212121212,
+                        "iron-gear-wheel": 0.1212121212121212,
+                        "pipe": 0.2424242424242424
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 154,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "inserter",
+                    "ingredients": [
+                        "electronic-circuit",
+                        "iron-gear-wheel",
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 1.0,
+                        "iron-gear-wheel": 1.0,
+                        "electronic-circuit": 1.0
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 179,
+                    "y": 36
+                },
+                "spec": {
+                    "product": "iron-gear-wheel",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.9166666666666665,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 3.833333333333333
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 178,
+                    "y": 46
+                },
+                "spec": {
+                    "product": "iron-gear-wheel",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.9166666666666665,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 3.833333333333333
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 158,
+                    "y": 35
+                },
+                "spec": {
+                    "product": "iron-stick",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 5.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 171,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.2,
+                        "inserter": 0.2
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 176,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.2,
+                        "inserter": 0.2
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 163,
+                    "y": 42
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.2,
+                        "inserter": 0.2
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 171,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.2,
+                        "inserter": 0.2
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 162,
+                    "y": 51
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.2,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.2,
+                        "inserter": 0.2
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 135,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "lubricant",
+                    "ingredients": [],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "heavy-oil",
+                    "fluid_in": {
+                        "heavy-oil": 1
+                    },
+                    "fluid_out": {
+                        "lubricant": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 174,
+                    "y": 32
+                },
+                "spec": {
+                    "product": "pipe",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.3333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 1.3333333333333333
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 179,
+                    "y": 32
+                },
+                "spec": {
+                    "product": "pipe",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.3333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 1.3333333333333333
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 28
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 129,
+                    "y": 14
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 14
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 143,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 129,
+                    "y": 27
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 129,
+                    "y": 22
+                },
+                "spec": {
+                    "product": "production-science-pack",
+                    "ingredients": [
+                        "electric-furnace",
+                        "productivity-module",
+                        "rail"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "rail": 1.6666666666666665,
+                        "electric-furnace": 0.05555555555555555,
+                        "productivity-module": 0.05555555555555555
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 135,
+                    "y": 6
+                },
+                "spec": {
+                    "product": "productivity-module",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.08333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.41666666666666663,
+                        "advanced-circuit": 0.41666666666666663
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "productivity-module",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.08333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.41666666666666663,
+                        "advanced-circuit": 0.41666666666666663
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 130,
+                    "y": 6
+                },
+                "spec": {
+                    "product": "productivity-module",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.08333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.41666666666666663,
+                        "advanced-circuit": 0.41666666666666663
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 134,
+                    "y": 14
+                },
+                "spec": {
+                    "product": "productivity-module",
+                    "ingredients": [
+                        "advanced-circuit",
+                        "electronic-circuit"
+                    ],
+                    "output_rate": 0.08333333333333333,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "electronic-circuit": 0.41666666666666663,
+                        "advanced-circuit": 0.41666666666666663
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 167,
+                    "y": 36
+                },
+                "spec": {
+                    "product": "rail",
+                    "ingredients": [
+                        "iron-stick",
+                        "steel-plate",
+                        "stone"
+                    ],
+                    "output_rate": 5.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 2.5,
+                        "steel-plate": 2.5,
+                        "iron-stick": 2.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 167,
+                    "y": 33
+                },
+                "spec": {
+                    "product": "rail",
+                    "ingredients": [
+                        "iron-stick",
+                        "steel-plate",
+                        "stone"
+                    ],
+                    "output_rate": 5.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "stone": 2.5,
+                        "steel-plate": 2.5,
+                        "iron-stick": 2.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 176,
+                    "y": 41
+                },
+                "spec": {
+                    "product": "transport-belt",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.5,
+                        "iron-gear-wheel": 0.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            }
+        ],
+        "sources": [
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 61
+                },
+                "item": "copper-plate",
+                "rate": 0.9999999999999787,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 66
+                },
+                "item": "copper-plate",
+                "rate": 20.5,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 67
+                },
+                "item": "copper-plate",
+                "rate": 19.333333333333336,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 70
+                },
+                "item": "copper-plate",
+                "rate": 19.333333333333336,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 62
+                },
+                "item": "copper-plate",
+                "rate": 19.333333333333336,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 73
+                },
+                "item": "iron-plate",
+                "rate": 14.333333333333329,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 69
+                },
+                "item": "iron-plate",
+                "rate": 4.5,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 65
+                },
+                "item": "iron-plate",
+                "rate": 15.5,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 60
+                },
+                "item": "iron-plate",
+                "rate": 15.5,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 74
+                },
+                "item": "steel-plate",
+                "rate": 9.666666666666664,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 77
+                },
+                "item": "steel-plate",
+                "rate": 2.583333333333333,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 75
+                },
+                "item": "stone-brick",
+                "rate": 3.3333333333333304,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 63
+                },
+                "item": "stone-brick",
+                "rate": 5.0,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 78
+                },
+                "item": "coal",
+                "rate": 5.0,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 64
+                },
+                "item": "coal",
+                "rate": 8.666666666666666,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 72
+                },
+                "item": "stone",
+                "rate": 5.0,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 76
+                },
+                "item": "heavy-oil",
+                "rate": 4.999999999999999,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 71
+                },
+                "item": "petroleum-gas",
+                "rate": 205.83333333333337,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 0,
+                    "y": 68
+                },
+                "item": "water",
+                "rate": 65.83333333333348,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            }
+        ],
+        "outputs": [
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 57
+                },
+                "item": "automation-science-pack",
+                "rate": 1.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 55
+                },
+                "item": "chemical-science-pack",
+                "rate": 0.9999999999999999,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 56
+                },
+                "item": "logistic-science-pack",
+                "rate": 1.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 59
+                },
+                "item": "military-science-pack",
+                "rate": 1.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 58
+                },
+                "item": "production-science-pack",
+                "rate": 0.9999999999999999,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 181,
+                    "y": 62
+                },
+                "item": "utility-science-pack",
+                "rate": 0.9999999999999999,
+                "fluid": false,
+                "port": -1
+            }
+        ],
+        "outside_allowed": []
+    },
+    "cases": [
+        {
+            "name": "as committed",
+            "ops": [],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 83,
+                    "y": 38,
+                    "message": "long-handed-inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 79,
+                    "y": 38,
+                    "message": "long-handed-inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 72,
+                    "y": 38,
+                    "message": "long-handed-inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 76,
+                    "y": 28,
+                    "message": "long-handed-inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 72,
+                    "y": 28,
+                    "message": "inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 89,
+                    "y": 37,
+                    "message": "long-handed-inserter drops low-density-structure onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 86,
+                    "y": 27,
+                    "message": "inserter drops flying-robot-frame onto a lane of [flying-robot-frame, low-density-structure]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 136,
+                    "y": 17,
+                    "message": "inserter drops productivity-module onto a lane of [electric-furnace, productivity-module]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 181,
+                    "y": 31,
+                    "message": "inserter drops pipe onto a lane of [iron-gear-wheel, pipe]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 83,
+                    "y": 40,
+                    "message": "items [flying-robot-frame, low-density-structure] meet on one lane (net null)"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 136,
+                    "y": 18,
+                    "message": "items [electric-furnace, productivity-module] meet on one lane (net null)"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 181,
+                    "y": 30,
+                    "message": "items [iron-gear-wheel, pipe] meet on one lane (net null)"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 37,
+                    "y": 18,
+                    "message": "lanes carry 15.82/s and 0.00/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 36,
+                    "y": 18,
+                    "message": "lanes carry 15.82/s and 0.00/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 36,
+                    "y": 17,
+                    "message": "lanes carry 15.82/s and 0.00/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 37,
+                    "y": 17,
+                    "message": "lanes carry 15.82/s and 0.00/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 43,
+                    "y": 17,
+                    "message": "lanes carry 15.82/s and 0.00/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 44,
+                    "y": 17,
+                    "message": "lanes carry 15.82/s and 0.37/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 44,
+                    "y": 18,
+                    "message": "lanes carry 15.82/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 44,
+                    "y": 19,
+                    "message": "lanes carry 15.82/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 45,
+                    "y": 19,
+                    "message": "lanes carry 15.82/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 19,
+                    "message": "lanes carry 15.82/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 51,
+                    "y": 19,
+                    "message": "lanes carry 15.82/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 51,
+                    "y": 18,
+                    "message": "lanes carry 16.18/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 18,
+                    "message": "lanes carry 16.18/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 17,
+                    "message": "lanes carry 16.18/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 16,
+                    "message": "lanes carry 16.18/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 51,
+                    "y": 16,
+                    "message": "lanes carry 16.18/s and 4.99/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 52,
+                    "y": 16,
+                    "message": "lanes carry 15.55/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 52,
+                    "y": 15,
+                    "message": "lanes carry 15.55/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 52,
+                    "y": 14,
+                    "message": "lanes carry 15.55/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 53,
+                    "y": 14,
+                    "message": "lanes carry 15.55/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 54,
+                    "y": 14,
+                    "message": "lanes carry 20.17/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 54,
+                    "y": 13,
+                    "message": "lanes carry 20.17/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 55,
+                    "y": 13,
+                    "message": "lanes carry 20.17/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 56,
+                    "y": 13,
+                    "message": "lanes carry 20.17/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 56,
+                    "y": 3,
+                    "message": "lanes carry 20.17/s and 4.79/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 56,
+                    "y": 2,
+                    "message": "lanes carry 19.51/s and 4.63/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 56,
+                    "y": 1,
+                    "message": "lanes carry 19.51/s and 4.63/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 55,
+                    "y": 1,
+                    "message": "lanes carry 19.51/s and 4.63/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 51,
+                    "y": 1,
+                    "message": "lanes carry 19.51/s and 4.63/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 1,
+                    "message": "lanes carry 19.51/s and 4.63/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 50,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 49,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 47,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 36,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 29,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 28,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 23,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 22,
+                    "y": 0,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 22,
+                    "y": 1,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 22,
+                    "y": 4,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 22,
+                    "y": 5,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 21,
+                    "y": 5,
+                    "message": "lanes carry 18.85/s and 4.48/s; a lane holds 15.00/s"
+                },
+                {
+                    "type": "BELT_OVER_CAPACITY",
+                    "x": 20,
+                    "y": 5,
+                    "message": "lanes carry 16.23/s and 3.86/s; a lane holds 15.00/s"
+                }
+            ]
+        }
+    ]
+}

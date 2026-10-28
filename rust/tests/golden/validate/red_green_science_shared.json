@@ -1,0 +1,1446 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/red_green_science_shared",
+    "job": "docs/examples/red_green_science_shared.json",
+    "w": 15,
+    "h": 15,
+    "spec": {
+        "pole_ring": 1,
+        "require_power": true,
+        "fluid_mode": "pipes",
+        "check_rates": true,
+        "inserter_rate": {
+            "inserter": [
+                0.83,
+                0.581
+            ],
+            "long-handed-inserter": [
+                1.2,
+                0.84
+            ],
+            "fast-inserter": [
+                2.31,
+                1.617
+            ],
+            "bulk-inserter": [
+                4.62,
+                3.234
+            ]
+        },
+        "machines": [
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 12
+                },
+                "spec": {
+                    "product": "automation-science-pack",
+                    "ingredients": [
+                        "copper-plate",
+                        "iron-gear-wheel"
+                    ],
+                    "output_rate": 0.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 3
+                },
+                "spec": {
+                    "product": "copper-cable",
+                    "ingredients": [
+                        "copper-plate"
+                    ],
+                    "output_rate": 1.5,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "copper-plate": 0.75
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 0
+                },
+                "spec": {
+                    "product": "electronic-circuit",
+                    "ingredients": [
+                        "copper-cable",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.5,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.5,
+                        "copper-cable": 1.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "inserter",
+                    "ingredients": [
+                        "electronic-circuit",
+                        "iron-gear-wheel",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.5,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.5,
+                        "iron-gear-wheel": 0.5,
+                        "electronic-circuit": 0.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 4,
+                    "y": 6
+                },
+                "spec": {
+                    "product": "iron-gear-wheel",
+                    "ingredients": [
+                        "iron-plate"
+                    ],
+                    "output_rate": 1.25,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 2.5
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 12,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.16666666666666666,
+                        "inserter": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 12,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.16666666666666666,
+                        "inserter": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 4
+                },
+                "spec": {
+                    "product": "logistic-science-pack",
+                    "ingredients": [
+                        "inserter",
+                        "transport-belt"
+                    ],
+                    "output_rate": 0.16666666666666666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "transport-belt": 0.16666666666666666,
+                        "inserter": 0.16666666666666666
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 8,
+                    "y": 11
+                },
+                "spec": {
+                    "product": "transport-belt",
+                    "ingredients": [
+                        "iron-gear-wheel",
+                        "iron-plate"
+                    ],
+                    "output_rate": 0.5,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.25,
+                        "iron-gear-wheel": 0.25
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            }
+        ],
+        "sources": [
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 7
+                },
+                "item": "copper-plate",
+                "rate": 1.25,
+                "fluid": false,
+                "lane": 0,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 0
+                },
+                "item": "iron-plate",
+                "rate": 3.75,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            }
+        ],
+        "outputs": [
+            {
+                "tile": {
+                    "x": 6,
+                    "y": 15
+                },
+                "item": "automation-science-pack",
+                "rate": 0.5,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 15,
+                    "y": 5
+                },
+                "item": "logistic-science-pack",
+                "rate": 0.5,
+                "fluid": false,
+                "port": -1
+            }
+        ],
+        "outside_allowed": [
+            {
+                "x": -1,
+                "y": 0
+            },
+            {
+                "x": 15,
+                "y": 5
+            },
+            {
+                "x": -1,
+                "y": 7
+            },
+            {
+                "x": 6,
+                "y": 15
+            }
+        ]
+    },
+    "cases": [
+        {
+            "name": "as committed",
+            "ops": [],
+            "errors": []
+        },
+        {
+            "name": "mutation 0: remove #14",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 14,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter drops into nothing at (6,11)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 6,
+                    "y": 15,
+                    "message": "the automation-science-pack output port gets 0.25/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 1: remove #61",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 61,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 2: remove #108",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 108,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 1,
+                    "y": 10,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 1,
+                    "y": 12,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 1,
+                    "y": 13,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": -1,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 3: rotate #67",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 67,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OUTPUT_MISSING",
+                    "x": 15,
+                    "y": 5,
+                    "message": "no logistic-science-pack reaches its output port"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 15,
+                    "y": 5,
+                    "message": "the logistic-science-pack output port gets 0.00/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 4: rotate #11",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 11,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 6,
+                    "y": 5,
+                    "message": "inserter picks from nothing at (5,5)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 6,
+                    "y": 5,
+                    "message": "inserter drops into nothing at (7,5)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 6,
+                    "y": 2,
+                    "message": "inserter gets no iron-gear-wheel"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 4,
+                    "y": 6,
+                    "message": "iron-gear-wheel makes 1.25/s but its output inserters move 1.20/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 5: move #8",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 8,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 14,
+                    "y": 6,
+                    "message": "assembling-machine-3 and fast-transport-belt share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 14,
+                    "y": 5,
+                    "message": "assembling-machine-3 and fast-transport-belt share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 14,
+                    "y": 4,
+                    "message": "assembling-machine-3 and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 11,
+                    "y": 7,
+                    "message": "long-handed-inserter drops into nothing at (11,5)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 10,
+                    "y": 6,
+                    "message": "inserter drops into nothing at (11,6)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 15,
+                    "y": 5,
+                    "message": "the logistic-science-pack output port gets 0.33/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 6: set_item #69",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 69,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 13,
+                    "y": 7,
+                    "message": "inserter is filtered to iron-plate, which logistic-science-pack does not make"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 14,
+                    "y": 4,
+                    "message": "long-handed-inserter drops logistic-science-pack onto a lane of [iron-plate, logistic-science-pack]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 14,
+                    "y": 6,
+                    "message": "items [iron-plate, logistic-science-pack] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 11,
+                    "y": 4,
+                    "message": "logistic-science-pack makes 0.17/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 15,
+                    "y": 5,
+                    "message": "the logistic-science-pack output port gets 0.33/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 7: remove #92",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 92,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 8,
+                    "y": 7,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 8,
+                    "y": 8,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 8,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 6,
+                    "y": 10,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 4,
+                    "y": 6,
+                    "message": "iron-gear-wheel gets no iron-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 8,
+                    "y": 11,
+                    "message": "transport-belt gets no iron-plate"
+                }
+            ]
+        },
+        {
+            "name": "mutation 8: remove #100",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 100,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNREACHABLE",
+                    "x": -1,
+                    "y": 7,
+                    "message": "source of copper-plate has no belt"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 1,
+                    "y": 5,
+                    "message": "fast-inserter feeds copper-cable from a belt of [iron-gear-wheel]"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 9,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 3,
+                    "message": "copper-cable gets no copper-plate"
+                }
+            ]
+        },
+        {
+            "name": "mutation 9: remove #58",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 58,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 10: remove #107",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 107,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 5,
+                    "y": 12,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 3,
+                    "y": 7,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 1,
+                    "y": 11,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": -1,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 11: rotate #77",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 77,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 12: rotate #34",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 34,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 13,
+                    "y": 10,
+                    "message": "inserter picks from long-handed-inserter at (14,10)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 12,
+                    "y": 11,
+                    "message": "logistic-science-pack gets no inserter"
+                }
+            ]
+        },
+        {
+            "name": "mutation 13: move #3",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 3,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 5,
+                    "y": 2,
+                    "message": "assembling-machine-3 and inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 5,
+                    "y": 0,
+                    "message": "assembling-machine-3 and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 1,
+                    "y": 2,
+                    "message": "fast-inserter drops into nothing at (2,2)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 14: set_item #97",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 97,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 15: remove #51",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 51,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 9,
+                    "y": 4,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 10,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 12,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no iron-gear-wheel"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 8,
+                    "y": 11,
+                    "message": "transport-belt gets no iron-gear-wheel"
+                }
+            ]
+        },
+        {
+            "name": "mutation 16: remove #48",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 48,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 12,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no iron-gear-wheel"
+                }
+            ]
+        },
+        {
+            "name": "mutation 17: remove #34",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 34,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 12,
+                    "y": 11,
+                    "message": "logistic-science-pack gets no inserter"
+                }
+            ]
+        },
+        {
+            "name": "mutation 18: remove #107",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 107,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 5,
+                    "y": 12,
+                    "message": "inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 3,
+                    "y": 7,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 1,
+                    "y": 11,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": -1,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 19: rotate #103",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 103,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 20: rotate #18",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 18,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter picks from nothing at (5,10)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter drops into inserter at (5,12)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 2,
+                    "y": 9,
+                    "message": "automation-science-pack makes 0.25/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 6,
+                    "y": 15,
+                    "message": "the automation-science-pack output port gets 0.25/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 21: move #4",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 4,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 2,
+                    "message": "assembling-machine-3 and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 9,
+                    "y": 4,
+                    "message": "assembling-machine-3 and express-underground-belt share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 5,
+                    "y": 2,
+                    "message": "inserter drops into nothing at (6,2)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 6,
+                    "y": 5,
+                    "message": "inserter drops into nothing at (6,4)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 13,
+                    "y": 9,
+                    "message": "consumers here need 0.17/s of inserter but only 0.00/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 11,
+                    "y": 9,
+                    "message": "consumers here need 0.17/s of inserter but only 0.00/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 22: set_item #96",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 96,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 23: remove #53",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 53,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 1,
+                    "y": 9,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 10,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 12,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no iron-gear-wheel"
+                }
+            ]
+        },
+        {
+            "name": "mutation 24: remove #39, move #5",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 39,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "move",
+                    "index": 5,
+                    "dx": -1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 3,
+                    "y": 7,
+                    "message": "assembling-machine-3 and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 6,
+                    "y": 5,
+                    "message": "inserter picks from nothing at (6,6)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 7,
+                    "y": 8,
+                    "message": "fast-inserter drops into nothing at (6,8)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 6,
+                    "y": 9,
+                    "message": "fast-inserter drops into nothing at (6,8)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 5,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 10,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 12,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no iron-gear-wheel"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 3,
+                    "message": "copper-cable gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 6,
+                    "y": 2,
+                    "message": "inserter gets no iron-gear-wheel"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 8,
+                    "y": 11,
+                    "message": "transport-belt gets no iron-gear-wheel"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 2,
+                    "y": 7,
+                    "message": "consumers here need 0.25/s of iron-gear-wheel but only 0.00/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 25: remove #110, remove #54",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 110,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 54,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 1,
+                    "y": 4,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 8,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 10,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 12,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 0,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no copper-plate"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack gets no iron-gear-wheel"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 8,
+                    "y": 11,
+                    "message": "transport-belt gets no iron-gear-wheel"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 12,
+                    "y": 1,
+                    "message": "assembling-machine-3 is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 1,
+                    "message": "inserter is outside every pole's supply area"
+                }
+            ]
+        },
+        {
+            "name": "mutation 26: rotate #19, remove #26",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 19,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 26,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 5,
+                    "y": 12,
+                    "message": "inserter picks from inserter at (5,11)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 5,
+                    "y": 12,
+                    "message": "inserter drops into nothing at (5,13)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 13,
+                    "y": 9,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 2,
+                    "y": 12,
+                    "message": "automation-science-pack makes 0.25/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 12,
+                    "y": 11,
+                    "message": "logistic-science-pack gets no inserter"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 6,
+                    "y": 15,
+                    "message": "the automation-science-pack output port gets 0.25/s of 0.50/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 27: set_item #18, remove #105",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 18,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                },
+                {
+                    "op": "remove",
+                    "index": 105,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 5,
+                    "y": 11,
+                    "message": "inserter is filtered to iron-plate, which automation-science-pack does not make"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 5,
+                    "y": 12,
+                    "message": "inserter drops automation-science-pack onto a lane of [automation-science-pack, iron-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 6,
+                    "y": 12,
+                    "message": "items [automation-science-pack, iron-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 2,
+                    "y": 9,
+                    "message": "automation-science-pack makes 0.25/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 6,
+                    "y": 15,
+                    "message": "the automation-science-pack output port gets 0.25/s of 0.50/s"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 14,
+                    "y": 9,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        }
+    ]
+}

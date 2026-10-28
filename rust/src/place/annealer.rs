@@ -2,6 +2,7 @@ use super::place_model::PlaceModel;
 use super::placement::Placement;
 use crate::plan::ProductionPlan;
 use crate::util::splittable_random::SplittableRandom;
+use crate::util::sum_f64;
 use indexmap::IndexMap;
 use std::collections::HashMap;
 
@@ -562,8 +563,8 @@ impl<'a> Annealer<'a> {
                         self.revert();
                     }
                 }
-                let mean = deltas.iter().sum::<f64>() / deltas.len() as f64;
-                let sd = (deltas.iter().map(|d| (d - mean) * (d - mean)).sum::<f64>() / 1.max(deltas.len() as i64 - 1) as f64).sqrt();
+                let mean = sum_f64(deltas.iter().copied()) / deltas.len() as f64;
+                let sd = (sum_f64(deltas.iter().map(|d| (d - mean) * (d - mean))) / 1.max(deltas.len() as i64 - 1) as f64).sqrt();
                 tun.t0_factor * sd.max(1e-6) * o.t0_scale
             }
         };

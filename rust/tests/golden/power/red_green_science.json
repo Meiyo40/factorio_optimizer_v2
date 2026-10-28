@@ -1,0 +1,613 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/red_green_science",
+    "job": "docs/examples/red_green_science.json",
+    "w": 16,
+    "h": 16,
+    "sources": [
+        {
+            "tile": {
+                "x": -1,
+                "y": 0
+            },
+            "item": "copper-plate",
+            "rate": 1.25,
+            "fluid": false,
+            "lane": -1,
+            "port": -1
+        },
+        {
+            "tile": {
+                "x": -1,
+                "y": 6
+            },
+            "item": "iron-plate",
+            "rate": 3.75,
+            "fluid": false,
+            "lane": -1,
+            "port": -1
+        }
+    ],
+    "outputs": [
+        {
+            "tile": {
+                "x": 16,
+                "y": 8
+            },
+            "item": "automation-science-pack",
+            "rate": 0.5,
+            "fluid": false,
+            "port": -1
+        },
+        {
+            "tile": {
+                "x": 5,
+                "y": 16
+            },
+            "item": "logistic-science-pack",
+            "rate": 0.5,
+            "fluid": false,
+            "port": -1
+        }
+    ],
+    "power": [
+        {
+            "name": "medium poles in the ring",
+            "pole": "medium-electric-pole",
+            "ring": true,
+            "lattice": false,
+            "ok": true,
+            "disconnected": false,
+            "poles": [
+                {
+                    "x": 10,
+                    "y": 9
+                },
+                {
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "x": 12,
+                    "y": 5
+                },
+                {
+                    "x": 3,
+                    "y": 11
+                },
+                {
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "x": 13,
+                    "y": 11
+                },
+                {
+                    "x": 12,
+                    "y": 1
+                }
+            ],
+            "wires": [
+                [
+                    0,
+                    5
+                ],
+                [
+                    0,
+                    2
+                ],
+                [
+                    2,
+                    6
+                ],
+                [
+                    6,
+                    4
+                ],
+                [
+                    4,
+                    1
+                ],
+                [
+                    1,
+                    3
+                ]
+            ],
+            "uncovered": []
+        },
+        {
+            "name": "medium poles inside the box",
+            "pole": "medium-electric-pole",
+            "ring": false,
+            "lattice": false,
+            "ok": true,
+            "disconnected": false,
+            "poles": [
+                {
+                    "x": 10,
+                    "y": 9
+                },
+                {
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "x": 12,
+                    "y": 5
+                },
+                {
+                    "x": 3,
+                    "y": 11
+                },
+                {
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "x": 13,
+                    "y": 11
+                },
+                {
+                    "x": 12,
+                    "y": 1
+                }
+            ],
+            "wires": [
+                [
+                    0,
+                    5
+                ],
+                [
+                    0,
+                    2
+                ],
+                [
+                    2,
+                    6
+                ],
+                [
+                    6,
+                    4
+                ],
+                [
+                    4,
+                    1
+                ],
+                [
+                    1,
+                    3
+                ]
+            ],
+            "uncovered": []
+        },
+        {
+            "name": "small poles in the ring",
+            "pole": "small-electric-pole",
+            "ring": true,
+            "lattice": false,
+            "ok": true,
+            "disconnected": false,
+            "poles": [
+                {
+                    "x": 10,
+                    "y": 10
+                },
+                {
+                    "x": 10,
+                    "y": 5
+                },
+                {
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "x": 11,
+                    "y": 1
+                },
+                {
+                    "x": 4,
+                    "y": 12
+                },
+                {
+                    "x": 14,
+                    "y": 5
+                },
+                {
+                    "x": 5,
+                    "y": 11
+                },
+                {
+                    "x": 5,
+                    "y": 6
+                },
+                {
+                    "x": 10,
+                    "y": 13
+                },
+                {
+                    "x": 13,
+                    "y": 11
+                }
+            ],
+            "wires": [
+                [
+                    0,
+                    9
+                ],
+                [
+                    0,
+                    10
+                ],
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    6
+                ],
+                [
+                    1,
+                    4
+                ],
+                [
+                    0,
+                    7
+                ],
+                [
+                    7,
+                    5
+                ],
+                [
+                    7,
+                    2
+                ],
+                [
+                    2,
+                    8
+                ],
+                [
+                    8,
+                    3
+                ]
+            ],
+            "uncovered": []
+        },
+        {
+            "name": "substations in the ring",
+            "pole": "substation",
+            "ring": true,
+            "lattice": false,
+            "ok": true,
+            "disconnected": false,
+            "poles": [
+                {
+                    "x": 16,
+                    "y": 5
+                },
+                {
+                    "x": -1,
+                    "y": 4
+                },
+                {
+                    "x": -1,
+                    "y": 11
+                }
+            ],
+            "wires": [
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    2
+                ]
+            ],
+            "uncovered": []
+        },
+        {
+            "name": "medium pole lattice",
+            "pole": "medium-electric-pole",
+            "ring": true,
+            "lattice": true,
+            "ok": true,
+            "disconnected": false,
+            "poles": [
+                {
+                    "x": 3,
+                    "y": 3
+                },
+                {
+                    "x": 10,
+                    "y": 3
+                },
+                {
+                    "x": 15,
+                    "y": 3
+                },
+                {
+                    "x": 3,
+                    "y": 10
+                },
+                {
+                    "x": 10,
+                    "y": 10
+                },
+                {
+                    "x": 15,
+                    "y": 10
+                },
+                {
+                    "x": 3,
+                    "y": 15
+                },
+                {
+                    "x": 10,
+                    "y": 15
+                },
+                {
+                    "x": 15,
+                    "y": 15
+                }
+            ],
+            "wires": [
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    2
+                ],
+                [
+                    0,
+                    3
+                ],
+                [
+                    3,
+                    6
+                ],
+                [
+                    1,
+                    4
+                ],
+                [
+                    4,
+                    5
+                ],
+                [
+                    4,
+                    7
+                ],
+                [
+                    5,
+                    8
+                ]
+            ],
+            "uncovered": []
+        }
+    ],
+    "harness": {
+        "entities": [
+            {
+                "name": "fast-transport-belt",
+                "kind": "BELT",
+                "x": -1,
+                "y": -1,
+                "dir": "S",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-inserter",
+                "kind": "INSERTER",
+                "x": 0,
+                "y": -1,
+                "dir": "E",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "infinity-chest",
+                "kind": "INFINITY_CHEST",
+                "x": 1,
+                "y": -1,
+                "dir": "N",
+                "item": "copper-plate",
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-transport-belt",
+                "kind": "BELT",
+                "x": -1,
+                "y": 5,
+                "dir": "S",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-inserter",
+                "kind": "INSERTER",
+                "x": -2,
+                "y": 5,
+                "dir": "W",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "infinity-chest",
+                "kind": "INFINITY_CHEST",
+                "x": -3,
+                "y": 5,
+                "dir": "N",
+                "item": "iron-plate",
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-transport-belt",
+                "kind": "BELT",
+                "x": -1,
+                "y": 4,
+                "dir": "S",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-inserter",
+                "kind": "INSERTER",
+                "x": -2,
+                "y": 4,
+                "dir": "W",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "infinity-chest",
+                "kind": "INFINITY_CHEST",
+                "x": -3,
+                "y": 4,
+                "dir": "N",
+                "item": "iron-plate",
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-transport-belt",
+                "kind": "BELT",
+                "x": 17,
+                "y": 8,
+                "dir": "E",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-inserter",
+                "kind": "INSERTER",
+                "x": 17,
+                "y": 9,
+                "dir": "N",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "infinity-chest",
+                "kind": "INFINITY_CHEST",
+                "x": 17,
+                "y": 10,
+                "dir": "N",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-transport-belt",
+                "kind": "BELT",
+                "x": 5,
+                "y": 17,
+                "dir": "S",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "fast-inserter",
+                "kind": "INSERTER",
+                "x": 4,
+                "y": 17,
+                "dir": "E",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            },
+            {
+                "name": "infinity-chest",
+                "kind": "INFINITY_CHEST",
+                "x": 3,
+                "y": 17,
+                "dir": "N",
+                "item": null,
+                "fluid": null,
+                "drain": false
+            }
+        ],
+        "tiles": [
+            {
+                "x": -1,
+                "y": -1
+            },
+            {
+                "x": 0,
+                "y": -1
+            },
+            {
+                "x": 1,
+                "y": -1
+            },
+            {
+                "x": -3,
+                "y": 4
+            },
+            {
+                "x": -2,
+                "y": 4
+            },
+            {
+                "x": -1,
+                "y": 4
+            },
+            {
+                "x": -3,
+                "y": 5
+            },
+            {
+                "x": -2,
+                "y": 5
+            },
+            {
+                "x": -1,
+                "y": 5
+            },
+            {
+                "x": 17,
+                "y": 8
+            },
+            {
+                "x": 17,
+                "y": 9
+            },
+            {
+                "x": 17,
+                "y": 10
+            },
+            {
+                "x": 3,
+                "y": 17
+            },
+            {
+                "x": 4,
+                "y": 17
+            },
+            {
+                "x": 5,
+                "y": 17
+            }
+        ],
+        "warnings": []
+    }
+}

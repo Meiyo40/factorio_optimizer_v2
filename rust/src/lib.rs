@@ -7,4 +7,6 @@ pub mod emit;
 pub mod geom;
 pub mod place;
 pub mod plan;
+pub mod power;
 pub mod util;
+pub mod validate;

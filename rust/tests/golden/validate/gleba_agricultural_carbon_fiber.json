@@ -1,0 +1,2917 @@
+{
+    "upstream": "022c312",
+    "example": "docs/examples/gleba_agricultural_carbon_fiber",
+    "job": "docs/examples/gleba_agricultural_carbon_fiber.json",
+    "w": 50,
+    "h": 50,
+    "spec": {
+        "pole_ring": 1,
+        "require_power": true,
+        "fluid_mode": "pipes",
+        "check_rates": true,
+        "inserter_rate": {
+            "inserter": [
+                0.83,
+                0.581
+            ],
+            "long-handed-inserter": [
+                1.2,
+                0.84
+            ],
+            "fast-inserter": [
+                2.31,
+                1.617
+            ],
+            "bulk-inserter": [
+                4.62,
+                3.234
+            ]
+        },
+        "machines": [
+            {
+                "tile": {
+                    "x": 11,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 7,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 23
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "agricultural-science-pack",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "pentapod-egg"
+                    ],
+                    "output_rate": 0.7142857142857143,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.4761904761904762,
+                        "pentapod-egg": 0.4761904761904762,
+                        "nutrients": 0.2380952380952381
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "bioflux",
+                    "ingredients": [
+                        "jelly",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 1.5429896539422052,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako-mash": 3.857474134855513,
+                        "jelly": 3.0859793078844104,
+                        "nutrients": 0.19287370674277565
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 34
+                },
+                "spec": {
+                    "product": "bioflux",
+                    "ingredients": [
+                        "jelly",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 1.5429896539422052,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako-mash": 3.857474134855513,
+                        "jelly": 3.0859793078844104,
+                        "nutrients": 0.19287370674277565
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 19,
+                    "y": 43
+                },
+                "spec": {
+                    "product": "bioflux",
+                    "ingredients": [
+                        "jelly",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 1.5429896539422052,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako-mash": 3.857474134855513,
+                        "jelly": 3.0859793078844104,
+                        "nutrients": 0.19287370674277565
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 10,
+                    "y": 45
+                },
+                "spec": {
+                    "product": "bioflux",
+                    "ingredients": [
+                        "jelly",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 1.5429896539422052,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako-mash": 3.857474134855513,
+                        "jelly": 3.0859793078844104,
+                        "nutrients": 0.19287370674277565
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "sulfur",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "spoilage"
+                    ],
+                    "output_rate": 2.2222222222222228,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "spoilage": 3.7037037037037046,
+                        "bioflux": 0.7407407407407409,
+                        "nutrients": 0.18518518518518523
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 22,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "sulfur",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "spoilage"
+                    ],
+                    "output_rate": 2.2222222222222228,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "spoilage": 3.7037037037037046,
+                        "bioflux": 0.7407407407407409,
+                        "nutrients": 0.18518518518518523
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": 19
+                },
+                "spec": {
+                    "product": "sulfur",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients",
+                        "spoilage"
+                    ],
+                    "output_rate": 2.2222222222222228,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "spoilage": 3.7037037037037046,
+                        "bioflux": 0.7407407407407409,
+                        "nutrients": 0.18518518518518523
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 30,
+                    "y": 3
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 0.8333333333333338,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.6666666666666676
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 0.8333333333333338,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.6666666666666676
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 0
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 0.8333333333333338,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.6666666666666676
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 4
+                },
+                "spec": {
+                    "product": "carbon",
+                    "ingredients": [
+                        "coal"
+                    ],
+                    "output_rate": 0.8333333333333338,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "coal": 1.6666666666666676
+                    },
+                    "needs_fluid": "sulfuric-acid",
+                    "fluid_in": {
+                        "sulfuric-acid": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 17
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 25
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 38,
+                    "y": 9
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 43,
+                    "y": 18
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 28,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 45,
+                    "y": 10
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 24
+                },
+                "spec": {
+                    "product": "carbon-fiber",
+                    "ingredients": [
+                        "carbon",
+                        "nutrients",
+                        "yumako-mash"
+                    ],
+                    "output_rate": 0.5555555555555557,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "carbon": 0.37037037037037046,
+                        "yumako-mash": 3.7037037037037046,
+                        "nutrients": 0.23148148148148154
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 8,
+                    "y": 1
+                },
+                "spec": {
+                    "product": "iron-plate",
+                    "ingredients": [],
+                    "output_rate": 1.3333333333333335,
+                    "sink_rate": 0.0,
+                    "demand": {},
+                    "needs_fluid": "molten-iron",
+                    "fluid_in": {
+                        "molten-iron": 1
+                    },
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 1,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "jelly",
+                    "ingredients": [
+                        "jellynut",
+                        "nutrients"
+                    ],
+                    "output_rate": 6.202818408847666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "jellynut": 1.0286597692948036,
+                        "nutrients": 0.12858247116185045
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "jellynut-seed": 0.03085979307884411,
+                        "jelly": 6.171958615768822
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 3,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "jelly",
+                    "ingredients": [
+                        "jellynut",
+                        "nutrients"
+                    ],
+                    "output_rate": 6.202818408847666,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "jellynut": 1.0286597692948036,
+                        "nutrients": 0.12858247116185045
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "jellynut-seed": 0.03085979307884411,
+                        "jelly": 6.171958615768822
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 2,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "molten-iron",
+                    "ingredients": [
+                        "calcite",
+                        "iron-ore"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-ore": 0.5925925925925928,
+                        "calcite": 0.011851851851851855
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {
+                        "molten-iron": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 15,
+                    "y": 26
+                },
+                "spec": {
+                    "product": "nutrients",
+                    "ingredients": [
+                        "bioflux",
+                        "nutrients"
+                    ],
+                    "output_rate": 7.396836722559163,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "bioflux": 0.6164030602132636,
+                        "nutrients": 0.03082015301066318
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 24,
+                    "y": 2
+                },
+                "spec": {
+                    "product": "sulfuric-acid",
+                    "ingredients": [
+                        "iron-plate",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.6666666666666669,
+                        "sulfur": 3.3333333333333344
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "sulfuric-acid": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": 3
+                },
+                "spec": {
+                    "product": "sulfuric-acid",
+                    "ingredients": [
+                        "iron-plate",
+                        "sulfur"
+                    ],
+                    "output_rate": 0.0,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "iron-plate": 0.6666666666666669,
+                        "sulfur": 3.3333333333333344
+                    },
+                    "needs_fluid": "water",
+                    "fluid_in": {
+                        "water": 1
+                    },
+                    "fluid_out": {
+                        "sulfuric-acid": 1
+                    },
+                    "products": {},
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 45,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 35,
+                    "y": 30
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 45
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 45,
+                    "y": 47
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 45,
+                    "y": 31
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 26,
+                    "y": 38
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            },
+            {
+                "tile": {
+                    "x": 34,
+                    "y": 39
+                },
+                "spec": {
+                    "product": "yumako-mash",
+                    "ingredients": [
+                        "nutrients",
+                        "yumako"
+                    ],
+                    "output_rate": 5.47231801905366,
+                    "sink_rate": 0.0,
+                    "demand": {
+                        "yumako": 1.8060455508427924,
+                        "nutrients": 0.22575569385534905
+                    },
+                    "needs_fluid": null,
+                    "fluid_in": {},
+                    "fluid_out": {},
+                    "products": {
+                        "yumako-seed": 0.05418136652528377,
+                        "yumako-mash": 5.418136652528377
+                    },
+                    "sinks": {}
+                }
+            }
+        ],
+        "sources": [
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 35
+                },
+                "item": "pentapod-egg",
+                "rate": 3.3333333333333335,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 18,
+                    "y": -1
+                },
+                "item": "spoilage",
+                "rate": 11.111111111111114,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 41,
+                    "y": -1
+                },
+                "item": "coal",
+                "rate": 6.6666666666666705,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 42
+                },
+                "item": "jellynut",
+                "rate": 2.0573195385896073,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 8
+                },
+                "item": "iron-ore",
+                "rate": 0.5925925925925928,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": -1,
+                    "y": 1
+                },
+                "item": "calcite",
+                "rate": 0.011851851851851855,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 50,
+                    "y": 36
+                },
+                "item": "yumako",
+                "rate": 7.22418220337117,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 24,
+                    "y": 50
+                },
+                "item": "yumako",
+                "rate": 9.030227754213962,
+                "fluid": false,
+                "lane": -1,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 14,
+                    "y": -1
+                },
+                "item": "water",
+                "rate": 133.33333333333334,
+                "fluid": true,
+                "lane": -1,
+                "port": -1
+            }
+        ],
+        "outputs": [
+            {
+                "tile": {
+                    "x": 5,
+                    "y": -1
+                },
+                "item": "agricultural-science-pack",
+                "rate": 5.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 24,
+                    "y": -1
+                },
+                "item": "carbon-fiber",
+                "rate": 5.0,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 16,
+                    "y": 50
+                },
+                "item": "jellynut-seed",
+                "rate": 0.06171958615768822,
+                "fluid": false,
+                "port": -1
+            },
+            {
+                "tile": {
+                    "x": 50,
+                    "y": 28
+                },
+                "item": "yumako-seed",
+                "rate": 0.4876322987275539,
+                "fluid": false,
+                "port": -1
+            }
+        ],
+        "outside_allowed": [
+            {
+                "x": 5,
+                "y": -1
+            },
+            {
+                "x": 14,
+                "y": -1
+            },
+            {
+                "x": 18,
+                "y": -1
+            },
+            {
+                "x": 24,
+                "y": -1
+            },
+            {
+                "x": 41,
+                "y": -1
+            },
+            {
+                "x": -1,
+                "y": 1
+            },
+            {
+                "x": -1,
+                "y": 8
+            },
+            {
+                "x": 50,
+                "y": 28
+            },
+            {
+                "x": -1,
+                "y": 35
+            },
+            {
+                "x": 50,
+                "y": 36
+            },
+            {
+                "x": -1,
+                "y": 42
+            },
+            {
+                "x": 16,
+                "y": 50
+            },
+            {
+                "x": 24,
+                "y": 50
+            }
+        ]
+    },
+    "cases": [
+        {
+            "name": "as committed",
+            "ops": [],
+            "errors": []
+        },
+        {
+            "name": "mutation 0: remove #648",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 648,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "STARVED",
+                    "x": 50,
+                    "y": 28,
+                    "message": "the yumako-seed output port gets 0.05/s of 0.49/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 1: remove #1106",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1106,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 35,
+                    "y": 30,
+                    "message": "yumako-processing needs 1.81/s of yumako, its inserters move 1.62/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 33,
+                    "y": 31,
+                    "message": "consumers here need 1.81/s of yumako but only 1.62/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 2: remove #1177",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1177,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 16,
+                    "y": 12,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 17,
+                    "y": 9,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 17,
+                    "y": 10,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 17,
+                    "y": 11,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 21,
+                    "y": 12,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 3: rotate #633",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 633,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "STARVED",
+                    "x": 50,
+                    "y": 28,
+                    "message": "the yumako-seed output port gets 0.22/s of 0.49/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 4: rotate #610",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 610,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 21,
+                    "y": 37,
+                    "message": "long-handed-inserter picks from fast-inserter at (19,37)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 21,
+                    "y": 37,
+                    "message": "long-handed-inserter drops into nothing at (23,37)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 19,
+                    "y": 34,
+                    "message": "bioflux gets no nutrients"
+                }
+            ]
+        },
+        {
+            "name": "mutation 5: move #26",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 26,
+                    "dx": -1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 33,
+                    "y": 25,
+                    "message": "biochamber and inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 36,
+                    "y": 28,
+                    "message": "long-handed-inserter drops into nothing at (36,26)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 36,
+                    "y": 23,
+                    "message": "fast-inserter drops into nothing at (36,24)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 37,
+                    "y": 25,
+                    "message": "long-handed-inserter feeds carbon-fiber from a belt of [nutrients]"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 24,
+                    "y": -1,
+                    "message": "the carbon-fiber output port gets 4.44/s of 5.00/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 6: set_item #183",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 183,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 7: remove #492",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 492,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 10,
+                    "y": 7,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 3,
+                    "y": 7,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 1,
+                    "y": 9,
+                    "message": "agricultural-science-pack gets no nutrients"
+                }
+            ]
+        },
+        {
+            "name": "mutation 8: remove #1148",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1148,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 38,
+                    "y": 4,
+                    "message": "carbon gets no sulfuric-acid here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 46,
+                    "y": 0,
+                    "message": "carbon gets no sulfuric-acid here"
+                },
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 45,
+                    "y": 7,
+                    "message": "carbon gets no sulfuric-acid here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 9: remove #582",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 582,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNREACHABLE",
+                    "x": 10,
+                    "y": 49,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 10,
+                    "y": 45,
+                    "message": "bioflux gets no nutrients"
+                }
+            ]
+        },
+        {
+            "name": "mutation 10: remove #214",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 214,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 24,
+                    "y": 2,
+                    "message": "sulfuric-acid needs 3.33/s of sulfur, its inserters move 3.23/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 28,
+                    "y": 2,
+                    "message": "consumers here need 3.33/s of sulfur but only 3.23/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 11: remove #1223",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1223,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 45,
+                    "y": 17,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 40,
+                    "y": 15,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 28,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 40,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 12: rotate #975",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 975,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNREACHABLE",
+                    "x": 20,
+                    "y": 17,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 18,
+                    "y": 19,
+                    "message": "biosulfur needs 3.70/s of spoilage, its inserters move 3.23/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 18,
+                    "y": 17,
+                    "message": "consumers here need 3.70/s of spoilage but only 3.23/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 13: rotate #1105",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 1105,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 33,
+                    "y": 39,
+                    "message": "fast-inserter picks from nothing at (33,38)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 33,
+                    "y": 39,
+                    "message": "fast-inserter drops into fast-inserter at (33,40)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 34,
+                    "y": 39,
+                    "message": "yumako-processing needs 1.81/s of yumako, its inserters move 1.62/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 32,
+                    "y": 40,
+                    "message": "consumers here need 1.81/s of yumako but only 1.62/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 14: move #24",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 24,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 31,
+                    "y": 12,
+                    "message": "biochamber and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 31,
+                    "y": 11,
+                    "message": "biochamber and fast-inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 31,
+                    "y": 10,
+                    "message": "biochamber and medium-electric-pole share a tile"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 31,
+                    "y": 12,
+                    "message": "long-handed-inserter feeds carbon-fiber from a belt of [nutrients]"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 24,
+                    "y": -1,
+                    "message": "the carbon-fiber output port gets 4.44/s of 5.00/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 15: set_item #769",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 769,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 16: remove #1008",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1008,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 40,
+                    "y": 6,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 35,
+                    "y": 6,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 34,
+                    "y": 5,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 34,
+                    "y": 4,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 33,
+                    "y": 2,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 30,
+                    "y": 3,
+                    "message": "carbon gets no coal"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 35,
+                    "y": 2,
+                    "message": "carbon gets no coal"
+                }
+            ]
+        },
+        {
+            "name": "mutation 17: remove #1161",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1161,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 27,
+                    "y": 4,
+                    "message": "sulfuric-acid gets no water here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 18: remove #619",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 619,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "STARVED",
+                    "x": 50,
+                    "y": 28,
+                    "message": "the yumako-seed output port gets 0.38/s of 0.49/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 19: remove #45",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 45,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 26,
+                    "y": 25,
+                    "message": "carbon-fiber needs 3.70/s of yumako-mash, its inserters move 3.24/s"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 26,
+                    "y": 31,
+                    "message": "yumako-processing makes 5.42/s yumako-mash but its output inserters move 4.71/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 28,
+                    "y": 22,
+                    "message": "consumers here need 1.30/s of yumako-mash but only 0.84/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 40,
+                    "y": 13,
+                    "message": "consumers here need 3.70/s of yumako-mash but only 3.46/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 20: remove #1180",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1180,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNPOWERED",
+                    "x": 12,
+                    "y": 44,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 41,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 9,
+                    "y": 40,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 11,
+                    "y": 44,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 13,
+                    "y": 40,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 11,
+                    "y": 48,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 21: rotate #1165",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 1165,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UNREACHABLE",
+                    "x": 18,
+                    "y": 9,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 18,
+                    "y": 10,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 18,
+                    "y": 11,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 20,
+                    "y": 11,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 20,
+                    "y": 10,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 20,
+                    "y": 9,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 19,
+                    "y": 17,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 18,
+                    "y": 17,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 20,
+                    "y": 17,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 14,
+                    "y": 9,
+                    "message": "biosulfur gets no spoilage"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 22,
+                    "y": 9,
+                    "message": "biosulfur gets no spoilage"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 19,
+                    "message": "biosulfur gets no spoilage"
+                }
+            ]
+        },
+        {
+            "name": "mutation 22: rotate #268",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 268,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 40,
+                    "y": 8,
+                    "message": "inserter picks from nothing at (41,8)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 40,
+                    "y": 8,
+                    "message": "inserter drops into nothing at (39,8)"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 38,
+                    "y": 9,
+                    "message": "carbon-fiber gets no carbon"
+                }
+            ]
+        },
+        {
+            "name": "mutation 23: move #22",
+            "ops": [
+                {
+                    "op": "move",
+                    "index": 22,
+                    "dx": -1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 37,
+                    "y": 11,
+                    "message": "biochamber and long-handed-inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 37,
+                    "y": 9,
+                    "message": "biochamber and fast-inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 40,
+                    "y": 8,
+                    "message": "inserter drops into nothing at (40,9)"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 40,
+                    "y": 12,
+                    "message": "fast-inserter drops into nothing at (40,11)"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 37,
+                    "y": 11,
+                    "message": "long-handed-inserter feeds carbon-fiber from a belt of [nutrients]"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 24,
+                    "y": -1,
+                    "message": "the carbon-fiber output port gets 4.44/s of 5.00/s"
+                }
+            ]
+        },
+        {
+            "name": "mutation 24: set_item #611",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 611,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                }
+            ],
+            "errors": []
+        },
+        {
+            "name": "mutation 25: remove #1065",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1065,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 48,
+                    "y": 35,
+                    "message": "underground entrance has no exit within reach (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 47,
+                    "y": 45,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 46,
+                    "y": 45,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 34,
+                    "y": 45,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 32,
+                    "y": 48,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 34,
+                    "y": 47,
+                    "message": "yumako-processing gets no yumako"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 45,
+                    "y": 47,
+                    "message": "yumako-processing gets no yumako"
+                }
+            ]
+        },
+        {
+            "name": "mutation 26: remove #1136",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1136,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "FLUID_MISSING",
+                    "x": 45,
+                    "y": 7,
+                    "message": "carbon gets no sulfuric-acid here"
+                }
+            ]
+        },
+        {
+            "name": "mutation 27: remove #296, move #14",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 296,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "move",
+                    "index": 14,
+                    "dx": 1,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "OVERLAP",
+                    "x": 33,
+                    "y": 3,
+                    "message": "chemical-plant and express-transport-belt share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 33,
+                    "y": 5,
+                    "message": "chemical-plant and fast-inserter share a tile"
+                },
+                {
+                    "type": "OVERLAP",
+                    "x": 33,
+                    "y": 4,
+                    "message": "chemical-plant and fast-inserter share a tile"
+                },
+                {
+                    "type": "INSERTER_BAD_DROP",
+                    "x": 29,
+                    "y": 19,
+                    "message": "long-handed-inserter drops into nothing at (31,19)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 24,
+                    "y": -1,
+                    "message": "the carbon-fiber output port gets 0.56/s of 5.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 41,
+                    "y": 27,
+                    "message": "consumers here need 0.37/s of carbon but only 0.07/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 27,
+                    "y": 23,
+                    "message": "consumers here need 0.37/s of carbon but only 0.20/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 41,
+                    "y": 20,
+                    "message": "consumers here need 0.37/s of carbon but only 0.00/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 28: remove #1182, remove #206",
+            "ops": [
+                {
+                    "op": "remove",
+                    "index": 1182,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 206,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "UG_UNPAIRED",
+                    "x": 25,
+                    "y": 7,
+                    "message": "underground exit has no entrance (net null)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 25,
+                    "y": 6,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 26,
+                    "y": 6,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 28,
+                    "y": 2,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 18,
+                    "y": 3,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 24,
+                    "y": 2,
+                    "message": "sulfuric-acid gets no sulfur"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 14,
+                    "y": 3,
+                    "message": "sulfuric-acid needs 3.33/s of sulfur, its inserters move 2.40/s"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 5,
+                    "y": 17,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 9,
+                    "y": 12,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 4,
+                    "y": 16,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 16,
+                    "y": 23,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 24,
+                    "y": 42,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 10,
+                    "y": 43,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 23,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 31,
+                    "y": 41,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 40,
+                    "y": 15,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 43,
+                    "y": 7,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 28,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 30,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 8,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 29,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 44,
+                    "y": 39,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 33,
+                    "y": 44,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 22,
+                    "y": 36,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 10,
+                    "y": 36,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 4,
+                    "y": 37,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 3,
+                    "y": 46,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 31,
+                    "y": 10,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 44,
+                    "y": 46,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 6,
+                    "y": 22,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 22,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 43,
+                    "y": 3,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 21,
+                    "y": 21,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 48,
+                    "y": 10,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 4,
+                    "y": 31,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 26,
+                    "y": 48,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 38,
+                    "y": 36,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 16,
+                    "y": 31,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 44,
+                    "y": 36,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 36,
+                    "y": 5,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 50,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 21,
+                    "y": 46,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 31,
+                    "y": 17,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 34,
+                    "y": 50,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 8,
+                    "y": 22,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 25,
+                    "y": 35,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 7,
+                    "y": 29,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 11,
+                    "y": 48,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 40,
+                    "y": 16,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 42,
+                    "y": 15,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 16,
+                    "y": 33,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 2,
+                    "y": 44,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        },
+        {
+            "name": "mutation 29: rotate #1015, remove #99",
+            "ops": [
+                {
+                    "op": "rotate",
+                    "index": 1015,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                },
+                {
+                    "op": "remove",
+                    "index": 99,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_BAD_PICKUP",
+                    "x": 33,
+                    "y": 4,
+                    "message": "fast-inserter picks from fast-inserter at (33,5)"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 16,
+                    "y": 21,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 16,
+                    "y": 21,
+                    "message": "fast-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 16,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 24,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 7,
+                    "y": 14,
+                    "message": "long-handed-inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "UNREACHABLE",
+                    "x": 2,
+                    "y": 13,
+                    "message": "inserter picks from a belt no item reaches"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 11,
+                    "y": 19,
+                    "message": "agricultural-science-pack gets no bioflux"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 7,
+                    "y": 9,
+                    "message": "agricultural-science-pack gets no bioflux"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 1,
+                    "y": 9,
+                    "message": "agricultural-science-pack gets no bioflux"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 14,
+                    "y": 9,
+                    "message": "biosulfur gets no bioflux"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 22,
+                    "y": 9,
+                    "message": "biosulfur gets no bioflux"
+                },
+                {
+                    "type": "MISSING_INPUT",
+                    "x": 18,
+                    "y": 19,
+                    "message": "biosulfur gets no bioflux"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 30,
+                    "y": 3,
+                    "message": "carbon needs 1.67/s of coal, its inserters move 1.62/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 34,
+                    "y": 5,
+                    "message": "consumers here need 1.67/s of coal but only 1.62/s arrives (net null)"
+                }
+            ]
+        },
+        {
+            "name": "mutation 30: set_item #266, remove #1190",
+            "ops": [
+                {
+                    "op": "set_item",
+                    "index": 266,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": "iron-plate"
+                },
+                {
+                    "op": "remove",
+                    "index": 1190,
+                    "dx": 0,
+                    "dy": 0,
+                    "item": null
+                }
+            ],
+            "errors": [
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 46,
+                    "y": 2,
+                    "message": "long-handed-inserter is filtered to iron-plate, which carbon does not make"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 46,
+                    "y": 4,
+                    "message": "long-handed-inserter drops carbon onto a lane of [carbon, iron-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 37,
+                    "y": 5,
+                    "message": "long-handed-inserter drops carbon onto a lane of [carbon, iron-plate]"
+                },
+                {
+                    "type": "INSERTER_WRONG_ITEM",
+                    "x": 32,
+                    "y": 6,
+                    "message": "fast-inserter drops carbon onto a lane of [carbon, iron-plate]"
+                },
+                {
+                    "type": "CONTAMINATION",
+                    "x": 48,
+                    "y": 4,
+                    "message": "items [carbon, iron-plate] meet on one lane (net null)"
+                },
+                {
+                    "type": "INSERTER_RATE",
+                    "x": 43,
+                    "y": 0,
+                    "message": "carbon makes 0.83/s but its output inserters move 0.00/s"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 41,
+                    "y": 27,
+                    "message": "consumers here need 0.37/s of carbon but only 0.07/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 27,
+                    "y": 23,
+                    "message": "consumers here need 0.37/s of carbon but only 0.20/s arrives (net null)"
+                },
+                {
+                    "type": "STARVED",
+                    "x": 41,
+                    "y": 20,
+                    "message": "consumers here need 0.37/s of carbon but only 0.00/s arrives (net null)"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 44,
+                    "y": 40,
+                    "message": "long-handed-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 45,
+                    "y": 41,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 46,
+                    "y": 41,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "UNPOWERED",
+                    "x": 47,
+                    "y": 41,
+                    "message": "fast-inserter is outside every pole's supply area"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 44,
+                    "y": 46,
+                    "message": "pole is not wired to the rest"
+                },
+                {
+                    "type": "POLES_DISCONNECTED",
+                    "x": 45,
+                    "y": 50,
+                    "message": "pole is not wired to the rest"
+                }
+            ]
+        }
+    ]
+}
