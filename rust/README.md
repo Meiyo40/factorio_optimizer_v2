@@ -298,4 +298,61 @@ rust/tools/docker.sh run 'export BENCH_OUT=/work/out/bench; JAVA_TOOL_OPTIONS=-X
 rust/tools/docker.sh out rust/bench-results
 ```
 
+## Whole trials and real searches against the JVM
+
+The benchmarks above time the placer and the router apart. This one times what a search actually repeats: a whole
+trial (place, route, power, validate) on the golden trial cases, with the plan, config, tuning, box and seed read from
+the same files by both sides (`tests/golden/trial/cases`). The goldens prove the results are identical, and the
+benchmark checks it again (stage, score and notes) before it prints a ratio. Same container as above, 3 warm-up runs and
+the median of 5; a case over 10 s runs once to warm up and 3 times (the JVM gets little warm-up there, so the short
+cases carry the warm numbers).
+
+Baseline, before any speed change:
+
+| Case | Machines | Box | Stage | JVM | Rust | Ratio |
+|------|---------:|-----|-------|----:|-----:|------:|
+| iron gear wheels | 8 | 28x28 | ok | 62 ms | 30 ms | 2.08x |
+| red + green science | 10 | 20x20 | ok | 145 ms | 70 ms | 2.08x |
+| red + green science, fast belts | 10 | 24x24 | ok | 181 ms | 87 ms | 2.07x |
+| processing units | 10 | 26x26 | ok | 189 ms | 98 ms | 1.94x |
+| metallurgic science | 38 | 52x52 | ok | 1.57 s | 0.88 s | 1.79x |
+| chemical science | 43 | 40x40 | ok | 8.40 s | 5.40 s | 1.56x |
+| electromagnetic science | 36 | 46x46 | ok | 4.63 s | 3.08 s | 1.50x |
+| red + green science, 16x16 (near miss) | 10 | 16x16 | ok | 2.70 s | 1.84 s | 1.46x |
+| red + green science, 14x14 (spread) | 10 | 14x14 | route | 1.04 s | 0.68 s | 1.53x |
+| chemical science, tight | 43 | 36x36 | route | 33.9 s | 24.4 s | 1.39x |
+
+The ratio falls from 2x on small boxes to 1.4-1.5x on the trials that take seconds, the same shape as the router
+table: the longer a trial, the more of it is the A* at the tight frontier.
+
+A real search cannot be compared run for run: a plan built by Rust differs from Kotlin's in the last bits (OR-Tools
+against `microlp`), so the two searches diverge after the first trial. What can be compared is how much each gets done
+in the same time. Both run the same job with `threads` 8 and `time_budget_s` 120:
+
+| Job | | Trials | In the first 30 s | Best box | Improvements: box, and when it came |
+|-----|--|-------:|------------------:|----------|-------------------------------------|
+| red + green science (300 s job) | JVM | 980 | 253 | 16x16, score 300.4 | 30 at 0.9 s, 22 at 1.9 s, 18 at 2.5 s, 16 at 5.5 s |
+| | Rust | 1538 | 375 | 16x16, score 300.4 | 30 at 0.2 s, 22 at 0.4 s, 18 at 0.6 s, 16 at 1.7 s |
+| chemical science (900 s job) | JVM | 40 | 24 | 38x38, score 1657.8 | 62 at 5.9 s, 46 at 11.1 s, 38 at 92 s |
+| | Rust | 40 | 28 | 38x38, score 1661.7 | 62 at 2.7 s, 46 at 5.0 s, 38 at 107 s |
+
+The small job does 1.57x the trials in the same time. The chemical job is limited by a handful of long trials (a
+tight box takes 25-34 s whole), so both finish 40 trials; Rust reaches the bigger boxes in under half the time and ends
+11 s sooner (the budget is only checked between trials). The 38x38 box came later for Rust here, which is the search's
+luck with different plans, not speed.
+
+Where the Rust time goes, from callgrind on the near-miss trial (43.7 G instructions): the router's `route_net_from`
+with the A* inlined is 94% inclusive; bounds-checked slice indexing is about 16% of all instructions; `GridDims::in_full`
+alone is 4.6% (it is asked for every step of the underground loop); the heap is 13.7% (35.6M pushes, 19.3M pops); `relax`
+is called 134M times, 97M of them from the underground loop; the distance transform is 4.7%. The placer is 1.5-2% in a
+tight trial.
+
+Reproduce (Docker Desktop running; `sync` first, and leave the machine alone while it runs, the Docker VM shares the CPU):
+
+```sh
+rust/tools/speed.sh trials                       # the table of trials above (Kotlin, then Rust, same work checked)
+rust/tools/speed.sh search docs/examples/red_green_science.json 120 8
+rust/tools/speed.sh profile t3_16_s2             # callgrind
+```
+
 Licensed GPL-3.0 like the original.

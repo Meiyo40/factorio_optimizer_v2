@@ -34,6 +34,7 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.int
+import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
@@ -538,5 +539,60 @@ class GoldenTrialTest {
         case("acid_east", job("$jobs/acid.json").copy(outputs = listOf(ConfigSource("sulfuric-acid", edge = "east")), blocks = BlocksConfig(maxMachines = 2)))
         case("t3_reserved", t3.copy(blocks = BlocksConfig(maxMachines = 5), reserved = listOf(ReservedArea(w = 5, h = 4))))
         case("t3_repack_merge", t3.copy(blocks = BlocksConfig(maxMachines = 3, repack = true, merge = true)))
+    }
+    // ---- timing: runTrial on the golden trial cases ----
+    private val benchCases = listOf(
+        "t3_24_s1", "red_green_20_s1", "chem_40_s4", "em_science_46_s2", "metallurgic_52_s1", "t4_pipes_26_s1", "iron40_28_s1",
+        "t3_16_s2", "t3_spread_14_s1", "chem_tight_36_s7",
+    )
+
+    /**
+     * Times runTrial on cases of the committed trial goldens (rust/tests/golden/trial), reading their plan, config and
+     * tuning from the same files the Rust benchmark reads, so both sides do the same work (the goldens prove they
+     * get the same results). TRIAL_BENCH_OUT=<dir> writes trial_bench_kotlin.json there; BENCH_CASES picks cases
+     * (comma separated), BENCH_WARM and BENCH_REPS set the protocol (3 and 5; a case over 10 s runs 1 and 3 times).
+     */
+    @Test
+    fun benchTrials() {
+        val out = System.getenv("TRIAL_BENCH_OUT")?.let { File(it) } ?: return
+        out.mkdirs()
+        val dir = File("rust/tests/golden/trial")
+        val names = System.getenv("BENCH_CASES")?.split(",") ?: benchCases
+        val report = ArrayList<JsonElement>()
+        for (name in names) {
+            val g = Json.parseToJsonElement(File(dir, "cases/$name.json").readText()).jsonObject
+            fun path(key: String) = File(dir, g.getValue(key).jsonPrimitive.content)
+            val config = RunConfiguration.load(path("config").path)
+            val tuning = Tuning.load(path("tuning").path)
+            val plan = strictJson.decodeFromString(ProductionPlan.serializer(), path("plan").readText())
+            val w = g.getValue("w").jsonPrimitive.int; val h = g.getValue("h").jsonPrimitive.int
+            val seed = g.getValue("seed").jsonPrimitive.content.toLong()
+            val want = g.getValue("result").jsonObject
+            fun once(): Pair<Long, TrialResult> {
+                val t = System.nanoTime()
+                val r = runTrial(TestData.data, plan, config, tuning, w, h, seed)
+                return (System.nanoTime() - t) to r
+            }
+            val first = once()
+            check(first.second.stage == want.getValue("stage").jsonPrimitive.content && first.second.notes.size == want.getValue("notes").jsonArray.size) {
+                "$name: Kotlin no longer gives what the golden says (${first.second.stage})"
+            }
+            val heavy = first.first > 10_000_000_000L
+            val warm = (System.getenv("BENCH_WARM")?.toInt() ?: if (heavy) 1 else 3) - 1
+            val reps = System.getenv("BENCH_REPS")?.toInt() ?: if (heavy) 3 else 5
+            repeat(warm.coerceAtLeast(0)) { once() }
+            val runs = (0 until reps).map { once() }
+            val times = runs.map { it.first / 1e6 }.sorted()
+            val r = runs[0].second
+            report += buildJsonObject {
+                put("case", name); put("machines", plan.machines.size); put("w", w); put("h", h); put("seed", seed)
+                put("stage", r.stage); put("score", r.score); put("notes", r.notes.size)
+                put("median_ms", times[times.size / 2]); put("min_ms", times[0]); put("reps", reps)
+            }
+            println("bench $name: ${plan.machines.size} machines ${w}x$h -> ${r.stage}, median ${"%.1f".format(times[times.size / 2])} ms over $reps runs")
+        }
+        write(File(out, "trial_bench_kotlin.json"), buildJsonObject {
+            put("runtime", "jvm ${System.getProperty("java.version")}"); put("cases", JsonArray(report))
+        })
     }
 }
