@@ -347,12 +347,34 @@ alone is 4.6% (it is asked for every step of the underground loop); the heap is 
 is called 134M times, 97M of them from the underground loop; the distance transform is 4.7%. The placer is 1.5-2% in a
 tight trial.
 
+The same trial under callgrind's cache and branch simulation (`speed.sh profile t3_16_s2 "--cache-sim=yes
+--branch-sim=yes"`) says it is not memory-bound: 120M first-level data misses in 14.7G reads (0.8%) and 25k last-level
+misses, the working set stays in cache. What is left is branches: 512M of 8.4G conditional branches mispredicted (6.1%,
+in callgrind's simple predictor, which overstates what a real CPU does). They sit in the decisions the A* exists to make:
+`placeable` (64M), the pin test in `belt_cost` (58M), the heap's sift-down (101M) and push (41M), not in one spot a
+rewrite could remove.
+
+Two changes were tried on that trial, each alone, with every golden unchanged, and neither was kept:
+
+| Change | Instructions | Time (t3_16_s2) | Kept |
+|--------|-------------:|----------------:|------|
+| Underground loop: count once how many steps stay in the grid instead of `in_full` on every step, loop-invariant fields in locals | 43.74G to 40.91G (-6.5%) | 1841 to 1802 ms (-2%, the other cases within noise) | no |
+| Heap pop: a missing right child counts as infinity, so the child choice is a select | not measured | 1841.5 to 1841.6 ms (0%) | no |
+
+Fewer instructions bought almost no time, which is what a loop that waits on branches rather than on arithmetic does.
+Left alone, because the profile bounds what they can give: packing the per-state arrays into one struct (misses are
+under 1% of reads, 8% of the time at the very most), one `Vec` of (key, value) pairs for the heap (about 2-3%), a cheaper
+distance transform (4.7% in all). None would reach the 5% a change had to earn to be worth its complexity, so the port
+stays where the baseline puts it: 1.4x to 2.1x the JVM, more on small boxes.
+
 Reproduce (Docker Desktop running; `sync` first, and leave the machine alone while it runs, the Docker VM shares the CPU):
 
 ```sh
 rust/tools/speed.sh trials                       # the table of trials above (Kotlin, then Rust, same work checked)
 rust/tools/speed.sh search docs/examples/red_green_science.json 120 8
 rust/tools/speed.sh profile t3_16_s2             # callgrind
+rust/tools/speed.sh profile t3_16_s2 "--cache-sim=yes --branch-sim=yes"
+rust/tools/speed.sh rust t3_16_s2                # Rust only, against the JVM numbers of the last `trials` run
 ```
 
 Licensed GPL-3.0 like the original.

@@ -4,7 +4,9 @@
 #
 #   rust/tools/speed.sh trials [cases]       whole trials on golden cases: Kotlin, then Rust, same work checked
 #   rust/tools/speed.sh rust [cases]         Rust only, against the JVM numbers of the last trials run (for measuring a change)
-#   rust/tools/speed.sh profile <case>       callgrind profile of one trial in Rust (instruction counts per function)
+#   rust/tools/speed.sh profile <case> [valgrind flags]
+#                                            callgrind profile of one trial in Rust (instruction counts per function); with
+#                                            "--cache-sim=yes --branch-sim=yes" also cache misses and mispredicted branches
 #   rust/tools/speed.sh search <job> [budget_s] [threads]
 #                                            a real search of a job in Kotlin and in Rust: trials done and best box over time
 set -euo pipefail
@@ -24,13 +26,13 @@ cd rust && cargo build --release --bin trial_bench 2>&1 | tail -1
 '
     ;;
   profile)
-    case_name="${1:?usage: speed.sh profile <case>}"
+    case_name="${1:?usage: speed.sh profile <case> [valgrind flags]}"; extra="${2:-}"
     "$here/docker.sh" run '
 set -e
 cd rust
 CARGO_PROFILE_RELEASE_DEBUG=line-tables-only cargo build --release --bin trial_bench 2>&1 | tail -1
 mkdir -p /work/out/profile && rm -f /work/out/profile/callgrind.'"$case_name"'.out
-valgrind --tool=callgrind --callgrind-out-file=/work/out/profile/callgrind.'"$case_name"'.out --dump-instr=no \
+valgrind --tool=callgrind '"$extra"' --callgrind-out-file=/work/out/profile/callgrind.'"$case_name"'.out --dump-instr=no \
   /cache/target/release/trial_bench --dir /work/rust/tests/golden/trial --only '"$case_name"' --warm 1 --reps 1 --no-check 2>&1 | tail -3
 callgrind_annotate --inclusive=no /work/out/profile/callgrind.'"$case_name"'.out 2>/dev/null | head -45
 '
@@ -48,7 +50,7 @@ cd rust && cargo build --release --bin trial_bench 2>&1 | tail -1
 /cache/target/release/trial_bench --dir /work/rust/tests/golden/trial --kotlin /work/out/trial-bench/trial_bench_kotlin.json${cases:+ --cases $cases}"
     ;;
   *)
-    sed -n '2,9p' "$0"
+    sed -n '2,11p' "$0"
     exit 1
     ;;
 esac
