@@ -1,0 +1,189 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "burner-inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.45325317265078324,
+            "product": "burner-inserter",
+            "demand": {
+                "iron-plate": 0.45325317265078324,
+                "iron-gear-wheel": 0.45325317265078324
+            },
+            "products": {
+                "burner-inserter": 0.45325317265078324
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.45325317265078324
+        },
+        {
+            "id": 1,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.45325317265078324,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 0.9065063453015665
+            },
+            "products": {
+                "iron-gear-wheel": 0.45325317265078324
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.45325317265078324
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "burner-inserter",
+            "specs": [
+                {
+                    "name": "burner-inserter",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "burner-inserter",
+            "rate": 0.45325317265078324,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "OUTPUT",
+            "item": "burner-inserter",
+            "rate": 0.45325317265078324,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.45325317265078324,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.45325317265078324,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 1.3597595179523498,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.45325317265078324,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.9065063453015665,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "burner-inserter",
+            "flow": 0.45325317265078324,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "flow": 0.45325317265078324,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "iron-plate",
+            "flow": 1.3597595179523498,
+            "terminals": [
+                4,
+                5,
+                6
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "iron-plate": 1.3597595179523498
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "burner-inserter": 0.45325317265078324,
+        "iron-gear-wheel": 0.45325317265078324
+    },
+    "beltTier": "fast",
+    "warnings": [
+        "source 'copper-plate' is configured but not an input of this job"
+    ],
+    "outputs": {
+        "burner-inserter": 0.45325317265078324
+    }
+}

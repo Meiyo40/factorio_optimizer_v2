@@ -1,0 +1,337 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "burner-inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.145843406356024,
+            "product": "burner-inserter",
+            "demand": {
+                "iron-plate": 1.145843406356024,
+                "iron-gear-wheel": 1.145843406356024
+            },
+            "products": {
+                "burner-inserter": 1.145843406356024
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.145843406356024
+        },
+        {
+            "id": 1,
+            "recipe": "firearm-magazine",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.532567616696161,
+            "product": "firearm-magazine",
+            "demand": {
+                "iron-plate": 2.130270466784644
+            },
+            "products": {
+                "firearm-magazine": 0.532567616696161
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.532567616696161
+        },
+        {
+            "id": 2,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.145843406356024,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 2.291686812712048
+            },
+            "products": {
+                "iron-gear-wheel": 1.145843406356024
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.145843406356024
+        },
+        {
+            "id": 3,
+            "recipe": "iron-stick",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5406937068347375,
+            "product": "iron-stick",
+            "demand": {
+                "iron-plate": 0.27034685341736875
+            },
+            "products": {
+                "iron-stick": 0.5406937068347375
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.27034685341736875
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "burner-inserter",
+            "specs": [
+                {
+                    "name": "burner-inserter",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "firearm-magazine",
+            "specs": [
+                {
+                    "name": "firearm-magazine",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "iron-stick",
+            "specs": [
+                {
+                    "name": "iron-stick",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "burner-inserter",
+            "rate": 1.145843406356024,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "OUTPUT",
+            "item": "burner-inserter",
+            "rate": 1.145843406356024,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "firearm-magazine",
+            "rate": 0.532567616696161,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "OUTPUT",
+            "item": "firearm-magazine",
+            "rate": 0.532567616696161,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 1.145843406356024,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 1.145843406356024,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "iron-stick",
+            "rate": 0.5406937068347375,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "OUTPUT",
+            "item": "iron-stick",
+            "rate": 0.5406937068347375,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 5.838147539270086,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.145843406356024,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.130270466784644,
+            "k": 2,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.291686812712048,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.27034685341736875,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "burner-inserter",
+            "flow": 1.145843406356024,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "firearm-magazine",
+            "flow": 0.532567616696161,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "iron-gear-wheel",
+            "flow": 1.145843406356024,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "iron-stick",
+            "flow": 0.5406937068347375,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "iron-plate",
+            "flow": 5.838147539270086,
+            "terminals": [
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "iron-plate": 5.838147539270086
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "burner-inserter": 1.145843406356024,
+        "iron-gear-wheel": 1.145843406356024,
+        "iron-stick": 0.5406937068347375,
+        "firearm-magazine": 0.532567616696161
+    },
+    "beltTier": "fast",
+    "warnings": [
+        "source 'copper-plate' is configured but not an input of this job"
+    ],
+    "outputs": {
+        "burner-inserter": 1.145843406356024,
+        "firearm-magazine": 0.532567616696161,
+        "iron-stick": 0.5406937068347375
+    }
+}

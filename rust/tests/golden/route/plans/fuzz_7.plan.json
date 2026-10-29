@@ -1,0 +1,355 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 3.7608788899988084,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 1.8804394449994042
+            },
+            "products": {
+                "copper-cable": 3.7608788899988084
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8804394449994042
+        },
+        {
+            "id": 1,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.2536262966662695,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 1.2536262966662695,
+                "copper-cable": 3.7608788899988084
+            },
+            "products": {
+                "electronic-circuit": 1.2536262966662695
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.2536262966662695
+        },
+        {
+            "id": 2,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2110158273901125,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 0.422031654780225
+            },
+            "products": {
+                "iron-gear-wheel": 0.2110158273901125
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2110158273901125
+        },
+        {
+            "id": 3,
+            "recipe": "transport-belt",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.422031654780225,
+            "product": "transport-belt",
+            "demand": {
+                "iron-plate": 0.2110158273901125,
+                "iron-gear-wheel": 0.2110158273901125
+            },
+            "products": {
+                "transport-belt": 0.422031654780225
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2110158273901125
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "transport-belt",
+            "specs": [
+                {
+                    "name": "transport-belt",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 3.7608788899988084,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 3.7608788899988084,
+            "k": 3,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 1.2536262966662695,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "OUTPUT",
+            "item": "electronic-circuit",
+            "rate": 1.2536262966662695,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.2110158273901125,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.2110158273901125,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "transport-belt",
+            "rate": 0.422031654780225,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "OUTPUT",
+            "item": "transport-belt",
+            "rate": 0.422031654780225,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 1.8804394449994042,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 1.8804394449994042,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 1.8866737788366068,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.2536262966662695,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.422031654780225,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.2110158273901125,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "copper-cable",
+            "flow": 3.7608788899988084,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 1.2536262966662695,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "iron-gear-wheel",
+            "flow": 0.2110158273901125,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "transport-belt",
+            "flow": 0.422031654780225,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "copper-plate",
+            "flow": 1.8804394449994042,
+            "terminals": [
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "iron-plate",
+            "flow": 1.8866737788366068,
+            "terminals": [
+                10,
+                11,
+                12,
+                13
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 1.8804394449994042,
+        "iron-plate": 1.8866737788366068
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "transport-belt": 0.422031654780225,
+        "iron-gear-wheel": 0.2110158273901125,
+        "copper-cable": 3.7608788899988084,
+        "electronic-circuit": 1.2536262966662695
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "electronic-circuit": 1.2536262966662695,
+        "transport-belt": 0.422031654780225
+    }
+}

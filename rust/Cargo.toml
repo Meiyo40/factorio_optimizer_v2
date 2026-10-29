@@ -18,3 +18,7 @@ serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
 codegen-units = 1
 lto = "fat"
 panic = "abort"
+
+# The routing goldens run millions of A* expansions; optimise them, keeping overflow checks and debug assertions.
+[profile.test]
+opt-level = 2

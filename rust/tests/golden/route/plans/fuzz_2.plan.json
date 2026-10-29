@@ -1,0 +1,415 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.4316720327806944,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 0.7158360163903472
+            },
+            "products": {
+                "copper-cable": 1.4316720327806944
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.7158360163903472
+        },
+        {
+            "id": 1,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.47722401092689815,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 0.47722401092689815,
+                "copper-cable": 1.4316720327806944
+            },
+            "products": {
+                "electronic-circuit": 0.47722401092689815
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.47722401092689815
+        },
+        {
+            "id": 2,
+            "recipe": "firearm-magazine",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.8912983776105546,
+            "product": "firearm-magazine",
+            "demand": {
+                "iron-plate": 3.5651935104422185
+            },
+            "products": {
+                "firearm-magazine": 0.8912983776105546
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.8912983776105546
+        },
+        {
+            "id": 3,
+            "recipe": "inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.4772240109268981,
+            "product": "inserter",
+            "demand": {
+                "iron-plate": 0.4772240109268981,
+                "iron-gear-wheel": 0.4772240109268981,
+                "electronic-circuit": 0.4772240109268981
+            },
+            "products": {
+                "inserter": 0.4772240109268981
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.4772240109268981
+        },
+        {
+            "id": 4,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.4772240109268981,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 0.9544480218537962
+            },
+            "products": {
+                "iron-gear-wheel": 0.4772240109268981
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.4772240109268981
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "firearm-magazine",
+            "specs": [
+                {
+                    "name": "firearm-magazine",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "inserter",
+            "specs": [
+                {
+                    "name": "inserter",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 1.4316720327806944,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 1.4316720327806944,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 0.47722401092689815,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.4772240109268981,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "firearm-magazine",
+            "rate": 0.8912983776105546,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "OUTPUT",
+            "item": "firearm-magazine",
+            "rate": 0.8912983776105546,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "inserter",
+            "rate": 0.4772240109268981,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "OUTPUT",
+            "item": "inserter",
+            "rate": 0.47722401092689815,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.4772240109268981,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.4772240109268981,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.7158360163903472,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.7158360163903472,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 5.474089554149811,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.47722401092689815,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 3.5651935104422185,
+            "k": 3,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4772240109268981,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.9544480218537962,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "copper-cable",
+            "flow": 1.4316720327806944,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 0.4772240109268981,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "firearm-magazine",
+            "flow": 0.8912983776105546,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "inserter",
+            "flow": 0.47722401092689815,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "iron-gear-wheel",
+            "flow": 0.4772240109268981,
+            "terminals": [
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "copper-plate",
+            "flow": 0.7158360163903472,
+            "terminals": [
+                10,
+                11
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "iron-plate",
+            "flow": 5.474089554149812,
+            "terminals": [
+                12,
+                13,
+                14,
+                15,
+                16
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.7158360163903472,
+        "iron-plate": 5.474089554149811
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "inserter": 0.4772240109268981,
+        "iron-gear-wheel": 0.4772240109268981,
+        "copper-cable": 1.4316720327806944,
+        "electronic-circuit": 0.47722401092689815,
+        "firearm-magazine": 0.8912983776105546
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "firearm-magazine": 0.8912983776105546,
+        "inserter": 0.47722401092689815
+    }
+}

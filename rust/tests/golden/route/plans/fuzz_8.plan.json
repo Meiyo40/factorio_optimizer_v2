@@ -1,0 +1,337 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.15334206122141303,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 0.30668412244282606
+            },
+            "products": {
+                "iron-gear-wheel": 0.15334206122141303
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.15334206122141303
+        },
+        {
+            "id": 1,
+            "recipe": "iron-stick",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.171716629758357,
+            "product": "iron-stick",
+            "demand": {
+                "iron-plate": 0.0858583148791785
+            },
+            "products": {
+                "iron-stick": 0.171716629758357
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.0858583148791785
+        },
+        {
+            "id": 2,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.2397389793469757,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.2397389793469757
+            },
+            "products": {
+                "pipe": 1.2397389793469757
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.2397389793469757
+        },
+        {
+            "id": 3,
+            "recipe": "transport-belt",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.30668412244282606,
+            "product": "transport-belt",
+            "demand": {
+                "iron-plate": 0.15334206122141303,
+                "iron-gear-wheel": 0.15334206122141303
+            },
+            "products": {
+                "transport-belt": 0.30668412244282606
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.15334206122141303
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-stick",
+            "specs": [
+                {
+                    "name": "iron-stick",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "transport-belt",
+            "specs": [
+                {
+                    "name": "transport-belt",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.15334206122141303,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.15334206122141303,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "iron-stick",
+            "rate": 0.171716629758357,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "OUTPUT",
+            "item": "iron-stick",
+            "rate": 0.171716629758357,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.2397389793469757,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 1.2397389793469757,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "transport-belt",
+            "rate": 0.30668412244282606,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "OUTPUT",
+            "item": "transport-belt",
+            "rate": 0.30668412244282606,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 1.7856234778903932,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.30668412244282606,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.0858583148791785,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.2397389793469757,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.15334206122141303,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "iron-gear-wheel",
+            "flow": 0.15334206122141303,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "iron-stick",
+            "flow": 0.171716629758357,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "pipe",
+            "flow": 1.2397389793469757,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "transport-belt",
+            "flow": 0.30668412244282606,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "iron-plate",
+            "flow": 1.7856234778903932,
+            "terminals": [
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "iron-plate": 1.7856234778903932
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "transport-belt": 0.30668412244282606,
+        "pipe": 1.2397389793469757,
+        "iron-gear-wheel": 0.15334206122141303,
+        "iron-stick": 0.171716629758357
+    },
+    "beltTier": "fast",
+    "warnings": [
+        "source 'copper-plate' is configured but not an input of this job"
+    ],
+    "outputs": {
+        "iron-stick": 0.171716629758357,
+        "pipe": 1.2397389793469757,
+        "transport-belt": 0.30668412244282606
+    }
+}

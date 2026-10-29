@@ -1,0 +1,529 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.22413675786799653,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.22413675786799653,
+                "iron-gear-wheel": 0.22413675786799653
+            },
+            "products": {
+                "automation-science-pack": 0.22413675786799653
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.22413675786799653
+        },
+        {
+            "id": 1,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.22413675786799653,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.22413675786799653,
+                "iron-gear-wheel": 0.22413675786799653
+            },
+            "products": {
+                "automation-science-pack": 0.22413675786799653
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.22413675786799653
+        },
+        {
+            "id": 2,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.515428744623426,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 1.030857489246852
+            },
+            "products": {
+                "iron-gear-wheel": 0.515428744623426
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.515428744623426
+        },
+        {
+            "id": 3,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.4832149666225767,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.4832149666225767
+            },
+            "products": {
+                "pipe": 1.4832149666225767
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.4832149666225767
+        },
+        {
+            "id": 4,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.4832149666225767,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.4832149666225767
+            },
+            "products": {
+                "pipe": 1.4832149666225767
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.4832149666225767
+        },
+        {
+            "id": 5,
+            "recipe": "pipe-to-ground",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5932859866490306,
+            "product": "pipe-to-ground",
+            "demand": {
+                "iron-plate": 1.4832149666225767,
+                "pipe": 2.9664299332451534
+            },
+            "products": {
+                "pipe-to-ground": 0.5932859866490306
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2966429933245153
+        },
+        {
+            "id": 6,
+            "recipe": "transport-belt",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1343104577748659,
+            "product": "transport-belt",
+            "demand": {
+                "iron-plate": 0.06715522888743294,
+                "iron-gear-wheel": 0.06715522888743294
+            },
+            "products": {
+                "transport-belt": 0.1343104577748659
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.06715522888743294
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "automation-science-pack",
+            "specs": [
+                {
+                    "name": "automation-science-pack",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "pipe-to-ground",
+            "specs": [
+                {
+                    "name": "pipe-to-ground",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "transport-belt",
+            "specs": [
+                {
+                    "name": "transport-belt",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "OUTPUT",
+            "item": "automation-science-pack",
+            "rate": 0.44827351573599306,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.515428744623426,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.06715522888743294,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.4832149666225767,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.4832149666225767,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 2.9664299332451534,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "PRODUCER",
+            "item": "pipe-to-ground",
+            "rate": 0.5932859866490306,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "OUTPUT",
+            "item": "pipe-to-ground",
+            "rate": 0.5932859866490306,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "PRODUCER",
+            "item": "transport-belt",
+            "rate": 0.1343104577748659,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "OUTPUT",
+            "item": "transport-belt",
+            "rate": 0.1343104577748659,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.44827351573599306,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.22413675786799653,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 5.547657618002015,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.030857489246852,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.4832149666225767,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.4832149666225767,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.4832149666225767,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.06715522888743294,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "flow": 0.44827351573599306,
+            "terminals": [
+                0,
+                1,
+                2
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "flow": 0.515428744623426,
+            "terminals": [
+                3,
+                4,
+                5,
+                6
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "pipe",
+            "flow": 2.9664299332451534,
+            "terminals": [
+                7,
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "pipe-to-ground",
+            "flow": 0.5932859866490306,
+            "terminals": [
+                10,
+                11
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "transport-belt",
+            "flow": 0.1343104577748659,
+            "terminals": [
+                12,
+                13
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "copper-plate",
+            "flow": 0.44827351573599306,
+            "terminals": [
+                14,
+                15,
+                16
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "iron-plate",
+            "flow": 5.547657618002016,
+            "terminals": [
+                17,
+                18,
+                19,
+                20,
+                21,
+                22
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.44827351573599306,
+        "iron-plate": 5.547657618002015
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "transport-belt": 0.1343104577748659,
+        "pipe": 2.9664299332451534,
+        "pipe-to-ground": 0.5932859866490306,
+        "iron-gear-wheel": 0.515428744623426,
+        "automation-science-pack": 0.44827351573599306
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "automation-science-pack": 0.44827351573599306,
+        "pipe-to-ground": 0.5932859866490306,
+        "transport-belt": 0.1343104577748659
+    }
+}

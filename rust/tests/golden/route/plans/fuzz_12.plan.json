@@ -1,0 +1,369 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.409453084493422,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 0.704726542246711
+            },
+            "products": {
+                "copper-cable": 1.409453084493422
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.704726542246711
+        },
+        {
+            "id": 1,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.46981769483114066,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 0.46981769483114066,
+                "copper-cable": 1.409453084493422
+            },
+            "products": {
+                "electronic-circuit": 0.46981769483114066
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.46981769483114066
+        },
+        {
+            "id": 2,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.4092501780634077,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 0.8185003561268154
+            },
+            "products": {
+                "iron-gear-wheel": 0.4092501780634077
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.4092501780634077
+        },
+        {
+            "id": 3,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.0844889921524004,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.0844889921524004
+            },
+            "products": {
+                "pipe": 1.0844889921524004
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.0844889921524004
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 1.409453084493422,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 1.409453084493422,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 0.46981769483114066,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "OUTPUT",
+            "item": "electronic-circuit",
+            "rate": 0.46981769483114066,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.4092501780634077,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "OUTPUT",
+            "item": "iron-gear-wheel",
+            "rate": 0.4092501780634077,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.0844889921524004,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 1.0844889921524004,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.704726542246711,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.704726542246711,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 2.3728070431103565,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.46981769483114066,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.8185003561268154,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.0844889921524004,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "copper-cable",
+            "flow": 1.409453084493422,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 0.46981769483114066,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "iron-gear-wheel",
+            "flow": 0.4092501780634077,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "pipe",
+            "flow": 1.0844889921524004,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "copper-plate",
+            "flow": 0.704726542246711,
+            "terminals": [
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "iron-plate",
+            "flow": 2.372807043110356,
+            "terminals": [
+                10,
+                11,
+                12,
+                13
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.704726542246711,
+        "iron-plate": 2.3728070431103565
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "pipe": 1.0844889921524004,
+        "iron-gear-wheel": 0.4092501780634077,
+        "copper-cable": 1.409453084493422,
+        "electronic-circuit": 0.46981769483114066
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "electronic-circuit": 0.46981769483114066,
+        "iron-gear-wheel": 0.4092501780634077,
+        "pipe": 1.0844889921524004
+    }
+}

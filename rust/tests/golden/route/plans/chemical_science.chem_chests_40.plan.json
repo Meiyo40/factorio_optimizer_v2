@@ -1,0 +1,2414 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.18749999999999997,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.37499999999999994,
+                "copper-cable": 0.7499999999999999,
+                "electronic-circuit": 0.37499999999999994
+            },
+            "products": {
+                "advanced-circuit": 0.18749999999999997
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.18749999999999997
+        },
+        {
+            "id": 1,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.18749999999999997,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.37499999999999994,
+                "copper-cable": 0.7499999999999999,
+                "electronic-circuit": 0.37499999999999994
+            },
+            "products": {
+                "advanced-circuit": 0.18749999999999997
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.18749999999999997
+        },
+        {
+            "id": 2,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.18749999999999997,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.37499999999999994,
+                "copper-cable": 0.7499999999999999,
+                "electronic-circuit": 0.37499999999999994
+            },
+            "products": {
+                "advanced-circuit": 0.18749999999999997
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.18749999999999997
+        },
+        {
+            "id": 3,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.18749999999999997,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.37499999999999994,
+                "copper-cable": 0.7499999999999999,
+                "electronic-circuit": 0.37499999999999994
+            },
+            "products": {
+                "advanced-circuit": 0.18749999999999997
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.18749999999999997
+        },
+        {
+            "id": 4,
+            "recipe": "advanced-oil-processing",
+            "machine": "oil-refinery",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "water",
+            "outputRate": 4.807692307692308,
+            "product": "heavy-oil",
+            "demand": {},
+            "products": {
+                "heavy-oil": 4.807692307692308,
+                "light-oil": 8.653846153846155,
+                "petroleum-gas": 10.576923076923077
+            },
+            "fluidDemand": {
+                "water": 9.615384615384617,
+                "crude-oil": 19.230769230769234
+            },
+            "fluidIn": {
+                "water": 1,
+                "crude-oil": 2
+            },
+            "fluidOut": {
+                "heavy-oil": 1,
+                "light-oil": 2,
+                "petroleum-gas": 3
+            },
+            "crafts": 0.19230769230769232
+        },
+        {
+            "id": 5,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 6,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 7,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 8,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 9,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 10,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 3.749999999999999,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 1.8749999999999996
+            },
+            "products": {
+                "copper-cable": 3.749999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8749999999999996
+        },
+        {
+            "id": 11,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 3.749999999999999,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 1.8749999999999996
+            },
+            "products": {
+                "copper-cable": 3.749999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8749999999999996
+        },
+        {
+            "id": 12,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 13,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 14,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 15,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 16,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 17,
+            "recipe": "copper-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6249999999999999,
+            "product": "copper-plate",
+            "demand": {
+                "copper-ore": 0.6249999999999999
+            },
+            "products": {
+                "copper-plate": 0.6249999999999999
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6249999999999999
+        },
+        {
+            "id": 18,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.4999999999999998,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 1.4999999999999998,
+                "copper-cable": 4.499999999999999
+            },
+            "products": {
+                "electronic-circuit": 1.4999999999999998
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.4999999999999998
+        },
+        {
+            "id": 19,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.125,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.125,
+                "iron-gear-wheel": 0.125,
+                "pipe": 0.25
+            },
+            "products": {
+                "engine-unit": 0.125
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.125
+        },
+        {
+            "id": 20,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.125,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.125,
+                "iron-gear-wheel": 0.125,
+                "pipe": 0.25
+            },
+            "products": {
+                "engine-unit": 0.125
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.125
+        },
+        {
+            "id": 21,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.125,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.125,
+                "iron-gear-wheel": 0.125,
+                "pipe": 0.25
+            },
+            "products": {
+                "engine-unit": 0.125
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.125
+        },
+        {
+            "id": 22,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.125,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.125,
+                "iron-gear-wheel": 0.125,
+                "pipe": 0.25
+            },
+            "products": {
+                "engine-unit": 0.125
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.125
+        },
+        {
+            "id": 23,
+            "recipe": "heavy-oil-cracking",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 3.6057692307692313,
+            "product": "light-oil",
+            "demand": {},
+            "products": {
+                "light-oil": 3.6057692307692313
+            },
+            "fluidDemand": {
+                "water": 3.6057692307692313,
+                "heavy-oil": 4.807692307692308
+            },
+            "fluidIn": {
+                "water": 1,
+                "heavy-oil": 2
+            },
+            "fluidOut": {
+                "light-oil": 1
+            },
+            "crafts": 0.12019230769230771
+        },
+        {
+            "id": 24,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 1.0
+            },
+            "products": {
+                "iron-gear-wheel": 0.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        },
+        {
+            "id": 25,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 26,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 27,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 28,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 29,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 30,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 31,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 32,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 33,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 34,
+            "recipe": "iron-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.6,
+            "product": "iron-plate",
+            "demand": {
+                "iron-ore": 0.6
+            },
+            "products": {
+                "iron-plate": 0.6
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.6
+        },
+        {
+            "id": 35,
+            "recipe": "light-oil-cracking",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 8.173076923076922,
+            "product": "petroleum-gas",
+            "demand": {},
+            "products": {
+                "petroleum-gas": 8.173076923076922
+            },
+            "fluidDemand": {
+                "water": 12.259615384615383,
+                "light-oil": 12.259615384615383
+            },
+            "fluidIn": {
+                "water": 1,
+                "light-oil": 2
+            },
+            "fluidOut": {
+                "petroleum-gas": 1
+            },
+            "crafts": 0.4086538461538461
+        },
+        {
+            "id": 36,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.9999999999999998,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 0.9999999999999998
+            },
+            "products": {
+                "pipe": 0.9999999999999998
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.9999999999999998
+        },
+        {
+            "id": 37,
+            "recipe": "plastic-bar",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "petroleum-gas",
+            "outputRate": 1.4999999999999998,
+            "product": "plastic-bar",
+            "demand": {
+                "coal": 0.7499999999999999
+            },
+            "products": {
+                "plastic-bar": 1.4999999999999998
+            },
+            "fluidDemand": {
+                "petroleum-gas": 14.999999999999998
+            },
+            "fluidIn": {
+                "petroleum-gas": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.7499999999999999
+        },
+        {
+            "id": 38,
+            "recipe": "steel-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.12500000000000003,
+            "product": "steel-plate",
+            "demand": {
+                "iron-plate": 0.6250000000000001
+            },
+            "products": {
+                "steel-plate": 0.12500000000000003
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.12500000000000003
+        },
+        {
+            "id": 39,
+            "recipe": "steel-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.12500000000000003,
+            "product": "steel-plate",
+            "demand": {
+                "iron-plate": 0.6250000000000001
+            },
+            "products": {
+                "steel-plate": 0.12500000000000003
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.12500000000000003
+        },
+        {
+            "id": 40,
+            "recipe": "steel-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.12500000000000003,
+            "product": "steel-plate",
+            "demand": {
+                "iron-plate": 0.6250000000000001
+            },
+            "products": {
+                "steel-plate": 0.12500000000000003
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.12500000000000003
+        },
+        {
+            "id": 41,
+            "recipe": "steel-plate",
+            "machine": "electric-furnace",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.12500000000000003,
+            "product": "steel-plate",
+            "demand": {
+                "iron-plate": 0.6250000000000001
+            },
+            "products": {
+                "steel-plate": 0.12500000000000003
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.12500000000000003
+        },
+        {
+            "id": 42,
+            "recipe": "sulfur",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 0.25,
+            "product": "sulfur",
+            "demand": {},
+            "products": {
+                "sulfur": 0.25
+            },
+            "fluidDemand": {
+                "water": 3.75,
+                "petroleum-gas": 3.75
+            },
+            "fluidIn": {
+                "water": 1,
+                "petroleum-gas": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.125
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "coal",
+            "specs": [
+                {
+                    "name": "coal",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "copper-ore",
+            "specs": [
+                {
+                    "name": "copper-ore",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "crude-oil",
+            "specs": [
+                {
+                    "name": "crude-oil",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "iron-ore",
+            "specs": [
+                {
+                    "name": "iron-ore",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "water",
+            "specs": [
+                {
+                    "name": "water",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "PRODUCER",
+            "item": "heavy-oil",
+            "rate": 4.807692307692308,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 4.807692307692308,
+            "k": 1,
+            "machine": 23,
+            "fluid": true
+        },
+        {
+            "id": 11,
+            "role": "PRODUCER",
+            "item": "light-oil",
+            "rate": 8.653846153846155,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 12,
+            "role": "PRODUCER",
+            "item": "light-oil",
+            "rate": 3.6057692307692313,
+            "k": 1,
+            "machine": 23,
+            "fluid": true
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "light-oil",
+            "rate": 12.259615384615383,
+            "k": 1,
+            "machine": 35,
+            "fluid": true
+        },
+        {
+            "id": 14,
+            "role": "PRODUCER",
+            "item": "petroleum-gas",
+            "rate": 10.576923076923077,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 15,
+            "role": "PRODUCER",
+            "item": "petroleum-gas",
+            "rate": 8.173076923076922,
+            "k": 1,
+            "machine": 35,
+            "fluid": true
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "petroleum-gas",
+            "rate": 14.999999999999998,
+            "k": 1,
+            "machine": 37,
+            "fluid": true
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "petroleum-gas",
+            "rate": 3.75,
+            "k": 1,
+            "machine": 42,
+            "fluid": true
+        },
+        {
+            "id": 18,
+            "role": "SINK",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "SINK",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "SINK",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "SINK",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "SINK",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 3.749999999999999,
+            "k": 2,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 3.749999999999999,
+            "k": 2,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 4.499999999999999,
+            "k": 3,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 30,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 31,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 32,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 33,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 34,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 35,
+            "role": "PRODUCER",
+            "item": "copper-plate",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 36,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 1.8749999999999996,
+            "k": 2,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 37,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 1.8749999999999996,
+            "k": 2,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 38,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 1.4999999999999998,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 39,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 40,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 41,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 42,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 43,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 44,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 45,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 46,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 47,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 48,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 49,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 50,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 51,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 52,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 53,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 54,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 55,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 56,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 57,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 58,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 59,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 60,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 61,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 62,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 63,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 64,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 65,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 66,
+            "role": "PRODUCER",
+            "item": "iron-plate",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 67,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.4999999999999998,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 68,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 69,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.9999999999999998,
+            "k": 1,
+            "machine": 36,
+            "fluid": false
+        },
+        {
+            "id": 70,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.6250000000000001,
+            "k": 1,
+            "machine": 38,
+            "fluid": false
+        },
+        {
+            "id": 71,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.6250000000000001,
+            "k": 1,
+            "machine": 39,
+            "fluid": false
+        },
+        {
+            "id": 72,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.6250000000000001,
+            "k": 1,
+            "machine": 40,
+            "fluid": false
+        },
+        {
+            "id": 73,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.6250000000000001,
+            "k": 1,
+            "machine": 41,
+            "fluid": false
+        },
+        {
+            "id": 74,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 0.9999999999999998,
+            "k": 1,
+            "machine": 36,
+            "fluid": false
+        },
+        {
+            "id": 75,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 76,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 77,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 78,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 79,
+            "role": "PRODUCER",
+            "item": "plastic-bar",
+            "rate": 1.4999999999999998,
+            "k": 1,
+            "machine": 37,
+            "fluid": false
+        },
+        {
+            "id": 80,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 81,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 82,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 83,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 84,
+            "role": "PRODUCER",
+            "item": "steel-plate",
+            "rate": 0.12500000000000003,
+            "k": 1,
+            "machine": 38,
+            "fluid": false
+        },
+        {
+            "id": 85,
+            "role": "PRODUCER",
+            "item": "steel-plate",
+            "rate": 0.12500000000000003,
+            "k": 1,
+            "machine": 39,
+            "fluid": false
+        },
+        {
+            "id": 86,
+            "role": "PRODUCER",
+            "item": "steel-plate",
+            "rate": 0.12500000000000003,
+            "k": 1,
+            "machine": 40,
+            "fluid": false
+        },
+        {
+            "id": 87,
+            "role": "PRODUCER",
+            "item": "steel-plate",
+            "rate": 0.12500000000000003,
+            "k": 1,
+            "machine": 41,
+            "fluid": false
+        },
+        {
+            "id": 88,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 89,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 90,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 91,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.125,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 92,
+            "role": "PRODUCER",
+            "item": "sulfur",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 42,
+            "fluid": false
+        },
+        {
+            "id": 93,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 94,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 95,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 96,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 97,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 98,
+            "role": "SOURCE",
+            "item": "water",
+            "rate": 29.230769230769223,
+            "k": 1,
+            "port": 4,
+            "fluid": true
+        },
+        {
+            "id": 99,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 9.615384615384617,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 100,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 3.6057692307692313,
+            "k": 1,
+            "machine": 23,
+            "fluid": true
+        },
+        {
+            "id": 101,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 12.259615384615383,
+            "k": 1,
+            "machine": 35,
+            "fluid": true
+        },
+        {
+            "id": 102,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 3.75,
+            "k": 1,
+            "machine": 42,
+            "fluid": true
+        },
+        {
+            "id": 103,
+            "role": "SOURCE",
+            "item": "crude-oil",
+            "rate": 19.230769230769234,
+            "k": 1,
+            "port": 2,
+            "fluid": true
+        },
+        {
+            "id": 104,
+            "role": "CONSUMER",
+            "item": "crude-oil",
+            "rate": 19.230769230769234,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 105,
+            "role": "SOURCE",
+            "item": "copper-ore",
+            "rate": 3.749999999999999,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 106,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 107,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 108,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 109,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 110,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 111,
+            "role": "CONSUMER",
+            "item": "copper-ore",
+            "rate": 0.6249999999999999,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 112,
+            "role": "SOURCE",
+            "item": "iron-ore",
+            "rate": 6.0,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 113,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 114,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 115,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 116,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 117,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 118,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 119,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 120,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 121,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 122,
+            "role": "CONSUMER",
+            "item": "iron-ore",
+            "rate": 0.6,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 123,
+            "role": "SOURCE",
+            "item": "coal",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 124,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 37,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "flow": 0.7500000000000001,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "heavy-oil",
+            "flow": 4.807692307692308,
+            "terminals": [
+                9,
+                10
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 2,
+            "item": "light-oil",
+            "flow": 12.259615384615383,
+            "terminals": [
+                11,
+                12,
+                13
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "item": "petroleum-gas",
+            "flow": 18.75,
+            "terminals": [
+                14,
+                15,
+                16,
+                17
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "item": "copper-cable",
+            "flow": 7.499999999999998,
+            "terminals": [
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "copper-plate",
+            "flow": 3.749999999999999,
+            "terminals": [
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "electronic-circuit",
+            "flow": 1.4999999999999998,
+            "terminals": [
+                38,
+                39,
+                40,
+                41,
+                42
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "item": "engine-unit",
+            "flow": 0.5,
+            "terminals": [
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "item": "iron-gear-wheel",
+            "flow": 0.5,
+            "terminals": [
+                52,
+                53,
+                54,
+                55,
+                56
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "item": "iron-plate",
+            "flow": 6.0,
+            "terminals": [
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "item": "pipe",
+            "flow": 1.0,
+            "terminals": [
+                74,
+                75,
+                76,
+                77,
+                78
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "item": "plastic-bar",
+            "flow": 1.4999999999999998,
+            "terminals": [
+                79,
+                80,
+                81,
+                82,
+                83
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "item": "steel-plate",
+            "flow": 0.5,
+            "terminals": [
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "item": "sulfur",
+            "flow": 0.25,
+            "terminals": [
+                92,
+                93,
+                94,
+                95,
+                96,
+                97
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "item": "water",
+            "flow": 29.230769230769234,
+            "terminals": [
+                98,
+                99,
+                100,
+                101,
+                102
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 15,
+            "item": "crude-oil",
+            "flow": 19.230769230769234,
+            "terminals": [
+                103,
+                104
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 16,
+            "item": "copper-ore",
+            "flow": 3.7499999999999996,
+            "terminals": [
+                105,
+                106,
+                107,
+                108,
+                109,
+                110,
+                111
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "item": "iron-ore",
+            "flow": 5.999999999999999,
+            "terminals": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "item": "coal",
+            "flow": 0.7499999999999999,
+            "terminals": [
+                123,
+                124
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "coal": 0.7499999999999999,
+        "copper-ore": 3.749999999999999,
+        "crude-oil": 19.230769230769234,
+        "iron-ore": 6.0,
+        "water": 29.230769230769223
+    },
+    "fluidRates": {
+        "crude-oil": 19.230769230769234,
+        "water": 29.230769230769223
+    },
+    "recipeRates": {
+        "pipe": 0.9999999999999998,
+        "advanced-oil-processing": 0.19230769230769232,
+        "heavy-oil-cracking": 0.12019230769230771,
+        "light-oil-cracking": 0.4086538461538461,
+        "iron-plate": 6.0,
+        "copper-plate": 3.749999999999999,
+        "steel-plate": 0.5000000000000001,
+        "plastic-bar": 1.4999999999999998,
+        "sulfur": 0.25,
+        "iron-gear-wheel": 0.5,
+        "copper-cable": 7.499999999999998,
+        "electronic-circuit": 1.4999999999999998,
+        "advanced-circuit": 0.7499999999999999,
+        "engine-unit": 0.5,
+        "chemical-science-pack": 0.5
+    },
+    "beltTier": "fast",
+    "warnings": [
+        "no source configured for input 'coal'; it may enter anywhere on the box edge",
+        "no source configured for input 'copper-ore'; it may enter anywhere on the box edge",
+        "no source configured for input 'crude-oil'; it may enter anywhere on the box edge",
+        "no source configured for input 'iron-ore'; it may enter anywhere on the box edge",
+        "no source configured for input 'water'; it may enter anywhere on the box edge"
+    ],
+    "outputs": {
+        "chemical-science-pack": 0.5
+    }
+}
