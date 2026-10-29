@@ -1,0 +1,2498 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 1,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 2,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 3,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 4,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 5,
+            "recipe": "electrolyte",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "heavy-oil",
+            "outputRate": 5.277777777777778,
+            "product": "electrolyte",
+            "demand": {
+                "stone": 0.35185185185185186
+            },
+            "products": {
+                "electrolyte": 5.277777777777778
+            },
+            "fluidDemand": {
+                "heavy-oil": 3.5185185185185186,
+                "holmium-solution": 3.5185185185185186
+            },
+            "fluidIn": {
+                "heavy-oil": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {
+                "electrolyte": 1
+            },
+            "crafts": 0.35185185185185186
+        },
+        {
+            "id": 6,
+            "recipe": "electromagnetic-science-pack",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.30000000000000004,
+            "product": "electromagnetic-science-pack",
+            "demand": {
+                "supercapacitor": 0.2,
+                "accumulator": 0.2
+            },
+            "products": {
+                "electromagnetic-science-pack": 0.30000000000000004
+            },
+            "fluidDemand": {
+                "electrolyte": 5.0,
+                "holmium-solution": 5.0
+            },
+            "fluidIn": {
+                "electrolyte": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 7,
+            "recipe": "electromagnetic-science-pack",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.30000000000000004,
+            "product": "electromagnetic-science-pack",
+            "demand": {
+                "supercapacitor": 0.2,
+                "accumulator": 0.2
+            },
+            "products": {
+                "electromagnetic-science-pack": 0.30000000000000004
+            },
+            "fluidDemand": {
+                "electrolyte": 5.0,
+                "holmium-solution": 5.0
+            },
+            "fluidIn": {
+                "electrolyte": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 8,
+            "recipe": "electromagnetic-science-pack",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.30000000000000004,
+            "product": "electromagnetic-science-pack",
+            "demand": {
+                "supercapacitor": 0.2,
+                "accumulator": 0.2
+            },
+            "products": {
+                "electromagnetic-science-pack": 0.30000000000000004
+            },
+            "fluidDemand": {
+                "electrolyte": 5.0,
+                "holmium-solution": 5.0
+            },
+            "fluidIn": {
+                "electrolyte": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 9,
+            "recipe": "electromagnetic-science-pack",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.30000000000000004,
+            "product": "electromagnetic-science-pack",
+            "demand": {
+                "supercapacitor": 0.2,
+                "accumulator": 0.2
+            },
+            "products": {
+                "electromagnetic-science-pack": 0.30000000000000004
+            },
+            "fluidDemand": {
+                "electrolyte": 5.0,
+                "holmium-solution": 5.0
+            },
+            "fluidIn": {
+                "electrolyte": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 10,
+            "recipe": "electromagnetic-science-pack",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.30000000000000004,
+            "product": "electromagnetic-science-pack",
+            "demand": {
+                "supercapacitor": 0.2,
+                "accumulator": 0.2
+            },
+            "products": {
+                "electromagnetic-science-pack": 0.30000000000000004
+            },
+            "fluidDemand": {
+                "electrolyte": 5.0,
+                "holmium-solution": 5.0
+            },
+            "fluidIn": {
+                "electrolyte": 1,
+                "holmium-solution": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 11,
+            "recipe": "heavy-oil-cracking",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 2.222222222222222,
+            "product": "light-oil",
+            "demand": {},
+            "products": {
+                "light-oil": 2.222222222222222
+            },
+            "fluidDemand": {
+                "water": 2.222222222222222,
+                "heavy-oil": 2.9629629629629624
+            },
+            "fluidIn": {
+                "water": 1,
+                "heavy-oil": 2
+            },
+            "fluidOut": {
+                "light-oil": 1
+            },
+            "crafts": 0.07407407407407406
+        },
+        {
+            "id": 12,
+            "recipe": "holmium-plate",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "holmium-solution",
+            "outputRate": 0.8888888888888887,
+            "product": "holmium-plate",
+            "demand": {},
+            "products": {
+                "holmium-plate": 0.8888888888888887
+            },
+            "fluidDemand": {
+                "holmium-solution": 17.777777777777775
+            },
+            "fluidIn": {
+                "holmium-solution": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.8888888888888887
+        },
+        {
+            "id": 13,
+            "recipe": "holmium-plate",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "holmium-solution",
+            "outputRate": 0.8888888888888887,
+            "product": "holmium-plate",
+            "demand": {},
+            "products": {
+                "holmium-plate": 0.8888888888888887
+            },
+            "fluidDemand": {
+                "holmium-solution": 17.777777777777775
+            },
+            "fluidIn": {
+                "holmium-solution": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.8888888888888887
+        },
+        {
+            "id": 14,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 15,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 16,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 17,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 18,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 19,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 20,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 21,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 22,
+            "recipe": "holmium-solution",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 9.074074074074073,
+            "product": "holmium-solution",
+            "demand": {
+                "stone": 0.09074074074074073,
+                "holmium-ore": 0.18148148148148147
+            },
+            "products": {
+                "holmium-solution": 9.074074074074073
+            },
+            "fluidDemand": {
+                "water": 0.9074074074074073
+            },
+            "fluidIn": {
+                "water": 1
+            },
+            "fluidOut": {
+                "holmium-solution": 1
+            },
+            "crafts": 0.09074074074074073
+        },
+        {
+            "id": 23,
+            "recipe": "ice-melting",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "outputRate": 10.388888888888888,
+            "product": "water",
+            "demand": {
+                "ice": 0.5194444444444444
+            },
+            "products": {
+                "water": 10.388888888888888
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {
+                "water": 1
+            },
+            "crafts": 0.5194444444444444
+        },
+        {
+            "id": 24,
+            "recipe": "supercapacitor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.25,
+            "product": "supercapacitor",
+            "demand": {
+                "battery": 0.16666666666666666,
+                "electronic-circuit": 0.6666666666666666,
+                "holmium-plate": 0.3333333333333333,
+                "superconductor": 0.3333333333333333
+            },
+            "products": {
+                "supercapacitor": 0.25
+            },
+            "fluidDemand": {
+                "electrolyte": 1.6666666666666665
+            },
+            "fluidIn": {
+                "electrolyte": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 25,
+            "recipe": "supercapacitor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.25,
+            "product": "supercapacitor",
+            "demand": {
+                "battery": 0.16666666666666666,
+                "electronic-circuit": 0.6666666666666666,
+                "holmium-plate": 0.3333333333333333,
+                "superconductor": 0.3333333333333333
+            },
+            "products": {
+                "supercapacitor": 0.25
+            },
+            "fluidDemand": {
+                "electrolyte": 1.6666666666666665
+            },
+            "fluidIn": {
+                "electrolyte": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 26,
+            "recipe": "supercapacitor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.25,
+            "product": "supercapacitor",
+            "demand": {
+                "battery": 0.16666666666666666,
+                "electronic-circuit": 0.6666666666666666,
+                "holmium-plate": 0.3333333333333333,
+                "superconductor": 0.3333333333333333
+            },
+            "products": {
+                "supercapacitor": 0.25
+            },
+            "fluidDemand": {
+                "electrolyte": 1.6666666666666665
+            },
+            "fluidIn": {
+                "electrolyte": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 27,
+            "recipe": "supercapacitor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "electrolyte",
+            "outputRate": 0.25,
+            "product": "supercapacitor",
+            "demand": {
+                "battery": 0.16666666666666666,
+                "electronic-circuit": 0.6666666666666666,
+                "holmium-plate": 0.3333333333333333,
+                "superconductor": 0.3333333333333333
+            },
+            "products": {
+                "supercapacitor": 0.25
+            },
+            "fluidDemand": {
+                "electrolyte": 1.6666666666666665
+            },
+            "fluidIn": {
+                "electrolyte": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 28,
+            "recipe": "superconductor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "light-oil",
+            "outputRate": 0.6666666666666665,
+            "product": "superconductor",
+            "demand": {
+                "copper-plate": 0.22222222222222215,
+                "plastic-bar": 0.22222222222222215,
+                "holmium-plate": 0.22222222222222215
+            },
+            "products": {
+                "superconductor": 0.6666666666666665
+            },
+            "fluidDemand": {
+                "light-oil": 1.1111111111111107
+            },
+            "fluidIn": {
+                "light-oil": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.22222222222222215
+        },
+        {
+            "id": 29,
+            "recipe": "superconductor",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "needsFluid": "light-oil",
+            "outputRate": 0.6666666666666665,
+            "product": "superconductor",
+            "demand": {
+                "copper-plate": 0.22222222222222215,
+                "plastic-bar": 0.22222222222222215,
+                "holmium-plate": 0.22222222222222215
+            },
+            "products": {
+                "superconductor": 0.6666666666666665
+            },
+            "fluidDemand": {
+                "light-oil": 1.1111111111111107
+            },
+            "fluidIn": {
+                "light-oil": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.22222222222222215
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "accumulator",
+            "specs": [
+                {
+                    "name": "accumulator",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "electromagnetic-science-pack",
+            "specs": [
+                {
+                    "name": "electromagnetic-science-pack",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "battery",
+            "specs": [
+                {
+                    "name": "battery",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "stone",
+            "specs": [
+                {
+                    "name": "stone",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 5,
+            "item": "heavy-oil",
+            "specs": [
+                {
+                    "name": "heavy-oil",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 6,
+            "item": "holmium-ore",
+            "specs": [
+                {
+                    "name": "holmium-ore",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 7,
+            "item": "ice",
+            "specs": [
+                {
+                    "name": "ice",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 8,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 9,
+            "item": "plastic-bar",
+            "specs": [
+                {
+                    "name": "plastic-bar",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "CONSUMER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "CONSUMER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 8,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 9,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 10,
+            "role": "PRODUCER",
+            "item": "electrolyte",
+            "rate": 5.277777777777778,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 6,
+            "fluid": true
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 7,
+            "fluid": true
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 8,
+            "fluid": true
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 9,
+            "fluid": true
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 10,
+            "fluid": true
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 24,
+            "fluid": true
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 25,
+            "fluid": true
+        },
+        {
+            "id": 18,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 26,
+            "fluid": true
+        },
+        {
+            "id": 19,
+            "role": "CONSUMER",
+            "item": "electrolyte",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 27,
+            "fluid": true
+        },
+        {
+            "id": 20,
+            "role": "PRODUCER",
+            "item": "electromagnetic-science-pack",
+            "rate": 0.30000000000000004,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "PRODUCER",
+            "item": "electromagnetic-science-pack",
+            "rate": 0.30000000000000004,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "PRODUCER",
+            "item": "electromagnetic-science-pack",
+            "rate": 0.30000000000000004,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "PRODUCER",
+            "item": "electromagnetic-science-pack",
+            "rate": 0.30000000000000004,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "PRODUCER",
+            "item": "electromagnetic-science-pack",
+            "rate": 0.30000000000000004,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.6666666666666666,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.6666666666666666,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.6666666666666666,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.6666666666666666,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "PRODUCER",
+            "item": "light-oil",
+            "rate": 2.222222222222222,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 30,
+            "role": "CONSUMER",
+            "item": "light-oil",
+            "rate": 1.1111111111111107,
+            "k": 1,
+            "machine": 28,
+            "fluid": true
+        },
+        {
+            "id": 31,
+            "role": "CONSUMER",
+            "item": "light-oil",
+            "rate": 1.1111111111111107,
+            "k": 1,
+            "machine": 29,
+            "fluid": true
+        },
+        {
+            "id": 32,
+            "role": "PRODUCER",
+            "item": "holmium-plate",
+            "rate": 0.8888888888888887,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 33,
+            "role": "PRODUCER",
+            "item": "holmium-plate",
+            "rate": 0.8888888888888887,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 34,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 35,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 36,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 37,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 38,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 39,
+            "role": "CONSUMER",
+            "item": "holmium-plate",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 40,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 14,
+            "fluid": true
+        },
+        {
+            "id": 41,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 15,
+            "fluid": true
+        },
+        {
+            "id": 42,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 16,
+            "fluid": true
+        },
+        {
+            "id": 43,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 17,
+            "fluid": true
+        },
+        {
+            "id": 44,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 18,
+            "fluid": true
+        },
+        {
+            "id": 45,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 19,
+            "fluid": true
+        },
+        {
+            "id": 46,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 20,
+            "fluid": true
+        },
+        {
+            "id": 47,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 21,
+            "fluid": true
+        },
+        {
+            "id": 48,
+            "role": "PRODUCER",
+            "item": "holmium-solution",
+            "rate": 9.074074074074073,
+            "k": 1,
+            "machine": 22,
+            "fluid": true
+        },
+        {
+            "id": 49,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 50,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 51,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 52,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 53,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 54,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 55,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 6,
+            "fluid": true
+        },
+        {
+            "id": 56,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 7,
+            "fluid": true
+        },
+        {
+            "id": 57,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 8,
+            "fluid": true
+        },
+        {
+            "id": 58,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 9,
+            "fluid": true
+        },
+        {
+            "id": 59,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 5.0,
+            "k": 1,
+            "machine": 10,
+            "fluid": true
+        },
+        {
+            "id": 60,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 17.777777777777775,
+            "k": 1,
+            "machine": 12,
+            "fluid": true
+        },
+        {
+            "id": 61,
+            "role": "CONSUMER",
+            "item": "holmium-solution",
+            "rate": 17.777777777777775,
+            "k": 1,
+            "machine": 13,
+            "fluid": true
+        },
+        {
+            "id": 62,
+            "role": "PRODUCER",
+            "item": "water",
+            "rate": 10.388888888888888,
+            "k": 1,
+            "machine": 23,
+            "fluid": true
+        },
+        {
+            "id": 63,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 2.222222222222222,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 64,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 14,
+            "fluid": true
+        },
+        {
+            "id": 65,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 15,
+            "fluid": true
+        },
+        {
+            "id": 66,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 16,
+            "fluid": true
+        },
+        {
+            "id": 67,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 17,
+            "fluid": true
+        },
+        {
+            "id": 68,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 18,
+            "fluid": true
+        },
+        {
+            "id": 69,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 19,
+            "fluid": true
+        },
+        {
+            "id": 70,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 20,
+            "fluid": true
+        },
+        {
+            "id": 71,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 21,
+            "fluid": true
+        },
+        {
+            "id": 72,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 0.9074074074074073,
+            "k": 1,
+            "machine": 22,
+            "fluid": true
+        },
+        {
+            "id": 73,
+            "role": "PRODUCER",
+            "item": "supercapacitor",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 74,
+            "role": "PRODUCER",
+            "item": "supercapacitor",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 75,
+            "role": "PRODUCER",
+            "item": "supercapacitor",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 76,
+            "role": "PRODUCER",
+            "item": "supercapacitor",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 77,
+            "role": "CONSUMER",
+            "item": "supercapacitor",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 78,
+            "role": "CONSUMER",
+            "item": "supercapacitor",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 79,
+            "role": "CONSUMER",
+            "item": "supercapacitor",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 80,
+            "role": "CONSUMER",
+            "item": "supercapacitor",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 81,
+            "role": "CONSUMER",
+            "item": "supercapacitor",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 82,
+            "role": "PRODUCER",
+            "item": "superconductor",
+            "rate": 0.6666666666666665,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 83,
+            "role": "PRODUCER",
+            "item": "superconductor",
+            "rate": 0.6666666666666665,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 84,
+            "role": "CONSUMER",
+            "item": "superconductor",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 85,
+            "role": "CONSUMER",
+            "item": "superconductor",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 86,
+            "role": "CONSUMER",
+            "item": "superconductor",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 87,
+            "role": "CONSUMER",
+            "item": "superconductor",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 88,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 89,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 90,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 91,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 92,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 93,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 94,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 95,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 96,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 97,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.35185185185185186,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 98,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 99,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 100,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 101,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 102,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 103,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 104,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 105,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 106,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 0.09074074074074073,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 107,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 108,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 109,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 110,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 111,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 112,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 3.5185185185185186,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 113,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 2.9629629629629624,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 114,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 115,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 116,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 117,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 118,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 119,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 120,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 121,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 122,
+            "role": "CONSUMER",
+            "item": "holmium-ore",
+            "rate": 0.18148148148148147,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 123,
+            "role": "CONSUMER",
+            "item": "ice",
+            "rate": 0.5194444444444444,
+            "k": 1,
+            "machine": 23,
+            "fluid": false
+        },
+        {
+            "id": 124,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 125,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 126,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 127,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.22222222222222215,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 128,
+            "role": "SOURCE",
+            "item": "accumulator",
+            "rate": 1.0,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 129,
+            "role": "OUTPUT",
+            "item": "electromagnetic-science-pack",
+            "rate": 1.5,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 130,
+            "role": "SOURCE",
+            "item": "electronic-circuit",
+            "rate": 2.666666666666666,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 131,
+            "role": "SOURCE",
+            "item": "battery",
+            "rate": 0.6666666666666661,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 132,
+            "role": "SOURCE",
+            "item": "stone",
+            "rate": 2.9277777777777763,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 133,
+            "role": "SOURCE",
+            "item": "heavy-oil",
+            "rate": 24.074074074074073,
+            "k": 1,
+            "port": 5,
+            "fluid": true
+        },
+        {
+            "id": 134,
+            "role": "SOURCE",
+            "item": "holmium-ore",
+            "rate": 1.6333333333333333,
+            "k": 1,
+            "port": 6,
+            "fluid": false
+        },
+        {
+            "id": 135,
+            "role": "SOURCE",
+            "item": "ice",
+            "rate": 0.5194444444444444,
+            "k": 1,
+            "port": 7,
+            "fluid": false
+        },
+        {
+            "id": 136,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.4444444444444443,
+            "k": 1,
+            "port": 8,
+            "fluid": false
+        },
+        {
+            "id": 137,
+            "role": "SOURCE",
+            "item": "plastic-bar",
+            "rate": 0.4444444444444443,
+            "k": 1,
+            "port": 9,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "accumulator",
+            "flow": 1.0,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                128
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electrolyte",
+            "flow": 31.66666666666667,
+            "terminals": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 2,
+            "item": "electromagnetic-science-pack",
+            "flow": 1.5,
+            "terminals": [
+                20,
+                21,
+                22,
+                23,
+                24,
+                129
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "electronic-circuit",
+            "flow": 2.6666666666666665,
+            "terminals": [
+                25,
+                26,
+                27,
+                28,
+                130
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "light-oil",
+            "flow": 2.2222222222222214,
+            "terminals": [
+                29,
+                30,
+                31
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 5,
+            "item": "holmium-plate",
+            "flow": 1.7777777777777775,
+            "terminals": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "holmium-solution",
+            "flow": 81.66666666666666,
+            "terminals": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 7,
+            "item": "water",
+            "flow": 10.388888888888886,
+            "terminals": [
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 8,
+            "item": "supercapacitor",
+            "flow": 1.0,
+            "terminals": [
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "item": "superconductor",
+            "flow": 1.3333333333333333,
+            "terminals": [
+                82,
+                83,
+                84,
+                85,
+                86,
+                87
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "item": "battery",
+            "flow": 0.6666666666666666,
+            "terminals": [
+                88,
+                89,
+                90,
+                91,
+                131
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "item": "stone",
+            "flow": 2.9277777777777763,
+            "terminals": [
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                132
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "item": "heavy-oil",
+            "flow": 24.074074074074073,
+            "terminals": [
+                107,
+                108,
+                109,
+                110,
+                111,
+                112,
+                113,
+                133
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 13,
+            "item": "holmium-ore",
+            "flow": 1.6333333333333333,
+            "terminals": [
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                134
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "item": "ice",
+            "flow": 0.5194444444444444,
+            "terminals": [
+                123,
+                135
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "item": "copper-plate",
+            "flow": 0.4444444444444443,
+            "terminals": [
+                124,
+                125,
+                136
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "item": "plastic-bar",
+            "flow": 0.4444444444444443,
+            "terminals": [
+                126,
+                127,
+                137
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "battery": 0.6666666666666661,
+        "stone": 2.9277777777777763,
+        "heavy-oil": 24.074074074074073,
+        "holmium-ore": 1.6333333333333333,
+        "ice": 0.5194444444444444,
+        "copper-plate": 0.4444444444444443,
+        "plastic-bar": 0.4444444444444443
+    },
+    "fluidRates": {
+        "heavy-oil": 24.074074074074073
+    },
+    "recipeRates": {},
+    "beltTier": "express",
+    "warnings": [],
+    "outputs": {
+        "electromagnetic-science-pack": 1.5
+    }
+}

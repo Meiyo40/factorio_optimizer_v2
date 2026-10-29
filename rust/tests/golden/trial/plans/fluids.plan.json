@@ -1,0 +1,299 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "lubricant",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "heavy-oil",
+            "outputRate": 10.0,
+            "product": "lubricant",
+            "demand": {},
+            "products": {
+                "lubricant": 10.0
+            },
+            "fluidDemand": {
+                "heavy-oil": 10.0
+            },
+            "fluidIn": {
+                "heavy-oil": 1
+            },
+            "fluidOut": {
+                "lubricant": 1
+            },
+            "crafts": 1.0
+        },
+        {
+            "id": 1,
+            "recipe": "sulfur",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 2.0,
+            "product": "sulfur",
+            "demand": {},
+            "products": {
+                "sulfur": 2.0
+            },
+            "fluidDemand": {
+                "water": 30.0,
+                "petroleum-gas": 30.0
+            },
+            "fluidIn": {
+                "water": 1,
+                "petroleum-gas": 2
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "heavy-oil",
+            "specs": [
+                {
+                    "name": "heavy-oil",
+                    "edge": "west",
+                    "from": 1,
+                    "to": 1,
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "petroleum-gas",
+            "specs": [
+                {
+                    "name": "petroleum-gas",
+                    "edge": "west",
+                    "from": 0,
+                    "to": 0,
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "water",
+            "specs": [
+                {
+                    "name": "water",
+                    "edge": "west",
+                    "from": 2,
+                    "to": 2,
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "lubricant",
+            "specs": [
+                {
+                    "name": "lubricant",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "sulfur",
+            "specs": [
+                {
+                    "name": "sulfur",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "lubricant",
+            "rate": 10.0,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 1,
+            "role": "OUTPUT",
+            "item": "lubricant",
+            "rate": 10.0,
+            "k": 1,
+            "port": 3,
+            "fluid": true
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "sulfur",
+            "rate": 2.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "OUTPUT",
+            "item": "sulfur",
+            "rate": 2.0,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "SOURCE",
+            "item": "heavy-oil",
+            "rate": 10.0,
+            "k": 1,
+            "port": 0,
+            "fluid": true
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 10.0,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 6,
+            "role": "SOURCE",
+            "item": "water",
+            "rate": 30.0,
+            "k": 1,
+            "port": 2,
+            "fluid": true
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 30.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "petroleum-gas",
+            "rate": 30.0,
+            "k": 1,
+            "port": 1,
+            "fluid": true
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "petroleum-gas",
+            "rate": 30.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "lubricant",
+            "flow": 10.0,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 1,
+            "item": "sulfur",
+            "flow": 2.0,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "heavy-oil",
+            "flow": 10.0,
+            "terminals": [
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "item": "water",
+            "flow": 30.0,
+            "terminals": [
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "item": "petroleum-gas",
+            "flow": 30.0,
+            "terminals": [
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": true
+        }
+    ],
+    "rawRates": {
+        "heavy-oil": 10.0,
+        "petroleum-gas": 30.0,
+        "water": 30.0
+    },
+    "fluidRates": {
+        "heavy-oil": 10.0,
+        "petroleum-gas": 30.0,
+        "water": 30.0
+    },
+    "recipeRates": {
+        "lubricant": 10.0,
+        "sulfur": 2.0
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "lubricant": 10.0,
+        "sulfur": 2.0
+    }
+}

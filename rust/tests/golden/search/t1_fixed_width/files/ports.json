@@ -1,0 +1,26 @@
+{
+    "box": {
+        "w": 12,
+        "h": 3
+    },
+    "inputs": [
+        {
+            "item": "iron-plate",
+            "rate": 2.0,
+            "fluid": false,
+            "x": -1,
+            "y": 1,
+            "edge": "west"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "iron-gear-wheel",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 7,
+            "y": -1,
+            "edge": "north"
+        }
+    ]
+}

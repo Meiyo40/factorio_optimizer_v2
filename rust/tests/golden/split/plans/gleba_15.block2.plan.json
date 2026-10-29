@@ -1,0 +1,1180 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 1,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 2,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 3,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 4,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 5,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 6,
+            "recipe": "carbon-fiber",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5555555555555557,
+            "product": "carbon-fiber",
+            "demand": {
+                "carbon": 0.37037037037037046,
+                "yumako-mash": 3.7037037037037046,
+                "nutrients": 0.23148148148148154
+            },
+            "products": {
+                "carbon-fiber": 0.5555555555555557
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.37037037037037046
+        },
+        {
+            "id": 7,
+            "recipe": "nutrients-from-bioflux",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 7.396836722559163,
+            "product": "nutrients",
+            "demand": {
+                "bioflux": 0.6164030602132636,
+                "nutrients": 0.03082015301066318
+            },
+            "products": {
+                "nutrients": 7.396836722559163
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.12328061204265273
+        },
+        {
+            "id": 8,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 9,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 10,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 11,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 12,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 13,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        },
+        {
+            "id": 14,
+            "recipe": "yumako-processing",
+            "machine": "biochamber",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.05418136652528377,
+            "product": "yumako-seed",
+            "demand": {
+                "yumako": 1.8060455508427924,
+                "nutrients": 0.22575569385534905
+            },
+            "products": {
+                "yumako-seed": 0.05418136652528377,
+                "yumako-mash": 5.418136652528377
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.8060455508427924
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "bioflux",
+            "specs": [
+                {
+                    "name": "bioflux",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "carbon",
+            "specs": [
+                {
+                    "name": "carbon",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "carbon-fiber",
+            "specs": [
+                {
+                    "name": "carbon-fiber",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "nutrients",
+            "specs": [
+                {
+                    "name": "nutrients",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "nutrients",
+            "specs": [
+                {
+                    "name": "nutrients",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "yumako-seed",
+            "specs": [
+                {
+                    "name": "yumako-seed",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 6,
+            "item": "yumako-mash",
+            "specs": [
+                {
+                    "name": "yumako-mash",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 7,
+            "item": "yumako",
+            "specs": [
+                {
+                    "name": "yumako",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "CONSUMER",
+            "item": "bioflux",
+            "rate": 0.6164030602132636,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 0.37037037037037046,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "PRODUCER",
+            "item": "carbon-fiber",
+            "rate": 0.5555555555555557,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "PRODUCER",
+            "item": "nutrients",
+            "rate": 7.396836722559163,
+            "k": 4,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.23148148148148154,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.03082015301066318,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 30,
+            "role": "CONSUMER",
+            "item": "nutrients",
+            "rate": 0.22575569385534905,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 31,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 32,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 33,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 34,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 35,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 36,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 37,
+            "role": "PRODUCER",
+            "item": "yumako-seed",
+            "rate": 0.05418136652528377,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 38,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 39,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 40,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 41,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 42,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 43,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 44,
+            "role": "PRODUCER",
+            "item": "yumako-mash",
+            "rate": 5.418136652528377,
+            "k": 3,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 45,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 46,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 47,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 48,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 49,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 50,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 51,
+            "role": "CONSUMER",
+            "item": "yumako-mash",
+            "rate": 3.7037037037037046,
+            "k": 3,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 52,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 53,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 54,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 55,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 56,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 57,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 58,
+            "role": "CONSUMER",
+            "item": "yumako",
+            "rate": 1.8060455508427924,
+            "k": 2,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 59,
+            "role": "SOURCE",
+            "item": "bioflux",
+            "rate": 0.6164030602132636,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 60,
+            "role": "SOURCE",
+            "item": "carbon",
+            "rate": 2.5925925925925934,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 61,
+            "role": "OUTPUT",
+            "item": "carbon-fiber",
+            "rate": 3.8888888888888884,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 62,
+            "role": "OUTPUT",
+            "item": "nutrients",
+            "rate": 2.5811410173403275,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 63,
+            "role": "OUTPUT",
+            "item": "nutrients",
+            "rate": 1.584215324850359,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 64,
+            "role": "OUTPUT",
+            "item": "yumako-seed",
+            "rate": 0.3792695656769864,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 65,
+            "role": "OUTPUT",
+            "item": "yumako-mash",
+            "rate": 12.001030641772697,
+            "k": 1,
+            "port": 6,
+            "fluid": false
+        },
+        {
+            "id": 66,
+            "role": "SOURCE",
+            "item": "yumako",
+            "rate": 12.642318855899546,
+            "k": 1,
+            "port": 7,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "bioflux",
+            "flow": 0.6164030602132636,
+            "terminals": [
+                0,
+                59
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "carbon",
+            "flow": 2.5925925925925934,
+            "terminals": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                60
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "carbon-fiber",
+            "flow": 3.8888888888888884,
+            "terminals": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                61
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "nutrients",
+            "flow": 7.396836722559163,
+            "terminals": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                62,
+                63
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "yumako-seed",
+            "flow": 0.3792695656769864,
+            "terminals": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                64
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "yumako-mash",
+            "flow": 37.92695656769863,
+            "terminals": [
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                65
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "yumako",
+            "flow": 12.642318855899548,
+            "terminals": [
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                66
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "yumako": 12.642318855899546
+    },
+    "fluidRates": {},
+    "recipeRates": {},
+    "beltTier": "express",
+    "warnings": [],
+    "outputs": {
+        "carbon-fiber": 3.8888888888888884,
+        "yumako-seed": 0.3792695656769864
+    }
+}

@@ -1,0 +1,4039 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.20555555555555552,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.41111111111111104,
+                "copper-cable": 0.8222222222222221,
+                "electronic-circuit": 0.41111111111111104
+            },
+            "products": {
+                "advanced-circuit": 0.20555555555555552
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.20555555555555552
+        },
+        {
+            "id": 1,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.20555555555555552,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.41111111111111104,
+                "copper-cable": 0.8222222222222221,
+                "electronic-circuit": 0.41111111111111104
+            },
+            "products": {
+                "advanced-circuit": 0.20555555555555552
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.20555555555555552
+        },
+        {
+            "id": 2,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.20555555555555552,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.41111111111111104,
+                "copper-cable": 0.8222222222222221,
+                "electronic-circuit": 0.41111111111111104
+            },
+            "products": {
+                "advanced-circuit": 0.20555555555555552
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.20555555555555552
+        },
+        {
+            "id": 3,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.20555555555555552,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.41111111111111104,
+                "copper-cable": 0.8222222222222221,
+                "electronic-circuit": 0.41111111111111104
+            },
+            "products": {
+                "advanced-circuit": 0.20555555555555552
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.20555555555555552
+        },
+        {
+            "id": 4,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.20555555555555552,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.41111111111111104,
+                "copper-cable": 0.8222222222222221,
+                "electronic-circuit": 0.41111111111111104
+            },
+            "products": {
+                "advanced-circuit": 0.20555555555555552
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.20555555555555552
+        },
+        {
+            "id": 5,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 6,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 7,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 8,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 9,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 10,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 11,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 12,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 13,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 14,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 15,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 16,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 17,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 18,
+            "recipe": "chemical-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1,
+            "product": "chemical-science-pack",
+            "demand": {
+                "sulfur": 0.05,
+                "advanced-circuit": 0.15000000000000002,
+                "engine-unit": 0.1
+            },
+            "products": {
+                "chemical-science-pack": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05
+        },
+        {
+            "id": 19,
+            "recipe": "electric-engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "lubricant",
+            "outputRate": 0.1111111111111111,
+            "product": "electric-engine-unit",
+            "demand": {
+                "electronic-circuit": 0.2222222222222222,
+                "engine-unit": 0.1111111111111111
+            },
+            "products": {
+                "electric-engine-unit": 0.1111111111111111
+            },
+            "fluidDemand": {
+                "lubricant": 1.6666666666666665
+            },
+            "fluidIn": {
+                "lubricant": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.1111111111111111
+        },
+        {
+            "id": 20,
+            "recipe": "electric-engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "lubricant",
+            "outputRate": 0.1111111111111111,
+            "product": "electric-engine-unit",
+            "demand": {
+                "electronic-circuit": 0.2222222222222222,
+                "engine-unit": 0.1111111111111111
+            },
+            "products": {
+                "electric-engine-unit": 0.1111111111111111
+            },
+            "fluidDemand": {
+                "lubricant": 1.6666666666666665
+            },
+            "fluidIn": {
+                "lubricant": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.1111111111111111
+        },
+        {
+            "id": 21,
+            "recipe": "electric-engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "lubricant",
+            "outputRate": 0.1111111111111111,
+            "product": "electric-engine-unit",
+            "demand": {
+                "electronic-circuit": 0.2222222222222222,
+                "engine-unit": 0.1111111111111111
+            },
+            "products": {
+                "electric-engine-unit": 0.1111111111111111
+            },
+            "fluidDemand": {
+                "lubricant": 1.6666666666666665
+            },
+            "fluidIn": {
+                "lubricant": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.1111111111111111
+        },
+        {
+            "id": 22,
+            "recipe": "electric-furnace",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1666666666666666,
+            "product": "electric-furnace",
+            "demand": {
+                "steel-plate": 1.666666666666666,
+                "advanced-circuit": 0.833333333333333,
+                "stone-brick": 1.666666666666666
+            },
+            "products": {
+                "electric-furnace": 0.1666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1666666666666666
+        },
+        {
+            "id": 23,
+            "recipe": "electric-furnace",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1666666666666666,
+            "product": "electric-furnace",
+            "demand": {
+                "steel-plate": 1.666666666666666,
+                "advanced-circuit": 0.833333333333333,
+                "stone-brick": 1.666666666666666
+            },
+            "products": {
+                "electric-furnace": 0.1666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1666666666666666
+        },
+        {
+            "id": 24,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 25,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 26,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 27,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 28,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 29,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 30,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 31,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 32,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 33,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 34,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 35,
+            "recipe": "inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.0,
+            "product": "inserter",
+            "demand": {
+                "iron-plate": 1.0,
+                "iron-gear-wheel": 1.0,
+                "electronic-circuit": 1.0
+            },
+            "products": {
+                "inserter": 1.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 36,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.9166666666666665,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 3.833333333333333
+            },
+            "products": {
+                "iron-gear-wheel": 1.9166666666666665
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.9166666666666665
+        },
+        {
+            "id": 37,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.9166666666666665,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 3.833333333333333
+            },
+            "products": {
+                "iron-gear-wheel": 1.9166666666666665
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.9166666666666665
+        },
+        {
+            "id": 38,
+            "recipe": "iron-stick",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 5.0,
+            "product": "iron-stick",
+            "demand": {
+                "iron-plate": 2.5
+            },
+            "products": {
+                "iron-stick": 5.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.5
+        },
+        {
+            "id": 39,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.2,
+                "inserter": 0.2
+            },
+            "products": {
+                "logistic-science-pack": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 40,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.2,
+                "inserter": 0.2
+            },
+            "products": {
+                "logistic-science-pack": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 41,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.2,
+                "inserter": 0.2
+            },
+            "products": {
+                "logistic-science-pack": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 42,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.2,
+                "inserter": 0.2
+            },
+            "products": {
+                "logistic-science-pack": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 43,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.2,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.2,
+                "inserter": 0.2
+            },
+            "products": {
+                "logistic-science-pack": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 44,
+            "recipe": "lubricant",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "heavy-oil",
+            "outputRate": 4.999999999999999,
+            "product": "lubricant",
+            "demand": {},
+            "products": {
+                "lubricant": 4.999999999999999
+            },
+            "fluidDemand": {
+                "heavy-oil": 4.999999999999999
+            },
+            "fluidIn": {
+                "heavy-oil": 1
+            },
+            "fluidOut": {
+                "lubricant": 1
+            },
+            "crafts": 0.49999999999999994
+        },
+        {
+            "id": 45,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.3333333333333333,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.3333333333333333
+            },
+            "products": {
+                "pipe": 1.3333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.3333333333333333
+        },
+        {
+            "id": 46,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.3333333333333333,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.3333333333333333
+            },
+            "products": {
+                "pipe": 1.3333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.3333333333333333
+        },
+        {
+            "id": 47,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 48,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 49,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 50,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 51,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 52,
+            "recipe": "production-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "production-science-pack",
+            "demand": {
+                "rail": 1.6666666666666665,
+                "electric-furnace": 0.05555555555555555,
+                "productivity-module": 0.05555555555555555
+            },
+            "products": {
+                "production-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.05555555555555555
+        },
+        {
+            "id": 53,
+            "recipe": "productivity-module",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.08333333333333333,
+            "product": "productivity-module",
+            "demand": {
+                "electronic-circuit": 0.41666666666666663,
+                "advanced-circuit": 0.41666666666666663
+            },
+            "products": {
+                "productivity-module": 0.08333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.08333333333333333
+        },
+        {
+            "id": 54,
+            "recipe": "productivity-module",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.08333333333333333,
+            "product": "productivity-module",
+            "demand": {
+                "electronic-circuit": 0.41666666666666663,
+                "advanced-circuit": 0.41666666666666663
+            },
+            "products": {
+                "productivity-module": 0.08333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.08333333333333333
+        },
+        {
+            "id": 55,
+            "recipe": "productivity-module",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.08333333333333333,
+            "product": "productivity-module",
+            "demand": {
+                "electronic-circuit": 0.41666666666666663,
+                "advanced-circuit": 0.41666666666666663
+            },
+            "products": {
+                "productivity-module": 0.08333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.08333333333333333
+        },
+        {
+            "id": 56,
+            "recipe": "productivity-module",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.08333333333333333,
+            "product": "productivity-module",
+            "demand": {
+                "electronic-circuit": 0.41666666666666663,
+                "advanced-circuit": 0.41666666666666663
+            },
+            "products": {
+                "productivity-module": 0.08333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.08333333333333333
+        },
+        {
+            "id": 57,
+            "recipe": "rail",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 5.0,
+            "product": "rail",
+            "demand": {
+                "stone": 2.5,
+                "steel-plate": 2.5,
+                "iron-stick": 2.5
+            },
+            "products": {
+                "rail": 5.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.5
+        },
+        {
+            "id": 58,
+            "recipe": "rail",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 5.0,
+            "product": "rail",
+            "demand": {
+                "stone": 2.5,
+                "steel-plate": 2.5,
+                "iron-stick": 2.5
+            },
+            "products": {
+                "rail": 5.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.5
+        },
+        {
+            "id": 59,
+            "recipe": "transport-belt",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.0,
+            "product": "transport-belt",
+            "demand": {
+                "iron-plate": 0.5,
+                "iron-gear-wheel": 0.5
+            },
+            "products": {
+                "transport-belt": 1.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "specs": [
+                {
+                    "name": "advanced-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "automation-science-pack",
+            "specs": [
+                {
+                    "name": "automation-science-pack",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "chemical-science-pack",
+            "specs": [
+                {
+                    "name": "chemical-science-pack",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "copper-cable",
+            "specs": [
+                {
+                    "name": "copper-cable",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "electric-engine-unit",
+            "specs": [
+                {
+                    "name": "electric-engine-unit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 6,
+            "item": "logistic-science-pack",
+            "specs": [
+                {
+                    "name": "logistic-science-pack",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 7,
+            "item": "plastic-bar",
+            "specs": [
+                {
+                    "name": "plastic-bar",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 8,
+            "item": "production-science-pack",
+            "specs": [
+                {
+                    "name": "production-science-pack",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 9,
+            "item": "sulfur",
+            "specs": [
+                {
+                    "name": "sulfur",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 10,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 11,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 12,
+            "item": "steel-plate",
+            "specs": [
+                {
+                    "name": "steel-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 13,
+            "item": "stone-brick",
+            "specs": [
+                {
+                    "name": "stone-brick",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 14,
+            "item": "heavy-oil",
+            "specs": [
+                {
+                    "name": "heavy-oil",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 15,
+            "item": "stone",
+            "specs": [
+                {
+                    "name": "stone",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.20555555555555552,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.20555555555555552,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.20555555555555552,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.20555555555555552,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.20555555555555552,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.15000000000000002,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.833333333333333,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.833333333333333,
+            "k": 1,
+            "machine": 23,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 53,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 54,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 55,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 56,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 30,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 31,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 32,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 33,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 34,
+            "role": "PRODUCER",
+            "item": "chemical-science-pack",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 35,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.8222222222222221,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 36,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.8222222222222221,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 37,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.8222222222222221,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 38,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.8222222222222221,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 39,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.8222222222222221,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 40,
+            "role": "PRODUCER",
+            "item": "electric-engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 41,
+            "role": "PRODUCER",
+            "item": "electric-engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 42,
+            "role": "PRODUCER",
+            "item": "electric-engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 43,
+            "role": "PRODUCER",
+            "item": "electric-furnace",
+            "rate": 0.1666666666666666,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 44,
+            "role": "PRODUCER",
+            "item": "electric-furnace",
+            "rate": 0.1666666666666666,
+            "k": 1,
+            "machine": 23,
+            "fluid": false
+        },
+        {
+            "id": 45,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 47,
+            "fluid": false
+        },
+        {
+            "id": 46,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 48,
+            "fluid": false
+        },
+        {
+            "id": 47,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 49,
+            "fluid": false
+        },
+        {
+            "id": 48,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 50,
+            "fluid": false
+        },
+        {
+            "id": 49,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 51,
+            "fluid": false
+        },
+        {
+            "id": 50,
+            "role": "CONSUMER",
+            "item": "electric-furnace",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 52,
+            "fluid": false
+        },
+        {
+            "id": 51,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 52,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 53,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 54,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 55,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 56,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.2222222222222222,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 57,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.2222222222222222,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 58,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.2222222222222222,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 59,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 35,
+            "fluid": false
+        },
+        {
+            "id": 60,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 53,
+            "fluid": false
+        },
+        {
+            "id": 61,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 54,
+            "fluid": false
+        },
+        {
+            "id": 62,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 55,
+            "fluid": false
+        },
+        {
+            "id": 63,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.41666666666666663,
+            "k": 1,
+            "machine": 56,
+            "fluid": false
+        },
+        {
+            "id": 64,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 65,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 66,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 67,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 68,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 69,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 70,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 71,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 72,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 73,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 74,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 75,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 76,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 77,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 78,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 79,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 80,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 81,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 82,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 83,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 84,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 85,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 86,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 87,
+            "role": "CONSUMER",
+            "item": "engine-unit",
+            "rate": 0.1111111111111111,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 88,
+            "role": "PRODUCER",
+            "item": "inserter",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 35,
+            "fluid": false
+        },
+        {
+            "id": 89,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 39,
+            "fluid": false
+        },
+        {
+            "id": 90,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 40,
+            "fluid": false
+        },
+        {
+            "id": 91,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 41,
+            "fluid": false
+        },
+        {
+            "id": 92,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 42,
+            "fluid": false
+        },
+        {
+            "id": 93,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 43,
+            "fluid": false
+        },
+        {
+            "id": 94,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 1.9166666666666665,
+            "k": 1,
+            "machine": 36,
+            "fluid": false
+        },
+        {
+            "id": 95,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 1.9166666666666665,
+            "k": 1,
+            "machine": 37,
+            "fluid": false
+        },
+        {
+            "id": 96,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 97,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 98,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 99,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 100,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 101,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 102,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 103,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 104,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 105,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 106,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 107,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 108,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 109,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 110,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 111,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 35,
+            "fluid": false
+        },
+        {
+            "id": 112,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 59,
+            "fluid": false
+        },
+        {
+            "id": 113,
+            "role": "PRODUCER",
+            "item": "iron-stick",
+            "rate": 5.0,
+            "k": 2,
+            "machine": 38,
+            "fluid": false
+        },
+        {
+            "id": 114,
+            "role": "CONSUMER",
+            "item": "iron-stick",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 57,
+            "fluid": false
+        },
+        {
+            "id": 115,
+            "role": "CONSUMER",
+            "item": "iron-stick",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 58,
+            "fluid": false
+        },
+        {
+            "id": 116,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 39,
+            "fluid": false
+        },
+        {
+            "id": 117,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 40,
+            "fluid": false
+        },
+        {
+            "id": 118,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 41,
+            "fluid": false
+        },
+        {
+            "id": 119,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 42,
+            "fluid": false
+        },
+        {
+            "id": 120,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 43,
+            "fluid": false
+        },
+        {
+            "id": 121,
+            "role": "PRODUCER",
+            "item": "lubricant",
+            "rate": 4.999999999999999,
+            "k": 1,
+            "machine": 44,
+            "fluid": true
+        },
+        {
+            "id": 122,
+            "role": "CONSUMER",
+            "item": "lubricant",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 19,
+            "fluid": true
+        },
+        {
+            "id": 123,
+            "role": "CONSUMER",
+            "item": "lubricant",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 20,
+            "fluid": true
+        },
+        {
+            "id": 124,
+            "role": "CONSUMER",
+            "item": "lubricant",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 21,
+            "fluid": true
+        },
+        {
+            "id": 125,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 45,
+            "fluid": false
+        },
+        {
+            "id": 126,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 46,
+            "fluid": false
+        },
+        {
+            "id": 127,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 128,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 129,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 130,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 131,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 132,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 133,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 134,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 135,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 136,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 137,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 138,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 139,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 140,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 141,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 142,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.41111111111111104,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 143,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 47,
+            "fluid": false
+        },
+        {
+            "id": 144,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 48,
+            "fluid": false
+        },
+        {
+            "id": 145,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 49,
+            "fluid": false
+        },
+        {
+            "id": 146,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 50,
+            "fluid": false
+        },
+        {
+            "id": 147,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 51,
+            "fluid": false
+        },
+        {
+            "id": 148,
+            "role": "PRODUCER",
+            "item": "production-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 52,
+            "fluid": false
+        },
+        {
+            "id": 149,
+            "role": "PRODUCER",
+            "item": "productivity-module",
+            "rate": 0.08333333333333333,
+            "k": 1,
+            "machine": 53,
+            "fluid": false
+        },
+        {
+            "id": 150,
+            "role": "PRODUCER",
+            "item": "productivity-module",
+            "rate": 0.08333333333333333,
+            "k": 1,
+            "machine": 54,
+            "fluid": false
+        },
+        {
+            "id": 151,
+            "role": "PRODUCER",
+            "item": "productivity-module",
+            "rate": 0.08333333333333333,
+            "k": 1,
+            "machine": 55,
+            "fluid": false
+        },
+        {
+            "id": 152,
+            "role": "PRODUCER",
+            "item": "productivity-module",
+            "rate": 0.08333333333333333,
+            "k": 1,
+            "machine": 56,
+            "fluid": false
+        },
+        {
+            "id": 153,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 47,
+            "fluid": false
+        },
+        {
+            "id": 154,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 48,
+            "fluid": false
+        },
+        {
+            "id": 155,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 49,
+            "fluid": false
+        },
+        {
+            "id": 156,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 50,
+            "fluid": false
+        },
+        {
+            "id": 157,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 51,
+            "fluid": false
+        },
+        {
+            "id": 158,
+            "role": "CONSUMER",
+            "item": "productivity-module",
+            "rate": 0.05555555555555555,
+            "k": 1,
+            "machine": 52,
+            "fluid": false
+        },
+        {
+            "id": 159,
+            "role": "PRODUCER",
+            "item": "rail",
+            "rate": 5.0,
+            "k": 2,
+            "machine": 57,
+            "fluid": false
+        },
+        {
+            "id": 160,
+            "role": "PRODUCER",
+            "item": "rail",
+            "rate": 5.0,
+            "k": 2,
+            "machine": 58,
+            "fluid": false
+        },
+        {
+            "id": 161,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 47,
+            "fluid": false
+        },
+        {
+            "id": 162,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 48,
+            "fluid": false
+        },
+        {
+            "id": 163,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 49,
+            "fluid": false
+        },
+        {
+            "id": 164,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 50,
+            "fluid": false
+        },
+        {
+            "id": 165,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 51,
+            "fluid": false
+        },
+        {
+            "id": 166,
+            "role": "CONSUMER",
+            "item": "rail",
+            "rate": 1.6666666666666665,
+            "k": 1,
+            "machine": 52,
+            "fluid": false
+        },
+        {
+            "id": 167,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 168,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 169,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 170,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 171,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 172,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 173,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 174,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 175,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 176,
+            "role": "CONSUMER",
+            "item": "sulfur",
+            "rate": 0.05,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 177,
+            "role": "PRODUCER",
+            "item": "transport-belt",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 59,
+            "fluid": false
+        },
+        {
+            "id": 178,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 39,
+            "fluid": false
+        },
+        {
+            "id": 179,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 40,
+            "fluid": false
+        },
+        {
+            "id": 180,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 41,
+            "fluid": false
+        },
+        {
+            "id": 181,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 42,
+            "fluid": false
+        },
+        {
+            "id": 182,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 43,
+            "fluid": false
+        },
+        {
+            "id": 183,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 184,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 185,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 186,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 187,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 35,
+            "fluid": false
+        },
+        {
+            "id": 188,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 3.833333333333333,
+            "k": 2,
+            "machine": 36,
+            "fluid": false
+        },
+        {
+            "id": 189,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 3.833333333333333,
+            "k": 2,
+            "machine": 37,
+            "fluid": false
+        },
+        {
+            "id": 190,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 38,
+            "fluid": false
+        },
+        {
+            "id": 191,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 45,
+            "fluid": false
+        },
+        {
+            "id": 192,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 46,
+            "fluid": false
+        },
+        {
+            "id": 193,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 59,
+            "fluid": false
+        },
+        {
+            "id": 194,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 1.666666666666666,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 195,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 1.666666666666666,
+            "k": 1,
+            "machine": 23,
+            "fluid": false
+        },
+        {
+            "id": 196,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 24,
+            "fluid": false
+        },
+        {
+            "id": 197,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 25,
+            "fluid": false
+        },
+        {
+            "id": 198,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 26,
+            "fluid": false
+        },
+        {
+            "id": 199,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 27,
+            "fluid": false
+        },
+        {
+            "id": 200,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 28,
+            "fluid": false
+        },
+        {
+            "id": 201,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 29,
+            "fluid": false
+        },
+        {
+            "id": 202,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 30,
+            "fluid": false
+        },
+        {
+            "id": 203,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 31,
+            "fluid": false
+        },
+        {
+            "id": 204,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 32,
+            "fluid": false
+        },
+        {
+            "id": 205,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 33,
+            "fluid": false
+        },
+        {
+            "id": 206,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 34,
+            "fluid": false
+        },
+        {
+            "id": 207,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 57,
+            "fluid": false
+        },
+        {
+            "id": 208,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 58,
+            "fluid": false
+        },
+        {
+            "id": 209,
+            "role": "CONSUMER",
+            "item": "stone-brick",
+            "rate": 1.666666666666666,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 210,
+            "role": "CONSUMER",
+            "item": "stone-brick",
+            "rate": 1.666666666666666,
+            "k": 1,
+            "machine": 23,
+            "fluid": false
+        },
+        {
+            "id": 211,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 4.999999999999999,
+            "k": 1,
+            "machine": 44,
+            "fluid": true
+        },
+        {
+            "id": 212,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 57,
+            "fluid": false
+        },
+        {
+            "id": 213,
+            "role": "CONSUMER",
+            "item": "stone",
+            "rate": 2.5,
+            "k": 1,
+            "machine": 58,
+            "fluid": false
+        },
+        {
+            "id": 214,
+            "role": "SOURCE",
+            "item": "advanced-circuit",
+            "rate": 3.8055555555555545,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 215,
+            "role": "OUTPUT",
+            "item": "automation-science-pack",
+            "rate": 1.0,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 216,
+            "role": "OUTPUT",
+            "item": "chemical-science-pack",
+            "rate": 0.9999999999999999,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 217,
+            "role": "SOURCE",
+            "item": "copper-cable",
+            "rate": 4.111111111111111,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 218,
+            "role": "OUTPUT",
+            "item": "electric-engine-unit",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 219,
+            "role": "SOURCE",
+            "item": "electronic-circuit",
+            "rate": 5.388888888888889,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 220,
+            "role": "OUTPUT",
+            "item": "logistic-science-pack",
+            "rate": 1.0,
+            "k": 1,
+            "port": 6,
+            "fluid": false
+        },
+        {
+            "id": 221,
+            "role": "SOURCE",
+            "item": "plastic-bar",
+            "rate": 2.0555555555555554,
+            "k": 1,
+            "port": 7,
+            "fluid": false
+        },
+        {
+            "id": 222,
+            "role": "OUTPUT",
+            "item": "production-science-pack",
+            "rate": 0.9999999999999999,
+            "k": 1,
+            "port": 8,
+            "fluid": false
+        },
+        {
+            "id": 223,
+            "role": "SOURCE",
+            "item": "sulfur",
+            "rate": 0.4999999999999998,
+            "k": 1,
+            "port": 9,
+            "fluid": false
+        },
+        {
+            "id": 224,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.9999999999999716,
+            "k": 1,
+            "port": 10,
+            "fluid": false
+        },
+        {
+            "id": 225,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 14.333333333333325,
+            "k": 1,
+            "port": 11,
+            "fluid": false
+        },
+        {
+            "id": 226,
+            "role": "SOURCE",
+            "item": "steel-plate",
+            "rate": 9.666666666666664,
+            "k": 1,
+            "port": 12,
+            "fluid": false
+        },
+        {
+            "id": 227,
+            "role": "SOURCE",
+            "item": "stone-brick",
+            "rate": 3.333333333333332,
+            "k": 1,
+            "port": 13,
+            "fluid": false
+        },
+        {
+            "id": 228,
+            "role": "SOURCE",
+            "item": "heavy-oil",
+            "rate": 4.999999999999999,
+            "k": 1,
+            "port": 14,
+            "fluid": true
+        },
+        {
+            "id": 229,
+            "role": "SOURCE",
+            "item": "stone",
+            "rate": 5.0,
+            "k": 1,
+            "port": 15,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "flow": 4.833333333333333,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                214
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "automation-science-pack",
+            "flow": 1.0,
+            "terminals": [
+                21,
+                22,
+                23,
+                24,
+                215
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "chemical-science-pack",
+            "flow": 0.9999999999999999,
+            "terminals": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                216
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "copper-cable",
+            "flow": 4.111111111111111,
+            "terminals": [
+                35,
+                36,
+                37,
+                38,
+                39,
+                217
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "electric-engine-unit",
+            "flow": 0.3333333333333333,
+            "terminals": [
+                40,
+                41,
+                42,
+                218
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "electric-furnace",
+            "flow": 0.33333333333333337,
+            "terminals": [
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "electronic-circuit",
+            "flow": 5.38888888888889,
+            "terminals": [
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                219
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "item": "engine-unit",
+            "flow": 1.3333333333333333,
+            "terminals": [
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "item": "inserter",
+            "flow": 1.0,
+            "terminals": [
+                88,
+                89,
+                90,
+                91,
+                92,
+                93
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "item": "iron-gear-wheel",
+            "flow": 3.833333333333332,
+            "terminals": [
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107,
+                108,
+                109,
+                110,
+                111,
+                112
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "item": "iron-stick",
+            "flow": 5.0,
+            "terminals": [
+                113,
+                114,
+                115
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "item": "logistic-science-pack",
+            "flow": 1.0,
+            "terminals": [
+                116,
+                117,
+                118,
+                119,
+                120,
+                220
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "item": "lubricant",
+            "flow": 5.0,
+            "terminals": [
+                121,
+                122,
+                123,
+                124
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 13,
+            "item": "pipe",
+            "flow": 2.666666666666666,
+            "terminals": [
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "item": "plastic-bar",
+            "flow": 2.0555555555555554,
+            "terminals": [
+                138,
+                139,
+                140,
+                141,
+                142,
+                221
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "item": "production-science-pack",
+            "flow": 0.9999999999999999,
+            "terminals": [
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                222
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "item": "productivity-module",
+            "flow": 0.33333333333333337,
+            "terminals": [
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "item": "rail",
+            "flow": 9.999999999999998,
+            "terminals": [
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "item": "sulfur",
+            "flow": 0.49999999999999994,
+            "terminals": [
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                223
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "item": "transport-belt",
+            "flow": 1.0,
+            "terminals": [
+                177,
+                178,
+                179,
+                180,
+                181,
+                182
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "item": "copper-plate",
+            "flow": 1.0,
+            "terminals": [
+                183,
+                184,
+                185,
+                186,
+                224
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "item": "iron-plate",
+            "flow": 14.333333333333334,
+            "terminals": [
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193,
+                225
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "item": "steel-plate",
+            "flow": 9.666666666666664,
+            "terminals": [
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                226
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "item": "stone-brick",
+            "flow": 3.333333333333332,
+            "terminals": [
+                209,
+                210,
+                227
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "item": "heavy-oil",
+            "flow": 4.999999999999999,
+            "terminals": [
+                211,
+                228
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 25,
+            "item": "stone",
+            "flow": 5.0,
+            "terminals": [
+                212,
+                213,
+                229
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.9999999999999716,
+        "iron-plate": 14.333333333333325,
+        "steel-plate": 9.666666666666664,
+        "stone-brick": 3.333333333333332,
+        "heavy-oil": 4.999999999999999,
+        "stone": 5.0
+    },
+    "fluidRates": {
+        "heavy-oil": 4.999999999999999
+    },
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "automation-science-pack": 1.0,
+        "chemical-science-pack": 0.9999999999999999,
+        "logistic-science-pack": 1.0,
+        "production-science-pack": 0.9999999999999999
+    }
+}

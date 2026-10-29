@@ -1,0 +1,563 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 4.000000000000001,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 2.0000000000000004
+            },
+            "products": {
+                "copper-cable": 4.000000000000001
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.0000000000000004
+        },
+        {
+            "id": 1,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 4.000000000000001,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 2.0000000000000004
+            },
+            "products": {
+                "copper-cable": 4.000000000000001
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.0000000000000004
+        },
+        {
+            "id": 2,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 2.4000000000000004,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 2.4000000000000004,
+                "copper-cable": 7.200000000000001
+            },
+            "products": {
+                "electronic-circuit": 2.4000000000000004
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.4000000000000004
+        },
+        {
+            "id": 3,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 2.4000000000000004,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 2.4000000000000004,
+                "copper-cable": 7.200000000000001
+            },
+            "products": {
+                "electronic-circuit": 2.4000000000000004
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.4000000000000004
+        },
+        {
+            "id": 4,
+            "recipe": "processing-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 0.1,
+            "product": "processing-unit",
+            "demand": {
+                "electronic-circuit": 2.0,
+                "advanced-circuit": 0.2
+            },
+            "products": {
+                "processing-unit": 0.1
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 0.5
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.1
+        },
+        {
+            "id": 5,
+            "recipe": "processing-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 0.1,
+            "product": "processing-unit",
+            "demand": {
+                "electronic-circuit": 2.0,
+                "advanced-circuit": 0.2
+            },
+            "products": {
+                "processing-unit": 0.1
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 0.5
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.1
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "specs": [
+                {
+                    "name": "advanced-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "copper-cable",
+            "specs": [
+                {
+                    "name": "copper-cable",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "processing-unit",
+            "specs": [
+                {
+                    "name": "processing-unit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 6,
+            "item": "sulfuric-acid",
+            "specs": [
+                {
+                    "name": "sulfuric-acid",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": true
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "advanced-circuit",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 4.000000000000001,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 4.000000000000001,
+            "k": 2,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 7.200000000000001,
+            "k": 5,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 7.200000000000001,
+            "k": 5,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 2.4000000000000004,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 2.4000000000000004,
+            "k": 2,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "PRODUCER",
+            "item": "processing-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "PRODUCER",
+            "item": "processing-unit",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 2.0000000000000004,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 2.0000000000000004,
+            "k": 2,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.4000000000000004,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.4000000000000004,
+            "k": 2,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 18,
+            "role": "SOURCE",
+            "item": "advanced-circuit",
+            "rate": 0.4,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "SOURCE",
+            "item": "copper-cable",
+            "rate": 6.4,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "OUTPUT",
+            "item": "electronic-circuit",
+            "rate": 0.8000000000000002,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "OUTPUT",
+            "item": "processing-unit",
+            "rate": 0.2,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 4.000000000000001,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 4.800000000000001,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "SOURCE",
+            "item": "sulfuric-acid",
+            "rate": 1.0,
+            "k": 1,
+            "port": 6,
+            "fluid": true
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "flow": 0.4,
+            "terminals": [
+                0,
+                1,
+                18
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "copper-cable",
+            "flow": 14.400000000000002,
+            "terminals": [
+                2,
+                3,
+                4,
+                5,
+                19
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "flow": 4.8,
+            "terminals": [
+                6,
+                7,
+                8,
+                9,
+                20
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "processing-unit",
+            "flow": 0.2,
+            "terminals": [
+                10,
+                11,
+                21
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "copper-plate",
+            "flow": 4.000000000000001,
+            "terminals": [
+                12,
+                13,
+                22
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "iron-plate",
+            "flow": 4.800000000000001,
+            "terminals": [
+                14,
+                15,
+                23
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "sulfuric-acid",
+            "flow": 1.0,
+            "terminals": [
+                16,
+                17,
+                24
+            ],
+            "beltCount": 1,
+            "fluid": true
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 4.000000000000001,
+        "iron-plate": 4.800000000000001,
+        "sulfuric-acid": 1.0
+    },
+    "fluidRates": {
+        "sulfuric-acid": 1.0
+    },
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "processing-unit": 0.2
+    }
+}

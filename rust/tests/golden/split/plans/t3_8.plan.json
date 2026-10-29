@@ -1,0 +1,696 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 1,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 2,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.5,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 0.75
+            },
+            "products": {
+                "copper-cable": 1.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.75
+        },
+        {
+            "id": 3,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 0.5,
+                "copper-cable": 1.5
+            },
+            "products": {
+                "electronic-circuit": 0.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        },
+        {
+            "id": 4,
+            "recipe": "inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5,
+            "product": "inserter",
+            "demand": {
+                "iron-plate": 0.5,
+                "iron-gear-wheel": 0.5,
+                "electronic-circuit": 0.5
+            },
+            "products": {
+                "inserter": 0.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        },
+        {
+            "id": 5,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.25,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 2.5
+            },
+            "products": {
+                "iron-gear-wheel": 1.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.25
+        },
+        {
+            "id": 6,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.16666666666666666,
+                "inserter": 0.16666666666666666
+            },
+            "products": {
+                "logistic-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 7,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.16666666666666666,
+                "inserter": 0.16666666666666666
+            },
+            "products": {
+                "logistic-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 8,
+            "recipe": "logistic-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.16666666666666666,
+            "product": "logistic-science-pack",
+            "demand": {
+                "transport-belt": 0.16666666666666666,
+                "inserter": 0.16666666666666666
+            },
+            "products": {
+                "logistic-science-pack": 0.16666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.16666666666666666
+        },
+        {
+            "id": 9,
+            "recipe": "transport-belt",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5,
+            "product": "transport-belt",
+            "demand": {
+                "iron-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "transport-belt": 0.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "automation-science-pack",
+            "specs": [
+                {
+                    "name": "automation-science-pack",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "logistic-science-pack",
+            "specs": [
+                {
+                    "name": "logistic-science-pack",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "OUTPUT",
+            "item": "automation-science-pack",
+            "rate": 0.5,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 1.5,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 1.5,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "inserter",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "inserter",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 1.25,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "PRODUCER",
+            "item": "logistic-science-pack",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "OUTPUT",
+            "item": "logistic-science-pack",
+            "rate": 0.5,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "PRODUCER",
+            "item": "transport-belt",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "CONSUMER",
+            "item": "transport-belt",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 1.25,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.75,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 3.75,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 30,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 31,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.5,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 32,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "flow": 0.5,
+            "terminals": [
+                0,
+                1,
+                2
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "copper-cable",
+            "flow": 1.5,
+            "terminals": [
+                3,
+                4
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "flow": 0.5,
+            "terminals": [
+                5,
+                6
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "inserter",
+            "flow": 0.5,
+            "terminals": [
+                7,
+                8,
+                9,
+                10
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "iron-gear-wheel",
+            "flow": 1.25,
+            "terminals": [
+                11,
+                12,
+                13,
+                14,
+                15
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "logistic-science-pack",
+            "flow": 0.5,
+            "terminals": [
+                16,
+                17,
+                18,
+                19
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "transport-belt",
+            "flow": 0.5,
+            "terminals": [
+                20,
+                21,
+                22,
+                23
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "item": "copper-plate",
+            "flow": 1.25,
+            "terminals": [
+                24,
+                25,
+                26,
+                27
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "item": "iron-plate",
+            "flow": 3.75,
+            "terminals": [
+                28,
+                29,
+                30,
+                31,
+                32
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 1.25,
+        "iron-plate": 3.75
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "transport-belt": 0.5,
+        "inserter": 0.5,
+        "iron-gear-wheel": 1.25,
+        "copper-cable": 1.5,
+        "electronic-circuit": 0.5,
+        "automation-science-pack": 0.5,
+        "logistic-science-pack": 0.5
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "automation-science-pack": 0.5,
+        "logistic-science-pack": 0.5
+    }
+}

@@ -129,7 +129,7 @@ fn check_harness(name: &str) {
     let entities: Vec<EntityJson> = built.entities.iter().map(entity_json).collect();
     assert!(!entities.is_empty(), "{name}: Kotlin built a harness");
     assert_eq!(entities, g.harness.entities, "{name}: entities");
-    let mut tiles: Vec<Tile> = built.tiles.iter().copied().collect();
+    let mut tiles: Vec<Tile> = built.tiles.iter_java().copied().collect();
     tiles.sort_by_key(|t| (t.y, t.x));
     assert_eq!(tiles, g.harness.tiles, "{name}: tiles");
     assert_eq!(built.warnings, g.harness.warnings, "{name}: warnings");

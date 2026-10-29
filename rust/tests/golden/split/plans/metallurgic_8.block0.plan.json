@@ -1,0 +1,1050 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 1,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 2,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 3,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 4,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 5,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 6,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 7,
+            "recipe": "carbon",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.0,
+            "product": "carbon",
+            "demand": {
+                "coal": 2.0
+            },
+            "products": {
+                "carbon": 1.0
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 20.0
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.0
+        },
+        {
+            "id": 8,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 9,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 10,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 11,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 12,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 13,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        },
+        {
+            "id": 14,
+            "recipe": "tungsten-carbide",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "sulfuric-acid",
+            "outputRate": 1.1428571428571428,
+            "product": "tungsten-carbide",
+            "demand": {
+                "carbon": 1.1428571428571428,
+                "tungsten-ore": 2.2857142857142856
+            },
+            "products": {
+                "tungsten-carbide": 1.1428571428571428
+            },
+            "fluidDemand": {
+                "sulfuric-acid": 11.428571428571427
+            },
+            "fluidIn": {
+                "sulfuric-acid": 1
+            },
+            "fluidOut": {},
+            "crafts": 1.1428571428571428
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "tungsten-carbide",
+            "specs": [
+                {
+                    "name": "tungsten-carbide",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "coal",
+            "specs": [
+                {
+                    "name": "coal",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "sulfuric-acid",
+            "specs": [
+                {
+                    "name": "sulfuric-acid",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "tungsten-ore",
+            "specs": [
+                {
+                    "name": "tungsten-ore",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "carbon",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "carbon",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "PRODUCER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 28,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 29,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 30,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 31,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 32,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 33,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 34,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 35,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 36,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 6,
+            "fluid": true
+        },
+        {
+            "id": 37,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 20.0,
+            "k": 1,
+            "machine": 7,
+            "fluid": true
+        },
+        {
+            "id": 38,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 8,
+            "fluid": true
+        },
+        {
+            "id": 39,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 9,
+            "fluid": true
+        },
+        {
+            "id": 40,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 10,
+            "fluid": true
+        },
+        {
+            "id": 41,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 42,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 12,
+            "fluid": true
+        },
+        {
+            "id": 43,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 13,
+            "fluid": true
+        },
+        {
+            "id": 44,
+            "role": "CONSUMER",
+            "item": "sulfuric-acid",
+            "rate": 11.428571428571427,
+            "k": 1,
+            "machine": 14,
+            "fluid": true
+        },
+        {
+            "id": 45,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 46,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 47,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 48,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 49,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 50,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 51,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 2.2857142857142856,
+            "k": 2,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 52,
+            "role": "OUTPUT",
+            "item": "tungsten-carbide",
+            "rate": 7.999999999999998,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 53,
+            "role": "SOURCE",
+            "item": "coal",
+            "rate": 16.0,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 54,
+            "role": "SOURCE",
+            "item": "sulfuric-acid",
+            "rate": 239.99999999999991,
+            "k": 1,
+            "port": 2,
+            "fluid": true
+        },
+        {
+            "id": 55,
+            "role": "SOURCE",
+            "item": "tungsten-ore",
+            "rate": 15.999999999999996,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "carbon",
+            "flow": 7.999999999999998,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "tungsten-carbide",
+            "flow": 7.999999999999998,
+            "terminals": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                52
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "coal",
+            "flow": 16.0,
+            "terminals": [
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                53
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "sulfuric-acid",
+            "flow": 239.99999999999991,
+            "terminals": [
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                54
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "item": "tungsten-ore",
+            "flow": 15.999999999999996,
+            "terminals": [
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                55
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "coal": 16.0,
+        "sulfuric-acid": 239.99999999999991,
+        "tungsten-ore": 15.999999999999996
+    },
+    "fluidRates": {
+        "sulfuric-acid": 239.99999999999991
+    },
+    "recipeRates": {},
+    "beltTier": "express",
+    "warnings": [],
+    "outputs": {}
+}

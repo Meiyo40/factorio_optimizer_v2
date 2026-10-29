@@ -39,7 +39,7 @@ impl Default for AnnealOptions {
 /// The annealer owns the model; callers reach it as `annealer.model`.
 pub struct Annealer<'a> {
     pub model: PlaceModel<'a>,
-    rnd: SplittableRandom,
+    pub rnd: SplittableRandom,
     n_m: usize,
     /// The machines of the proposed move, and where they go (nx, ny, nr) and came from (ox, oy, or_).
     cur: Vec<usize>,

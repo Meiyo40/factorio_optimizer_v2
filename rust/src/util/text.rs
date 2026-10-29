@@ -2,24 +2,29 @@
 
 use std::fmt::Display;
 
-/// `"%.2f".format(d)`. Java's Formatter rounds half up on the shortest decimal digits of the double (the ones
-/// `Double.toString` shows), so 0.285 gives 0.29. C and Rust round the exact binary value instead, which is
-/// slightly below 0.285 and gives 0.28.
-pub fn fmt2(d: f64) -> String {
+/// `"%.{digits}f".format(d)`. Java's Formatter rounds half up on the shortest decimal digits of the double (the ones
+/// `Double.toString` shows), so 0.285 gives 0.29 and 12.5 gives 13. C and Rust round the exact binary value instead:
+/// 0.285 is slightly below, and 12.5 goes to even.
+pub fn fmt_fixed(d: f64, digits: usize) -> String {
     if !d.is_finite() {
         return format!("{d}");
     }
     let shortest = format!("{}", d.abs()); // the shortest decimal that round-trips, never in exponent form
     let (whole, frac) = shortest.split_once('.').unwrap_or((&shortest, ""));
-    let digits: Vec<u8> = frac.bytes().map(|b| b - b'0').collect();
-    let digit = |i: usize| digits.get(i).copied().unwrap_or(0);
-    let Ok(whole) = whole.parse::<u128>() else { return format!("{d:.2}") };
-    let mut hundredths = whole * 100 + u128::from(digit(0)) * 10 + u128::from(digit(1));
-    if digit(2) >= 5 {
-        hundredths += 1;
+    let digit = |i: usize| frac.as_bytes().get(i).map_or(0, |b| b - b'0');
+    let Ok(whole) = whole.parse::<u128>() else { return format!("{d:.digits$}") };
+    let unit = 10u128.pow(digits as u32);
+    let mut scaled = whole * unit + (0..digits).fold(0u128, |acc, i| acc * 10 + u128::from(digit(i)));
+    if digit(digits) >= 5 {
+        scaled += 1;
     }
     let sign = if d.is_sign_negative() { "-" } else { "" }; // Java keeps it: -0.001 prints -0.00
-    format!("{sign}{}.{:02}", hundredths / 100, hundredths % 100)
+    if digits == 0 { format!("{sign}{scaled}") } else { format!("{sign}{}.{:0digits$}", scaled / unit, scaled % unit) }
+}
+
+/// `"%.2f".format(d)`, see [`fmt_fixed`].
+pub fn fmt2(d: f64) -> String {
+    fmt_fixed(d, 2)
 }
 
 /// Kotlin's `List.toString()`: `[a, b, c]`.

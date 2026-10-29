@@ -1,0 +1,72 @@
+{
+    "engine": "sa",
+    "quality": "normal",
+    "targets": [
+        {
+            "name": "iron-gear-wheel",
+            "amount": 20.0
+        }
+    ],
+    "forbidden_recipes": [],
+    "recipe_overrides": {},
+    "machine": "assembling-machine-3",
+    "fuel": "coal",
+    "belt_tier": "fast",
+    "weave_tier": "auto",
+    "lane_sharing": false,
+    "inserters": {
+        "allowed": [
+            "inserter",
+            "long-handed-inserter",
+            "fast-inserter"
+        ],
+        "belt_pickup_derate": 0.7
+    },
+    "research": {
+        "inserter_capacity": 2,
+        "productivity": {}
+    },
+    "tricks": {},
+    "box": {
+        "aspect": 1.0
+    },
+    "forbidden_tiles": [],
+    "forbidden_places": [],
+    "sources": [
+        {
+            "name": "iron-plate",
+            "edge": "west",
+            "force": 1.0
+        }
+    ],
+    "outputs": [],
+    "sinks": {
+        "mode": "port",
+        "chest": "steel-chest"
+    },
+    "fluids": {
+        "mode": "pipes"
+    },
+    "power": {
+        "mode": "set-cover",
+        "pole": "medium-electric-pole",
+        "allow_outside_ring": true
+    },
+    "search": {
+        "time_budget_s": 300.0,
+        "seeds_per_size": 3,
+        "threads": 4,
+        "seed": 12345,
+        "verbose": true
+    },
+    "score": {
+        "belt": 0.3,
+        "underground": 1.0,
+        "inserter": 0.2
+    },
+    "test_mode": false,
+    "reserved": [],
+    "ports_on_ring": true,
+    "marker_tile": "hazard-concrete-left",
+    "debug_renders": false
+}

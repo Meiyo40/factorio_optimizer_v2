@@ -1,0 +1,90 @@
+{
+    "engine": "sa",
+    "quality": "normal",
+    "targets": [
+        {
+            "name": "electromagnetic-science-pack",
+            "amount": 1.5
+        }
+    ],
+    "forbidden_recipes": [],
+    "recipe_overrides": {},
+    "raw_resources": [
+        "heavy-oil",
+        "holmium-ore",
+        "ice",
+        "stone",
+        "battery",
+        "steel-plate",
+        "iron-gear-wheel",
+        "copper-cable",
+        "solid-fuel",
+        "concrete",
+        "low-density-structure",
+        "processing-unit",
+        "iron-plate",
+        "copper-plate",
+        "plastic-bar"
+    ],
+    "machine": "assembling-machine-3",
+    "machines": [
+        "electromagnetic-plant",
+        "assembling-machine-3",
+        "chemical-plant",
+        "oil-refinery",
+        "electric-furnace"
+    ],
+    "fuel": "coal",
+    "belt_tier": "express",
+    "weave_tier": "auto",
+    "lane_sharing": true,
+    "inserters": {
+        "allowed": [
+            "inserter",
+            "long-handed-inserter",
+            "fast-inserter"
+        ],
+        "belt_pickup_derate": 0.7
+    },
+    "research": {
+        "inserter_capacity": 0,
+        "productivity": {}
+    },
+    "tricks": {},
+    "box": {
+        "aspect": 1.0
+    },
+    "forbidden_tiles": [],
+    "forbidden_places": [],
+    "sources": [],
+    "outputs": [],
+    "sinks": {
+        "mode": "port",
+        "chest": "steel-chest"
+    },
+    "fluids": {
+        "mode": "pipes"
+    },
+    "power": {
+        "mode": "set-cover",
+        "pole": "medium-electric-pole",
+        "allow_outside_ring": true
+    },
+    "search": {
+        "time_budget_s": 900.0,
+        "seeds_per_size": 10,
+        "threads": 10,
+        "seed": 2026,
+        "verbose": true
+    },
+    "score": {
+        "belt": 0.3,
+        "underground": 1.0,
+        "inserter": 0.2
+    },
+    "test_mode": false,
+    "reserved": [],
+    "ports_on_ring": true,
+    "marker_tile": "hazard-concrete-left",
+    "debug_renders": false
+}

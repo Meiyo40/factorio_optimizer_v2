@@ -1,0 +1,138 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "metallic-asteroid-crushing",
+            "machine": "crusher",
+            "w": 2,
+            "h": 3,
+            "outputRate": 10.0,
+            "product": "iron-ore",
+            "demand": {
+                "metallic-asteroid-chunk": 0.5
+            },
+            "products": {
+                "iron-ore": 10.0,
+                "metallic-asteroid-chunk": 0.1
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "metallic-asteroid-chunk",
+            "specs": [
+                {
+                    "name": "metallic-asteroid-chunk",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-ore",
+            "specs": [
+                {
+                    "name": "iron-ore",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "iron-ore",
+            "rate": 10.0,
+            "k": 5,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "OUTPUT",
+            "item": "iron-ore",
+            "rate": 10.0,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "metallic-asteroid-chunk",
+            "rate": 0.1,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "SOURCE",
+            "item": "metallic-asteroid-chunk",
+            "rate": 0.4,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "metallic-asteroid-chunk",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "iron-ore",
+            "flow": 10.0,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "metallic-asteroid-chunk",
+            "flow": 0.5,
+            "terminals": [
+                2,
+                3,
+                4
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "metallic-asteroid-chunk": 0.4
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "metallic-asteroid-crushing": 0.5
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "iron-ore": 10.0
+    }
+}

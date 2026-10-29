@@ -1,0 +1,219 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 1,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "specs": [
+                {
+                    "name": "automation-science-pack",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "OUTPUT",
+            "item": "automation-science-pack",
+            "rate": 0.5,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "SOURCE",
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.5,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "flow": 0.5,
+            "terminals": [
+                0,
+                1,
+                6
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "flow": 0.5,
+            "terminals": [
+                2,
+                3,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "copper-plate",
+            "flow": 0.5,
+            "terminals": [
+                4,
+                5,
+                8
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.5
+    },
+    "fluidRates": {},
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "automation-science-pack": 0.5
+    }
+}

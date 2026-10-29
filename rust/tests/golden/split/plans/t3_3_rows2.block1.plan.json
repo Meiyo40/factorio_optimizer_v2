@@ -1,0 +1,417 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "automation-science-pack",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.25,
+            "product": "automation-science-pack",
+            "demand": {
+                "copper-plate": 0.25,
+                "iron-gear-wheel": 0.25
+            },
+            "products": {
+                "automation-science-pack": 0.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.25
+        },
+        {
+            "id": 1,
+            "recipe": "inserter",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.5,
+            "product": "inserter",
+            "demand": {
+                "iron-plate": 0.5,
+                "iron-gear-wheel": 0.5,
+                "electronic-circuit": 0.5
+            },
+            "products": {
+                "inserter": 0.5
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.5
+        },
+        {
+            "id": 2,
+            "recipe": "iron-gear-wheel",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.25,
+            "product": "iron-gear-wheel",
+            "demand": {
+                "iron-plate": 2.5
+            },
+            "products": {
+                "iron-gear-wheel": 1.25
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.25
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "specs": [
+                {
+                    "name": "automation-science-pack",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "inserter",
+            "specs": [
+                {
+                    "name": "inserter",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "inserter",
+            "specs": [
+                {
+                    "name": "inserter",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 6,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 7,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "inserter",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 1.25,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.5,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.5,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "OUTPUT",
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "SOURCE",
+            "item": "electronic-circuit",
+            "rate": 0.5,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "OUTPUT",
+            "item": "inserter",
+            "rate": 0.16666666666666666,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "OUTPUT",
+            "item": "inserter",
+            "rate": 0.3333333333333333,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "OUTPUT",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "OUTPUT",
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 0.25,
+            "k": 1,
+            "port": 6,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 3.0,
+            "k": 1,
+            "port": 7,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "automation-science-pack",
+            "flow": 0.25,
+            "terminals": [
+                0,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 0.5,
+            "terminals": [
+                1,
+                10
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "inserter",
+            "flow": 0.5,
+            "terminals": [
+                2,
+                11,
+                12
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "iron-gear-wheel",
+            "flow": 1.25,
+            "terminals": [
+                3,
+                4,
+                5,
+                13,
+                14
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "copper-plate",
+            "flow": 0.25,
+            "terminals": [
+                6,
+                15
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "iron-plate",
+            "flow": 3.0,
+            "terminals": [
+                7,
+                8,
+                16
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 0.25,
+        "iron-plate": 3.0
+    },
+    "fluidRates": {},
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "automation-science-pack": 0.25
+    }
+}

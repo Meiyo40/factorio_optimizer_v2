@@ -1,0 +1,1660 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 1,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 2,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 3,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 4,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 5,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 6,
+            "recipe": "metallurgic-science-pack",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-copper",
+            "outputRate": 0.5714285714285714,
+            "product": "metallurgic-science-pack",
+            "demand": {
+                "tungsten-carbide": 1.1428571428571428,
+                "tungsten-plate": 0.7619047619047619
+            },
+            "products": {
+                "metallurgic-science-pack": 0.5714285714285714
+            },
+            "fluidDemand": {
+                "molten-copper": 76.19047619047619
+            },
+            "fluidIn": {
+                "molten-copper": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.38095238095238093
+        },
+        {
+            "id": 7,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 8,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 9,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 10,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 11,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 12,
+            "recipe": "molten-copper-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 5.333333333333334,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.23703703703703705
+            },
+            "products": {
+                "stone": 5.333333333333334,
+                "molten-copper": 88.88888888888889
+            },
+            "fluidDemand": {
+                "lava": 118.51851851851852
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-copper": 1
+            },
+            "crafts": 0.23703703703703705
+        },
+        {
+            "id": 13,
+            "recipe": "molten-iron-from-lava",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "lava",
+            "outputRate": 1.422222222222222,
+            "product": "stone",
+            "demand": {
+                "calcite": 0.09481481481481481
+            },
+            "products": {
+                "stone": 1.422222222222222,
+                "molten-iron": 35.55555555555556
+            },
+            "fluidDemand": {
+                "lava": 47.407407407407405
+            },
+            "fluidIn": {
+                "lava": 1
+            },
+            "fluidOut": {
+                "molten-iron": 1
+            },
+            "crafts": 0.09481481481481481
+        },
+        {
+            "id": 14,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 15,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 16,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 17,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 18,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 19,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 20,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 21,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        },
+        {
+            "id": 22,
+            "recipe": "tungsten-plate",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 0.5925925925925926,
+            "product": "tungsten-plate",
+            "demand": {
+                "tungsten-ore": 1.5802469135802468
+            },
+            "products": {
+                "tungsten-plate": 0.5925925925925926
+            },
+            "fluidDemand": {
+                "molten-iron": 3.950617283950617
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.3950617283950617
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "metallurgic-science-pack",
+            "specs": [
+                {
+                    "name": "metallurgic-science-pack",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "stone",
+            "specs": [
+                {
+                    "name": "stone",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "tungsten-carbide",
+            "specs": [
+                {
+                    "name": "tungsten-carbide",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "calcite",
+            "specs": [
+                {
+                    "name": "calcite",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "lava",
+            "specs": [
+                {
+                    "name": "lava",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 5,
+            "item": "tungsten-ore",
+            "specs": [
+                {
+                    "name": "tungsten-ore",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "metallurgic-science-pack",
+            "rate": 0.5714285714285714,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 5.333333333333334,
+            "k": 3,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "PRODUCER",
+            "item": "stone",
+            "rate": 1.422222222222222,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 7,
+            "fluid": true
+        },
+        {
+            "id": 15,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 8,
+            "fluid": true
+        },
+        {
+            "id": 16,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 9,
+            "fluid": true
+        },
+        {
+            "id": 17,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 10,
+            "fluid": true
+        },
+        {
+            "id": 18,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 19,
+            "role": "PRODUCER",
+            "item": "molten-copper",
+            "rate": 88.88888888888889,
+            "k": 1,
+            "machine": 12,
+            "fluid": true
+        },
+        {
+            "id": 20,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        },
+        {
+            "id": 21,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 22,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 23,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 24,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 25,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 26,
+            "role": "CONSUMER",
+            "item": "molten-copper",
+            "rate": 76.19047619047619,
+            "k": 1,
+            "machine": 6,
+            "fluid": true
+        },
+        {
+            "id": 27,
+            "role": "PRODUCER",
+            "item": "molten-iron",
+            "rate": 35.55555555555556,
+            "k": 1,
+            "machine": 13,
+            "fluid": true
+        },
+        {
+            "id": 28,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 14,
+            "fluid": true
+        },
+        {
+            "id": 29,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 15,
+            "fluid": true
+        },
+        {
+            "id": 30,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 16,
+            "fluid": true
+        },
+        {
+            "id": 31,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 17,
+            "fluid": true
+        },
+        {
+            "id": 32,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 18,
+            "fluid": true
+        },
+        {
+            "id": 33,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 19,
+            "fluid": true
+        },
+        {
+            "id": 34,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 20,
+            "fluid": true
+        },
+        {
+            "id": 35,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 21,
+            "fluid": true
+        },
+        {
+            "id": 36,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 3.950617283950617,
+            "k": 1,
+            "machine": 22,
+            "fluid": true
+        },
+        {
+            "id": 37,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 38,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 39,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 40,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 41,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 42,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 43,
+            "role": "CONSUMER",
+            "item": "tungsten-carbide",
+            "rate": 1.1428571428571428,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 44,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 45,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 46,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 47,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 48,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 49,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 50,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 51,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 52,
+            "role": "PRODUCER",
+            "item": "tungsten-plate",
+            "rate": 0.5925925925925926,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 53,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 54,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 55,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 56,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 57,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 58,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 59,
+            "role": "CONSUMER",
+            "item": "tungsten-plate",
+            "rate": 0.7619047619047619,
+            "k": 1,
+            "machine": 6,
+            "fluid": false
+        },
+        {
+            "id": 60,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 7,
+            "fluid": false
+        },
+        {
+            "id": 61,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 8,
+            "fluid": false
+        },
+        {
+            "id": 62,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 9,
+            "fluid": false
+        },
+        {
+            "id": 63,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 10,
+            "fluid": false
+        },
+        {
+            "id": 64,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 11,
+            "fluid": false
+        },
+        {
+            "id": 65,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.23703703703703705,
+            "k": 1,
+            "machine": 12,
+            "fluid": false
+        },
+        {
+            "id": 66,
+            "role": "CONSUMER",
+            "item": "calcite",
+            "rate": 0.09481481481481481,
+            "k": 1,
+            "machine": 13,
+            "fluid": false
+        },
+        {
+            "id": 67,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 7,
+            "fluid": true
+        },
+        {
+            "id": 68,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 8,
+            "fluid": true
+        },
+        {
+            "id": 69,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 9,
+            "fluid": true
+        },
+        {
+            "id": 70,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 10,
+            "fluid": true
+        },
+        {
+            "id": 71,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 11,
+            "fluid": true
+        },
+        {
+            "id": 72,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 118.51851851851852,
+            "k": 1,
+            "machine": 12,
+            "fluid": true
+        },
+        {
+            "id": 73,
+            "role": "CONSUMER",
+            "item": "lava",
+            "rate": 47.407407407407405,
+            "k": 1,
+            "machine": 13,
+            "fluid": true
+        },
+        {
+            "id": 74,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 14,
+            "fluid": false
+        },
+        {
+            "id": 75,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 15,
+            "fluid": false
+        },
+        {
+            "id": 76,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 16,
+            "fluid": false
+        },
+        {
+            "id": 77,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 17,
+            "fluid": false
+        },
+        {
+            "id": 78,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 18,
+            "fluid": false
+        },
+        {
+            "id": 79,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 19,
+            "fluid": false
+        },
+        {
+            "id": 80,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 20,
+            "fluid": false
+        },
+        {
+            "id": 81,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 21,
+            "fluid": false
+        },
+        {
+            "id": 82,
+            "role": "CONSUMER",
+            "item": "tungsten-ore",
+            "rate": 1.5802469135802468,
+            "k": 1,
+            "machine": 22,
+            "fluid": false
+        },
+        {
+            "id": 83,
+            "role": "OUTPUT",
+            "item": "metallurgic-science-pack",
+            "rate": 3.999999999999999,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 84,
+            "role": "OUTPUT",
+            "item": "stone",
+            "rate": 33.422222222222224,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 85,
+            "role": "SOURCE",
+            "item": "tungsten-carbide",
+            "rate": 7.999999999999998,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 86,
+            "role": "SOURCE",
+            "item": "calcite",
+            "rate": 1.517037037037037,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 87,
+            "role": "SOURCE",
+            "item": "lava",
+            "rate": 758.5185185185185,
+            "k": 1,
+            "port": 4,
+            "fluid": true
+        },
+        {
+            "id": 88,
+            "role": "SOURCE",
+            "item": "tungsten-ore",
+            "rate": 14.222222222222221,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "metallurgic-science-pack",
+            "flow": 3.999999999999999,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                83
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "stone",
+            "flow": 33.422222222222224,
+            "terminals": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                84
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "molten-copper",
+            "flow": 533.3333333333334,
+            "terminals": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "item": "molten-iron",
+            "flow": 35.55555555555556,
+            "terminals": [
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "item": "tungsten-carbide",
+            "flow": 7.999999999999998,
+            "terminals": [
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                85
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "tungsten-plate",
+            "flow": 5.333333333333333,
+            "terminals": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "calcite",
+            "flow": 1.517037037037037,
+            "terminals": [
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                86
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "item": "lava",
+            "flow": 758.5185185185185,
+            "terminals": [
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                87
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 8,
+            "item": "tungsten-ore",
+            "flow": 14.222222222222221,
+            "terminals": [
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                88
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "calcite": 1.517037037037037,
+        "lava": 758.5185185185185,
+        "tungsten-ore": 14.222222222222221
+    },
+    "fluidRates": {
+        "lava": 758.5185185185185
+    },
+    "recipeRates": {},
+    "beltTier": "express",
+    "warnings": [],
+    "outputs": {
+        "metallurgic-science-pack": 3.999999999999999,
+        "stone": 33.422222222222224
+    }
+}

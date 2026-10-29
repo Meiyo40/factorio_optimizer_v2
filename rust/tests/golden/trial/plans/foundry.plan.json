@@ -1,0 +1,132 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "casting-iron-gear-wheel",
+            "machine": "foundry",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "molten-iron",
+            "outputRate": 4.0,
+            "product": "iron-gear-wheel",
+            "demand": {},
+            "products": {
+                "iron-gear-wheel": 4.0
+            },
+            "fluidDemand": {
+                "molten-iron": 26.666666666666664
+            },
+            "fluidIn": {
+                "molten-iron": 1
+            },
+            "fluidOut": {},
+            "crafts": 2.6666666666666665
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "molten-iron",
+            "specs": [
+                {
+                    "name": "molten-iron",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "iron-gear-wheel",
+            "rate": 4.0,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "OUTPUT",
+            "item": "iron-gear-wheel",
+            "rate": 4.0,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "SOURCE",
+            "item": "molten-iron",
+            "rate": 26.666666666666664,
+            "k": 1,
+            "port": 0,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "molten-iron",
+            "rate": 26.666666666666664,
+            "k": 1,
+            "machine": 0,
+            "fluid": true
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "iron-gear-wheel",
+            "flow": 4.0,
+            "terminals": [
+                0,
+                1
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "molten-iron",
+            "flow": 26.666666666666664,
+            "terminals": [
+                2,
+                3
+            ],
+            "beltCount": 1,
+            "fluid": true
+        }
+    ],
+    "rawRates": {
+        "molten-iron": 26.666666666666664
+    },
+    "fluidRates": {
+        "molten-iron": 26.666666666666664
+    },
+    "recipeRates": {
+        "casting-iron-gear-wheel": 2.6666666666666665
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "iron-gear-wheel": 4.0
+    }
+}

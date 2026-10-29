@@ -1,0 +1,699 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "advanced-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.18749999999999997,
+            "product": "advanced-circuit",
+            "demand": {
+                "plastic-bar": 0.37499999999999994,
+                "copper-cable": 0.7499999999999999,
+                "electronic-circuit": 0.37499999999999994
+            },
+            "products": {
+                "advanced-circuit": 0.18749999999999997
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.18749999999999997
+        },
+        {
+            "id": 1,
+            "recipe": "advanced-oil-processing",
+            "machine": "oil-refinery",
+            "w": 5,
+            "h": 5,
+            "needsFluid": "water",
+            "outputRate": 4.807692307692308,
+            "product": "heavy-oil",
+            "demand": {},
+            "products": {
+                "heavy-oil": 4.807692307692308,
+                "light-oil": 8.653846153846155,
+                "petroleum-gas": 10.576923076923077
+            },
+            "fluidDemand": {
+                "water": 9.615384615384617,
+                "crude-oil": 19.230769230769234
+            },
+            "fluidIn": {
+                "water": 1,
+                "crude-oil": 2
+            },
+            "fluidOut": {
+                "heavy-oil": 1,
+                "light-oil": 2,
+                "petroleum-gas": 3
+            },
+            "crafts": 0.19230769230769232
+        },
+        {
+            "id": 2,
+            "recipe": "heavy-oil-cracking",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 3.6057692307692313,
+            "product": "light-oil",
+            "demand": {},
+            "products": {
+                "light-oil": 3.6057692307692313
+            },
+            "fluidDemand": {
+                "water": 3.6057692307692313,
+                "heavy-oil": 4.807692307692308
+            },
+            "fluidIn": {
+                "water": 1,
+                "heavy-oil": 2
+            },
+            "fluidOut": {
+                "light-oil": 1
+            },
+            "crafts": 0.12019230769230771
+        },
+        {
+            "id": 3,
+            "recipe": "light-oil-cracking",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 8.173076923076922,
+            "product": "petroleum-gas",
+            "demand": {},
+            "products": {
+                "petroleum-gas": 8.173076923076922
+            },
+            "fluidDemand": {
+                "water": 12.259615384615383,
+                "light-oil": 12.259615384615383
+            },
+            "fluidIn": {
+                "water": 1,
+                "light-oil": 2
+            },
+            "fluidOut": {
+                "petroleum-gas": 1
+            },
+            "crafts": 0.4086538461538461
+        },
+        {
+            "id": 4,
+            "recipe": "plastic-bar",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "petroleum-gas",
+            "outputRate": 1.4999999999999998,
+            "product": "plastic-bar",
+            "demand": {
+                "coal": 0.7499999999999999
+            },
+            "products": {
+                "plastic-bar": 1.4999999999999998
+            },
+            "fluidDemand": {
+                "petroleum-gas": 14.999999999999998
+            },
+            "fluidIn": {
+                "petroleum-gas": 1
+            },
+            "fluidOut": {},
+            "crafts": 0.7499999999999999
+        },
+        {
+            "id": 5,
+            "recipe": "sulfur",
+            "machine": "chemical-plant",
+            "w": 3,
+            "h": 3,
+            "needsFluid": "water",
+            "outputRate": 0.25,
+            "product": "sulfur",
+            "demand": {},
+            "products": {
+                "sulfur": 0.25
+            },
+            "fluidDemand": {
+                "water": 3.75,
+                "petroleum-gas": 3.75
+            },
+            "fluidIn": {
+                "water": 1,
+                "petroleum-gas": 2
+            },
+            "fluidOut": {},
+            "crafts": 0.125
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "specs": [
+                {
+                    "name": "advanced-circuit",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "copper-cable",
+            "specs": [
+                {
+                    "name": "copper-cable",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "plastic-bar",
+            "specs": [
+                {
+                    "name": "plastic-bar",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "sulfur",
+            "specs": [
+                {
+                    "name": "sulfur",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "sulfur",
+            "specs": [
+                {
+                    "name": "sulfur",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 6,
+            "item": "water",
+            "specs": [
+                {
+                    "name": "water",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 7,
+            "item": "crude-oil",
+            "specs": [
+                {
+                    "name": "crude-oil",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": true,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 8,
+            "item": "coal",
+            "specs": [
+                {
+                    "name": "coal",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "heavy-oil",
+            "rate": 4.807692307692308,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 2,
+            "role": "CONSUMER",
+            "item": "heavy-oil",
+            "rate": 4.807692307692308,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "light-oil",
+            "rate": 8.653846153846155,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "light-oil",
+            "rate": 3.6057692307692313,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "light-oil",
+            "rate": 12.259615384615383,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "petroleum-gas",
+            "rate": 10.576923076923077,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "petroleum-gas",
+            "rate": 8.173076923076922,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "petroleum-gas",
+            "rate": 14.999999999999998,
+            "k": 1,
+            "machine": 4,
+            "fluid": true
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "petroleum-gas",
+            "rate": 3.75,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "PRODUCER",
+            "item": "plastic-bar",
+            "rate": 1.4999999999999998,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "plastic-bar",
+            "rate": 0.37499999999999994,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "PRODUCER",
+            "item": "sulfur",
+            "rate": 0.25,
+            "k": 1,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 9.615384615384617,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 3.6057692307692313,
+            "k": 1,
+            "machine": 2,
+            "fluid": true
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 12.259615384615383,
+            "k": 1,
+            "machine": 3,
+            "fluid": true
+        },
+        {
+            "id": 18,
+            "role": "CONSUMER",
+            "item": "water",
+            "rate": 3.75,
+            "k": 1,
+            "machine": 5,
+            "fluid": true
+        },
+        {
+            "id": 19,
+            "role": "CONSUMER",
+            "item": "crude-oil",
+            "rate": 19.230769230769234,
+            "k": 1,
+            "machine": 1,
+            "fluid": true
+        },
+        {
+            "id": 20,
+            "role": "CONSUMER",
+            "item": "coal",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "OUTPUT",
+            "item": "advanced-circuit",
+            "rate": 0.18749999999999997,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "SOURCE",
+            "item": "copper-cable",
+            "rate": 0.7499999999999991,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "SOURCE",
+            "item": "electronic-circuit",
+            "rate": 0.37499999999999983,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "OUTPUT",
+            "item": "plastic-bar",
+            "rate": 1.1249999999999998,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "OUTPUT",
+            "item": "sulfur",
+            "rate": 0.15,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "OUTPUT",
+            "item": "sulfur",
+            "rate": 0.1,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 27,
+            "role": "SOURCE",
+            "item": "water",
+            "rate": 29.230769230769223,
+            "k": 1,
+            "port": 6,
+            "fluid": true
+        },
+        {
+            "id": 28,
+            "role": "SOURCE",
+            "item": "crude-oil",
+            "rate": 19.230769230769234,
+            "k": 1,
+            "port": 7,
+            "fluid": true
+        },
+        {
+            "id": 29,
+            "role": "SOURCE",
+            "item": "coal",
+            "rate": 0.7499999999999999,
+            "k": 1,
+            "port": 8,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "advanced-circuit",
+            "flow": 0.18749999999999997,
+            "terminals": [
+                0,
+                21
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "heavy-oil",
+            "flow": 4.807692307692308,
+            "terminals": [
+                1,
+                2
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 2,
+            "item": "light-oil",
+            "flow": 12.259615384615383,
+            "terminals": [
+                3,
+                4,
+                5
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 3,
+            "item": "petroleum-gas",
+            "flow": 18.75,
+            "terminals": [
+                6,
+                7,
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 4,
+            "item": "copper-cable",
+            "flow": 0.7499999999999999,
+            "terminals": [
+                10,
+                22
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "item": "electronic-circuit",
+            "flow": 0.37499999999999994,
+            "terminals": [
+                11,
+                23
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "item": "plastic-bar",
+            "flow": 1.4999999999999998,
+            "terminals": [
+                12,
+                13,
+                24
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "item": "sulfur",
+            "flow": 0.25,
+            "terminals": [
+                14,
+                25,
+                26
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "item": "water",
+            "flow": 29.230769230769234,
+            "terminals": [
+                15,
+                16,
+                17,
+                18,
+                27
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 9,
+            "item": "crude-oil",
+            "flow": 19.230769230769234,
+            "terminals": [
+                19,
+                28
+            ],
+            "beltCount": 1,
+            "fluid": true
+        },
+        {
+            "id": 10,
+            "item": "coal",
+            "flow": 0.7499999999999999,
+            "terminals": [
+                20,
+                29
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "water": 29.230769230769223,
+        "crude-oil": 19.230769230769234,
+        "coal": 0.7499999999999999
+    },
+    "fluidRates": {
+        "water": 29.230769230769223,
+        "crude-oil": 19.230769230769234
+    },
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {}
+}

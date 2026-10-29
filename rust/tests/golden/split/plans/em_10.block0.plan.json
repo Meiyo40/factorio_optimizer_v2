@@ -1,0 +1,485 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "accumulator",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 0.2,
+            "product": "accumulator",
+            "demand": {
+                "iron-plate": 0.4,
+                "battery": 1.0
+            },
+            "products": {
+                "accumulator": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 1,
+            "recipe": "accumulator",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 0.2,
+            "product": "accumulator",
+            "demand": {
+                "iron-plate": 0.4,
+                "battery": 1.0
+            },
+            "products": {
+                "accumulator": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 2,
+            "recipe": "accumulator",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 0.2,
+            "product": "accumulator",
+            "demand": {
+                "iron-plate": 0.4,
+                "battery": 1.0
+            },
+            "products": {
+                "accumulator": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 3,
+            "recipe": "accumulator",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 0.2,
+            "product": "accumulator",
+            "demand": {
+                "iron-plate": 0.4,
+                "battery": 1.0
+            },
+            "products": {
+                "accumulator": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 4,
+            "recipe": "accumulator",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 0.2,
+            "product": "accumulator",
+            "demand": {
+                "iron-plate": 0.4,
+                "battery": 1.0
+            },
+            "products": {
+                "accumulator": 0.2
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.2
+        },
+        {
+            "id": 5,
+            "recipe": "electronic-circuit",
+            "machine": "electromagnetic-plant",
+            "w": 4,
+            "h": 4,
+            "outputRate": 2.666666666666666,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 1.7777777777777775,
+                "copper-cable": 5.333333333333332
+            },
+            "products": {
+                "electronic-circuit": 2.666666666666666
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.7777777777777775
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "accumulator",
+            "specs": [
+                {
+                    "name": "accumulator",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "east",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 3,
+            "item": "battery",
+            "specs": [
+                {
+                    "name": "battery",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 4,
+            "item": "copper-cable",
+            "specs": [
+                {
+                    "name": "copper-cable",
+                    "edge": "north",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "PRODUCER",
+            "item": "accumulator",
+            "rate": 0.2,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 2.666666666666666,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 0.4,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.7777777777777775,
+            "k": 2,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "CONSUMER",
+            "item": "battery",
+            "rate": 1.0,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 5.333333333333332,
+            "k": 4,
+            "machine": 5,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "OUTPUT",
+            "item": "accumulator",
+            "rate": 1.0,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "OUTPUT",
+            "item": "electronic-circuit",
+            "rate": 2.666666666666666,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 3.7777777777777777,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "SOURCE",
+            "item": "battery",
+            "rate": 5.0,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "SOURCE",
+            "item": "copper-cable",
+            "rate": 5.333333333333332,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "accumulator",
+            "flow": 1.0,
+            "terminals": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                18
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 2.666666666666666,
+            "terminals": [
+                5,
+                19
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "iron-plate",
+            "flow": 3.7777777777777777,
+            "terminals": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                20
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "battery",
+            "flow": 5.0,
+            "terminals": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                21
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "copper-cable",
+            "flow": 5.333333333333332,
+            "terminals": [
+                17,
+                22
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "iron-plate": 3.7777777777777777,
+        "battery": 5.0,
+        "copper-cable": 5.333333333333332
+    },
+    "fluidRates": {},
+    "recipeRates": {},
+    "beltTier": "express",
+    "warnings": [],
+    "outputs": {}
+}

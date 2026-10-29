@@ -2,6 +2,7 @@ use crate::config::run_configuration::RunConfiguration;
 use crate::data::game_constants as gc;
 use crate::geom::{Dir, Kind, PlacedEntity, Tile};
 use crate::plan::{inserter_count, inserter_rate};
+use crate::util::java_hash::JSet;
 use crate::util::text::fmt_list;
 use crate::validate::{OutputSpec, SourceSpec};
 use anyhow::Result;
@@ -11,7 +12,7 @@ use std::collections::{HashMap, HashSet};
 #[derive(Debug, Clone)]
 pub struct Harness {
     pub entities: Vec<PlacedEntity>,
-    pub tiles: HashSet<Tile>,
+    pub tiles: JSet<Tile>,
     pub warnings: Vec<String>,
 }
 
@@ -45,13 +46,13 @@ pub fn build_harness(
     }
     let cap = inserter_rate(&ins_name, config, false);
     let mut out: Vec<PlacedEntity> = Vec::new();
-    let mut tiles: HashSet<Tile> = HashSet::new();
+    let mut tiles: JSet<Tile> = JSet::new();
     let mut warnings: Vec<String> = Vec::new();
     let in_box = |t: Tile| t.x >= 0 && t.x < w && t.y >= 0 && t.y < h;
 
-    let fluid_port = |at: Tile, fluid: &str, drain: bool, out: &mut Vec<PlacedEntity>, tiles: &mut HashSet<Tile>, warnings: &mut Vec<String>, occupied: &HashSet<Tile>| {
+    let fluid_port = |at: Tile, fluid: &str, drain: bool, out: &mut Vec<PlacedEntity>, tiles: &mut JSet<Tile>, warnings: &mut Vec<String>, occupied: &HashSet<Tile>| {
         // A fluid port gets an infinity pipe just outside the box, next to its pipe.
-        let free = |t: Tile, tiles: &HashSet<Tile>| !in_box(t) && !occupied.contains(&t) && !tiles.contains(&t);
+        let free = |t: Tile, tiles: &JSet<Tile>| !in_box(t) && !occupied.contains(&t) && !tiles.contains(&t);
         let Some(o) = Dir::ALL.into_iter().find(|&d| !in_box(at + d) && free(at + d, tiles)) else {
             warnings.push(format!("no room for a fluid harness at {at} ({fluid})"));
             return;
@@ -69,7 +70,7 @@ pub fn build_harness(
     for o in outputs.iter().filter(|o| o.fluid) {
         fluid_port(o.tile, &o.item, true, &mut out, &mut tiles, &mut warnings, &occupied);
     }
-    let free = |t: Tile, tiles: &HashSet<Tile>| !in_box(t) && !occupied.contains(&t) && !tiles.contains(&t);
+    let free = |t: Tile, tiles: &JSet<Tile>| !in_box(t) && !occupied.contains(&t) && !tiles.contains(&t);
 
     // Item sources, grouped by tile: a shared belt gets one feeder with each item's inserters on the side that
     // drops onto its lane (an inserter drops on the far lane).

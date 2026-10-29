@@ -40,3 +40,8 @@ pub fn compare_f32(a: f32, b: f32) -> std::cmp::Ordering {
         (false, false) => a.total_cmp(&b),
     }
 }
+
+/// Milliseconds since the Unix epoch, like Kotlin's `System.currentTimeMillis()`.
+pub fn now_ms() -> i64 {
+    std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map_or(0, |d| d.as_millis() as i64)
+}

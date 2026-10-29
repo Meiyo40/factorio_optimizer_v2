@@ -7,12 +7,14 @@
 
 mod common;
 
+use common::{EntityJson, compare, compare_list, dir_of, entity_json, read};
+
 use factorio_optimizer::config::run_configuration::RunConfiguration;
 use factorio_optimizer::config::tuning::RouteTuning;
 use factorio_optimizer::data::data_model::RootData;
 use factorio_optimizer::data::game_constants as gc;
 use factorio_optimizer::data::loader::load_root_data;
-use factorio_optimizer::geom::{Dir, PlacedEntity, Tile};
+use factorio_optimizer::geom::{Dir, Tile};
 use factorio_optimizer::place::{PlacedMachine, Placement};
 use factorio_optimizer::plan::ProductionPlan;
 use factorio_optimizer::route::access::{AccessOption, DiLink};
@@ -22,7 +24,6 @@ use factorio_optimizer::search::trial::{layout_of, validation_spec};
 use factorio_optimizer::validate::{MachineSpec, OutputSpec, SourceSpec, validate};
 use serde::Deserialize;
 use std::collections::{HashMap, HashSet};
-use std::fmt::Debug;
 use std::path::PathBuf;
 
 #[derive(Deserialize)]
@@ -93,10 +94,6 @@ struct SetupJson {
     options: Vec<OptionJson>,
     sink_options: Vec<SinkOptionsJson>,
 }
-
-/// name, kind, x, y, dir, recipe, mirror, w, h, item, fluid, drain, net (a tuple struct: tuples of 13 have no Debug)
-#[derive(Deserialize, Debug, PartialEq)]
-struct EntityJson(String, String, i32, i32, String, Option<String>, bool, i32, i32, Option<String>, Option<String>, bool, Option<i32>);
 
 #[derive(Deserialize)]
 struct ConflictNetsJson {
@@ -216,36 +213,6 @@ fn golden_dir() -> PathBuf {
     common::repo_root().join("rust/tests/golden/route")
 }
 
-fn read(path: PathBuf) -> String {
-    std::fs::read_to_string(&path).unwrap_or_else(|e| panic!("{}: {e}", path.display()))
-}
-
-fn dir_of(s: &str) -> Dir {
-    match s {
-        "N" => Dir::N,
-        "E" => Dir::E,
-        "S" => Dir::S,
-        "W" => Dir::W,
-        other => panic!("unknown direction {other}"),
-    }
-}
-
-/// Kotlin's enum constant for a `Kind` variant: `PipeUg` is `PIPE_UG`.
-fn kotlin_kind(kind: factorio_optimizer::geom::Kind) -> String {
-    let mut name = String::new();
-    for (i, c) in format!("{kind:?}").chars().enumerate() {
-        if i > 0 && c.is_uppercase() {
-            name.push('_');
-        }
-        name.push(c.to_ascii_uppercase());
-    }
-    name
-}
-
-fn entity_json(e: &PlacedEntity) -> EntityJson {
-    EntityJson(e.name.clone(), kotlin_kind(e.kind), e.x, e.y, format!("{:?}", e.dir), e.recipe.clone(), e.mirror, e.w, e.h, e.item.clone(), e.fluid.clone(), e.drain, e.net)
-}
-
 fn option_json(o: &AccessOption) -> OptionJson {
     (o.terminal, o.belt_tile.x, o.belt_tile.y, o.ins_tile.x, o.ins_tile.y, format!("{:?}", o.ins_dir), o.long, o.trick.to_owned(), format!("{:?}", o.side))
 }
@@ -253,24 +220,6 @@ fn option_json(o: &AccessOption) -> OptionJson {
 /// The nonzero entries of a float array with their bits, like the dump.
 fn bits_of(values: &[f32]) -> Bits {
     Bits { len: values.len(), nonzero: values.iter().enumerate().filter(|(_, v)| **v != 0.0).map(|(i, v)| (i, v.to_bits() as i32)).collect() }
-}
-
-fn compare<T: PartialEq + Debug>(what: &str, got: &T, want: &T, out: &mut Vec<String>) {
-    if got != want {
-        out.push(format!("{what}: rust {got:?}, kotlin {want:?}"));
-    }
-}
-
-/// Lists: the length, and the first element that differs.
-fn compare_list<T: PartialEq + Debug>(what: &str, got: &[T], want: &[T], out: &mut Vec<String>) {
-    if got == want {
-        return;
-    }
-    let first = got.iter().zip(want).position(|(a, b)| a != b);
-    match first {
-        Some(i) => out.push(format!("{what}: {} vs {} entries, first difference at #{i}\n      rust:   {:?}\n      kotlin: {:?}", got.len(), want.len(), got[i], want[i])),
-        None => out.push(format!("{what}: {} entries in rust, {} in kotlin (the shorter is a prefix); next: {:?}", got.len(), want.len(), got.get(want.len()).or(want.get(got.len())))),
-    }
 }
 
 fn run_case(name: &str, data: &RootData) -> Vec<String> {

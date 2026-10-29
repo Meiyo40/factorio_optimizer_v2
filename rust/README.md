@@ -17,7 +17,7 @@ cargo test
 | 3 placer | `place` | done, same-seed parity with Kotlin (see below) |
 | 4 validator, power | `validate`, `power` | done, same verdicts and messages as Kotlin (see below) |
 | 5 router | `route`, `search/Trial.kt` (`validationSpec`, `layoutOf`) | done, same routes as Kotlin (see below) |
-| 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | |
+| 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | trial, search, block splitter and compaction done, same results as Kotlin (see below); factory and CLI next |
 | 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | |
 
 Not ported on purpose: `RecipeIndex` and `computeRates` in `Rates.kt` (nothing in Kotlin's `src/main` uses them),
@@ -115,6 +115,51 @@ rust/tools/docker.sh sync
 rust/tools/docker.sh run 'UPSTREAM=022c312 ROUTE_OUT=/work/out/route-golden JAVA_TOOL_OPTIONS=-Xmx6g bash ./gradlew --no-daemon test --rerun --tests GoldenRouteTest.dumpRouteGoldens'
 rust/tools/docker.sh out rust/bench-results
 cp -r rust/bench-results/route-golden/. rust/tests/golden/route/
+```
+
+## The trial, the search and the block splitter match Kotlin exactly
+
+`tests/trial_golden.rs` replays 89 trials Kotlin ran (job, box, seed, `runTrial`'s options) and compares the whole
+`TrialResult`: where it stopped, the notes of every feedback round and retry, the score and the annealing
+temperature, the layout entity by entity with poles and wires, the placement, the ports, the validator's errors
+and the summary of how routing went. The cases cover the comfortable and the tight sizes of the test jobs (failed
+feedback rounds, the near-miss retry), the spread retry (forced with `spread_max`), column and mixed starts, warm
+starts with and without a temperature, test mode, lane sharing, reserved areas, ports inside the box, the lattice
+and no power, the power reroute that keeps tiles free near unpowered entities, fluid and Space Age jobs, and the
+examples. `the_cases_reach_every_branch` fails if a branch loses its last case. One branch has none: when the set
+cover fails twice the trial falls back to the pole lattice; no job tried (tight boxes, small poles, reserved areas
+in the way) got there, so that call is only covered by the lattice mode's own cases.
+
+`tests/search_golden.rs` replays five searches (one thread, a budget that is never reached, `extra_rounds` of 2): the
+improvements, the number of trials, the best result, every log line (clocks aside), the rows of `attempts.tsv` and
+`scores.tsv`, `ports.json` byte for byte, and the best blueprint, which is compared by what it decodes to (two zlibs
+compress to different bytes). `tests/search.rs` adds `SearchTest`'s outcome tests and checks that four threads find what
+one does. `tests/split_golden.rs` replays 20 splits of jobs into blocks (the split, every block's plan, the split
+after merging each pair of neighbours) and 13 compactions, and `tests/trial.rs` holds `TrialTest`'s and `SpaceAgeTest`'s
+outcome tests.
+
+What exactness depended on, besides what is listed above:
+
+- `java.util.HashMap.merge` links a new node in at the head of its bucket and checks whether to grow before it looks
+  for the key, where `put` appends and checks after. `splitPlan` fills two maps with `merge` and walks them, and an
+  item's links come out in a different order (and are numbered differently) if the model treats `merge` as `put`:
+  `JMap` now tracks both. It also supports `remove`, which leaves the table as large as it was.
+- The harness's tile set is a `HashSet` that the power placer walks to build its candidate list; it is a `JSet`, in
+  Java's order, where a Rust `HashSet` would give a different order in every process.
+- Seeds, scores and times print through `fmt_fixed`, Java's `%.nf`, which rounds half up on the shortest decimals.
+
+Not ported until the viz stage: the PNG renders (`best.png`, `renders/`, the score graph, the `debug_renders`
+option) and the Ctrl-C hook. Every file the search writes is written to a temporary name and renamed, so a kill leaves
+the last complete result instead.
+
+Regenerate the goldens (Docker Desktop running, repo root); `SPLIT_OUT`, `SEARCH_OUT` and `FACTORY_OUT` work the same
+way with `dumpSplitGoldens`, `dumpSearchGoldens` and `dumpFactoryGoldens`:
+
+```sh
+rust/tools/docker.sh sync
+rust/tools/docker.sh run 'UPSTREAM=022c312 TRIAL_OUT=/work/out/trial JAVA_TOOL_OPTIONS=-Xmx6g bash ./gradlew --no-daemon test --rerun --tests GoldenTrialTest.dumpTrialGoldens'
+rust/tools/docker.sh out rust/bench-results
+cp -r rust/bench-results/trial/. rust/tests/golden/trial/
 ```
 
 ## Router speed against the JVM

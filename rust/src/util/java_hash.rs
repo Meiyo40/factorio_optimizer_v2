@@ -4,19 +4,29 @@
 //! `mutableMapOf`, `mutableSetOf`, `associate*`, `groupBy` and `toSet` keep insertion order, which is what an
 //! `IndexMap` does.
 //!
-//! The order of a table that never shrinks: buckets in index order (the key's hash, spread by `h ^ (h >>> 16)`,
-//! masked to the table size), and insertion order within a bucket (resizing keeps it). The table starts at 16 and
-//! doubles when it grows past three quarters full. Not modelled: a ninth node in one bucket, which resizes a table
-//! under 64 and turns the bucket into a tree from 64 (tree bins order their nodes differently). Keys here (indices,
-//! short strings, tiles) rarely collide that much; debug builds assert that they do not.
+//! Buckets come in index order (the key's hash, spread by `h ^ (h >>> 16)`, masked to the table size). Within a
+//! bucket a key added by `put` goes last and a key added by `merge` goes first (`HashMap.merge` links its new node
+//! in at the head), and resizing keeps the order. The table starts at 16 and doubles when it grows past three
+//! quarters full: `put` checks after adding a key, `merge` before, even for a key already there. Removing keys does
+//! not shrink the table. Not modelled: a ninth node in one bucket, which resizes a table under 64 and turns the
+//! bucket into a tree from 64 (tree bins order their nodes differently). Keys here (indices, short strings, tiles)
+//! rarely collide that much; debug builds assert that they do not.
 
 use crate::geom::Tile;
+use indexmap::map::Entry;
 use indexmap::{IndexMap, IndexSet};
 use std::hash::Hash;
 
 /// `hashCode()` of the Kotlin key types used in the ported maps.
 pub trait JavaHash {
     fn java_hash(&self) -> i32;
+}
+
+/// `Long.hashCode`: the two halves xor-ed.
+impl JavaHash for i64 {
+    fn java_hash(&self) -> i32 {
+        (*self ^ (*self >> 32)) as i32
+    }
 }
 
 impl JavaHash for i32 {
@@ -61,8 +71,10 @@ impl JavaHash for Tile {
 /// Java's TREEIFY_THRESHOLD: the ninth node in a bucket is the first one it no longer lists in plain chain order.
 const MAX_BUCKET: usize = 8;
 
+const INITIAL_TABLE: usize = 16;
+
 fn table_size(len: usize) -> usize {
-    let mut capacity = 16;
+    let mut capacity = INITIAL_TABLE;
     while len > capacity * 3 / 4 {
         capacity *= 2;
     }
@@ -74,30 +86,46 @@ fn bucket(hash: i32, capacity: usize) -> usize {
     ((h ^ (h >> 16)) as usize) & (capacity - 1)
 }
 
-/// Positions into `keys` (distinct, in insertion order) in the order a Java hash table holding them iterates.
+/// Positions into `keys` (distinct, in insertion order, all added by `put`) in the order a Java hash table holding
+/// them iterates.
 pub fn java_order<K: JavaHash>(keys: &[K]) -> Vec<usize> {
     let capacity = table_size(keys.len());
-    let buckets: Vec<usize> = keys.iter().map(|k| bucket(k.java_hash(), capacity)).collect();
-    let mut order: Vec<usize> = (0..keys.len()).collect();
-    order.sort_by_key(|&i| buckets[i]);
+    order_in_table(keys.iter().map(|k| (k.java_hash(), false)), capacity)
+}
+
+/// The positions of `(hash, linked in at the head)` entries (in insertion order) in iteration order for a table of
+/// `capacity` buckets. A bucket lists its head-linked keys newest first, then the others oldest first.
+fn order_in_table(entries: impl Iterator<Item = (i32, bool)>, capacity: usize) -> Vec<usize> {
+    let slots: Vec<(usize, bool)> = entries.map(|(hash, head)| (bucket(hash, capacity), head)).collect();
+    let mut order: Vec<usize> = (0..slots.len()).collect();
+    let rank = |i: usize| if slots[i].1 { -(i as i64) } else { i as i64 };
+    order.sort_by_key(|&i| (slots[i].0, !slots[i].1, rank(i)));
     // A bucket that is full in the final table was at least as full in every smaller one.
     debug_assert!(
-        order.chunk_by(|&a, &b| buckets[a] == buckets[b]).all(|bucket| bucket.len() <= MAX_BUCKET),
+        order.chunk_by(|&a, &b| slots[a].0 == slots[b].0).all(|bucket| bucket.len() <= MAX_BUCKET),
         "a bucket of more than {MAX_BUCKET} keys: Java would resize or treeify, which is not modelled"
     );
     order
 }
 
-/// A map that looks up like any map and iterates like a `java.util.HashMap`. Entries are never removed, as in
-/// the Kotlin code it stands for.
+#[derive(Debug, Clone)]
+struct Slot<V> {
+    value: V,
+    /// Added by `merge`, which links the node in at the head of its bucket.
+    at_head: bool,
+}
+
+/// A map that looks up like any map and iterates like a `java.util.HashMap`.
 #[derive(Debug, Clone)]
 pub struct JMap<K, V> {
-    entries: IndexMap<K, V>,
+    entries: IndexMap<K, Slot<V>>,
+    /// Buckets in Java's table: it grows with the keys it holds and never shrinks.
+    table: usize,
 }
 
 impl<K, V> Default for JMap<K, V> {
     fn default() -> Self {
-        Self { entries: IndexMap::new() }
+        Self { entries: IndexMap::new(), table: INITIAL_TABLE }
     }
 }
 
@@ -115,11 +143,11 @@ impl<K: JavaHash + Hash + Eq, V> JMap<K, V> {
     }
 
     pub fn get(&self, k: &K) -> Option<&V> {
-        self.entries.get(k)
+        self.entries.get(k).map(|s| &s.value)
     }
 
     pub fn get_mut(&mut self, k: &K) -> Option<&mut V> {
-        self.entries.get_mut(k)
+        self.entries.get_mut(k).map(|s| &mut s.value)
     }
 
     pub fn contains_key(&self, k: &K) -> bool {
@@ -128,20 +156,64 @@ impl<K: JavaHash + Hash + Eq, V> JMap<K, V> {
 
     /// `map[k] = v`: an existing key keeps its place.
     pub fn insert(&mut self, k: K, v: V) {
-        self.entries.insert(k, v);
+        match self.entries.get_mut(&k) {
+            Some(old) => old.value = v,
+            None => {
+                self.slot(k, || v);
+            }
+        }
     }
 
-    /// `getOrPut(k) { make() }`
+    /// `remove(k)`: the others keep their order, and a key put back later goes last in its bucket.
+    pub fn remove(&mut self, k: &K) -> Option<V> {
+        self.entries.shift_remove(k).map(|s| s.value)
+    }
+
+    /// `getOrPut(k) { make() }`: a `get`, then a `put` when the key is missing.
     pub fn get_or_put_with(&mut self, k: K, make: impl FnOnce() -> V) -> &mut V {
-        self.entries.entry(k).or_insert_with(make)
+        self.slot(k, make)
+    }
+
+    /// The value of `k`, put with `make()` when missing (`put` semantics: last in its bucket, table checked after).
+    fn slot(&mut self, k: K, make: impl FnOnce() -> V) -> &mut V {
+        let len_after = self.entries.len() + 1;
+        match self.entries.entry(k) {
+            Entry::Occupied(o) => &mut o.into_mut().value,
+            Entry::Vacant(v) => {
+                if len_after > self.table * 3 / 4 {
+                    self.table *= 2;
+                }
+                &mut v.insert(Slot { value: make(), at_head: false }).value
+            }
+        }
+    }
+
+    /// `merge(k, v, f)`: `v` when the key is new (linked in at the head of its bucket), else `f(old, v)`. The table
+    /// is checked first, before even looking for the key.
+    pub fn merge(&mut self, k: K, v: V, f: impl FnOnce(V, V) -> V)
+    where
+        V: Copy,
+    {
+        if self.entries.len() > self.table * 3 / 4 {
+            self.table *= 2;
+        }
+        match self.entries.get_mut(&k) {
+            Some(old) => old.value = f(old.value, v),
+            None => {
+                self.entries.insert(k, Slot { value: v, at_head: true });
+            }
+        }
     }
 
     /// Entries in Java iteration order.
     pub fn iter_java(&self) -> impl Iterator<Item = (&K, &V)> {
-        let keys: Vec<&K> = self.entries.keys().collect();
-        java_order(&keys.iter().map(|k| JavaRef(*k)).collect::<Vec<_>>())
+        let order = order_in_table(self.entries.iter().map(|(k, s)| (k.java_hash(), s.at_head)), self.table);
+        order
             .into_iter()
-            .map(move |i| (keys[i], &self.entries[keys[i]]))
+            .map(|i| {
+                let (k, s) = self.entries.get_index(i).expect("a position just listed");
+                (k, &s.value)
+            })
             .collect::<Vec<_>>()
             .into_iter()
     }
@@ -158,7 +230,7 @@ impl<K: JavaHash + Hash + Eq, V> JMap<K, V> {
 impl<K: JavaHash + Hash + Eq, V: Default> JMap<K, V> {
     /// `getOrPut(k) { default }`
     pub fn entry_or_default(&mut self, k: K) -> &mut V {
-        self.entries.entry(k).or_default()
+        self.slot(k, V::default)
     }
 }
 

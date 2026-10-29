@@ -1,0 +1,589 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 1,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 2,
+            "recipe": "engine-unit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 0.1212121212121212,
+            "product": "engine-unit",
+            "demand": {
+                "steel-plate": 0.1212121212121212,
+                "iron-gear-wheel": 0.1212121212121212,
+                "pipe": 0.2424242424242424
+            },
+            "products": {
+                "engine-unit": 0.1212121212121212
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 0.1212121212121212
+        },
+        {
+            "id": 3,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.3333333333333333,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.3333333333333333
+            },
+            "products": {
+                "pipe": 1.3333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.3333333333333333
+        },
+        {
+            "id": 4,
+            "recipe": "pipe",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 1.3333333333333333,
+            "product": "pipe",
+            "demand": {
+                "iron-plate": 1.3333333333333333
+            },
+            "products": {
+                "pipe": 1.3333333333333333
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.3333333333333333
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "engine-unit",
+            "specs": [
+                {
+                    "name": "engine-unit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 1,
+            "item": "engine-unit",
+            "specs": [
+                {
+                    "name": "engine-unit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 2,
+            "item": "engine-unit",
+            "specs": [
+                {
+                    "name": "engine-unit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 3,
+            "item": "engine-unit",
+            "specs": [
+                {
+                    "name": "engine-unit",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 4,
+            "item": "iron-gear-wheel",
+            "specs": [
+                {
+                    "name": "iron-gear-wheel",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 5,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 6,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 7,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 8,
+            "item": "pipe",
+            "specs": [
+                {
+                    "name": "pipe",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": true
+        },
+        {
+            "id": 9,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        },
+        {
+            "id": 10,
+            "item": "steel-plate",
+            "specs": [
+                {
+                    "name": "steel-plate",
+                    "edge": "south",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": true
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "PRODUCER",
+            "item": "engine-unit",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "CONSUMER",
+            "item": "iron-gear-wheel",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "PRODUCER",
+            "item": "pipe",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 10,
+            "role": "CONSUMER",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 11,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 3,
+            "fluid": false
+        },
+        {
+            "id": 12,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 1.3333333333333333,
+            "k": 1,
+            "machine": 4,
+            "fluid": false
+        },
+        {
+            "id": 13,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 14,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 15,
+            "role": "CONSUMER",
+            "item": "steel-plate",
+            "rate": 0.1212121212121212,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 16,
+            "role": "OUTPUT",
+            "item": "engine-unit",
+            "rate": 0.03636363636363642,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 17,
+            "role": "OUTPUT",
+            "item": "engine-unit",
+            "rate": 0.05757575757575761,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 18,
+            "role": "OUTPUT",
+            "item": "engine-unit",
+            "rate": 0.09999999999999981,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 19,
+            "role": "OUTPUT",
+            "item": "engine-unit",
+            "rate": 0.16969696969696976,
+            "k": 1,
+            "port": 3,
+            "fluid": false
+        },
+        {
+            "id": 20,
+            "role": "SOURCE",
+            "item": "iron-gear-wheel",
+            "rate": 0.3636363636363636,
+            "k": 1,
+            "port": 4,
+            "fluid": false
+        },
+        {
+            "id": 21,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 0.2424242424242424,
+            "k": 1,
+            "port": 5,
+            "fluid": false
+        },
+        {
+            "id": 22,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 0.4848484848484848,
+            "k": 1,
+            "port": 6,
+            "fluid": false
+        },
+        {
+            "id": 23,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 0.4848484848484848,
+            "k": 1,
+            "port": 7,
+            "fluid": false
+        },
+        {
+            "id": 24,
+            "role": "OUTPUT",
+            "item": "pipe",
+            "rate": 0.7272727272727272,
+            "k": 1,
+            "port": 8,
+            "fluid": false
+        },
+        {
+            "id": 25,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 2.6666666666666665,
+            "k": 1,
+            "port": 9,
+            "fluid": false
+        },
+        {
+            "id": 26,
+            "role": "SOURCE",
+            "item": "steel-plate",
+            "rate": 0.3636363636363636,
+            "k": 1,
+            "port": 10,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "engine-unit",
+            "flow": 0.36363636363636365,
+            "terminals": [
+                0,
+                1,
+                2,
+                16,
+                17,
+                18,
+                19
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "iron-gear-wheel",
+            "flow": 0.3636363636363636,
+            "terminals": [
+                3,
+                4,
+                5,
+                20
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "pipe",
+            "flow": 2.6666666666666665,
+            "terminals": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                21,
+                22,
+                23,
+                24
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "iron-plate",
+            "flow": 2.6666666666666665,
+            "terminals": [
+                11,
+                12,
+                25
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "item": "steel-plate",
+            "flow": 0.3636363636363636,
+            "terminals": [
+                13,
+                14,
+                15,
+                26
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "iron-plate": 2.6666666666666665,
+        "steel-plate": 0.3636363636363636
+    },
+    "fluidRates": {},
+    "recipeRates": {},
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {}
+}
