@@ -12,14 +12,16 @@ use super::pipes::{PRouted, PipeRouter};
 use crate::config::run_configuration::RunConfiguration;
 use crate::config::tuning::RouteTuning;
 use crate::data::game_constants::{self as gc, BeltTier};
-use crate::geom::{Dir, GridDims, Kind, PlacedEntity, Rect, Tile};
+use crate::geom::{Dir, GridDims, Kind, Layout, PlacedEntity, Rect, Tile};
 use crate::place::Placement;
 use crate::plan::{ProductionPlan, Role, Terminal};
 use crate::util::java_hash::{JMap, JSet};
 use crate::util::java_random::{JavaRandom, java_shuffle};
 use crate::validate::{OutputSpec, SourceSpec};
+use crate::viz::{HeatOverlay, RenderOptions, render_layout};
 use indexmap::IndexMap;
 use std::collections::{HashMap, HashSet};
+use std::path::{Path, PathBuf};
 use std::rc::Rc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -48,6 +50,8 @@ pub struct RouteProblem<'a> {
     pub endgame_seed: i64,
     /// Tiles no underground may pass under (blocks, when stitching a split factory).
     pub no_tunnel: HashSet<Tile>,
+    /// Where to draw the router's debug renders (one per iteration, and one per net that fails), if anywhere.
+    pub debug_dir: Option<PathBuf>,
 }
 
 impl<'a> RouteProblem<'a> {
@@ -62,6 +66,7 @@ impl<'a> RouteProblem<'a> {
             warm_history: None,
             endgame_seed: 0,
             no_tunnel: HashSet::new(),
+            debug_dir: None,
         }
     }
 }
@@ -229,6 +234,8 @@ pub struct PathFinder<'a> {
     pub(super) weave_ok: bool,
     pub(super) log: Vec<String>,
     pub trace: Vec<i32>,
+    /// Failed nets drawn so far (at most 6 are).
+    pub(super) fail_renders: i32,
     pub(super) d_idx: [i32; 4],
     pub(super) d_x: [i32; 4],
     pub(super) d_y: [i32; 4],
@@ -449,6 +456,7 @@ impl<'a> PathFinder<'a> {
             weave_ok: false,
             log: Vec::new(),
             trace: Vec::new(),
+            fail_renders: 0,
             d_idx: [-fw, 1, fw, -1],
             d_x: [0, 1, 0, -1],
             d_y: [-1, 0, 1, 0],
@@ -761,9 +769,10 @@ impl<'a> PathFinder<'a> {
             overuse = self.total_overuse();
             let score = overuse + tun.unrouted_penalty * (unrouted.len() + failed_fluids.len()) as i32;
             self.trace.push(score);
-            if tun.trace_detail {
+            if tun.trace_detail || self.p.debug_dir.is_some() {
                 self.log_iteration_detail(iter, unrouted.len(), &nets);
             }
+            self.render_iteration(iter, overuse, unrouted.len());
             if overuse == 0 && unrouted.is_empty() && failed_fluids.is_empty() {
                 break;
             }
@@ -913,6 +922,23 @@ impl<'a> PathFinder<'a> {
             log,
             trace: self.trace.clone(),
             expansions: self.expansions,
+        }
+    }
+
+    /// With a debug dir: this iteration's picture, the history cost as heat and the overused tiles in red.
+    fn render_iteration(&self, iter: i32, overuse: i32, unrouted: usize) {
+        let Some(dir) = &self.p.debug_dir else { return };
+        let heat: Vec<(Tile, f64)> = (0..self.n).filter(|&t| self.hist[t] > 0.0).map(|t| (self.dims.tile(t), f64::from(self.hist[t]))).collect();
+        let overused: HashSet<Tile> = (0..self.n).filter(|&t| self.overuse_at(t) > 0).map(|t| self.dims.tile(t)).collect();
+        let options = RenderOptions { heat: Some(HeatOverlay { values: heat, overused }), title: Some(format!("iteration {iter}: overuse {overuse}, unrouted {unrouted}")), ..RenderOptions::default() };
+        self.render_debug(&dir.join(format!("route_iter_{iter:03}.png")), &options);
+    }
+
+    /// Draws the layout as it stands; a picture that cannot be written is a warning, never a failed route.
+    pub(super) fn render_debug(&self, file: &Path, options: &RenderOptions) {
+        let layout = Layout::new(self.w, self.h, self.entities());
+        if let Err(e) = render_layout(&layout, file, options) {
+            eprintln!("warning: could not draw {}: {e:#}", file.display());
         }
     }
 

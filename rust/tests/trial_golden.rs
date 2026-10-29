@@ -161,7 +161,7 @@ fn run_case(name: &str, data: &RootData) -> Vec<String> {
     let config = RunConfiguration::load(dir.join(&g.config).to_str().unwrap()).unwrap();
     let tuning = Tuning::load(dir.join(&g.tuning).to_str().unwrap()).unwrap();
     let warm = g.warm.as_ref().map(placement_of);
-    let opts = TrialOptions { warm: warm.as_ref(), warm_t0: g.warm_t0, deadline: i64::MAX, lattice: g.lattice };
+    let opts = TrialOptions { warm: warm.as_ref(), warm_t0: g.warm_t0, deadline: i64::MAX, lattice: g.lattice, debug_dir: None };
     let got = run_trial(data, &plan, &config, &tuning, g.w, g.h, g.seed, opts).unwrap();
     let mut out = Vec::new();
     compare_result(&got, &g.result, &mut out);

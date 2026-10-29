@@ -17,6 +17,7 @@ use crate::validate::{MachineSpec, OutputSpec, SourceSpec, ValidationError, Vali
 use anyhow::{Result, ensure};
 use indexmap::IndexMap;
 use std::collections::{HashMap, HashSet};
+use std::path::Path;
 use std::sync::Arc;
 
 /// What the validator should expect of this plan on this placement.
@@ -152,11 +153,13 @@ pub struct TrialOptions<'a> {
     pub deadline: i64,
     /// Fixed poles in a lattice instead of a set cover; the config's power mode when not given.
     pub lattice: Option<bool>,
+    /// Where the router draws its debug renders for the feedback rounds (a folder `round<N>` each), if anywhere.
+    pub debug_dir: Option<&'a Path>,
 }
 
 impl Default for TrialOptions<'_> {
     fn default() -> Self {
-        Self { warm: None, warm_t0: None, deadline: i64::MAX, lattice: None }
+        Self { warm: None, warm_t0: None, deadline: i64::MAX, lattice: None, debug_dir: None }
     }
 }
 
@@ -310,7 +313,8 @@ pub fn run_trial(
             return Ok(run.fail(&annealer, "route", routed, Vec::new(), None));
         }
         let placement = annealer.model.placement();
-        let r = route_once(plan, config, rt, &placement, &obstacles, |_| {});
+        let round_dir = opts.debug_dir.map(|d| d.join(format!("round{round}")));
+        let r = route_once(plan, config, rt, &placement, &obstacles, |p| p.debug_dir = round_dir);
         run.consider(&r, rt.unrouted_penalty);
         if r.success {
             routed = Some(r);
@@ -446,7 +450,7 @@ pub fn run_trial(
         }
         if !ok && config.power.mode == "set-cover" && !lattice {
             run.notes.push("set cover failed twice; falling back to the pole lattice".to_owned());
-            let again = TrialOptions { warm: Some(&placement), warm_t0: Some(annealer.last_t0), deadline: opts.deadline, lattice: Some(true) };
+            let again = TrialOptions { warm: Some(&placement), warm_t0: Some(annealer.last_t0), deadline: opts.deadline, lattice: Some(true), debug_dir: opts.debug_dir };
             return run_trial(data, plan, config, tuning, w, h, seed, again);
         }
         let offset = entities.len();

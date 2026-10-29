@@ -95,13 +95,36 @@ fn print_tuning_shows_the_knobs_after_the_jobs_overrides_and_stops() {
 }
 
 #[test]
-fn unknown_flags_and_calibrate_are_refused() {
+fn unknown_flags_and_bad_numbers_are_refused() {
     let result = run(&["--bogus".to_owned()]);
     assert!(!result.status.success());
     assert!(text(&result.stderr).contains("Unknown flags"), "{}", text(&result.stderr));
-    let result = run(&["--calibrate=a.json".to_owned()]);
+    let dir = temp_dir("badbudget");
+    let job = write_job(&dir, "t1", json!({}));
+    let result = run(&[format!("--calibrate={}", job.display()), "--budget=soon".to_owned()]);
     assert!(!result.status.success());
-    assert!(text(&result.stderr).contains("not ported"), "{}", text(&result.stderr));
+    assert!(text(&result.stderr).contains("--budget wants"), "{}", text(&result.stderr));
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
+fn calibrate_searches_the_jobs_reports_and_writes_a_tuning_next_to_them() {
+    let dir = temp_dir("calibrate");
+    let job = write_job(&dir, "t2", json!({}));
+    let tuning = dir.join("base.json");
+    std::fs::write(&tuning, r#"{"search": {"extra_rounds": 1}}"#).unwrap();
+    let out = dir.join("out");
+    let result = run(&[format!("--calibrate={}", job.display()), format!("--tuning={}", tuning.display()), "--budget=3600".to_owned(), format!("--out={}", out.display())]);
+    assert!(result.status.success(), "{}", text(&result.stderr));
+    let stdout = text(&result.stdout);
+    assert!(stdout.contains("job: best "), "named after the file: {stdout}");
+    assert!(stdout.contains("area factor") && stdout.contains("routed chains"), "{stdout}");
+    let tuned: Value = serde_json::from_str(&std::fs::read_to_string(out.join("tuning.json")).unwrap()).unwrap();
+    // The factor is the box area over the machine area of the best layout, less a margin.
+    let factor = tuned["search"]["area_factor"].as_f64().unwrap();
+    assert!(factor > 1.0 && factor < 6.0 && factor != 1.8, "{factor}");
+    assert!(out.join("job/best_output_string.txt").exists(), "each job searches in a folder of its own");
+    let _ = std::fs::remove_dir_all(&dir);
 }
 
 #[test]

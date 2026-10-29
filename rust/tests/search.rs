@@ -135,3 +135,27 @@ fn the_number_of_threads_does_not_change_what_the_search_finds() {
     assert!(one.1.len() >= 2, "{one:?}");
     assert_eq!(one, found(4, "threads4"));
 }
+
+#[test]
+fn debug_renders_draw_the_routes_of_the_first_seed_of_each_size() {
+    let out = out_dir("debug");
+    let config = with_search(RunConfiguration { debug_renders: true, ..job("t3") }, 2);
+    let (_, _, res) = run(&config, &out);
+    assert!(res.best.is_some());
+    let entries = |dir: &std::path::Path| -> Vec<String> { std::fs::read_dir(dir).unwrap().map(|e| e.unwrap().file_name().to_string_lossy().into_owned()).collect() };
+    let debug = entries(&out.join("debug"));
+    let routes: Vec<&String> = debug.iter().filter(|n| n.starts_with("route_")).collect();
+    assert!(!routes.is_empty(), "{debug:?}");
+    // Each drawn trial has a folder per feedback round, with a picture per routing iteration.
+    for r in &routes {
+        let round0 = out.join("debug").join(r).join("round0");
+        assert!(entries(&round0).iter().any(|n| n.starts_with("route_iter_")), "{}", round0.display());
+    }
+    // (A trial that did not route has no layout to draw; pictures of failed trials exist only for ones that failed later.)
+    // And none of it without the option.
+    let quiet = out_dir("quiet");
+    run(&with_search(job("t1"), 2), &quiet);
+    assert!(!quiet.join("debug").exists());
+    let _ = std::fs::remove_dir_all(&out);
+    let _ = std::fs::remove_dir_all(&quiet);
+}

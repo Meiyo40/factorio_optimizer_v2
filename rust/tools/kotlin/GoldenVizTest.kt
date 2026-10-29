@@ -191,15 +191,17 @@ class GoldenVizTest {
         out.mkdirs()
         val base = det(Tuning()).let { it.copy(search = it.search.copy(extraRounds = 2)) }
         fun quick(c: RunConfiguration) = c.copy(search = SearchConfig(timeBudgetS = 100000.0, seedsPerSize = 2, threads = 1, seed = 7))
-        // Chains of 2 to 5 terminals and more: the red and green science job, acid with pipes, lanes shared on a belt, 40 iron a second.
+        // Chains of 2 to 8 terminals and more: the red and green science job, a small one, lanes shared on a belt, 40 iron a second.
         val iron = RunConfiguration(targets = listOf(config.ConfigTarget("iron-gear-wheel", 20.0)), sources = listOf(config.ConfigSource("iron-plate", edge = "west")), research = config.ResearchConfig(2))
         val list = listOf(
-            "t3" to quick(RunConfiguration.load("$jobs/t3.json")), "red_green_science" to quick(RunConfiguration.load("$ex/red_green_science.json")),
-            "t4" to quick(RunConfiguration.load("$jobs/t4.json")), "pair" to quick(RunConfiguration.load("$jobs/pair.json").copy(laneSharing = true)),
+            "t3" to quick(RunConfiguration.load("$jobs/t3.json")), "t2" to quick(RunConfiguration.load("$jobs/t2.json")),
+            "pair" to quick(RunConfiguration.load("$jobs/pair.json").copy(laneSharing = true)),
             "iron40" to quick(iron.copy(box = config.BoxConfig(startSize = 28))),
         )
         File(out, "base_tuning.json").writeText(base.toJson())
         list.forEach { (name, c) -> File(out, "configs/$name.json").also { it.parentFile.mkdirs() }.writeText(strictJson.encodeToString(RunConfiguration.serializer(), c)) }
+        // The plans calibrate builds itself: Rust plans with another LP solver, so its plans differ in the last bits.
+        list.forEach { (name, c) -> File(out, "plans/$name.plan.json").also { it.parentFile.mkdirs() }.writeText(buildPlan(TestData.data, c, base).toJson()) }
         val res = calibrate(TestData.data, list, base, 100000.0, File(out, "run"))
         write(File(out, "expected.json"), buildJsonObject {
             put("upstream", System.getenv("UPSTREAM") ?: "unknown")

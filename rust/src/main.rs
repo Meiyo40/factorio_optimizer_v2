@@ -7,7 +7,8 @@
 //!   --out=<dir>                   output directory (default: solves/<time> - sa)
 //!   --verify-kit=<dir>            write the in-game verification blueprints (see docs/VERIFY.md)
 //!   --render=<dir>                redraw <dir>/best.png from its best_output_string.txt and ports.json (with ports)
-//! The Kotlin mode --calibrate is not ported yet.
+//!   --calibrate=<cfg>,<cfg>,...   refit q(k) and the area factor from short searches of these jobs and write the new
+//!                                 tuning to <out>/tuning.json (with --budget=<s> per job, default 60)
 
 use anyhow::{Context, Result, bail};
 use factorio_optimizer::blocks::factory::run_factory;
@@ -18,6 +19,7 @@ use factorio_optimizer::emit::blueprint::decode_blueprint;
 use factorio_optimizer::emit::verify_kit;
 use factorio_optimizer::geom::Tile;
 use factorio_optimizer::plan::build_plan;
+use factorio_optimizer::search::calibrate::{calibrate, write_tuning};
 use factorio_optimizer::search::search::run_search;
 use factorio_optimizer::util::text::fmt_fixed;
 use factorio_optimizer::viz::{PortLabel, RenderOptions, render_layout};
@@ -48,8 +50,8 @@ fn main() -> Result<()> {
         println!("wrote {written} verification blueprints to {dir}");
         return Ok(());
     }
-    if flags.contains_key("calibrate") {
-        bail!("--calibrate is not ported to Rust yet (stage 7 in rust/README.md); use the Kotlin build for it");
+    if let Some(list) = flags.get("calibrate") {
+        return calibrate_jobs(list, &flags);
     }
 
     let loaded = RunConfiguration::load(flags.get("config").map_or("config.json", String::as_str))?;
@@ -128,5 +130,35 @@ fn render_output(dir: &Path) -> Result<()> {
     let file = dir.join("best.png");
     render_layout(&layout, &file, &RenderOptions { title: Some(format!("{w}x{h}")), ports: all, ..RenderOptions::default() })?;
     println!("rendered {}", file.display());
+    Ok(())
+}
+
+/// Searches each job briefly and refits the tuning from what they routed. Kotlin writes the result over
+/// src/main/resources/tuning.json; here it goes to <out>/tuning.json, and the Kotlin tree is left alone.
+fn calibrate_jobs(list: &str, flags: &BTreeMap<String, String>) -> Result<()> {
+    let data = load_root_data("recipes.json")?;
+    let base = match flags.get("tuning") {
+        Some(name) => Tuning::load(name)?,
+        None => Tuning::default(),
+    };
+    let jobs = list
+        .split(',')
+        .map(|path| {
+            let file = Path::new(path).file_name().map_or_else(|| path.to_owned(), |f| f.to_string_lossy().into_owned());
+            Ok((file.strip_suffix(".json").unwrap_or(&file).to_owned(), RunConfiguration::load(path)?))
+        })
+        .collect::<Result<Vec<_>>>()?;
+    let budget: f64 = match flags.get("budget") {
+        Some(b) => b.parse().with_context(|| format!("--budget wants a number of seconds, not {b}"))?,
+        None => 60.0,
+    };
+    let out = flags.get("out").map_or("solves/calibration", String::as_str);
+    let result = calibrate(&data, &jobs, &base, budget, Path::new(out))?;
+    for line in &result.report {
+        println!("{line}");
+    }
+    let file = Path::new(out).join("tuning.json");
+    write_tuning(&result.tuning, &file)?;
+    println!("wrote {} from {} routed chains; copy it over src/main/resources/tuning.json, or pass it as --tuning, to use it", file.display(), result.samples);
     Ok(())
 }

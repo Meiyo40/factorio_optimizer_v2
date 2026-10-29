@@ -1,6 +1,6 @@
 # factorio_optimizer (Rust port)
 
-A port of the Kotlin generator in the parent directory, in progress. The layout mirrors the Kotlin tree
+A port of the Kotlin generator in the parent directory: every stage is done. The layout mirrors the Kotlin tree
 (`src/main/kotlin/<package>/<File>.kt` becomes `src/<package>/<file>.rs`), so an upstream change can be
 re-applied file by file. Ported from upstream commit `022c312`. The Kotlin sources are not changed by this port.
 
@@ -18,7 +18,7 @@ cargo test
 | 4 validator, power | `validate`, `power` | done, same verdicts and messages as Kotlin (see below) |
 | 5 router | `route`, `search/Trial.kt` (`validationSpec`, `layoutOf`) | done, same routes as Kotlin (see below) |
 | 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | done, same results as Kotlin (see below) |
-| 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | renders and verify kit done; calibrate next |
+| 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | done: same results as Kotlin where it can be compared (see below) |
 
 Not ported on purpose: `RecipeIndex` and `computeRates` in `Rates.kt` (nothing in Kotlin's `src/main` uses them),
 and the item and fluid links that `interlinkProductsWithItems` fills in (look up `RootData::items` by name).
@@ -180,7 +180,7 @@ cargo run --release -- --config=../docs/examples/red_green_science.json --out=so
 Flags as in Kotlin's `Main.kt`: `--config` (a path, or a built-in resource name; the default is the built-in
 `config.json`), `--tuning`, `--engine`, `--out` and `--print-tuning`. A job with more machines than `blocks.max_machines`
 runs as a factory, any other as a search. Output goes to `solves/<time> - sa` unless `--out` says otherwise (the Kotlin
-default is under `src/main/resources`, inside the Kotlin tree). `--render` and `--verify-kit` are there too (see below); `--calibrate` stops with a message until it is ported.
+default is under `src/main/resources`, inside the Kotlin tree). `--render`, `--verify-kit` and `--calibrate` are there too (see below).
 
 ## The renders and the verify kit
 
@@ -195,8 +195,34 @@ Rust's: the size must be equal, every pixel in Kotlin's flat areas (5 x 5 of one
 chests, heat tiles) must be the same colour, and only a few percent of the map's pixels may differ strongly. A wrong
 machine colour, a one-pixel shift and a dropped overlay each fail it. The score graph is a plain SVG, not lets-plot's.
 
+The renders, the kit and the calibration are dumped by `tools/kotlin/GoldenVizTest.kt` (`VIZ_OUT`, `VERIFY_OUT`,
+`CALIB_OUT`; tests `dumpVizGoldens`, `dumpVerifyKitGoldens`, `dumpCalibrateGoldens`), run like the others above.
+
 `--verify-kit=<dir>` writes the 18 in-game blueprints and `t1-hand.txt`; `tests/verify_kit.rs` checks the layouts
 against Kotlin's entity by entity and the strings against both Kotlin's output and the committed `docs/verify`.
+
+`debug_renders` in a job file works as in Kotlin: the router draws `route_iter_NNN.png` for every iteration of the first
+seed of each size (history as heat, overused tiles in red) in `debug/route_WxH_seed/round<N>/`, plus up to six
+`fail_NN_netN.png` for nets it could not route, and trials that failed after routing get a `debug/fail_WxH_seed.png`.
+Drawing only reads the router's state: a test checks that a route with pictures is the same route (entities, scores,
+work) as one without.
+
+## Calibration
+
+`--calibrate=<job>,<job> --budget=<s>` refits the placer's `q(k)` table and the search's `area_factor` from short
+searches, as Kotlin does (it starts from the code defaults unless `--tuning` is given). Kotlin writes the result over
+`src/main/resources/tuning.json`, which is a file of the Kotlin tree and compiled into this crate too; Rust writes
+`<out>/tuning.json` (default `solves/calibration/`) and says so, and you copy it over or pass it as `--tuning`.
+`tests/calibrate_golden.rs` runs four jobs (one thread, `extra_rounds` of 2) and compares the report lines, the 174
+routed chains it collects, the area ratios and the tuned tuning, bit for bit, with Kotlin's; with the factor's margin
+or the q table's non-decreasing rule changed it fails.
+
+One thing that test taught: **a plan built by Rust is not bit-for-bit Kotlin's.** Kotlin solves the planner's LP with
+OR-Tools, Rust with `microlp`, and the rates can differ in the last bit (0.2 against 0.20000000000000004 for the
+processing-unit job). Everything downstream is deterministic in its input, so the same seed on a Rust plan gives
+another, equally valid layout; that is why every differential test in this crate feeds Rust the plan Kotlin built
+(`calibrate_plans` takes ready plans for that), and why running the same job in both builds will not give the same
+box.
 
 ## Router speed against the JVM
 

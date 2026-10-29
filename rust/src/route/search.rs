@@ -7,6 +7,7 @@ use crate::data::game_constants as gc;
 use crate::geom::{Dir, Tile};
 use crate::plan::Role;
 use crate::util::text::fmt2;
+use crate::viz::{HeatOverlay, RenderOptions};
 use crate::util::{average_f64, compare_f32, compare_f64, sum_f64};
 use std::collections::{HashSet, VecDeque};
 
@@ -1148,9 +1149,39 @@ impl PathFinder<'_> {
     /// Gives up on the net: logs why, takes back whatever it had committed and reports failure.
     fn fail(&mut self, n: &RNet, why: String, r: &Routed) -> bool {
         self.log.push(format!("net {} ({}): {why}", n.plan_id, n.item));
+        self.render_failure(n, &why, r);
         self.rip_up_routed(r);
         self.routed[n.idx as usize] = None;
         false
+    }
+
+    /// With a debug dir, the first six failed nets are drawn: the tiles of their access options as heat, the head of
+    /// the route they got as far as in red.
+    fn render_failure(&mut self, n: &RNet, why: &str, r: &Routed) {
+        let Some(dir) = self.p.debug_dir.clone() else { return };
+        let drawn = self.fail_renders;
+        self.fail_renders += 1;
+        if drawn >= 6 {
+            return;
+        }
+        let mut heat: indexmap::IndexMap<Tile, f64> = indexmap::IndexMap::new();
+        for &t in n.terms.iter().filter(|&&t| self.need[t as usize] > 0) {
+            for &o in &self.term_opts[t as usize] {
+                heat.insert(self.dims.tile(self.opt_belt[o as usize] as usize), 1.0);
+                heat.insert(self.dims.tile(self.opt_ins[o as usize] as usize), 0.4);
+            }
+        }
+        let head: HashSet<Tile> = r.belts.last().map(|&b| self.dims.tile((b >> 2) as usize)).into_iter().collect();
+        let options = RenderOptions {
+            px: 28,
+            heat: Some(HeatOverlay { values: heat.into_iter().collect(), overused: head }),
+            title: Some(format!("net {} {}: {why}", n.plan_id, n.item)),
+            ..RenderOptions::default()
+        };
+        // The route so far is not stored yet: show it too.
+        let stored = self.routed[n.idx as usize].replace(r.clone());
+        self.render_debug(&dir.join(format!("fail_{:02}_net{}.png", self.fail_renders, n.plan_id)), &options);
+        self.routed[n.idx as usize] = stored;
     }
 
     pub(super) fn machine_center_of(&self, m: usize) -> Tile {

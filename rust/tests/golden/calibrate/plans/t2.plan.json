@@ -1,0 +1,260 @@
+{
+    "machines": [
+        {
+            "id": 0,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 3.0,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 1.5
+            },
+            "products": {
+                "copper-cable": 3.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.5
+        },
+        {
+            "id": 1,
+            "recipe": "copper-cable",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 3.0,
+            "product": "copper-cable",
+            "demand": {
+                "copper-plate": 1.5
+            },
+            "products": {
+                "copper-cable": 3.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 1.5
+        },
+        {
+            "id": 2,
+            "recipe": "electronic-circuit",
+            "machine": "assembling-machine-3",
+            "w": 3,
+            "h": 3,
+            "outputRate": 2.0,
+            "product": "electronic-circuit",
+            "demand": {
+                "iron-plate": 2.0,
+                "copper-cable": 6.0
+            },
+            "products": {
+                "electronic-circuit": 2.0
+            },
+            "fluidDemand": {},
+            "fluidIn": {},
+            "fluidOut": {},
+            "crafts": 2.0
+        }
+    ],
+    "ports": [
+        {
+            "id": 0,
+            "item": "copper-plate",
+            "specs": [
+                {
+                    "name": "copper-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 1,
+            "item": "iron-plate",
+            "specs": [
+                {
+                    "name": "iron-plate",
+                    "edge": "west",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": false,
+            "single": false
+        },
+        {
+            "id": 2,
+            "item": "electronic-circuit",
+            "specs": [
+                {
+                    "name": "electronic-circuit",
+                    "edge": "any",
+                    "force": 1.0
+                }
+            ],
+            "fluid": false,
+            "output": true,
+            "single": false
+        }
+    ],
+    "terminals": [
+        {
+            "id": 0,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 3.0,
+            "k": 2,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "role": "PRODUCER",
+            "item": "copper-cable",
+            "rate": 3.0,
+            "k": 2,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "role": "CONSUMER",
+            "item": "copper-cable",
+            "rate": 6.0,
+            "k": 4,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "role": "PRODUCER",
+            "item": "electronic-circuit",
+            "rate": 2.0,
+            "k": 1,
+            "machine": 2,
+            "fluid": false
+        },
+        {
+            "id": 4,
+            "role": "OUTPUT",
+            "item": "electronic-circuit",
+            "rate": 2.0,
+            "k": 1,
+            "port": 2,
+            "fluid": false
+        },
+        {
+            "id": 5,
+            "role": "SOURCE",
+            "item": "copper-plate",
+            "rate": 3.0,
+            "k": 1,
+            "port": 0,
+            "fluid": false
+        },
+        {
+            "id": 6,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 1.5,
+            "k": 1,
+            "machine": 0,
+            "fluid": false
+        },
+        {
+            "id": 7,
+            "role": "CONSUMER",
+            "item": "copper-plate",
+            "rate": 1.5,
+            "k": 1,
+            "machine": 1,
+            "fluid": false
+        },
+        {
+            "id": 8,
+            "role": "SOURCE",
+            "item": "iron-plate",
+            "rate": 2.0,
+            "k": 1,
+            "port": 1,
+            "fluid": false
+        },
+        {
+            "id": 9,
+            "role": "CONSUMER",
+            "item": "iron-plate",
+            "rate": 2.0,
+            "k": 2,
+            "machine": 2,
+            "fluid": false
+        }
+    ],
+    "nets": [
+        {
+            "id": 0,
+            "item": "copper-cable",
+            "flow": 6.0,
+            "terminals": [
+                0,
+                1,
+                2
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 1,
+            "item": "electronic-circuit",
+            "flow": 2.0,
+            "terminals": [
+                3,
+                4
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 2,
+            "item": "copper-plate",
+            "flow": 3.0,
+            "terminals": [
+                5,
+                6,
+                7
+            ],
+            "beltCount": 1,
+            "fluid": false
+        },
+        {
+            "id": 3,
+            "item": "iron-plate",
+            "flow": 2.0,
+            "terminals": [
+                8,
+                9
+            ],
+            "beltCount": 1,
+            "fluid": false
+        }
+    ],
+    "rawRates": {
+        "copper-plate": 3.0,
+        "iron-plate": 2.0
+    },
+    "fluidRates": {},
+    "recipeRates": {
+        "copper-cable": 6.0,
+        "electronic-circuit": 2.0
+    },
+    "beltTier": "fast",
+    "warnings": [],
+    "outputs": {
+        "electronic-circuit": 2.0
+    }
+}

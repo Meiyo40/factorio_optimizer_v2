@@ -324,3 +324,46 @@ fn one_iteration_on_100_x_100_with_60_nets_routes_every_net_in_time() {
     // Kotlin's bound is 200 ms on a warm JVM; this one only catches a blow-up, not a slow machine.
     assert!(fastest < 1000, "one iteration took {fastest} ms");
 }
+
+/// Routes a hand placement with the router's debug renders going to `debug`, and returns the result.
+fn route_fixture_drawing(name: &str, tuning: RouteTuning, debug: Option<std::path::PathBuf>) -> RouteResult {
+    let fx = PlacementFixture::load(&resource(&format!("placements/{name}.json"))).unwrap();
+    let config = RunConfiguration::load(&resource(&fx.job)).unwrap();
+    let plan = build_plan(&DATA, &config, &Tuning::default()).unwrap();
+    let placement = fx.to_placement(&plan).unwrap();
+    let mut problem = RouteProblem::new(&plan, &config, tuning, &placement);
+    problem.obstacles = static_obstacles(&config, &plan, placement.w, placement.h);
+    problem.debug_dir = debug;
+    route(&problem)
+}
+
+#[test]
+fn a_debug_dir_draws_every_iteration_and_the_failed_nets_without_changing_the_route() {
+    let tuning = RouteTuning { ug_penalty: 8.0, p_mult: 1.5, max_iterations: 60, stagnation_stop: 25, ..Default::default() };
+    let dir = std::env::temp_dir().join(format!("factorio-router-debug-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&dir);
+    let plain = route_fixture_drawing("cross", tuning.clone(), None);
+    let drawn = route_fixture_drawing("cross", tuning, Some(dir.join("negotiation")));
+    // Drawing only looks: the same entities in the same order, the same iterations, scores and work.
+    assert_eq!(drawn.entities, plain.entities);
+    assert_eq!((drawn.success, drawn.iterations, drawn.overuse, drawn.expansions), (plain.success, plain.iterations, plain.overuse, plain.expansions));
+    assert_eq!(drawn.trace, plain.trace);
+    assert!(plain.iterations > 1);
+    // One picture per iteration, numbered from 1, each one a PNG of the box.
+    let pictures: Vec<_> = (1..=plain.iterations).map(|i| dir.join(format!("negotiation/route_iter_{i:03}.png"))).collect();
+    for p in &pictures {
+        let png = tiny_skia::Pixmap::load_png(p).unwrap_or_else(|e| panic!("{}: {e}", p.display()));
+        assert!(png.width() >= 720, "the legend makes it wide");
+    }
+    assert_eq!(std::fs::read_dir(dir.join("negotiation")).unwrap().filter(|e| e.as_ref().unwrap().file_name().to_string_lossy().starts_with("route_iter_")).count(), pictures.len());
+    // The detailed iteration lines are logged whenever pictures are drawn, as in Kotlin.
+    assert!(drawn.log.iter().any(|l| l.starts_with("iter 1:")) && !plain.log.iter().any(|l| l.starts_with("iter 1:")));
+
+    // A pass that leaves nets unrouted draws each failed net (at most six).
+    let failing = RouteTuning { ug_penalty: 8.0, p_mult: 1.5, p_fac_first: 0.0, max_iterations: 1, endgame_rounds: 0, ..Default::default() };
+    let bare = route_fixture_drawing("cross", failing.clone(), None);
+    let result = route_fixture_drawing("cross", failing, Some(dir.join("failing")));
+    assert_eq!((result.success, result.iterations, &result.entities), (bare.success, bare.iterations, &bare.entities));
+    assert!(std::fs::read_dir(dir.join("failing")).unwrap().count() >= 1, "at least the iteration's picture");
+    let _ = std::fs::remove_dir_all(&dir);
+}

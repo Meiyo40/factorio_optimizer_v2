@@ -38,6 +38,9 @@ pub struct SearchResult {
     pub log: Vec<String>,
 }
 
+/// What a search calls with every finished trial.
+type TrialHook<'a> = Box<dyn FnMut(&TrialResult) + Send + Sync + 'a>;
+
 /// Every box tried so far, in order: tries, successes, best score and the closest failure.
 #[derive(Clone)]
 struct SizeStats {
@@ -77,6 +80,8 @@ pub struct Search<'a> {
     seeds_used: HashMap<i32, i32>,
     /// The score of every improvement and when it came, for the graph.
     scores: Vec<ScorePoint>,
+    /// Called for every finished trial (calibration collects routing statistics here).
+    on_trial: Option<TrialHook<'a>>,
 }
 
 /// `distinct()`: the first of each, in order.
@@ -121,7 +126,14 @@ impl<'a> Search<'a> {
             trials: 0,
             seeds_used: HashMap::new(),
             scores: Vec::new(),
+            on_trial: None,
         }
+    }
+
+    /// Calls `f` on every finished trial, on the thread that runs the search, once the trials of a size are in.
+    pub fn with_on_trial(mut self, f: impl FnMut(&TrialResult) + Send + Sync + 'a) -> Self {
+        self.on_trial = Some(Box::new(f));
+        self
     }
 
     fn item(&self, net: i32) -> String {
@@ -415,8 +427,10 @@ impl<'a> Search<'a> {
                                 break;
                             }
                             let seed = me.config.search.seed.wrapping_mul(1_000_003).wrapping_add(i64::from(s).wrapping_mul(1009)).wrapping_add((k + offset) as i64);
+                            // With debug_renders the router draws the first seed's routes of this size.
+                            let debug = (me.config.debug_renders && k == 0).then(|| me.out.join(format!("debug/route_{w}x{h}_{seed}")));
                             let result = me.time_left().then(|| {
-                                let opts = TrialOptions { warm: warm.as_ref(), warm_t0, deadline: me.deadline, lattice: None };
+                                let opts = TrialOptions { warm: warm.as_ref(), warm_t0, deadline: me.deadline, lattice: None, debug_dir: debug.as_deref() };
                                 run_trial(me.data, me.plan, me.config, me.tuning, w, h, seed, opts).inspect(|r| me.report(r, offset + k + 1))
                             });
                             mine.push((k, result));
@@ -441,7 +455,17 @@ impl<'a> Search<'a> {
         for r in results.iter().filter(|r| !r.success) {
             *failures.entry(r.stage).or_default() += 1;
         }
+        if self.config.debug_renders {
+            for r in results.iter().filter(|r| !r.success) {
+                let Some(layout) = &r.layout else { continue };
+                let title = format!("{} {}", r.stage, fmt_list(r.errors.iter().take(3)));
+                render_layout(layout, &self.out.join(format!("debug/fail_{w}x{h}_{}.png", r.seed)), &RenderOptions { errors: r.errors.clone(), title: Some(title), ..RenderOptions::default() })?;
+            }
+        }
         for r in results {
+            if let Some(hook) = self.on_trial.as_mut() {
+                hook(&r);
+            }
             self.offer(r)?;
         }
         let failed = if failures.is_empty() {
