@@ -13,3 +13,4 @@ pub mod route;
 pub mod search;
 pub mod util;
 pub mod validate;
+pub mod viz;

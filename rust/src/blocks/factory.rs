@@ -15,6 +15,7 @@ use crate::util::json::to_pretty_string;
 use crate::util::now_ms;
 use crate::util::text::{fmt_fixed, fmt_list};
 use crate::validate::{OutputSpec, SourceSpec, ValidationError, validate};
+use crate::viz::{RenderOptions, port_labels, render_layout};
 use anyhow::{Context, Result, ensure};
 use indexmap::IndexMap;
 use serde_json::{Value, json};
@@ -148,8 +149,8 @@ impl Run<'_> {
 /// do not fit, the corridors widen and it tries again. With `BlocksConfig.repack` every block is then
 /// searched again at a common height per row, and with `BlocksConfig.merge` neighbouring blocks are merged
 /// and searched again from their placements until the budget runs out; either is kept only if the factory gets
-/// smaller. Every better factory is written to `out` (blueprint, ports.json; factory.txt logs it all), each block
-/// to `block_<n>`. The renders are left to the viz stage.
+/// smaller. Every better factory is written to `out` (blueprint, render, ports.json; factory.txt logs it all), each block
+/// to `block_<n>`.
 pub fn run_factory(data: &RootData, config: &RunConfiguration, tuning: &Tuning, plan: &ProductionPlan, out: &Path) -> Result<Option<Factory>> {
     let cfg = config.blocks.as_ref().context("run_factory needs a blocks section")?;
     ensure!(
@@ -640,7 +641,7 @@ fn side_of(t: Tile, w: i32, h: i32) -> Dir {
     }
 }
 
-/// Writes the factory's blueprint and ports. The render (best.png) is left to the viz stage.
+/// Writes the factory's blueprint, render and ports.
 fn write_factory(f: &Factory, out: &Path, config: &RunConfiguration) -> Result<()> {
     let write = |name: &str, text: String| -> Result<()> {
         let path = out.join(name);
@@ -650,6 +651,8 @@ fn write_factory(f: &Factory, out: &Path, config: &RunConfiguration) -> Result<(
     };
     write("best_output_string.txt", f.layout.to_blueprint_string(&config.quality))?;
     write("best_blueprint.json", f.layout.to_blueprint(&config.quality).to_json())?;
+    let title = format!("factory {}x{} score {}", f.layout.w, f.layout.h, fmt_fixed(f.score, 1));
+    render_layout(&f.layout, &out.join("best.png"), &RenderOptions { errors: f.errors.clone(), ports: port_labels(&f.sources, &f.outputs), title: Some(title), ..RenderOptions::default() })?;
     write("ports.json", to_pretty_string(&factory_manifest(f)))
 }
 

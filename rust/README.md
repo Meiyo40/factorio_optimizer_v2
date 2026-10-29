@@ -18,7 +18,7 @@ cargo test
 | 4 validator, power | `validate`, `power` | done, same verdicts and messages as Kotlin (see below) |
 | 5 router | `route`, `search/Trial.kt` (`validationSpec`, `layoutOf`) | done, same routes as Kotlin (see below) |
 | 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | done, same results as Kotlin (see below) |
-| 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | |
+| 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | renders and verify kit done; calibrate next |
 
 Not ported on purpose: `RecipeIndex` and `computeRates` in `Rates.kt` (nothing in Kotlin's `src/main` uses them),
 and the item and fluid links that `interlinkProductsWithItems` fills in (look up `RootData::items` by name).
@@ -148,8 +148,7 @@ What exactness depended on, besides what is listed above:
   Java's order, where a Rust `HashSet` would give a different order in every process.
 - Seeds, scores and times print through `fmt_fixed`, Java's `%.nf`, which rounds half up on the shortest decimals.
 
-Not ported until the viz stage: the PNG renders (`best.png`, `renders/`, the score graph, the `debug_renders`
-option) and the Ctrl-C hook. Every file the search writes is written to a temporary name and renamed, so a kill leaves
+Not ported: the Ctrl-C hook. Every file the search writes is written to a temporary name and renamed, so a kill leaves
 the last complete result instead.
 
 Regenerate the goldens (Docker Desktop running, repo root); `SPLIT_OUT`, `SEARCH_OUT` and `FACTORY_OUT` work the same
@@ -181,8 +180,23 @@ cargo run --release -- --config=../docs/examples/red_green_science.json --out=so
 Flags as in Kotlin's `Main.kt`: `--config` (a path, or a built-in resource name; the default is the built-in
 `config.json`), `--tuning`, `--engine`, `--out` and `--print-tuning`. A job with more machines than `blocks.max_machines`
 runs as a factory, any other as a search. Output goes to `solves/<time> - sa` unless `--out` says otherwise (the Kotlin
-default is under `src/main/resources`, inside the Kotlin tree). `--calibrate`, `--verify-kit` and `--render` stop with a
-message until the viz stage.
+default is under `src/main/resources`, inside the Kotlin tree). `--render` and `--verify-kit` are there too (see below); `--calibrate` stops with a message until it is ported.
+
+## The renders and the verify kit
+
+`best.png`, `renders/improvement_NNN.png`, the factory's `best.png`, `--render` and `score_vs_time.svg` come from
+`src/viz`. Kotlin draws with Java2D, which Rust has nothing like, so `render.rs` is a statement-for-statement port
+(same order, same colours down to Java's float `HSBtoRGB`, same geometry, the stroke staying set between entities as
+it does in Java) on `tiny-skia`, with text from the bundled Noto Sans Mono bitmaps (`noto-sans-mono-bitmap`, no font
+file in the repo), scaled to the size Java was asked for. Text is therefore monospace where Java's is sans-serif, and
+antialiasing differs, so the pictures are not equal pixel for pixel. `tests/viz_golden.rs` compares 16 Kotlin renders
+(every entity kind, supply areas, heat overlay, errors, ports, marker tiles, nets, chains, test-mode harness) with
+Rust's: the size must be equal, every pixel in Kotlin's flat areas (5 x 5 of one colour: the box, machine fills,
+chests, heat tiles) must be the same colour, and only a few percent of the map's pixels may differ strongly. A wrong
+machine colour, a one-pixel shift and a dropped overlay each fail it. The score graph is a plain SVG, not lets-plot's.
+
+`--verify-kit=<dir>` writes the 18 in-game blueprints and `t1-hand.txt`; `tests/verify_kit.rs` checks the layouts
+against Kotlin's entity by entity and the strings against both Kotlin's output and the committed `docs/verify`.
 
 ## Router speed against the JVM
 

@@ -9,6 +9,7 @@ use crate::util::json::to_pretty_string;
 use crate::util::now_ms;
 use crate::util::text::{fmt_fixed, fmt_list};
 use crate::validate::{OutputSpec, SourceSpec};
+use crate::viz::{RenderOptions, ScorePoint, port_labels, render_layout, write_score_graph};
 use anyhow::{Context, Result};
 use indexmap::{IndexMap, IndexSet};
 use serde_json::{Value, json};
@@ -74,6 +75,8 @@ pub struct Search<'a> {
     trials: usize,
     /// Seeds used so far per size, so every retry at a size gets fresh ones.
     seeds_used: HashMap<i32, i32>,
+    /// The score of every improvement and when it came, for the graph.
+    scores: Vec<ScorePoint>,
 }
 
 /// `distinct()`: the first of each, in order.
@@ -117,6 +120,7 @@ impl<'a> Search<'a> {
             improvements: Vec::new(),
             trials: 0,
             seeds_used: HashMap::new(),
+            scores: Vec::new(),
         }
     }
 
@@ -343,9 +347,8 @@ impl<'a> Search<'a> {
         Ok(())
     }
 
-    /// The best blueprint, its ports and a line of scores.tsv. The renders (best.png, renders/, the score graph) are
-    /// left to the viz stage.
-    fn write_best(&self, t: &TrialResult) -> Result<()> {
+    /// The best blueprint, its ports, its renders, a line of scores.tsv and the score graph.
+    fn write_best(&mut self, t: &TrialResult) -> Result<()> {
         let n = self.improvements.len().max(1);
         let layout = Layout { label: format!("factorio-optimizer {}x{}", t.w, t.h), ..t.layout.clone().expect("a successful trial has a layout") };
         let blueprint = layout.to_blueprint_string(&self.config.quality);
@@ -355,6 +358,10 @@ impl<'a> Search<'a> {
         write_file(&self.out.join("ports.json"), &to_pretty_string(&port_manifest(t)))?;
         std::fs::create_dir_all(self.out.join("allSolves"))?;
         write_file(&self.out.join(format!("allSolves/{n:03} - {}x{} - {}.txt", t.w, t.h, fmt_fixed(t.score, 1))), &blueprint)?;
+        let best_title = format!("{}x{} score {} seed {}", t.w, t.h, fmt_fixed(t.score, 1), t.seed);
+        render_layout(&layout, &self.out.join("best.png"), &RenderOptions { ports: port_labels(&t.sources, &t.outputs), title: Some(best_title), ..RenderOptions::default() })?;
+        let improvement_title = format!("#{n} {}x{} score {}", t.w, t.h, fmt_fixed(t.score, 1));
+        render_layout(&layout, &self.out.join(format!("renders/improvement_{n:03}.png")), &RenderOptions { title: Some(improvement_title), ..RenderOptions::default() })?;
         let imp = self.improvements.last().expect("an improvement was just recorded");
         let header = if n == 1 { "elapsed_s\tw\th\tscore\tbelts\tundergrounds\tinserters\tseed\n" } else { "" };
         let row = format!(
@@ -368,14 +375,16 @@ impl<'a> Search<'a> {
             imp.inserters,
             imp.seed
         );
-        append_file(&self.out.join("scores.tsv"), &format!("{header}{row}"))
+        append_file(&self.out.join("scores.tsv"), &format!("{header}{row}"))?;
+        self.scores.push(ScorePoint { timestamp: now_ms(), score: t.score });
+        write_score_graph(&self.scores, &self.out, "Score (area + weighted entities)")
     }
 
     /// Rewrites the best result and notes why the search ended (Kotlin also calls it from a Ctrl-C hook; here every
     /// file is written whole or not at all, so a kill leaves the last complete result).
-    pub fn flush(&self, reason: &str) -> Result<()> {
-        if let Some(best) = &self.best {
-            self.write_best(best)?;
+    pub fn flush(&mut self, reason: &str) -> Result<()> {
+        if let Some(best) = self.best.clone() {
+            self.write_best(&best)?;
         }
         let best = self.best.as_ref().map_or_else(|| "none".to_owned(), |b| format!("{}x{} score {}", b.w, b.h, fmt_fixed(b.score, 1)));
         append_file(&self.out.join("log.txt"), &format!("stopped: {reason}; best {best}\n"))

@@ -67,6 +67,11 @@ fn box_size_never_grows_across_improvements_and_the_best_result_is_written() {
     let spec = validation_spec(&DATA, &plan, &config, best.placement.as_ref().unwrap(), &best.sources, true, &outside, &best.outputs);
     assert_eq!(validate(&decoded, &spec), Vec::new());
     assert_eq!(std::fs::read_to_string(out.join("scores.tsv")).unwrap().lines().count(), res.improvements.len() + 1);
+    assert!(out.join("best.png").exists());
+    for n in 1..=res.improvements.len() {
+        assert!(out.join(format!("renders/improvement_{n:03}.png")).exists(), "a render per improvement");
+    }
+    assert!(std::fs::read_to_string(out.join("score_vs_time.svg")).unwrap().matches("<circle").count() == res.improvements.len());
     let _ = std::fs::remove_dir_all(&out);
 }
 

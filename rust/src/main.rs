@@ -5,16 +5,23 @@
 //!   --engine=sa                   the only engine there is
 //!   --print-tuning                print every tuning knob with its value (after the job's overrides) and stop
 //!   --out=<dir>                   output directory (default: solves/<time> - sa)
-//! The Kotlin modes --calibrate, --verify-kit and --render are not ported yet.
+//!   --verify-kit=<dir>            write the in-game verification blueprints (see docs/VERIFY.md)
+//!   --render=<dir>                redraw <dir>/best.png from its best_output_string.txt and ports.json (with ports)
+//! The Kotlin mode --calibrate is not ported yet.
 
 use anyhow::{Context, Result, bail};
 use factorio_optimizer::blocks::factory::run_factory;
 use factorio_optimizer::config::run_configuration::RunConfiguration;
 use factorio_optimizer::config::tuning::Tuning;
 use factorio_optimizer::data::loader::load_root_data;
+use factorio_optimizer::emit::blueprint::decode_blueprint;
+use factorio_optimizer::emit::verify_kit;
+use factorio_optimizer::geom::Tile;
 use factorio_optimizer::plan::build_plan;
 use factorio_optimizer::search::search::run_search;
 use factorio_optimizer::util::text::fmt_fixed;
+use factorio_optimizer::viz::{PortLabel, RenderOptions, render_layout};
+use serde_json::Value;
 use std::collections::BTreeMap;
 use std::path::Path;
 
@@ -33,8 +40,16 @@ fn main() -> Result<()> {
     if !unknown.is_empty() {
         bail!("Unknown flags: {unknown:?} (known: {KNOWN:?})");
     }
-    if let Some(mode) = ["render", "verify-kit", "calibrate"].into_iter().find(|m| flags.contains_key(*m)) {
-        bail!("--{mode} is not ported to Rust yet (stage 7 in rust/README.md); use the Kotlin build for it");
+    if let Some(dir) = flags.get("render") {
+        return render_output(Path::new(dir));
+    }
+    if let Some(dir) = flags.get("verify-kit") {
+        let written = verify_kit::write(Path::new(dir))?;
+        println!("wrote {written} verification blueprints to {dir}");
+        return Ok(());
+    }
+    if flags.contains_key("calibrate") {
+        bail!("--calibrate is not ported to Rust yet (stage 7 in rust/README.md); use the Kotlin build for it");
     }
 
     let loaded = RunConfiguration::load(flags.get("config").map_or("config.json", String::as_str))?;
@@ -76,5 +91,42 @@ fn main() -> Result<()> {
             run_search(&data, &config, &tuning, &plan, &out)?;
         }
     }
+    Ok(())
+}
+
+/// Redraws `<dir>/best.png` from the blueprint and ports.json a search or factory run left there, ports marked.
+fn render_output(dir: &Path) -> Result<()> {
+    let ports: Value = serde_json::from_str(&std::fs::read_to_string(dir.join("ports.json")).context("Could not read ports.json")?).context("Bad ports.json")?;
+    let number = |o: &Value, key: &str| -> Result<f64> { o[key].as_f64().with_context(|| format!("ports.json has no number {key}")) };
+    let (w, h) = (number(&ports["box"], "w")? as i32, number(&ports["box"], "h")? as i32);
+    let blueprint = std::fs::read_to_string(dir.join("best_output_string.txt")).context("Could not read best_output_string.txt")?;
+    let layout = decode_blueprint(blueprint.trim())?.to_layout(w, h)?;
+    let labels = |key: &str, input: bool| -> Result<Vec<PortLabel>> {
+        ports[key]
+            .as_array()
+            .map_or(&[][..], Vec::as_slice)
+            .iter()
+            .map(|o| {
+                let lane = match o["lane"].as_str() {
+                    Some("left") => 0,
+                    Some("right") => 1,
+                    _ => -1,
+                };
+                Ok(PortLabel {
+                    tile: Tile::new(number(o, "x")? as i32, number(o, "y")? as i32),
+                    item: o["item"].as_str().context("a port without an item")?.to_owned(),
+                    rate: number(o, "rate")?,
+                    input,
+                    lane,
+                    fluid: o["fluid"].as_bool().unwrap_or(false),
+                })
+            })
+            .collect()
+    };
+    let mut all = labels("inputs", true)?;
+    all.extend(labels("outputs", false)?);
+    let file = dir.join("best.png");
+    render_layout(&layout, &file, &RenderOptions { title: Some(format!("{w}x{h}")), ports: all, ..RenderOptions::default() })?;
+    println!("rendered {}", file.display());
     Ok(())
 }

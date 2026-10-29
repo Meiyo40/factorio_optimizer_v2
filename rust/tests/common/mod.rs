@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use factorio_optimizer::geom::{Dir, Kind, Layout, PlacedEntity};
+use factorio_optimizer::geom::{Dir, GroundTile, Kind, Layout, PlacedEntity};
 use factorio_optimizer::validate::ValidationError;
 use serde::Deserialize;
 use std::fmt::Debug;
@@ -164,4 +164,16 @@ pub fn compare_layout(got: &Layout, want: &LayoutJson, out: &mut Vec<String>) {
     compare_list("layout wires", &got.wires, &want.wires, out);
     let tiles: Vec<(String, i32, i32)> = got.tiles.iter().map(|t| (t.name.clone(), t.x, t.y)).collect();
     compare_list("layout tiles", &tiles, &want.tiles, out);
+}
+
+/// The layout a Kotlin dump describes.
+pub fn layout_from_json(j: &LayoutJson) -> Layout {
+    Layout {
+        w: j.w,
+        h: j.h,
+        entities: j.entities.iter().map(entity_from_json).collect(),
+        wires: j.wires.clone(),
+        label: j.label.clone(),
+        tiles: j.tiles.iter().map(|(name, x, y)| GroundTile { name: name.clone(), x: *x, y: *y }).collect(),
+    }
 }

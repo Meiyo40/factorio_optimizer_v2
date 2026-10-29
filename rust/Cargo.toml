@@ -12,8 +12,10 @@ chrono = { version = "0.4", default-features = false, features = ["clock"] }
 flate2 = "1"
 indexmap = { version = "2", features = ["serde"] }
 microlp = "0.6"
+noto-sans-mono-bitmap = { version = "0.3", default-features = false, features = ["regular", "bold", "size_16", "size_20", "size_24", "size_32", "unicode-basic-latin"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+tiny-skia = "0.12"
 
 [profile.release]
 codegen-units = 1
