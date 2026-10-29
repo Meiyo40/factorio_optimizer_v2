@@ -1,0 +1,58 @@
+{
+    "box": {
+        "w": 35,
+        "h": 22
+    },
+    "inputs": [
+        {
+            "item": "plastic-bar",
+            "rate": 0.8000000000000002,
+            "fluid": false,
+            "x": 1,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 4.000000000000001,
+            "fluid": false,
+            "x": 0,
+            "y": 19,
+            "edge": "west"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 4.000000000000001,
+            "fluid": false,
+            "x": 0,
+            "y": 13,
+            "edge": "west"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 4.800000000000001,
+            "fluid": false,
+            "x": 0,
+            "y": 18,
+            "edge": "west"
+        },
+        {
+            "item": "sulfuric-acid",
+            "rate": 1.0,
+            "fluid": true,
+            "x": 24,
+            "y": 21,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "processing-unit",
+            "rate": 0.2,
+            "fluid": false,
+            "x": 34,
+            "y": 19,
+            "edge": "east"
+        }
+    ]
+}

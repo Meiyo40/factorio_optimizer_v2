@@ -1,0 +1,106 @@
+{
+    "engine": "sa",
+    "quality": "normal",
+    "targets": [
+        {
+            "name": "processing-unit",
+            "amount": 0.2
+        }
+    ],
+    "forbidden_recipes": [],
+    "recipe_overrides": {},
+    "machine": "assembling-machine-3",
+    "fuel": "coal",
+    "belt_tier": "fast",
+    "weave_tier": "auto",
+    "lane_sharing": false,
+    "inserters": {
+        "allowed": [
+            "inserter",
+            "long-handed-inserter",
+            "fast-inserter"
+        ],
+        "belt_pickup_derate": 0.7
+    },
+    "research": {
+        "inserter_capacity": 0,
+        "productivity": {}
+    },
+    "tricks": {},
+    "box": {
+        "aspect": 1.0
+    },
+    "forbidden_tiles": [],
+    "forbidden_places": [],
+    "sources": [
+        {
+            "name": "iron-plate",
+            "edge": "west",
+            "force": 1.0
+        },
+        {
+            "name": "copper-plate",
+            "edge": "west",
+            "force": 1.0
+        },
+        {
+            "name": "plastic-bar",
+            "edge": "north",
+            "force": 1.0
+        },
+        {
+            "name": "sulfuric-acid",
+            "edge": "south",
+            "force": 1.0
+        }
+    ],
+    "outputs": [
+        {
+            "name": "processing-unit",
+            "edge": "east",
+            "force": 1.0
+        }
+    ],
+    "sinks": {
+        "mode": "port",
+        "chest": "steel-chest"
+    },
+    "fluids": {
+        "mode": "pipes"
+    },
+    "power": {
+        "mode": "set-cover",
+        "pole": "medium-electric-pole",
+        "allow_outside_ring": true
+    },
+    "search": {
+        "time_budget_s": 100000.0,
+        "seeds_per_size": 2,
+        "threads": 1,
+        "seed": 7,
+        "verbose": true
+    },
+    "score": {
+        "belt": 0.3,
+        "underground": 1.0,
+        "inserter": 0.2
+    },
+    "test_mode": false,
+    "blocks": {
+        "max_machines": 6,
+        "split_at": [],
+        "corridor": 4,
+        "link_belt_share": 0.9,
+        "split_at_weight": 0.1,
+        "block_time_share": 0.9,
+        "compact": true,
+        "repack": false,
+        "repack_share": 0.25,
+        "merge": false,
+        "merge_share": 0.3
+    },
+    "reserved": [],
+    "ports_on_ring": true,
+    "marker_tile": "hazard-concrete-left",
+    "debug_renders": false
+}

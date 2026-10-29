@@ -8,6 +8,7 @@ description = "Rust port of factorio_optimizer_v2 (Kotlin), module for module"
 [dependencies]
 anyhow = "1"
 base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
 flate2 = "1"
 indexmap = { version = "2", features = ["serde"] }
 microlp = "0.6"

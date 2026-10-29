@@ -1,0 +1,82 @@
+{
+    "box": {
+        "w": 15,
+        "h": 10
+    },
+    "inputs": [
+        {
+            "item": "copper-plate",
+            "rate": 0.75,
+            "fluid": false,
+            "x": 4,
+            "y": 10,
+            "edge": "south"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 0,
+            "y": 10,
+            "edge": "west"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 3.0,
+            "fluid": false,
+            "x": 9,
+            "y": 10,
+            "edge": "south"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 8,
+            "y": 10,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 7,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "inserter",
+            "rate": 0.16666666666666666,
+            "fluid": false,
+            "x": 6,
+            "y": 10,
+            "edge": "south"
+        },
+        {
+            "item": "inserter",
+            "rate": 0.3333333333333333,
+            "fluid": false,
+            "x": 5,
+            "y": 10,
+            "edge": "south"
+        },
+        {
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 14,
+            "y": 10,
+            "edge": "east"
+        },
+        {
+            "item": "iron-gear-wheel",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 7,
+            "y": 10,
+            "edge": "south"
+        }
+    ]
+}

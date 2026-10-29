@@ -1,0 +1,58 @@
+{
+    "box": {
+        "w": 12,
+        "h": 12
+    },
+    "inputs": [
+        {
+            "item": "inserter",
+            "rate": 0.5,
+            "fluid": false,
+            "x": -1,
+            "y": 0,
+            "edge": "west"
+        },
+        {
+            "item": "iron-gear-wheel",
+            "rate": 0.5,
+            "fluid": false,
+            "x": -1,
+            "y": 8,
+            "edge": "west"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 11,
+            "y": 12,
+            "edge": "east"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 5,
+            "y": 12,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 11,
+            "y": -1,
+            "edge": "east"
+        },
+        {
+            "item": "logistic-science-pack",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 3,
+            "y": -1,
+            "edge": "north"
+        }
+    ]
+}

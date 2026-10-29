@@ -1,0 +1,34 @@
+{
+    "box": {
+        "w": 7,
+        "h": 7
+    },
+    "inputs": [
+        {
+            "item": "copper-plate",
+            "rate": 0.75,
+            "fluid": false,
+            "x": 3,
+            "y": 7,
+            "edge": "south"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 4,
+            "y": 7,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "electronic-circuit",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 7,
+            "y": 6,
+            "edge": "east"
+        }
+    ]
+}

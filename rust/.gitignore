@@ -2,3 +2,5 @@ target/
 bench-results/
 # Upstream ignores every bin/ directory; src/bin holds our benchmark binary.
 !src/bin/
+# What the CLI writes by default.
+solves/

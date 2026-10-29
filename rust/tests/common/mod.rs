@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
-use factorio_optimizer::geom::{Dir, Kind, PlacedEntity};
+use factorio_optimizer::geom::{Dir, Kind, Layout, PlacedEntity};
+use factorio_optimizer::validate::ValidationError;
 use serde::Deserialize;
 use std::fmt::Debug;
 use std::path::{Path, PathBuf};
@@ -129,3 +130,38 @@ pub fn assert_no_differences(case: &str, out: Vec<String>) {
     assert!(out.is_empty(), "{case} differs from Kotlin:\n  {}", out.join("\n  "));
 }
 
+
+#[derive(Deserialize)]
+pub struct ErrorJson {
+    #[serde(rename = "type")]
+    pub kind: String,
+    pub x: i32,
+    pub y: i32,
+    pub message: String,
+}
+
+/// A layout as the Kotlin dumpers write it.
+#[derive(Deserialize)]
+pub struct LayoutJson {
+    pub w: i32,
+    pub h: i32,
+    pub label: String,
+    pub entities: Vec<EntityJson>,
+    pub wires: Vec<(usize, usize)>,
+    pub tiles: Vec<(String, i32, i32)>,
+}
+
+pub fn compare_errors(got: &[ValidationError], want: &[ErrorJson], out: &mut Vec<String>) {
+    let got: Vec<(String, i32, i32, String)> = got.iter().map(|e| (e.kind.name().to_owned(), e.tile.x, e.tile.y, e.message.clone())).collect();
+    let want: Vec<(String, i32, i32, String)> = want.iter().map(|e| (e.kind.clone(), e.x, e.y, e.message.clone())).collect();
+    compare_list("errors", &got, &want, out);
+}
+
+pub fn compare_layout(got: &Layout, want: &LayoutJson, out: &mut Vec<String>) {
+    compare("layout size and label", &(got.w, got.h, got.label.as_str()), &(want.w, want.h, want.label.as_str()), out);
+    let entities: Vec<EntityJson> = got.entities.iter().map(entity_json).collect();
+    compare_list("layout entities", &entities, &want.entities, out);
+    compare_list("layout wires", &got.wires, &want.wires, out);
+    let tiles: Vec<(String, i32, i32)> = got.tiles.iter().map(|t| (t.name.clone(), t.x, t.y)).collect();
+    compare_list("layout tiles", &tiles, &want.tiles, out);
+}

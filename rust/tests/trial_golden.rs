@@ -7,7 +7,7 @@
 
 mod common;
 
-use common::{EntityJson, compare, compare_list, entity_json, files_in, read};
+use common::{ErrorJson, LayoutJson, compare, compare_errors, compare_layout, compare_list, files_in, read};
 use factorio_optimizer::config::run_configuration::RunConfiguration;
 use factorio_optimizer::config::tuning::Tuning;
 use factorio_optimizer::data::data_model::RootData;
@@ -37,15 +37,6 @@ struct PlacementJson {
 }
 
 #[derive(Deserialize)]
-struct ErrorJson {
-    #[serde(rename = "type")]
-    kind: String,
-    x: i32,
-    y: i32,
-    message: String,
-}
-
-#[derive(Deserialize)]
 struct HotspotJson {
     tile: Tile,
     nets: Vec<i32>,
@@ -57,16 +48,6 @@ struct SummaryJson {
     overuse: i32,
     failed_nets: Vec<i32>,
     hotspots: Vec<HotspotJson>,
-}
-
-#[derive(Deserialize)]
-struct LayoutJson {
-    w: i32,
-    h: i32,
-    label: String,
-    entities: Vec<EntityJson>,
-    wires: Vec<(usize, usize)>,
-    tiles: Vec<(String, i32, i32)>,
 }
 
 #[derive(Deserialize)]
@@ -126,10 +107,6 @@ fn placement_json(p: &Placement) -> Vec<(usize, i32, i32, usize, bool)> {
     p.machines.iter().map(|m| (m.id, m.x, m.y, m.rot.ordinal(), m.mirror)).collect()
 }
 
-fn errors_of(errors: &[factorio_optimizer::validate::ValidationError]) -> Vec<(String, i32, i32, String)> {
-    errors.iter().map(|e| (e.kind.name().to_owned(), e.tile.x, e.tile.y, e.message.clone())).collect()
-}
-
 fn compare_result(got: &TrialResult, want: &ResultJson, out: &mut Vec<String>) {
     compare("stage", &got.stage, &want.stage.as_str(), out);
     compare("success", &got.success, &want.success, out);
@@ -137,8 +114,7 @@ fn compare_result(got: &TrialResult, want: &ResultJson, out: &mut Vec<String>) {
     compare("score", &got.score, &want.score, out);
     compare("annealing t0", &got.anneal_t0, &want.anneal_t0, out);
     compare_list("notes", &got.notes, &want.notes, out);
-    let want_errors: Vec<_> = want.errors.iter().map(|e| (e.kind.clone(), e.x, e.y, e.message.clone())).collect();
-    compare_list("errors", &errors_of(&got.errors), &want_errors, out);
+    compare_errors(&got.errors, &want.errors, out);
     compare_list("sources", &got.sources, &want.sources, out);
     compare_list("outputs", &got.outputs, &want.outputs, out);
 
@@ -150,14 +126,7 @@ fn compare_result(got: &TrialResult, want: &ResultJson, out: &mut Vec<String>) {
     compare("summary", &got_summary, &want_summary, out);
 
     match (&got.layout, &want.layout) {
-        (Some(g), Some(w)) => {
-            compare("layout size and label", &(g.w, g.h, g.label.as_str()), &(w.w, w.h, w.label.as_str()), out);
-            let entities: Vec<EntityJson> = g.entities.iter().map(entity_json).collect();
-            compare_list("layout entities", &entities, &w.entities, out);
-            compare_list("layout wires", &g.wires, &w.wires, out);
-            let tiles: Vec<(String, i32, i32)> = g.tiles.iter().map(|t| (t.name.clone(), t.x, t.y)).collect();
-            compare_list("layout tiles", &tiles, &w.tiles, out);
-        }
+        (Some(g), Some(w)) => compare_layout(g, w, out),
         (None, None) => {}
         (g, w) => out.push(format!("layout: rust {}, kotlin {}", g.is_some(), w.is_some())),
     }

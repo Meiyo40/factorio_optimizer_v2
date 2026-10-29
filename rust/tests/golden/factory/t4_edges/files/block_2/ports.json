@@ -1,0 +1,66 @@
+{
+    "box": {
+        "w": 17,
+        "h": 17
+    },
+    "inputs": [
+        {
+            "item": "advanced-circuit",
+            "rate": 0.4,
+            "fluid": false,
+            "x": -1,
+            "y": 7,
+            "edge": "west"
+        },
+        {
+            "item": "copper-cable",
+            "rate": 6.4,
+            "fluid": false,
+            "x": -1,
+            "y": 0,
+            "edge": "west"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 4.000000000000001,
+            "fluid": false,
+            "x": 8,
+            "y": 17,
+            "edge": "south"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 4.800000000000001,
+            "fluid": false,
+            "x": 12,
+            "y": 17,
+            "edge": "south"
+        },
+        {
+            "item": "sulfuric-acid",
+            "rate": 1.0,
+            "fluid": true,
+            "x": 6,
+            "y": 16,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "electronic-circuit",
+            "rate": 0.8000000000000002,
+            "fluid": false,
+            "x": -1,
+            "y": 8,
+            "edge": "west"
+        },
+        {
+            "item": "processing-unit",
+            "rate": 0.2,
+            "fluid": false,
+            "x": 0,
+            "y": 17,
+            "edge": "west"
+        }
+    ]
+}

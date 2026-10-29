@@ -1,0 +1,90 @@
+{
+    "box": {
+        "w": 15,
+        "h": 29
+    },
+    "inputs": [
+        {
+            "item": "copper-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 0,
+            "y": 16,
+            "edge": "west"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 0,
+            "y": 11,
+            "edge": "west"
+        },
+        {
+            "item": "copper-plate",
+            "rate": 0.75,
+            "fluid": false,
+            "x": 0,
+            "y": 12,
+            "edge": "west"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 0,
+            "y": 18,
+            "edge": "west"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 3.0,
+            "fluid": false,
+            "x": 0,
+            "y": 14,
+            "edge": "west"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 0.5,
+            "fluid": false,
+            "x": 0,
+            "y": 13,
+            "edge": "west"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 7,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "automation-science-pack",
+            "rate": 0.25,
+            "fluid": false,
+            "x": 0,
+            "y": 29,
+            "edge": "south"
+        },
+        {
+            "item": "logistic-science-pack",
+            "rate": 0.3333333333333333,
+            "fluid": false,
+            "x": 8,
+            "y": 29,
+            "edge": "south"
+        },
+        {
+            "item": "logistic-science-pack",
+            "rate": 0.16666666666666666,
+            "fluid": false,
+            "x": 13,
+            "y": 29,
+            "edge": "south"
+        }
+    ]
+}

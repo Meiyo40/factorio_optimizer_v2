@@ -17,7 +17,7 @@ cargo test
 | 3 placer | `place` | done, same-seed parity with Kotlin (see below) |
 | 4 validator, power | `validate`, `power` | done, same verdicts and messages as Kotlin (see below) |
 | 5 router | `route`, `search/Trial.kt` (`validationSpec`, `layoutOf`) | done, same routes as Kotlin (see below) |
-| 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | trial, search, block splitter and compaction done, same results as Kotlin (see below); factory and CLI next |
+| 6 trial, search, blocks, CLI | `search`, `blocks`, `Main.kt` | done, same results as Kotlin (see below) |
 | 7 renders, verify kit, calibrate | `viz`, `emit/VerifyKit.kt`, `search/Calibrate.kt` | |
 
 Not ported on purpose: `RecipeIndex` and `computeRates` in `Rates.kt` (nothing in Kotlin's `src/main` uses them),
@@ -161,6 +161,28 @@ rust/tools/docker.sh run 'UPSTREAM=022c312 TRIAL_OUT=/work/out/trial JAVA_TOOL_O
 rust/tools/docker.sh out rust/bench-results
 cp -r rust/bench-results/trial/. rust/tests/golden/trial/
 ```
+
+## The factory of blocks and the command line
+
+`tests/factory_golden.rs` replays seven factories Kotlin made (one thread, a budget that is never reached, `extra_rounds`
+of 1 per block): t3 in two blocks, in test mode, with shared lanes and with a reserved area, t4 with its inputs and
+outputs on named edges (a fluid input among them), acid leaving by pipe on the east edge, and t3 in four blocks that
+are repacked at two heights and then merged twice. Rust must reproduce the stitched layout entity by entity, its
+errors, score, ports and notes, every line of `factory.txt` (clocks aside: which corridor width routed, which repack
+masks were kept, which merges were tried) and the blueprint and `ports.json` of the factory, of every block and of
+every repacked and merged block. Making the corridor widen by 2 instead of 3 tiles, or keeping a factory of equal area,
+fails the repack and merge case. `tests/factory.rs` adds `FactoryTest`'s outcome tests and `tests/cli.rs` runs the
+binary.
+
+```sh
+cargo run --release -- --config=../docs/examples/red_green_science.json --out=solves/red_green
+```
+
+Flags as in Kotlin's `Main.kt`: `--config` (a path, or a built-in resource name; the default is the built-in
+`config.json`), `--tuning`, `--engine`, `--out` and `--print-tuning`. A job with more machines than `blocks.max_machines`
+runs as a factory, any other as a search. Output goes to `solves/<time> - sa` unless `--out` says otherwise (the Kotlin
+default is under `src/main/resources`, inside the Kotlin tree). `--calibrate`, `--verify-kit` and `--render` stop with a
+message until the viz stage.
 
 ## Router speed against the JVM
 

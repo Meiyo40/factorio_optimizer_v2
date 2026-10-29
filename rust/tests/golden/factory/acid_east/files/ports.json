@@ -1,0 +1,42 @@
+{
+    "box": {
+        "w": 7,
+        "h": 9
+    },
+    "inputs": [
+        {
+            "item": "water",
+            "rate": 100.0,
+            "fluid": true,
+            "x": 4,
+            "y": -1,
+            "edge": "north"
+        },
+        {
+            "item": "iron-plate",
+            "rate": 1.0,
+            "fluid": false,
+            "x": 0,
+            "y": 7,
+            "edge": "west"
+        },
+        {
+            "item": "sulfur",
+            "rate": 5.0,
+            "fluid": false,
+            "x": 0,
+            "y": 8,
+            "edge": "south"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "sulfuric-acid",
+            "rate": 50.0,
+            "fluid": true,
+            "x": 6,
+            "y": 8,
+            "edge": "south"
+        }
+    ]
+}
