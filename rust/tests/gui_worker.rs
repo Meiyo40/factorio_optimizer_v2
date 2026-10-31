@@ -2,7 +2,7 @@
 
 mod common;
 
-use factorio_optimizer::config::run_configuration::RunConfiguration;
+use factorio_optimizer::config::run_configuration::{BlocksConfig, RunConfiguration};
 use factorio_optimizer::config::tuning::Tuning;
 use factorio_optimizer::data::loader::load_root_data;
 use factorio_optimizer::gui::worker::{Event, Job, spawn};
@@ -62,6 +62,39 @@ fn a_run_reports_started_log_improvements_then_finished() {
     for file in ["plan.json", "tuning.json", "best_output_string.txt", "best_blueprint.json", "ports.json", "best.png", "log.txt"] {
         assert!(dir.join("out").join(file).is_file(), "{file} was not written");
     }
+}
+
+#[test]
+fn a_factory_job_reports_its_stitched_result() {
+    let dir = temp_dir("factory");
+    // A small job cut into blocks of four machines: a real factory run, but one that finishes inside a test budget.
+    let text = std::fs::read_to_string(common::repo_root().join("src/test/resources/jobs/t3.json")).unwrap();
+    let mut config = RunConfiguration::parse(&text).unwrap();
+    config.blocks = Some(BlocksConfig { max_machines: 4, ..BlocksConfig::default() });
+    config.search.time_budget_s = 60.0;
+    config.search.threads = 4;
+    config.search.verbose = false;
+    let data = Arc::new(load_root_data("recipes.json").unwrap());
+    let (tx, rx) = channel();
+    let handle = spawn(
+        Arc::clone(&data),
+        Job { config, tuning: Tuning::defaults(), out: dir.join("out") },
+        tx,
+        Arc::new(AtomicBool::new(false)),
+    );
+    handle.join().unwrap();
+    let events: Vec<Event> = rx.iter().collect();
+
+    // A factory reports at the end, with a picture, rather than through improvements.
+    match events.last() {
+        Some(Event::Finished { summary, image }) => {
+            assert!(summary.starts_with("factory"), "unexpected summary: {summary}");
+            assert!(image.as_ref().is_some_and(|image| image.w > 0 && image.px > 1.0), "the factory's picture is drawn: {summary}");
+        }
+        _ => panic!("the last event is not Finished"),
+    }
+    assert!(dir.join("out").join("best_output_string.txt").is_file(), "the factory's blueprint is written");
+    assert!(dir.join("out").join("factory.txt").is_file(), "the factory logs to factory.txt");
 }
 
 #[test]
