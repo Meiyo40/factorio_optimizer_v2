@@ -33,7 +33,22 @@ fn main() -> anyhow::Result<()> {
     let image = image::open(&path).with_context(|| format!("could not open {}", path.display()))?;
     let rgba = image.to_rgba8();
     println!("sheet {}x{}", rgba.width(), rgba.height());
-    for row in 0..5 {
+    let rows = (layer["directions"].as_f64().unwrap_or(1.0) as u32).max(1);
+    for column in 0..columns.min(16) {
+        let (sx, sy) = (column * frame_w, 0);
+        let (mut x0, mut y0, mut x1, mut y1) = (u32::MAX, u32::MAX, 0, 0);
+        for y in 0..frame_h {
+            for x in 0..frame_w {
+                if rgba.get_pixel(sx + x, sy + y)[3] > 8 {
+                    x0 = x0.min(x); y0 = y0.min(y); x1 = x1.max(x); y1 = y1.max(y);
+                }
+            }
+        }
+        if x0 != u32::MAX {
+            println!("  col {column} (row 0): ink {}x{} px = {:.2}x{:.2} tiles", x1 - x0 + 1, y1 - y0 + 1, f64::from(x1 - x0 + 1) * scale / 32.0, f64::from(y1 - y0 + 1) * scale / 32.0);
+        }
+    }
+    for row in 0..rows {
         let (sx, sy) = (0, row * frame_h);
         let (mut x0, mut y0, mut x1, mut y1) = (u32::MAX, u32::MAX, 0, 0);
         for y in 0..frame_h {
