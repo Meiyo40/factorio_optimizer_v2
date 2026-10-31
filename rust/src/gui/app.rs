@@ -392,10 +392,10 @@ impl GuiApp {
         egui::Panel::left("job-form").resizable(true).default_size(390.0).min_size(320.0).show(ui, |ui| {
             self.run_bar(ui);
             if self.help {
-                egui::ScrollArea::vertical().max_height(320.0).show(ui, |ui| self.help_ui(ui));
+                egui::ScrollArea::vertical().id_salt("help").max_height(320.0).show(ui, |ui| self.help_ui(ui));
                 ui.separator();
             }
-            egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+            egui::ScrollArea::vertical().id_salt("form").auto_shrink([false, false]).show(ui, |ui| {
                 self.form_ui(ui);
             });
         });
@@ -430,6 +430,7 @@ impl GuiApp {
 
     /// The "?" page: what the window is for and what a run does, in the order a person meets it.
     fn help_ui(&mut self, ui: &mut egui::Ui) {
+        ui.set_max_width(ui.available_width());
         for (heading, text) in [
             ("What this is", "A window on the generator. It plans a factory from your targets, searches for a layout, and draws the best one it has found so far."),
             ("The job", "Targets are what the block must produce: an item and how many per second. Everything below narrows the search: machine and belt tier, whether to split a big job into blocks, the time budget and the box it may grow to."),
@@ -670,7 +671,7 @@ impl GuiApp {
                 return;
             }
             ui.label(egui::RichText::new("click one to look at it again").small());
-            egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+            egui::ScrollArea::vertical().id_salt("improvements").auto_shrink([false, false]).show(ui, |ui| {
                 egui::Grid::new("improvement-rows").num_columns(5).striped(true).show(ui, |ui| {
                     for title in ["run", "#", "size", "score", "s"] {
                         ui.label(egui::RichText::new(title).strong());
@@ -695,7 +696,7 @@ impl GuiApp {
             self.pick(index, ui.ctx());
         }
         egui::Panel::bottom("run-log").resizable(true).default_size(150.0).show(ui, |ui| {
-            egui::ScrollArea::vertical().stick_to_bottom(true).auto_shrink([false, false]).show(ui, |ui| {
+            egui::ScrollArea::vertical().id_salt("log").stick_to_bottom(true).auto_shrink([false, false]).show(ui, |ui| {
                 match &self.run {
                     Some(run) if !run.log.is_empty() => {
                         for line in &run.log {
@@ -821,7 +822,7 @@ fn choose(ui: &mut egui::Ui, id: &str, value: &mut String, options: &[String]) -
             let needle = filter.to_lowercase();
             let matches: Vec<&String> = options.iter().filter(|option| needle.is_empty() || option.to_lowercase().contains(&needle)).collect();
             let mut picked: Option<String> = None;
-            egui::ScrollArea::vertical().max_height(320.0).show(ui, |ui| {
+            egui::ScrollArea::vertical().id_salt("combo").max_height(320.0).show(ui, |ui| {
                 for option in &matches {
                     if ui.selectable_label(value.as_str() == option.as_str(), option.as_str()).clicked() {
                         picked = Some((*option).clone());
