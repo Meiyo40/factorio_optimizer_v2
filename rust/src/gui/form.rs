@@ -61,15 +61,16 @@ impl JobForm {
     /// machine — so the whole loop from plan to picture can be checked without waiting for anything.
     /// The Test button's jobs: three small factories of growing size, jittered and shuffled each time it is pressed, so
     /// one click checks the whole loop — plan, search, live picture — on more than one shape. The budgets add up to
-    /// 30 s, half the 60 s a check is allowed to take.
+    /// 58 s, inside the minute a check is allowed to take; the big one usually ends well before its budget because the
+    /// search stops once its extra seed rounds are done.
     pub fn test_scenarios() -> Vec<Self> {
         let mut state = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map_or(0x5EED, |since| since.as_nanos() as u64) | 1;
         // Growing sizes: one machine, a couple, then a small science block. Amounts are jittered by a fifth either way
         // so the machine counts differ from one press to the next.
         let families: [(&[(&str, f64)], i32, f64); 3] = [
             (&[("iron-gear-wheel", 1.0)], 12, 6.0),
-            (&[("automation-science-pack", 0.4)], 20, 10.0),
-            (&[("automation-science-pack", 0.6), ("logistic-science-pack", 0.6)], 28, 14.0),
+            (&[("automation-science-pack", 0.4)], 20, 16.0),
+            (&[("automation-science-pack", 0.6), ("logistic-science-pack", 0.6)], 28, 36.0),
         ];
         let mut forms: Vec<Self> = families
             .iter()
