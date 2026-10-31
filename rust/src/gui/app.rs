@@ -607,22 +607,41 @@ fn choose(ui: &mut egui::Ui, id: &str, value: &mut String, options: &[String]) -
     let mut changed = false;
     let filter_id = egui::Id::unique(("filter", id));
     let mut filter: String = ui.data(|data| data.get_temp(filter_id)).unwrap_or_default();
-    egui::ComboBox::from_id_salt(id).selected_text(value.as_str()).width(180.0).show_ui(ui, |ui| {
-        ui.add(egui::TextEdit::singleline(&mut filter).hint_text("filter").desired_width(160.0));
-        ui.separator();
-        let needle = filter.to_lowercase();
-        egui::ScrollArea::vertical().max_height(320.0).show(ui, |ui| {
-            for option in options {
-                if !needle.is_empty() && !option.to_lowercase().contains(&needle) {
-                    continue;
+    egui::ComboBox::from_id_salt(id)
+        .selected_text(value.as_str())
+        .width(180.0)
+        // A combo closes on any click by default, which shuts it the moment the filter field is clicked; with this
+        // it closes on a click outside, and the pick below closes it by hand.
+        .close_behavior(egui::PopupCloseBehavior::CloseOnClickOutside)
+        .show_ui(ui, |ui| {
+            let typed = ui.add(egui::TextEdit::singleline(&mut filter).hint_text("filter").desired_width(160.0));
+            ui.separator();
+            let needle = filter.to_lowercase();
+            let matches: Vec<&String> = options.iter().filter(|option| needle.is_empty() || option.to_lowercase().contains(&needle)).collect();
+            let mut picked: Option<String> = None;
+            egui::ScrollArea::vertical().max_height(320.0).show(ui, |ui| {
+                for option in &matches {
+                    if ui.selectable_label(value.as_str() == option.as_str(), option.as_str()).clicked() {
+                        picked = Some((*option).clone());
+                    }
                 }
-                if ui.selectable_label(value.as_str() == option.as_str(), option).clicked() && value != option {
-                    *value = option.clone();
+                if matches.is_empty() {
+                    ui.label(egui::RichText::new("nothing matches").small());
+                }
+            });
+            // A name typed in full and Enter is the other way to pick, which is what makes a long list usable.
+            if picked.is_none() && typed.lost_focus() && ui.input(|input| input.key_pressed(egui::Key::Enter)) {
+                picked = matches.first().map(|option| (*option).clone());
+            }
+            if let Some(option) = picked {
+                if value != &option {
+                    *value = option;
                     changed = true;
                 }
+                filter.clear();
+                ui.close();
             }
         });
-    });
     ui.data_mut(|data| data.insert_temp(filter_id, filter));
     changed
 }
