@@ -705,6 +705,15 @@ impl GuiApp {
         });
         let Self { preview, icons, sprites, shown, data, view, .. } = self;
         let game = *view == View::Game;
+        // The game view draws on the layout's tiles, so its camera counts tiles from the layout's corner; the schematic
+        // is a picture with a margin, a title and a legend around the same tiles.
+        if game {
+            if let Some(trial) = shown.as_ref() {
+                preview.aim_at_tiles(egui::vec2(trial.w as f32, trial.h as f32));
+            }
+        } else {
+            preview.aim_at_picture();
+        }
         preview.ui(ui, !game, |painter, rect, px| {
             if !game || px < 3.0 {
                 return;

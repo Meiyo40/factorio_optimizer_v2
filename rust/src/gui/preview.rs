@@ -12,6 +12,9 @@ pub struct Preview {
     tiles: egui::Vec2,
     /// How many picture pixels a tile got, so the window can redraw when the camera outgrows it.
     px: f32,
+    /// The picture's own size and scale, kept so the schematic can be aimed at after the game view moved the camera.
+    picture_tiles: egui::Vec2,
+    picture_px: f32,
     /// Screen pixels per tile.
     zoom: f32,
     offset: egui::Vec2,
@@ -21,17 +24,32 @@ pub struct Preview {
 
 impl Default for Preview {
     fn default() -> Self {
-        Self { texture: None, tiles: egui::Vec2::ZERO, px: 1.0, zoom: 32.0, offset: egui::Vec2::ZERO, fit_next: true }
+        Self {
+            texture: None,
+            tiles: egui::Vec2::ZERO,
+            px: 1.0,
+            picture_tiles: egui::Vec2::ZERO,
+            picture_px: 1.0,
+            zoom: 32.0,
+            offset: egui::Vec2::ZERO,
+            fit_next: true,
+        }
     }
 }
 
 impl Preview {
-    /// Uploads a picture; the camera only refits for the first one, so a run does not jump about as it improves.
+    /// Uploads a picture; the camera only refits for the first one, so a run does not jump about as it improves. A
+    /// picture is bigger than its layout — the renderer leaves a tile of margin, a title above and the legend below —
+    /// which is why the camera can be aimed at the tiles instead.
     pub fn set(&mut self, ctx: &egui::Context, image: &Image) {
         let pixels = egui::ColorImage::from_rgba_premultiplied([image.w as usize, image.h as usize], &image.rgba);
         let px = image.px.max(1.0);
-        self.tiles = egui::vec2(image.w as f32 / px, image.h as f32 / px);
-        self.px = px;
+        self.picture_tiles = egui::vec2(image.w as f32 / px, image.h as f32 / px);
+        self.picture_px = px;
+        if self.tiles == egui::Vec2::ZERO {
+            self.tiles = self.picture_tiles;
+            self.px = px;
+        }
         if self.texture.is_none() {
             self.fit_next = true;
         }
@@ -50,6 +68,25 @@ impl Preview {
     /// Screen pixels per tile.
     pub fn zoom(&self) -> f32 {
         self.zoom
+    }
+
+    /// Aims the camera at a layout's tiles: the game view draws on tiles, not on the picture's pixels, so its
+    /// origin is the layout's corner rather than the picture's (which carries a margin, a title and a legend).
+    pub fn aim_at_tiles(&mut self, tiles: egui::Vec2) {
+        if (self.tiles - tiles).length() > 0.01 {
+            self.tiles = tiles;
+            self.px = 1.0;
+            self.fit_next = true;
+        }
+    }
+
+    /// Back to the picture's own size, for the schematic.
+    pub fn aim_at_picture(&mut self) {
+        if (self.tiles - self.picture_tiles).length() > 0.01 {
+            self.tiles = self.picture_tiles;
+            self.px = self.picture_px;
+            self.fit_next = true;
+        }
     }
 
     /// Picture pixels per tile the current texture holds.
