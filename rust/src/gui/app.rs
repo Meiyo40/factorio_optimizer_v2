@@ -102,6 +102,20 @@ pub struct GuiApp {
     tests: VecDeque<JobForm>,
     test_of: usize,
     test_total: usize,
+    /// Every improvement of this launch, oldest first, with the trial behind it.
+    history: Vec<Snapshot>,
+    /// Which snapshot the preview is showing, when it is not simply the newest.
+    picked: Option<usize>,
+    /// Which run the window is on, for the history column.
+    run_no: usize,
+}
+
+/// One improvement kept for the session: the trial it came from, and the picture drawn at the time.
+struct Snapshot {
+    run: usize,
+    number: usize,
+    fact: Improvement,
+    trial: Arc<TrialResult>,
 }
 
 /// A run the window is watching: what the worker sent, and how to stop it.
@@ -111,7 +125,6 @@ struct Run {
     /// Where the run writes; the worker confirms it once the plan is built.
     out: String,
     started: Instant,
-    improvements: Vec<Improvement>,
     log: Vec<String>,
     summary: Option<String>,
     error: Option<String>,
@@ -148,6 +161,9 @@ impl GuiApp {
             tests: VecDeque::new(),
             test_of: 0,
             test_total: 0,
+            history: Vec::new(),
+            picked: None,
+            run_no: 0,
         };
         app.resync_lists();
         app
@@ -198,7 +214,6 @@ impl GuiApp {
             cancel,
             out,
             started: Instant::now(),
-            improvements: Vec::new(),
             log: Vec::new(),
             summary: None,
             error: None,
@@ -224,6 +239,25 @@ impl GuiApp {
         self.next_test();
     }
 
+    /// Shows a snapshot again: its trial takes over the picture (redrawn at the current zoom) and Copy blueprint.
+    fn pick(&mut self, index: usize, ctx: &egui::Context) {
+        let Some(snapshot) = self.history.get(index) else {
+            return;
+        };
+        let trial = Arc::clone(&snapshot.trial);
+        let label = format!("showing improvement {} of run {}", snapshot.number, snapshot.run);
+        self.picked = Some(index);
+        self.shown = Some(trial);
+        // The picture is drawn from the trial, so a picked snapshot is as sharp as the live one.
+        if let Some(layout) = self.shown.as_ref().and_then(|trial| trial.layout.as_ref()) {
+            let px = worker::wanted_px(self.preview.zoom(), layout.w, layout.h);
+            if let Ok(image) = worker::picture_of(self.shown.as_ref().expect("just set"), px) {
+                self.preview.set(ctx, &image);
+            }
+        }
+        self.status = Some(Status::info(label));
+    }
+
     /// Runs the first queued scenario, or says the run is over when there is none left.
     fn next_test(&mut self) {
         let Some(form) = self.tests.pop_front() else {
@@ -245,7 +279,7 @@ impl GuiApp {
     fn poll(&mut self, ctx: &egui::Context) {
         let mut advance = false;
         {
-            let Self { run, preview, status, shown, .. } = self;
+            let Self { run, preview, status, shown, history, picked, run_no, .. } = self;
             let Some(run) = run.as_mut() else {
                 return;
             };
@@ -256,6 +290,8 @@ impl GuiApp {
                         run.log.push(format!("plan: {machines} machines -> {out}"));
                         // The picture on screen belongs to the last run; it stays, but nothing can redraw it.
                         *shown = None;
+                        *picked = None;
+                        *run_no += 1;
                     }
                     Event::Log(line) => {
                         run.log.push(line);
@@ -264,8 +300,15 @@ impl GuiApp {
                         }
                     }
                     Event::Improvement { fact, trial, image } => {
-                        run.improvements.push(fact);
+                        // Kept for the session: the trial is what the picture is drawn from, so an entry in the list
+                        // brings its layout back at whatever the camera is at.
+                        let number = history.iter().filter(|snapshot| snapshot.run == *run_no).count() + 1;
+                        history.push(Snapshot { run: *run_no, number, fact, trial: Arc::clone(&trial) });
+                        if history.len() > 60 {
+                            history.remove(0);
+                        }
                         *shown = Some(trial);
+                        *picked = None;
                         if let Some(image) = image {
                             preview.set(ctx, &image);
                         }
@@ -575,34 +618,41 @@ impl GuiApp {
             if let Some(summary) = &run.summary {
                 ui.label(egui::RichText::new(summary).color(GOOD));
             }
-        }        egui::Panel::right("improvements").resizable(true).default_size(300.0).min_size(180.0).show(ui, |ui| {
+        }
+        // Every improvement of this launch, newest first, and clicking one brings it back: the trial is kept whole, so
+        // the window can redraw it at whatever the camera is at and the string can be copied from it again.
+        let mut picked = None;
+        egui::Panel::right("improvements").resizable(true).default_size(320.0).min_size(180.0).show(ui, |ui| {
             ui.heading("Improvements");
-            match &self.run {
-                None => {
-                    ui.label("no run yet");
-                }
-                Some(run) if run.improvements.is_empty() => {
-                    ui.label("no improvement yet");
-                }
-                Some(run) => {
-                    egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
-                        egui::Grid::new("improvement-rows").num_columns(4).striped(true).show(ui, |ui| {
-                            for title in ["#", "size", "score", "s"] {
-                                ui.label(egui::RichText::new(title).strong());
-                            }
-                            ui.end_row();
-                            for (n, fact) in run.improvements.iter().enumerate().rev() {
-                                ui.label(format!("{}", n + 1));
-                                ui.label(format!("{}x{}", fact.w, fact.h));
-                                ui.label(format!("{:.1}", fact.score));
-                                ui.label(format!("{:.0}", fact.elapsed_ms as f64 / 1000.0));
-                                ui.end_row();
-                            }
-                        });
-                    });
-                }
+            if self.history.is_empty() {
+                ui.label(if self.run.is_some() { "no improvement yet" } else { "no run yet" });
+                return;
             }
+            ui.label(egui::RichText::new("click one to look at it again").small());
+            egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+                egui::Grid::new("improvement-rows").num_columns(5).striped(true).show(ui, |ui| {
+                    for title in ["run", "#", "size", "score", "s"] {
+                        ui.label(egui::RichText::new(title).strong());
+                    }
+                    ui.end_row();
+                    for (index, snapshot) in self.history.iter().enumerate().rev() {
+                        let fact = &snapshot.fact;
+                        let here = self.picked == Some(index);
+                        if ui.selectable_label(here, format!("{}", snapshot.run)).clicked() {
+                            picked = Some(index);
+                        }
+                        ui.label(format!("{}", snapshot.number));
+                        ui.label(format!("{}x{}", fact.w, fact.h));
+                        ui.label(format!("{:.1}", fact.score));
+                        ui.label(format!("{:.0}", fact.elapsed_ms as f64 / 1000.0));
+                        ui.end_row();
+                    }
+                });
+            });
         });
+        if let Some(index) = picked {
+            self.pick(index, ui.ctx());
+        }
         egui::Panel::bottom("run-log").resizable(true).default_size(150.0).show(ui, |ui| {
             egui::ScrollArea::vertical().stick_to_bottom(true).auto_shrink([false, false]).show(ui, |ui| {
                 match &self.run {
