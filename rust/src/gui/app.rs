@@ -5,6 +5,7 @@
 use super::assets::Icons;
 use super::form::JobForm;
 use super::preview::Preview;
+use super::sprites::Sprites;
 use super::worker::{self, Event, Job};
 use crate::config::run_configuration::{ConfigTarget, DEFAULT_TRICKS, RunConfiguration, UNIMPLEMENTED_TRICKS};
 use crate::config::tuning::Tuning;
@@ -89,6 +90,8 @@ pub struct GuiApp {
     preview: Preview,
     /// The game's icons, read from the install on demand.
     icons: Icons,
+    /// The game's sprite sheets and the geometry to place them.
+    sprites: Sprites,
     /// The trial the picture came from, so the window can redraw it at the zoom it is being shown at.
     shown: Option<Arc<TrialResult>>,
     view: View,
@@ -134,6 +137,7 @@ impl GuiApp {
             preview: Preview::default(),
             view: if icons.dir().is_some() { View::Game } else { View::Schematic },
             icons,
+            sprites: Sprites::new(),
             shown: None,
             presets: JobForm::presets(),
         };
@@ -588,10 +592,10 @@ impl GuiApp {
                 ui.label(egui::RichText::new(&run.out).small());
             }
         });
-        let Self { preview, icons, shown, data, view, .. } = self;
+        let Self { preview, icons, sprites, shown, data, view, .. } = self;
         let game = *view == View::Game;
-        preview.ui(ui, |painter, rect, px| {
-            if !game || px < 6.0 {
+        preview.ui(ui, !game, |painter, rect, px| {
+            if !game || px < 3.0 {
                 return;
             }
             let Some(trial) = shown.as_ref() else {
@@ -602,12 +606,17 @@ impl GuiApp {
             };
             let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
             for entity in &layout.entities {
-                if !matches!(entity.kind, Kind::Machine | Kind::Chest) {
+                let (w, h) = data.entities.get(&entity.name).map_or((1, 1), |model| (model.width(), model.height()));
+                let footprint = (w as f32, h as f32);
+                // The game's own sheet when the table has one; the icon when it does not; nothing beyond that.
+                if sprites.draw(painter, rect.min, px, entity, footprint) {
                     continue;
                 }
-                let (w, h) = data.entities.get(&entity.name).map_or((1, 1), |model| (model.width(), model.height()));
-                let centre = rect.min + egui::vec2((entity.x as f32 + w as f32 / 2.0) * px, (entity.y as f32 + h as f32 / 2.0) * px);
-                let size = egui::vec2(w as f32, h as f32) * px * 0.9;
+                if !matches!(entity.kind, Kind::Machine | Kind::Chest) || px < 6.0 {
+                    continue;
+                }
+                let centre = rect.min + egui::vec2((entity.x as f32 + footprint.0 / 2.0) * px, (entity.y as f32 + footprint.1 / 2.0) * px);
+                let size = egui::vec2(footprint.0, footprint.1) * px * 0.9;
                 if let Some(icon) = icons.icon(painter.ctx(), &entity.name) {
                     painter.image(icon.id(), egui::Rect::from_center_size(centre, size), uv, egui::Color32::from_white_alpha(235));
                 }

@@ -11,7 +11,11 @@ use std::path::{Path, PathBuf};
 /// Where the game is, unless `FACTORIO_DIR` says otherwise: the install this was developed against.
 pub const DEFAULT_DIR: &str = r"E:\SteamLibrary\steamapps\common\Factorio";
 
-/// Icons of the entities in a layout, by prototype name.
+/// The install's root: `FACTORIO_DIR` when it is set, the default above otherwise.
+pub fn root() -> PathBuf {
+    std::env::var_os("FACTORIO_DIR").map_or_else(|| PathBuf::from(DEFAULT_DIR), PathBuf::from)
+}
+
 pub struct Icons {
     dir: Option<PathBuf>,
     cache: HashMap<String, Option<egui::TextureHandle>>,
@@ -19,7 +23,7 @@ pub struct Icons {
 
 impl Icons {
     pub fn new() -> Self {
-        let root = std::env::var_os("FACTORIO_DIR").map_or_else(|| PathBuf::from(DEFAULT_DIR), PathBuf::from);
+        let root = root();
         let dir = root.join("data/base/graphics/icons");
         Self { dir: dir.is_dir().then_some(dir), cache: HashMap::new() }
     }

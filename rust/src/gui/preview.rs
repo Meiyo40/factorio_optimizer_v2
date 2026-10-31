@@ -59,7 +59,7 @@ impl Preview {
 
     /// Draws the picture, then hands the painter, the picture's rectangle and the tile size to `overlay`, which draws
     /// anything on top of it (the window's entity icons).
-    pub fn ui(&mut self, ui: &mut egui::Ui, overlay: impl FnOnce(&egui::Painter, egui::Rect, f32)) {
+    pub fn ui(&mut self, ui: &mut egui::Ui, schematic: bool, overlay: impl FnOnce(&egui::Painter, egui::Rect, f32)) {
         let Some(texture) = &self.texture else {
             ui.centered_and_justified(|ui| ui.label("no picture yet: run a job and it appears here as it improves"));
             return;
@@ -86,7 +86,30 @@ impl Preview {
         let drawn = egui::Rect::from_center_size(rect.center() + self.offset, self.tiles * self.zoom);
         let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
         let painter = ui.painter_at(rect);
-        painter.image(texture.id(), drawn, uv, egui::Color32::WHITE);
+        if schematic {
+            painter.image(texture.id(), drawn, uv, egui::Color32::WHITE);
+        } else {
+            // The game view draws the ground and the sprites itself; the camera still comes from this picture's size.
+            painter.rect_filled(rect, 0.0, egui::Color32::from_rgb(18, 20, 22));
+            let grid = egui::Color32::from_rgba_unmultiplied(255, 255, 255, 14);
+            let step = self.zoom;
+            if step > 4.0 {
+                let mut x = drawn.min.x;
+                while x <= rect.right() {
+                    if x >= rect.left() {
+                        painter.vline(x, rect.y_range(), egui::Stroke::new(1.0, grid));
+                    }
+                    x += step;
+                }
+                let mut y = drawn.min.y;
+                while y <= rect.bottom() {
+                    if y >= rect.top() {
+                        painter.hline(rect.x_range(), y, egui::Stroke::new(1.0, grid));
+                    }
+                    y += step;
+                }
+            }
+        }
         overlay(&painter, drawn, self.zoom);
     }
 }

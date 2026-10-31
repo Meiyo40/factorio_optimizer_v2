@@ -16,3 +16,6 @@ pub mod assets;
 
 #[cfg(feature = "gui")]
 pub mod preview;
+
+#[cfg(feature = "gui")]
+pub mod sprites;

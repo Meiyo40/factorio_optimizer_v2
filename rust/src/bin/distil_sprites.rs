@@ -6,7 +6,7 @@
 //!
 //! ```sh
 //! factorio.exe --dump-data          # writes %APPDATA%/Factorio/script-output/data-raw-dump.json
-//! cargo run --bin distil_sprites -- ../data-raw-dump.json ../sprite-table.json
+//! cargo run --bin distil_sprites -- ../data-raw-dump.json sprite-table.json
 //! cargo run --bin distil_sprites -- ../data-raw-dump.json --keys=chemical-plant   # what a prototype carries
 //! ```
 //!
@@ -71,7 +71,7 @@ fn main() -> anyhow::Result<()> {
 
     let mut args = std::env::args().skip(1);
     let dump_path = args.next().unwrap_or_else(|| "../data-raw-dump.json".to_owned());
-    let out_path = args.next().unwrap_or_else(|| "../sprite-table.json".to_owned());
+    let out_path = args.next().unwrap_or_else(|| "sprite-table.json".to_owned());
     let text = std::fs::read_to_string(&dump_path).with_context(|| format!("Could not read {dump_path}"))?;
     let dump: Value = serde_json::from_str(&text).with_context(|| format!("Could not parse {dump_path}"))?;
     let top = dump.as_object().context("the dump is an object")?;
