@@ -4,6 +4,8 @@ version = "2.0.0"
 edition = "2024"
 license = "GPL-3.0-only"
 description = "Rust port of factorio_optimizer_v2 (Kotlin), module for module"
+# A second binary makes a bare `cargo run` ambiguous; the command line stays the default one.
+default-run = "factorio_optimizer"
 
 [dependencies]
 anyhow = "1"
@@ -16,6 +18,16 @@ noto-sans-mono-bitmap = { version = "0.3", default-features = false, features = 
 serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
 tiny-skia = "0.12"
+# The window (docs/GUI_PLAN.md). Optional so `cargo test`, the command line and the parity tests never build it.
+eframe = { version = "0.37", optional = true, default-features = false, features = ["glow", "default_fonts", "wayland", "x11"] }
+
+[features]
+gui = ["dep:eframe"]
+
+[[bin]]
+name = "gui"
+path = "src/bin/gui.rs"
+required-features = ["gui"]
 
 [profile.release]
 codegen-units = 1

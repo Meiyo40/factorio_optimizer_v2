@@ -6,6 +6,7 @@ pub mod config;
 pub mod data;
 pub mod emit;
 pub mod geom;
+pub mod gui;
 pub mod place;
 pub mod plan;
 pub mod power;

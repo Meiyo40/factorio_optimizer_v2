@@ -207,6 +207,28 @@ seed of each size (history as heat, overused tiles in red) in `debug/route_WxH_s
 Drawing only reads the router's state: a test checks that a route with pictures is the same route (entities, scores,
 work) as one without.
 
+## The window
+
+[`docs/GUI_PLAN.md`](../docs/GUI_PLAN.md) plans a window on the generator. G1 (the job form and the job's JSON tab)
+is in `src/gui`, behind a `gui` feature so that `cargo test`, the command line and the parity tests never build the GUI
+dependencies:
+
+```sh
+cargo run --features gui --bin gui
+```
+
+`src/gui/form.rs` holds what the window edits — a `RunConfiguration`, the directory the result goes to, and the text of
+the JSON tab — and has no window types in it, so `tests/gui_form.rs` checks the round trip without opening one: a new
+form holds the default job, the built-in example loads and validates, every job in `docs/examples` and `docs/status`
+loads and validates, the JSON tab takes an edit, refuses text that is not a job and leaves the form alone, a saved job
+reloads as itself, and switching `blocks` on gives a section that validates and keeps its settings when switched on
+again. `src/gui/app.rs` draws it: the form on the left, the job's JSON on the right, the validation verdict in the
+status line. Dropdowns are filtered and built from the compiled-in data, and every widget writes straight into the
+`RunConfiguration`, so there is no second model to keep in step. A second binary makes a bare `cargo run` ambiguous,
+hence `default-run` in `Cargo.toml`.
+
+The preview and the run arrive with the worker (G2); Run is drawn but disabled until then.
+
 ## Calibration
 
 `--calibrate=<job>,<job> --budget=<s>` refits the placer's `q(k)` table and the search's `area_factor` from short
