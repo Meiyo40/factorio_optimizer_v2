@@ -271,3 +271,37 @@ Start the app, pick a preset, knock the budget down to 60 s, hit Run, watch the 
 hit Stop, zoom in to check a belt run, copy the blueprint, paste it in game. Nothing in that path needs a terminal, and
 every run leaves the same files behind that the CLI would have left.
 
+
+## Return of experience: the game-asset preview (tried, taken out)
+
+Between `8bbb025` and `09bbd0c` the window drew the game's own sprites for the belts, inserters, machines, poles,
+chests and pipes. It was removed in favour of the schematic; what it taught is worth keeping, because it is most of
+the work of trying again.
+
+**What worked.** `factorio.exe --dump-data` is the only source of sprite geometry, and it has all of it: a sheet is
+`columns` frames wide (`line_length`, defaulting to `frame_count`) and one row per baked direction, with `width`,
+`height`/`size`, `scale` and `shift` per sprite. `src/bin/distil_sprites.rs` turns the 31 MB dump into a table of
+paths and geometry (35 prototypes, ~108 KB, no image data), and `src/bin/sprite_check.rs` measures a sheet's ink to
+check a reading of it. Both are kept. Three prototype shapes cover every entity: a belt bakes 16 directions into rows
+plus four endings (20 rows), a machine's animation is flat (`layers`) or keyed by side (`north: {layers}`), and a
+chest or pole bakes four directions across one row.
+
+**What it got wrong.** Belts never looked right and the cause was never pinned down to a single thing:
+
+- a belt frame is 128x128 px at scale 0.5 (2x2 tiles of canvas) but holds only ~1 tile of ink (68x72 px measured), so
+  the canvas is mostly transparent padding and the visible piece is 0.15 tiles below the canvas centre;
+- every column of row 0 measured identical, so columns are animation frames and rows are directions — the mapping the
+  code used, yet belts still landed on the wrong tile or at the wrong angle relative to the schematic;
+- the sprite layer first drew from the picture's top-left, which is a margin plus a title strip, not tile (0,0). That
+  was a real bug and was fixed (`9bbcd8d`), and belts were still wrong afterwards.
+
+**What was not tried.** Aligning each sprite by its measured ink centre rather than its canvas centre; checking the
+frame order against a screenshot of the game itself; drawing one tile of belt canvas instead of two. Any of the three
+is a plausible next step, and `sprite_check` can measure the evidence for all of them.
+
+**What it cost.** A day of the session, an `image` dependency (kept, but only the probe uses it now), and a view
+switch that competed with the schematic for the same panel. The schematic answers "is the layout any good"; the game
+preview only answers "does it look like Factorio", which is worth having but not worth the uncertainty above.
+
+**If it is tried again**, start from `sprite_check` and a single belt: render one layout with one belt facing each of
+the four directions against a known-good reference, and do not draw a second entity kind until those four are right.

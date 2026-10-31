@@ -18,7 +18,8 @@ fn main() -> anyhow::Result<()> {
     let mut args = std::env::args().skip(1);
     let root = args.next().unwrap_or_else(|| r"E:\SteamLibrary\steamapps\common\Factorio".to_owned());
     let entity = args.next().unwrap_or_else(|| "transport-belt".to_owned());
-    let table: serde_json::Value = serde_json::from_str(include_str!("../../sprite-table.json")).context("the sprite table parses")?;
+    let table_path = std::env::args().nth(3).unwrap_or_else(|| "sprite-table.json".to_owned());
+    let table: serde_json::Value = serde_json::from_str(&std::fs::read_to_string(&table_path).context("the sprite table reads")?).context("the sprite table parses")?;
     let entry = table["entities"].get(&entity).with_context(|| format!("no entry for {entity}"))?;
     let layer = entry["sides"][0][0].as_object().context("a first layer")?;
     let file = layer["file"].as_str().context("a file")?;

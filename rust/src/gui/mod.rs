@@ -12,10 +12,4 @@ pub mod worker;
 pub mod app;
 
 #[cfg(feature = "gui")]
-pub mod assets;
-
-#[cfg(feature = "gui")]
 pub mod preview;
-
-#[cfg(feature = "gui")]
-pub mod sprites;

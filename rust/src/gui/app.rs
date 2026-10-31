@@ -2,17 +2,14 @@
 //! The worker runs the job and reports what happens; the picture is drawn by the search's own renderer, with the
 //! game's icons on the machines when the install is there.
 
-use super::assets::Icons;
 use super::form::JobForm;
 use super::preview::Preview;
-use super::sprites::Sprites;
 use super::worker::{self, Event, Job};
 use crate::config::run_configuration::{ConfigTarget, DEFAULT_TRICKS, RunConfiguration, UNIMPLEMENTED_TRICKS};
 use crate::config::tuning::Tuning;
 use crate::data::data_model::RootData;
 use crate::data::game_constants as gc;
 use crate::data::loader::load_root_data;
-use crate::geom::{Dir, Kind, PlacedEntity};
 use crate::search::search::Improvement;
 use crate::search::trial::TrialResult;
 use eframe::egui;
@@ -30,13 +27,6 @@ const GOOD: egui::Color32 = egui::Color32::from_rgb(120, 190, 120);
 enum Tab {
     Preview,
     Json,
-}
-
-/// How the picture is drawn: the schematic the command line renders, or the game's own graphics over it.
-#[derive(Clone, Copy, PartialEq)]
-enum View {
-    Schematic,
-    Game,
 }
 
 /// A line at the bottom: what the last action did, or why it did not.
@@ -89,13 +79,8 @@ pub struct GuiApp {
     /// The run in progress, or the one that just ended.
     run: Option<Run>,
     preview: Preview,
-    /// The game's icons, read from the install on demand.
-    icons: Icons,
-    /// The game's sprite sheets and the geometry to place them.
-    sprites: Sprites,
     /// The trial the picture came from, so the window can redraw it at the zoom it is being shown at.
     shown: Option<Arc<TrialResult>>,
-    view: View,
     /// Jobs the preset list offers, worked out once at startup.
     presets: Vec<String>,
     /// The scenarios the Test button queued, and how far through them the window is.
@@ -142,7 +127,6 @@ impl GuiApp {
             }
             Err(e) => (JobForm::new(RunConfiguration::default()), Some(Status::error(format!("{e:#}")))),
         };
-        let icons = Icons::new();
         let mut app = Self {
             data,
             choices,
@@ -153,9 +137,6 @@ impl GuiApp {
             status,
             run: None,
             preview: Preview::default(),
-            view: if icons.dir().is_some() { View::Game } else { View::Schematic },
-            icons,
-            sprites: Sprites::new(),
             shown: None,
             presets: JobForm::presets(),
             tests: VecDeque::new(),
@@ -672,20 +653,6 @@ impl GuiApp {
                 self.preview.fit();
             }
             ui.separator();
-            ui.selectable_value(&mut self.view, View::Schematic, "Schematic");
-            ui.selectable_value(&mut self.view, View::Game, "Game");
-            ui.separator();
-            ui.label(format!("{:.1} px/tile", self.preview.zoom()));
-            if self.view == View::Game {
-                match self.icons.dir() {
-                    Some(dir) => {
-                        ui.label(egui::RichText::new("icons from the install").small()).on_hover_text(dir.display().to_string());
-                    }
-                    None => {
-                        ui.label(egui::RichText::new("no game install: set FACTORIO_DIR").color(BAD).small());
-                    }
-                }
-            }
             if let Some(run) = &self.run {
                 ui.label(egui::RichText::new(&run.out).small());
             }
@@ -703,60 +670,7 @@ impl GuiApp {
                 ui.label(egui::RichText::new(format!("{} characters", blueprint.len())).small());
             }
         });
-        let Self { preview, icons, sprites, shown, data, view, .. } = self;
-        let game = *view == View::Game;
-        // The game view draws on the layout's tiles, so its camera counts tiles from the layout's corner; the schematic
-        // is a picture with a margin, a title and a legend around the same tiles.
-        if game {
-            if let Some(trial) = shown.as_ref() {
-                preview.aim_at_tiles(egui::vec2(trial.w as f32, trial.h as f32));
-            }
-        } else {
-            preview.aim_at_picture();
-        }
-        preview.ui(ui, !game, |painter, rect, px| {
-            if !game || px < 3.0 {
-                return;
-            }
-            let Some(trial) = shown.as_ref() else {
-                return;
-            };
-            let Some(layout) = &trial.layout else {
-                return;
-            };
-            let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
-            // A belt's sprite spans two tiles each way and overlaps its neighbours, so the belt downstream has to be
-            // drawn last for the joint to land right: that is the order the game draws belts in. Everything else is an
-            // object and goes above the belts, lower rows over higher ones.
-            let (mut belts, mut objects): (Vec<&PlacedEntity>, Vec<&PlacedEntity>) =
-                layout.entities.iter().partition(|entity| entity.kind.belt_family());
-            belts.sort_by_key(|entity| {
-                let along = match entity.dir {
-                    Dir::N => -(entity.y),
-                    Dir::E => entity.x,
-                    Dir::S => entity.y,
-                    Dir::W => -(entity.x),
-                };
-                (entity.dir.ordinal(), along)
-            });
-            objects.sort_by_key(|entity| (entity.y, entity.x));
-            for entity in belts.into_iter().chain(objects) {
-                let (w, h) = data.entities.get(&entity.name).map_or((1, 1), |model| (model.width(), model.height()));
-                let footprint = (w as f32, h as f32);
-                // The game's own sheet when the table has one; the icon when it does not; nothing beyond that.
-                if sprites.draw(painter, rect.min, px, entity, footprint) {
-                    continue;
-                }
-                if !matches!(entity.kind, Kind::Machine | Kind::Chest) || px < 6.0 {
-                    continue;
-                }
-                let centre = rect.min + egui::vec2((entity.x as f32 + footprint.0 / 2.0) * px, (entity.y as f32 + footprint.1 / 2.0) * px);
-                let size = egui::vec2(footprint.0, footprint.1) * px * 0.9;
-                if let Some(icon) = icons.icon(painter.ctx(), &entity.name) {
-                    painter.image(icon.id(), egui::Rect::from_center_size(centre, size), uv, egui::Color32::from_white_alpha(235));
-                }
-            }
-        });
+        self.preview.ui(ui);
         // The live pictures are drawn at 12 px/tile to stay cheap; on screen the camera usually wants more, so the
         // window draws the layout again at the size it is being shown at (bounded by `wanted_px`).
         let zoom = self.preview.zoom();

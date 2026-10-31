@@ -12,9 +12,6 @@ pub struct Preview {
     tiles: egui::Vec2,
     /// How many picture pixels a tile got, so the window can redraw when the camera outgrows it.
     px: f32,
-    /// The picture's own size and scale, kept so the schematic can be aimed at after the game view moved the camera.
-    picture_tiles: egui::Vec2,
-    picture_px: f32,
     /// Screen pixels per tile.
     zoom: f32,
     offset: egui::Vec2,
@@ -28,8 +25,6 @@ impl Default for Preview {
             texture: None,
             tiles: egui::Vec2::ZERO,
             px: 1.0,
-            picture_tiles: egui::Vec2::ZERO,
-            picture_px: 1.0,
             zoom: 32.0,
             offset: egui::Vec2::ZERO,
             fit_next: true,
@@ -44,12 +39,8 @@ impl Preview {
     pub fn set(&mut self, ctx: &egui::Context, image: &Image) {
         let pixels = egui::ColorImage::from_rgba_premultiplied([image.w as usize, image.h as usize], &image.rgba);
         let px = image.px.max(1.0);
-        self.picture_tiles = egui::vec2(image.w as f32 / px, image.h as f32 / px);
-        self.picture_px = px;
-        if self.tiles == egui::Vec2::ZERO {
-            self.tiles = self.picture_tiles;
-            self.px = px;
-        }
+        self.tiles = egui::vec2(image.w as f32 / px, image.h as f32 / px);
+        self.px = px;
         if self.texture.is_none() {
             self.fit_next = true;
         }
@@ -70,25 +61,6 @@ impl Preview {
         self.zoom
     }
 
-    /// Aims the camera at a layout's tiles: the game view draws on tiles, not on the picture's pixels, so its
-    /// origin is the layout's corner rather than the picture's (which carries a margin, a title and a legend).
-    pub fn aim_at_tiles(&mut self, tiles: egui::Vec2) {
-        if (self.tiles - tiles).length() > 0.01 {
-            self.tiles = tiles;
-            self.px = 1.0;
-            self.fit_next = true;
-        }
-    }
-
-    /// Back to the picture's own size, for the schematic.
-    pub fn aim_at_picture(&mut self) {
-        if (self.tiles - self.picture_tiles).length() > 0.01 {
-            self.tiles = self.picture_tiles;
-            self.px = self.picture_px;
-            self.fit_next = true;
-        }
-    }
-
     /// Picture pixels per tile the current texture holds.
     pub fn rendered_px(&self) -> f32 {
         self.px
@@ -96,7 +68,7 @@ impl Preview {
 
     /// Draws the picture, then hands the painter, the picture's rectangle and the tile size to `overlay`, which draws
     /// anything on top of it (the window's entity icons).
-    pub fn ui(&mut self, ui: &mut egui::Ui, schematic: bool, overlay: impl FnOnce(&egui::Painter, egui::Rect, f32)) {
+    pub fn ui(&mut self, ui: &mut egui::Ui) {
         let Some(texture) = &self.texture else {
             ui.centered_and_justified(|ui| ui.label("no picture yet: run a job and it appears here as it improves"));
             return;
@@ -122,31 +94,6 @@ impl Preview {
         }
         let drawn = egui::Rect::from_center_size(rect.center() + self.offset, self.tiles * self.zoom);
         let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
-        let painter = ui.painter_at(rect);
-        if schematic {
-            painter.image(texture.id(), drawn, uv, egui::Color32::WHITE);
-        } else {
-            // The game view draws the ground and the sprites itself; the camera still comes from this picture's size.
-            painter.rect_filled(rect, 0.0, egui::Color32::from_rgb(18, 20, 22));
-            let grid = egui::Color32::from_rgba_unmultiplied(255, 255, 255, 14);
-            let step = self.zoom;
-            if step > 4.0 {
-                let mut x = drawn.min.x;
-                while x <= rect.right() {
-                    if x >= rect.left() {
-                        painter.vline(x, rect.y_range(), egui::Stroke::new(1.0, grid));
-                    }
-                    x += step;
-                }
-                let mut y = drawn.min.y;
-                while y <= rect.bottom() {
-                    if y >= rect.top() {
-                        painter.hline(rect.x_range(), y, egui::Stroke::new(1.0, grid));
-                    }
-                    y += step;
-                }
-            }
-        }
-        overlay(&painter, drawn, self.zoom);
+        ui.painter_at(rect).image(texture.id(), drawn, uv, egui::Color32::WHITE);
     }
 }

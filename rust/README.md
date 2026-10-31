@@ -245,8 +245,9 @@ exactly as the command line writes them, so any run from the window can be repla
 says so.
 
 The preview is a texture: `Pixmap::data()` is premultiplied RGBA, which is what `ColorImage::from_rgba_premultiplied`
-takes, so a picture reaches the screen without a PNG round trip. Icons (G4) and real sprites (G5) come later; see the
-plan.
+takes, so a picture reaches the screen without a PNG round trip. The pictures carry a symbol legend
+(`RenderOptions::legend`, off for the command line so its output still matches Kotlin). The game-asset preview was
+tried and taken out again: see the return of experience in the plan.
 
 ## Calibration
 
