@@ -49,3 +49,6 @@ bin/
 # Local job files and IDE settings
 /*.json
 .idea/
+
+# The game's data dump, used to distil sprite-table.json; 31 MB, never committed.
+/data-raw-dump.json
