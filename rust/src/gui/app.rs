@@ -640,6 +640,19 @@ impl GuiApp {
                 ui.label(egui::RichText::new(&run.out).small());
             }
         });
+        // The same string the command line writes to best_output_string.txt: the game's blueprint importer takes it.
+        let copyable = self.shown.as_ref().and_then(|trial| trial.layout.as_ref()).map(|layout| layout.to_blueprint_string(&self.form.config.quality));
+        ui.horizontal(|ui| {
+            if ui.add_enabled(copyable.is_some(), egui::Button::new("Copy blueprint")).on_disabled_hover_text("no layout to copy yet").clicked() {
+                if let Some(blueprint) = &copyable {
+                    ui.ctx().copy_text(blueprint.clone());
+                    self.status = Some(Status::info(format!("{} characters on the clipboard: paste it into the game", blueprint.len())));
+                }
+            }
+            if let Some(blueprint) = &copyable {
+                ui.label(egui::RichText::new(format!("{} characters", blueprint.len())).small());
+            }
+        });
         let Self { preview, icons, sprites, shown, data, view, .. } = self;
         let game = *view == View::Game;
         preview.ui(ui, !game, |painter, rect, px| {

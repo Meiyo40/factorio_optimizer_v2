@@ -19,7 +19,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
 tiny-skia = "0.12"
 # The window (docs/GUI_PLAN.md). Optional so `cargo test`, the command line and the parity tests never build it.
-eframe = { version = "0.37", optional = true, default-features = false, features = ["glow", "default_fonts", "wayland", "x11"] }
+eframe = { version = "0.37", optional = true, default-features = false, features = ["glow", "default_fonts", "clipboard", "wayland", "x11"] }
 # Decoding the game's own icon PNGs for the preview (level B of the plan); no other image format is needed.
 image = { version = "0.25", optional = true, default-features = false, features = ["png"] }
 

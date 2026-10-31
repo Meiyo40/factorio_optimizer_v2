@@ -183,3 +183,31 @@ fn the_test_scenarios_all_find_a_layout_inside_a_minute() {
     println!("three scenarios in {:.1} s, machines {machines:?}", started.elapsed().as_secs_f32());
     assert!(machines[0] < machines[2], "the scenarios differ in size: {machines:?}");
 }
+
+#[test]
+fn the_blueprint_string_of_a_run_decodes_back() {
+    use factorio_optimizer::emit::blueprint::decode_blueprint;
+
+    // What the Copy blueprint button hands the clipboard has to be the string the game's importer takes: the same
+    // encoder the command line uses, fed from the layout on screen.
+    let dir = temp_dir("blueprint");
+    let data = Arc::new(load_root_data("recipes.json").unwrap());
+    let (tx, rx) = channel();
+    spawn(Arc::clone(&data), job("t1", &dir, 6.0), tx, Arc::new(AtomicBool::new(false))).join().unwrap();
+    let shown = rx
+        .iter()
+        .filter_map(|event| match event {
+            Event::Improvement { trial, .. } => Some(trial),
+            _ => None,
+        })
+        .last()
+        .expect("the run found a layout");
+    let layout = shown.layout.clone().expect("an improvement has a layout");
+
+    let string = layout.to_blueprint_string("normal");
+    assert!(string.starts_with('0'), "a blueprint string starts with the version character: {}", &string[..8.min(string.len())]);
+    assert!(string.len() > 40, "the string carries the layout: {} characters", string.len());
+
+    let back = decode_blueprint(&string).expect("the string decodes").to_layout(layout.w, layout.h).expect("it lays out again");
+    assert_eq!(back.entities.len(), layout.entities.len(), "every entity survives the round trip");
+}
