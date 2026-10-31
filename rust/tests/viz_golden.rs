@@ -80,6 +80,7 @@ fn options_of(o: &OptionsJson) -> RenderOptions {
         ports: o.ports.iter().map(|p| PortLabel { tile: Tile::new(p.x, p.y), item: p.item.clone(), rate: p.rate, input: p.input, lane: p.lane, fluid: p.fluid }).collect(),
         // The goldens are Kotlin's pictures, which carry no symbol legend.
         legend: false,
+        nets: Vec::new(),
     }
 }
 

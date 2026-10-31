@@ -51,21 +51,24 @@ pub struct RenderOptions {
     /// Draw a legend of the picture's symbols under it. Off by default, so the command line's pictures stay the ones
     /// Kotlin draws; the window turns it on, because a big schematic is unreadable without it.
     pub legend: bool,
+    /// The nets the belts are coloured by, as (net id, item), so the legend can show the colour next to the item.
+    pub nets: Vec<(i32, String)>,
 }
 
-/// The lines that legend adds, drawn under the title and above the ports.
+/// The lines that legend adds, drawn under the title and above the ports. Each is preceded by a swatch drawn with the
+/// same colours and shapes the map uses, so the legend looks like the picture it explains.
 pub const LEGEND: [&str; 6] = [
-    "[ ] machine    the recipe name on its box",
-    "--> belt       one colour per item net, arrows show travel",
-    " >  inserter   arrow from where it picks up to where it drops",
-    "[ ] chest      sink for products, when the job sends them to chests",
-    " o  pole       wire reach; a pipe line carries its fluid's colour",
-    " !  port       numbered, listed below; a red mark is a validation error",
+    "machine  - the recipe on its box",
+    "belt  - one colour per item net, the arrow shows travel",
+    "inserter  - arrow from where it picks up to where it drops",
+    "chest  - products leave here",
+    "pipe  - in its fluid's colour",
+    "error  - a tile validation failed",
 ];
 
 impl Default for RenderOptions {
     fn default() -> Self {
-        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false }
+        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false, nets: Vec::new() }
     }
 }
 
@@ -166,7 +169,7 @@ fn belt_chains(layout: &Layout) -> HashMap<Tile, usize> {
 pub fn image_size(layout: &Layout, opt: &RenderOptions) -> (i32, i32) {
     let b = layout.bounds();
     let legend_lines = i32::from(opt.title.is_some())
-        + if opt.legend { LEGEND.len() as i32 } else { 0 }
+        + if opt.legend { LEGEND.len() as i32 + opt.nets.len() as i32 } else { 0 }
         + opt.errors.len().min(30) as i32
         + opt.ports.len() as i32;
     let line_h = (opt.px * 14 / 16).max(14);
@@ -560,9 +563,65 @@ pub fn render_image(layout: &Layout, opt: &RenderOptions) -> Result<Pixmap> {
         ty += line_h;
     }
     if opt.legend {
-        for line in LEGEND {
-            g.color = rgb(70, 70, 70);
-            g.draw_string(line, 6, ty, legend_size, false);
+        // A swatch of the thing, drawn with the map's own colours and shapes, then what it means.
+        let side = (line_h - 6).max(8);
+        for (row, caption) in LEGEND.iter().enumerate() {
+            let (x, top) = (6, ty - line_h + 3);
+            let mid = top + side / 2;
+            match row {
+                0 => {
+                    g.color = rgb(200, 210, 230);
+                    g.fill_rect(x, top, side, side);
+                    g.color = rgb(60, 70, 100);
+                    g.draw_rect(x, top, side, side);
+                }
+                1 => {
+                    // A belt is an arrow in its net's colour; the first net's is the one shown here.
+                    g.color = hsb_to_rgb(0.0, 0.75, 0.8);
+                    g.stroke((px as f32 / 6.0).max(2.0));
+                    g.draw_line(x, mid, x + side - 5, mid);
+                    g.fill_polygon([x + side, x + side - 6, x + side - 6], [mid, mid - 4, mid + 4]);
+                }
+                2 => {
+                    // An inserter: the tinted square and its arrow, in the plain inserter's colour.
+                    g.color = (200, 160, 0, 60);
+                    g.fill_rect(x, top, side, side);
+                    g.color = rgb(200, 160, 0);
+                    g.stroke(2.0);
+                    g.draw_line(x + 2, mid, x + side - 4, mid);
+                    g.fill_polygon([x + side - 1, x + side - 7, x + side - 7], [mid, mid - 4, mid + 4]);
+                }
+                3 => {
+                    g.color = rgb(150, 100, 50);
+                    g.fill_rect(x + 1, top + 1, side - 2, side - 2);
+                }
+                4 => {
+                    g.color = fluid_color(None);
+                    g.stroke((px as f32 / 4.0).max(2.0));
+                    g.draw_line(x, mid, x + side, mid);
+                }
+                _ => {
+                    g.color = rgb(200, 40, 40);
+                    g.stroke(2.0);
+                    g.draw_rect(x, top, side, side);
+                }
+            }
+            g.color = rgb(40, 40, 40);
+            g.draw_string(caption, x + side + 6, ty, legend_size, false);
+            ty += line_h;
+        }
+        g.color = rgb(0, 0, 0);
+        // The belts are one colour per item net; naming those colours is the difference between a picture of
+        // coloured arrows and a readable plan.
+        for (net, item) in &opt.nets {
+            let (x, top) = (6, ty - line_h + 3);
+            let mid = top + side / 2;
+            g.color = hsb_to_rgb(((f64::from(*net) * 0.61803398875) % 1.0) as f32, 0.75, 0.8);
+            g.stroke((px as f32 / 6.0).max(2.0));
+            g.draw_line(x, mid, x + side - 5, mid);
+            g.fill_polygon([x + side, x + side - 6, x + side - 6], [mid, mid - 4, mid + 4]);
+            g.color = rgb(40, 40, 40);
+            g.draw_string(&format!("net {net}  {item}"), x + side + 6, ty, legend_size, false);
             ty += line_h;
         }
         g.color = rgb(0, 0, 0);
