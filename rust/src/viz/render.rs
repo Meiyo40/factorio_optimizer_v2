@@ -48,11 +48,24 @@ pub struct RenderOptions {
     pub title: Option<String>,
     /// Inputs and outputs to mark (numbered on their tiles, listed under the render).
     pub ports: Vec<PortLabel>,
+    /// Draw a legend of the picture's symbols under it. Off by default, so the command line's pictures stay the ones
+    /// Kotlin draws; the window turns it on, because a big schematic is unreadable without it.
+    pub legend: bool,
 }
+
+/// The lines that legend adds, drawn under the title and above the ports.
+pub const LEGEND: [&str; 6] = [
+    "[ ] machine    the recipe name on its box",
+    "--> belt       one colour per item net, arrows show travel",
+    " >  inserter   arrow from where it picks up to where it drops",
+    "[ ] chest      sink for products, when the job sends them to chests",
+    " o  pole       wire reach; a pipe line carries its fluid's colour",
+    " !  port       numbered, listed below; a red mark is a validation error",
+];
 
 impl Default for RenderOptions {
     fn default() -> Self {
-        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new() }
+        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false }
     }
 }
 
@@ -152,7 +165,10 @@ fn belt_chains(layout: &Layout) -> HashMap<Tile, usize> {
 /// The size of the image: the layout with a one-tile margin, wide enough for the legend, tall enough for its lines.
 pub fn image_size(layout: &Layout, opt: &RenderOptions) -> (i32, i32) {
     let b = layout.bounds();
-    let legend_lines = i32::from(opt.title.is_some()) + opt.errors.len().min(30) as i32 + opt.ports.len() as i32;
+    let legend_lines = i32::from(opt.title.is_some())
+        + if opt.legend { LEGEND.len() as i32 } else { 0 }
+        + opt.errors.len().min(30) as i32
+        + opt.ports.len() as i32;
     let line_h = (opt.px * 14 / 16).max(14);
     let width = ((b.w + 2) * opt.px).max(if legend_lines > 0 { 720 * line_h / 14 } else { 0 });
     (width, (b.h + 2) * opt.px + legend_lines * line_h + 8)
@@ -542,6 +558,14 @@ pub fn render_image(layout: &Layout, opt: &RenderOptions) -> Result<Pixmap> {
     if let Some(title) = &opt.title {
         g.draw_string(title, 6, ty, legend_size, false);
         ty += line_h;
+    }
+    if opt.legend {
+        for line in LEGEND {
+            g.color = rgb(70, 70, 70);
+            g.draw_string(line, 6, ty, legend_size, false);
+            ty += line_h;
+        }
+        g.color = rgb(0, 0, 0);
     }
     for (i, p) in opt.ports.iter().enumerate() {
         g.color = if p.input { in_color } else { out_color };

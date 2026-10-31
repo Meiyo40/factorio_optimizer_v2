@@ -166,7 +166,7 @@ fn picture(
     title: String,
     px: i32,
 ) -> Result<Image> {
-    let options = RenderOptions { px, title: Some(title), ports: port_labels(sources, outputs), errors: errors.to_vec(), ..RenderOptions::default() };
+    let options = RenderOptions { px, title: Some(title), ports: port_labels(sources, outputs), errors: errors.to_vec(), legend: true, ..RenderOptions::default() };
     let pixmap = render_image(layout, &options)?;
     Ok(Image { w: pixmap.width(), h: pixmap.height(), px: px as f32, rgba: Arc::from(pixmap.take()) })
 }

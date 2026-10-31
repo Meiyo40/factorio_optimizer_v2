@@ -153,3 +153,17 @@ fn the_score_graph_has_a_point_per_score_and_a_line_through_them() {
     assert!(dir.join("score_vs_time.svg").exists());
     let _ = std::fs::remove_dir_all(&dir);
 }
+
+#[test]
+fn the_symbol_legend_adds_its_lines_to_the_picture() {
+    use factorio_optimizer::viz::{LEGEND, image_size};
+
+    let layout = Layout::new(10, 6, vec![entity("steel-chest", Kind::Chest, 2, 2, Dir::N)]);
+    let plain = image_size(&layout, &RenderOptions::default());
+    let with = image_size(&layout, &RenderOptions { legend: true, ..RenderOptions::default() });
+    // 32 px tiles: a legend line is 28 px, and the legend is six lines.
+    assert_eq!(with.1 - plain.1, LEGEND.len() as i32 * 28, "the legend gets a line each");
+    // The legend lines are wider than a small layout, so the picture widens to the legend's floor (720 px at 14 px
+    // lines, scaled to this tile size) — the same rule the ports legend already follows.
+    assert_eq!(with.0, 720 * 28 / 14, "the picture widens to fit the legend");
+}

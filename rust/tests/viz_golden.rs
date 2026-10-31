@@ -78,6 +78,8 @@ fn options_of(o: &OptionsJson) -> RenderOptions {
             .collect(),
         heat: o.heat.as_ref().map(|h| HeatOverlay { values: h.values.iter().map(|v| (Tile::new(v.x, v.y), v.v)).collect(), overused: h.overused.iter().copied().collect() }),
         ports: o.ports.iter().map(|p| PortLabel { tile: Tile::new(p.x, p.y), item: p.item.clone(), rate: p.rate, input: p.input, lane: p.lane, fluid: p.fluid }).collect(),
+        // The goldens are Kotlin's pictures, which carry no symbol legend.
+        legend: false,
     }
 }
 
