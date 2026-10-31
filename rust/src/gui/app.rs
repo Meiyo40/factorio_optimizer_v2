@@ -121,8 +121,11 @@ struct Run {
 }
 
 impl GuiApp {
-    pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
+    pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
         let data = Arc::new(load_root_data("recipes.json").expect("the built-in recipes.json parses"));
+        // Everything 35% larger: the default egui sizes are small on a 1600 px-wide screen, and this window is read at a
+        // glance rather than typed into. Ctrl with +/- or the wheel still adjusts it at run time.
+        cc.egui_ctx.set_zoom_factor(1.35);
         let choices = Choices::new(&data);
         let (form, status) = match JobForm::default_job() {
             Ok(form) => {
