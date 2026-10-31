@@ -177,6 +177,7 @@ fn picture(
         errors: errors.to_vec(),
         legend: true,
         nets: nets.to_vec(),
+        layers: true,
         symbols,
         ..RenderOptions::default()
     };

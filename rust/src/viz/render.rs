@@ -56,6 +56,10 @@ pub struct RenderOptions {
     /// Draw one character per entity instead of the shapes (F machine, I inserter, B belt, U underground,
     /// S splitter, C chest, P pole, R pipe): the way to read a plan too crowded for its own marks.
     pub symbols: bool,
+    /// Draw in the game's layers (pipes, belts, poles, inserters, chests, machines) instead of the plan's order, so a
+    /// belt arrow reaching past its tile cannot paint over a machine. Off by default: Kotlin draws in plan order and
+    /// the picture has to stay comparable with it.
+    pub layers: bool,
 }
 
 /// The lines that legend adds, drawn under the title and above the ports. Each is preceded by a swatch drawn with the
@@ -71,7 +75,7 @@ pub const LEGEND: [&str; 6] = [
 
 impl Default for RenderOptions {
     fn default() -> Self {
-        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false, nets: Vec::new(), symbols: false }
+        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false, nets: Vec::new(), symbols: false, layers: false }
     }
 }
 
@@ -422,7 +426,21 @@ pub fn render_image(layout: &Layout, opt: &RenderOptions) -> Result<Pixmap> {
     let by_tile = layout.tile_index();
     let px_f = f64::from(px);
     let scaled = |v: f64| (v * px_f) as i32;
-    for e in &layout.entities {
+    // In layers, the way the game stacks them: pipes and belts on the ground, then poles, inserters, chests, and the
+    // machines last so their box always owns its tiles. Drawing in the plan's own order let a belt's arrow, which
+    // reaches past its tile, paint over a machine's box and read as a belt running through the machine.
+    let mut ordered: Vec<&PlacedEntity> = layout.entities.iter().collect();
+    if opt.layers {
+    ordered.sort_by_key(|e| match e.kind {
+        Kind::Pipe | Kind::PipeUg | Kind::InfinityPipe => 0,
+        Kind::Belt | Kind::UgIn | Kind::UgOut | Kind::Splitter => 1,
+        Kind::Pole => 2,
+        Kind::Inserter => 3,
+        Kind::Chest | Kind::InfinityChest => 4,
+        Kind::Machine => 5,
+    });
+    }
+    for e in ordered {
         let (ex, ey, ew, eh) = (f64::from(e.x), f64::from(e.y), f64::from(e.w), f64::from(e.h));
         let (cx, cy) = (ex + ew / 2.0, ey + eh / 2.0);
         match e.kind {
@@ -439,6 +457,15 @@ pub fn render_image(layout: &Layout, opt: &RenderOptions) -> Result<Pixmap> {
                     Kind::InfinityChest => ("K", rgb(230, 90, 200)),
                     Kind::InfinityPipe => ("Q", rgb(130, 60, 200)),
                 };
+                // A machine keeps its footprint: a letter alone would leave the space it owns looking free, and the
+                // belt letters of the tiles around it would read as belts inside it.
+                if e.kind == Kind::Machine {
+                    g.color = rgb(200, 210, 230);
+                    let (rx, ry, rw, rh) = (sx(ex + 0.08), sy(ey + 0.08), scaled(ew - 0.16), scaled(eh - 0.16));
+                    g.fill_rect(rx, ry, rw, rh);
+                    g.color = rgb(60, 70, 100);
+                    g.draw_rect(rx, ry, rw, rh);
+                }
                 g.color = color;
                 let size = ((px_f * 0.7) as i32).max(8) as f32;
                 let lh = line_height(size);
