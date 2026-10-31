@@ -16,6 +16,7 @@ use crate::geom::{Dir, Kind, PlacedEntity};
 use crate::search::search::Improvement;
 use crate::search::trial::TrialResult;
 use eframe::egui;
+use std::collections::VecDeque;
 use std::path::PathBuf;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc::Receiver;
@@ -97,6 +98,10 @@ pub struct GuiApp {
     view: View,
     /// Jobs the preset list offers, worked out once at startup.
     presets: Vec<String>,
+    /// The scenarios the Test button queued, and how far through them the window is.
+    tests: VecDeque<JobForm>,
+    test_of: usize,
+    test_total: usize,
 }
 
 /// A run the window is watching: what the worker sent, and how to stop it.
@@ -140,6 +145,9 @@ impl GuiApp {
             sprites: Sprites::new(),
             shown: None,
             presets: JobForm::presets(),
+            tests: VecDeque::new(),
+            test_of: 0,
+            test_total: 0,
         };
         app.resync_lists();
         app
@@ -203,50 +211,86 @@ impl GuiApp {
         if let Some(run) = &self.run {
             run.cancel.store(true, Ordering::Relaxed);
         }
+        // Stopping is also how a test run is abandoned early.
+        self.tests.clear();
         self.status = Some(Status::info("stopping at the next size boundary"));
+    }
+
+    /// Queues the three test scenarios and starts the first: small, then bigger, shuffled, 30 s of budget in all.
+    fn start_test(&mut self) {
+        self.tests = JobForm::test_scenarios().into();
+        self.test_of = 0;
+        self.test_total = self.tests.len();
+        self.next_test();
+    }
+
+    /// Runs the first queued scenario, or says the run is over when there is none left.
+    fn next_test(&mut self) {
+        let Some(form) = self.tests.pop_front() else {
+            if self.test_total > 0 {
+                self.status = Some(Status::info("the test run is done"));
+                self.test_total = 0;
+            }
+            return;
+        };
+        self.test_of += 1;
+        let label = format!("test {} of {}: {} s", self.test_of, self.test_total, form.config.search.time_budget_s);
+        self.form = form;
+        self.resync_lists();
+        self.start();
+        self.status = Some(Status::info(label));
     }
 
     /// Drains what the worker sent since the last frame.
     fn poll(&mut self, ctx: &egui::Context) {
-        let Self { run, preview, status, shown, .. } = self;
-        let Some(run) = run.as_mut() else {
-            return;
-        };
-        while let Ok(event) = run.rx.try_recv() {
-            match event {
-                Event::Started { out, machines } => {
-                    run.out = out.clone();
-                    run.log.push(format!("plan: {machines} machines -> {out}"));
-                    // The picture on screen belongs to the last run; it stays, but nothing can redraw it.
-                    *shown = None;
-                }
-                Event::Log(line) => {
-                    run.log.push(line);
-                    if run.log.len() > 2000 {
-                        run.log.drain(..500);
+        let mut advance = false;
+        {
+            let Self { run, preview, status, shown, .. } = self;
+            let Some(run) = run.as_mut() else {
+                return;
+            };
+            while let Ok(event) = run.rx.try_recv() {
+                match event {
+                    Event::Started { out, machines } => {
+                        run.out = out.clone();
+                        run.log.push(format!("plan: {machines} machines -> {out}"));
+                        // The picture on screen belongs to the last run; it stays, but nothing can redraw it.
+                        *shown = None;
                     }
-                }
-                Event::Improvement { fact, trial, image } => {
-                    run.improvements.push(fact);
-                    *shown = Some(trial);
-                    if let Some(image) = image {
-                        preview.set(ctx, &image);
+                    Event::Log(line) => {
+                        run.log.push(line);
+                        if run.log.len() > 2000 {
+                            run.log.drain(..500);
+                        }
                     }
-                }
-                Event::Finished { summary, image } => {
-                    run.summary = Some(summary);
-                    run.done = true;
-                    *status = Some(Status::info("the run ended"));
-                    if let Some(image) = image {
-                        preview.set(ctx, &image);
+                    Event::Improvement { fact, trial, image } => {
+                        run.improvements.push(fact);
+                        *shown = Some(trial);
+                        if let Some(image) = image {
+                            preview.set(ctx, &image);
+                        }
                     }
-                }
-                Event::Failed(error) => {
-                    run.error = Some(error);
-                    run.done = true;
-                    *status = Some(Status::error("the run failed: why is under the preview"));
+                    Event::Finished { summary, image } => {
+                        run.summary = Some(summary);
+                        run.done = true;
+                        *status = Some(Status::info("the run ended"));
+                        advance = true;
+                        if let Some(image) = image {
+                            preview.set(ctx, &image);
+                        }
+                    }
+                    Event::Failed(error) => {
+                        run.error = Some(error);
+                        run.done = true;
+                        *status = Some(Status::error("the run failed: why is under the preview"));
+                        advance = true;
+                    }
                 }
             }
+        }
+        // The Test button's next scenario starts as the last one ends.
+        if advance && !self.tests.is_empty() {
+            self.next_test();
         }
     }
 
@@ -287,6 +331,10 @@ impl GuiApp {
                         let run = ui.add_enabled(ready, egui::Button::new("Run"));
                         if run.on_disabled_hover_text("the job has to validate first").clicked() {
                             self.start();
+                        }
+                        let test = ui.button("Test").on_hover_text("three small factories of growing size, 30 s in all");
+                        if test.clicked() {
+                            self.start_test();
                         }
                     }
                 });

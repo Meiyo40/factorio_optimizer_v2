@@ -1,7 +1,7 @@
 //! The job a window edits: a `RunConfiguration` plus the directory its result goes to and the text of the JSON tab.
 //! There are no window types here, so loading, saving and the JSON round trip are tested without opening one.
 
-use crate::config::run_configuration::{BlocksConfig, RunConfiguration};
+use crate::config::run_configuration::{BlocksConfig, BoxConfig, ConfigSource, ConfigTarget, RunConfiguration, SearchConfig};
 use crate::data::loader::read_resource_or_file;
 use anyhow::{Context, Result, bail};
 
@@ -55,6 +55,55 @@ impl JobForm {
     /// the command line defaults to.
     pub fn default_job() -> Result<Self> {
         Self::load(DEFAULT).or_else(|_| Self::load(CONFIG))
+    }
+
+    /// The Test button's job: one machine, basic belts, a 12-tile box and five seconds — 871 trials on the developer's
+    /// machine — so the whole loop from plan to picture can be checked without waiting for anything.
+    /// The Test button's jobs: three small factories of growing size, jittered and shuffled each time it is pressed, so
+    /// one click checks the whole loop — plan, search, live picture — on more than one shape. The budgets add up to
+    /// 30 s, half the 60 s a check is allowed to take.
+    pub fn test_scenarios() -> Vec<Self> {
+        let mut state = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map_or(0x5EED, |since| since.as_nanos() as u64) | 1;
+        // Growing sizes: one machine, a couple, then a small science block. Amounts are jittered by a fifth either way
+        // so the machine counts differ from one press to the next.
+        let families: [(&[(&str, f64)], i32, f64); 3] = [
+            (&[("iron-gear-wheel", 1.0)], 12, 6.0),
+            (&[("automation-science-pack", 0.4)], 20, 10.0),
+            (&[("automation-science-pack", 0.6), ("logistic-science-pack", 0.6)], 28, 14.0),
+        ];
+        let mut forms: Vec<Self> = families
+            .iter()
+            .enumerate()
+            .map(|(index, (targets, max_size, budget))| {
+                let jitter = 0.8 + 0.4 * (mix(&mut state) % 1000) as f64 / 1000.0;
+                let config = RunConfiguration {
+                    targets: targets.iter().map(|(name, amount)| ConfigTarget { name: (*name).to_owned(), amount: amount * jitter }).collect(),
+                    sources: ["iron-plate", "copper-plate"]
+                        .into_iter()
+                        .map(|name| ConfigSource { name: name.to_owned(), edge: Some("west".to_owned()), ..ConfigSource::default() })
+                        .collect(),
+                    belt_tier: "basic".to_owned(),
+                    forbidden_recipes: vec!["productivity-module".to_owned()],
+                    r#box: BoxConfig { max_size: Some(*max_size), ..BoxConfig::default() },
+                    search: SearchConfig {
+                        time_budget_s: *budget,
+                        seeds_per_size: 1,
+                        threads: 2,
+                        seed: (mix(&mut state) % 100_000) as i64,
+                        verbose: false,
+                    },
+                    ..RunConfiguration::default()
+                };
+                let mut form = Self::new(config);
+                form.path = format!("<test {} of 3>", index + 1);
+                form
+            })
+            .collect();
+        // Shuffled, so the sizes do not always arrive in the same order.
+        for at in (1..forms.len()).rev() {
+            forms.swap(at, (mix(&mut state) % (at as u64 + 1)) as usize);
+        }
+        forms
     }
 
     /// Jobs the window offers without typing a path: the ones in `docs/`, then the command line's own default. The
@@ -151,4 +200,14 @@ impl JobForm {
 
 fn to_json(config: &RunConfiguration) -> String {
     serde_json::to_string_pretty(config).expect("a job configuration serialises")
+}
+
+/// SplitMix64: the scenarios are jittered and shuffled, and a window has no business pulling in a random number
+/// generator for that.
+fn mix(state: &mut u64) -> u64 {
+    *state = state.wrapping_add(0x9E37_79B9_7F4A_7C15);
+    let mut z = *state;
+    z = (z ^ (z >> 30)).wrapping_mul(0xBF58_476D_1CE4_E5B9);
+    z = (z ^ (z >> 27)).wrapping_mul(0x94D0_49BB_1331_11EB);
+    z ^ (z >> 31)
 }

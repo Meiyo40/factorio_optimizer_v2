@@ -146,3 +146,40 @@ fn stop_ends_a_run_and_says_so() {
     let log = std::fs::read_to_string(dir.join("out").join("log.txt")).unwrap();
     assert!(log.contains("cancelled"), "the log says the run was cancelled");
 }
+
+#[test]
+fn the_test_scenarios_all_find_a_layout_inside_a_minute() {
+    use factorio_optimizer::gui::form::JobForm;
+
+    let scenarios = JobForm::test_scenarios();
+    assert_eq!(scenarios.len(), 3, "the Test button runs three scenarios");
+    let total: f64 = scenarios.iter().map(|form| form.config.search.time_budget_s).sum();
+    assert!(total <= 60.0, "a test run has to fit in a minute, not {total} s");
+    // Growing sizes, whatever order the shuffle put them in.
+    let mut machines: Vec<usize> = Vec::new();
+    let data = Arc::new(load_root_data("recipes.json").unwrap());
+    let dir = temp_dir("scenarios");
+    let started = Instant::now();
+    for (index, form) in scenarios.into_iter().enumerate() {
+        form.validate().unwrap_or_else(|e| panic!("scenario {} does not validate: {e:#}", index + 1));
+        let (tx, rx) = channel();
+        let job = Job { config: form.config, tuning: Tuning::defaults(), out: dir.join(format!("out{index}")) };
+        spawn(Arc::clone(&data), job, tx, Arc::new(AtomicBool::new(false))).join().unwrap();
+        let mut found = 0;
+        for event in rx.iter() {
+            match event {
+                Event::Started { machines: count, .. } => machines.push(count),
+                Event::Improvement { image, .. } => {
+                    assert!(image.as_ref().is_some_and(|image| image.w > 0), "a picture is drawn");
+                    found += 1;
+                }
+                Event::Failed(error) => panic!("scenario {} failed: {error}", index + 1),
+                _ => {}
+            }
+        }
+        assert!(found > 0, "scenario {} found no layout", index + 1);
+    }
+    machines.sort_unstable();
+    println!("three scenarios in {:.1} s, machines {machines:?}", started.elapsed().as_secs_f32());
+    assert!(machines[0] < machines[2], "the scenarios differ in size: {machines:?}");
+}

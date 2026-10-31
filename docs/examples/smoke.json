@@ -1,0 +1,28 @@
+{
+  "targets": [
+    {
+      "name": "iron-gear-wheel",
+      "amount": 1.0
+    }
+  ],
+  "sources": [
+    {
+      "name": "iron-plate",
+      "edge": "west"
+    }
+  ],
+  "belt_tier": "basic",
+  "forbidden_recipes": [
+    "productivity-module"
+  ],
+  "box": {
+    "max_size": 12
+  },
+  "search": {
+    "time_budget_s": 5.0,
+    "seeds_per_size": 1,
+    "threads": 2,
+    "seed": 7,
+    "verbose": false
+  }
+}
