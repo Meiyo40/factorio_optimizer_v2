@@ -209,9 +209,10 @@ a loaded job round-trips through `to_string`/`parse`, an invalid job surfaces th
 preset in `docs/examples` loads.
 
 **G2 — run, watch, stop.** Run a 60 s job on a preset: the preview updates on each improvement, the log tail fills, the
-improvements table grows, Stop ends the search within a second and leaves `best.png`, `best_output_string.txt` and
-`ports.json` in the out directory. Test: `tests/gui_worker.rs` drives the worker without a window against a 5 s budget
-on a small preset, asserts the event sequence (Started → Log* → Improvement* → Finished) and that the files exist.
+improvements table grows, Stop ends the search at its next size boundary (seeds already running finish first) and
+leaves `best.png`, `best_output_string.txt` and `ports.json` in the out directory. Test: `tests/gui_worker.rs` drives
+the worker without a window, asserts the event sequence (Started → Log* → Improvement* → Finished), that a run leaves
+the files the command line would leave, and that Stop reports `stopped` and logs `cancelled`.
 
 **G3 — inspect and take it out.** Zoom/pan/fit, ports legend, error overlay, score plot, copy blueprint, open folder,
 view an external blueprint. Test: extends `tests/gui_worker.rs` with a decoder round trip; pixel-level checks stay in
