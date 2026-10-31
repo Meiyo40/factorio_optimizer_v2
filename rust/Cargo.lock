@@ -647,6 +647,7 @@ dependencies = [
  "chrono",
  "eframe",
  "flate2",
+ "image",
  "indexmap",
  "microlp",
  "noto-sans-mono-bitmap",

@@ -31,6 +31,20 @@ fn job(name: &str, dir: &Path, budget: f64) -> Job {
 }
 
 #[test]
+fn a_zoom_draws_at_the_size_it_is_shown_at_within_a_memory_cap() {
+    use factorio_optimizer::gui::worker::wanted_px;
+
+    // A small layout may be drawn as finely as the camera asks, between sensible bounds.
+    assert_eq!(wanted_px(24.0, 22, 22), 24);
+    assert_eq!(wanted_px(0.2, 22, 22), 4);
+    assert_eq!(wanted_px(400.0, 22, 22), 48);
+    // A 140x140 factory is capped so one picture stays near 16 MB of RGBA whatever the zoom.
+    let big = wanted_px(48.0, 140, 140);
+    assert!(big < 48, "the cap bites: {big}");
+    assert!(big * big * 140 * 140 <= 4_000_000, "a picture stays within the cap: {big}");
+}
+
+#[test]
 fn a_run_reports_started_log_improvements_then_finished() {
     let dir = temp_dir("sequence");
     let data = Arc::new(load_root_data("recipes.json").unwrap());

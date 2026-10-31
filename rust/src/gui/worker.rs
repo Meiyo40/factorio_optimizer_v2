@@ -143,6 +143,21 @@ fn draw(trial: &TrialResult, px: i32) -> Result<Image> {
     picture(layout, &trial.sources, &trial.outputs, &trial.errors, title, px)
 }
 
+/// A trial drawn at `px` picture pixels per tile, for the window to ask for again when the camera zooms: the live
+/// previews are deliberately coarse, and a picture drawn at the size it is shown at is the difference between a
+/// legible plan and a blurry one.
+pub fn picture_of(trial: &TrialResult, px: i32) -> Result<Image> {
+    draw(trial, px)
+}
+
+/// The pixels per tile worth drawing at a zoom, capped so a 140x140 factory cannot eat memory: about 4M pixels,
+/// which is 16 MB of RGBA whatever the layout's size.
+pub fn wanted_px(zoom: f32, w: i32, h: i32) -> i32 {
+    const MAX_PIXELS: f32 = 4_000_000.0;
+    let cap = (MAX_PIXELS / (w.max(1) as f32 * h.max(1) as f32)).sqrt();
+    zoom.clamp(4.0, 48.0).min(cap).round().max(1.0) as i32
+}
+
 fn picture(
     layout: &Layout,
     sources: &[SourceSpec],

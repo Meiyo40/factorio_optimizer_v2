@@ -1,6 +1,7 @@
 //! The picture panel: a texture from the worker, zoom by scroll (around the pointer), pan by drag, fit on request.
-//! The camera counts screen pixels per tile rather than per picture pixel, so the live previews at 12 px/tile and the
-//! 32 px picture that ends a run show the same tiles at the same size.
+//! The camera counts screen pixels per tile rather than per picture pixel, so pictures drawn at different
+//! resolutions — the 12 px/tile live previews, the 32 px one that ends a run, or one the window asked for at the
+//! current zoom — show the same tiles at the same size.
 
 use super::worker::Image;
 use eframe::egui;
@@ -9,6 +10,8 @@ pub struct Preview {
     texture: Option<egui::TextureHandle>,
     /// The picture's size in tiles.
     tiles: egui::Vec2,
+    /// How many picture pixels a tile got, so the window can redraw when the camera outgrows it.
+    px: f32,
     /// Screen pixels per tile.
     zoom: f32,
     offset: egui::Vec2,
@@ -18,7 +21,7 @@ pub struct Preview {
 
 impl Default for Preview {
     fn default() -> Self {
-        Self { texture: None, tiles: egui::Vec2::ZERO, zoom: 32.0, offset: egui::Vec2::ZERO, fit_next: true }
+        Self { texture: None, tiles: egui::Vec2::ZERO, px: 1.0, zoom: 32.0, offset: egui::Vec2::ZERO, fit_next: true }
     }
 }
 
@@ -28,6 +31,7 @@ impl Preview {
         let pixels = egui::ColorImage::from_rgba_premultiplied([image.w as usize, image.h as usize], &image.rgba);
         let px = image.px.max(1.0);
         self.tiles = egui::vec2(image.w as f32 / px, image.h as f32 / px);
+        self.px = px;
         if self.texture.is_none() {
             self.fit_next = true;
         }
@@ -48,7 +52,14 @@ impl Preview {
         self.zoom
     }
 
-    pub fn ui(&mut self, ui: &mut egui::Ui) {
+    /// Picture pixels per tile the current texture holds.
+    pub fn rendered_px(&self) -> f32 {
+        self.px
+    }
+
+    /// Draws the picture, then hands the painter, the picture's rectangle and the tile size to `overlay`, which draws
+    /// anything on top of it (the window's entity icons).
+    pub fn ui(&mut self, ui: &mut egui::Ui, overlay: impl FnOnce(&egui::Painter, egui::Rect, f32)) {
         let Some(texture) = &self.texture else {
             ui.centered_and_justified(|ui| ui.label("no picture yet: run a job and it appears here as it improves"));
             return;
@@ -74,6 +85,8 @@ impl Preview {
         }
         let drawn = egui::Rect::from_center_size(rect.center() + self.offset, self.tiles * self.zoom);
         let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
-        ui.painter_at(rect).image(texture.id(), drawn, uv, egui::Color32::WHITE);
+        let painter = ui.painter_at(rect);
+        painter.image(texture.id(), drawn, uv, egui::Color32::WHITE);
+        overlay(&painter, drawn, self.zoom);
     }
 }

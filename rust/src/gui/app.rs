@@ -1,7 +1,8 @@
 //! The window: the job form on the left, tabs in the middle (preview, job JSON), a status line at the bottom.
-//! G1 draws the form and the JSON tab; running a job and the live preview arrive with the worker in G2, which is why
-//! Run is present but disabled for now.
+//! The worker runs the job and reports what happens; the picture is drawn by the search's own renderer, with the
+//! game's icons on the machines when the install is there.
 
+use super::assets::Icons;
 use super::form::JobForm;
 use super::preview::Preview;
 use super::worker::{self, Event, Job};
@@ -10,7 +11,9 @@ use crate::config::tuning::Tuning;
 use crate::data::data_model::RootData;
 use crate::data::game_constants as gc;
 use crate::data::loader::load_root_data;
+use crate::geom::Kind;
 use crate::search::search::Improvement;
+use crate::search::trial::TrialResult;
 use eframe::egui;
 use std::path::PathBuf;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -25,6 +28,13 @@ const GOOD: egui::Color32 = egui::Color32::from_rgb(120, 190, 120);
 enum Tab {
     Preview,
     Json,
+}
+
+/// How the picture is drawn: the schematic the command line renders, or the game's own graphics over it.
+#[derive(Clone, Copy, PartialEq)]
+enum View {
+    Schematic,
+    Game,
 }
 
 /// A line at the bottom: what the last action did, or why it did not.
@@ -77,6 +87,11 @@ pub struct GuiApp {
     /// The run in progress, or the one that just ended.
     run: Option<Run>,
     preview: Preview,
+    /// The game's icons, read from the install on demand.
+    icons: Icons,
+    /// The trial the picture came from, so the window can redraw it at the zoom it is being shown at.
+    shown: Option<Arc<TrialResult>>,
+    view: View,
     /// Jobs the preset list offers, worked out once at startup.
     presets: Vec<String>,
 }
@@ -106,6 +121,7 @@ impl GuiApp {
             }
             Err(e) => (JobForm::new(RunConfiguration::default()), Some(Status::error(format!("{e:#}")))),
         };
+        let icons = Icons::new();
         let mut app = Self {
             data,
             choices,
@@ -116,6 +132,9 @@ impl GuiApp {
             status,
             run: None,
             preview: Preview::default(),
+            view: if icons.dir().is_some() { View::Game } else { View::Schematic },
+            icons,
+            shown: None,
             presets: JobForm::presets(),
         };
         app.resync_lists();
@@ -185,7 +204,7 @@ impl GuiApp {
 
     /// Drains what the worker sent since the last frame.
     fn poll(&mut self, ctx: &egui::Context) {
-        let Self { run, preview, status, .. } = self;
+        let Self { run, preview, status, shown, .. } = self;
         let Some(run) = run.as_mut() else {
             return;
         };
@@ -194,6 +213,8 @@ impl GuiApp {
                 Event::Started { out, machines } => {
                     run.out = out.clone();
                     run.log.push(format!("plan: {machines} machines -> {out}"));
+                    // The picture on screen belongs to the last run; it stays, but nothing can redraw it.
+                    *shown = None;
                 }
                 Event::Log(line) => {
                     run.log.push(line);
@@ -201,8 +222,9 @@ impl GuiApp {
                         run.log.drain(..500);
                     }
                 }
-                Event::Improvement { fact, image, .. } => {
+                Event::Improvement { fact, trial, image } => {
                     run.improvements.push(fact);
+                    *shown = Some(trial);
                     if let Some(image) = image {
                         preview.set(ctx, &image);
                     }
@@ -501,8 +523,7 @@ impl GuiApp {
             if let Some(summary) = &run.summary {
                 ui.label(egui::RichText::new(summary).color(GOOD));
             }
-        }
-        egui::Panel::right("improvements").resizable(true).default_size(300.0).min_size(180.0).show(ui, |ui| {
+        }        egui::Panel::right("improvements").resizable(true).default_size(300.0).min_size(180.0).show(ui, |ui| {
             ui.heading("Improvements");
             match &self.run {
                 None => {
@@ -548,12 +569,65 @@ impl GuiApp {
             if ui.button("Fit").clicked() {
                 self.preview.fit();
             }
+            ui.separator();
+            ui.selectable_value(&mut self.view, View::Schematic, "Schematic");
+            ui.selectable_value(&mut self.view, View::Game, "Game");
+            ui.separator();
             ui.label(format!("{:.1} px/tile", self.preview.zoom()));
+            if self.view == View::Game {
+                match self.icons.dir() {
+                    Some(dir) => {
+                        ui.label(egui::RichText::new("icons from the install").small()).on_hover_text(dir.display().to_string());
+                    }
+                    None => {
+                        ui.label(egui::RichText::new("no game install: set FACTORIO_DIR").color(BAD).small());
+                    }
+                }
+            }
             if let Some(run) = &self.run {
                 ui.label(egui::RichText::new(&run.out).small());
             }
         });
-        self.preview.ui(ui);
+        let Self { preview, icons, shown, data, view, .. } = self;
+        let game = *view == View::Game;
+        preview.ui(ui, |painter, rect, px| {
+            if !game || px < 6.0 {
+                return;
+            }
+            let Some(trial) = shown.as_ref() else {
+                return;
+            };
+            let Some(layout) = &trial.layout else {
+                return;
+            };
+            let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
+            for entity in &layout.entities {
+                if !matches!(entity.kind, Kind::Machine | Kind::Chest) {
+                    continue;
+                }
+                let (w, h) = data.entities.get(&entity.name).map_or((1, 1), |model| (model.width(), model.height()));
+                let centre = rect.min + egui::vec2((entity.x as f32 + w as f32 / 2.0) * px, (entity.y as f32 + h as f32 / 2.0) * px);
+                let size = egui::vec2(w as f32, h as f32) * px * 0.9;
+                if let Some(icon) = icons.icon(painter.ctx(), &entity.name) {
+                    painter.image(icon.id(), egui::Rect::from_center_size(centre, size), uv, egui::Color32::from_white_alpha(235));
+                }
+            }
+        });
+        // The live pictures are drawn at 12 px/tile to stay cheap; on screen the camera usually wants more, so the
+        // window draws the layout again at the size it is being shown at (bounded by `wanted_px`).
+        let zoom = self.preview.zoom();
+        if let Some(trial) = self.shown.clone() {
+            let want = worker::wanted_px(zoom, trial.w, trial.h);
+            if (want as f32 / self.preview.rendered_px().max(1.0) - 1.0).abs() > 0.2 {
+                match worker::picture_of(&trial, want) {
+                    Ok(image) => {
+                        self.preview.set(ui.ctx(), &image);
+                        ui.ctx().request_repaint();
+                    }
+                    Err(e) => self.status = Some(Status::error(format!("{e:#}"))),
+                }
+            }
+        }
     }
 
     fn json_ui(&mut self, ui: &mut egui::Ui) {
