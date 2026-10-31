@@ -653,6 +653,9 @@ impl GuiApp {
         if let Some(index) = picked {
             self.pick(index, ui.ctx());
         }
+        egui::Panel::bottom("legend").resizable(true).default_size(46.0).show(ui, |ui| {
+            self.legend_ui(ui);
+        });
         egui::Panel::bottom("run-log").resizable(true).default_size(150.0).show(ui, |ui| {
             egui::ScrollArea::vertical().stick_to_bottom(true).auto_shrink([false, false]).show(ui, |ui| {
                 match &self.run {
@@ -772,6 +775,56 @@ impl GuiApp {
                 }
             }
         }
+    }
+
+    /// What the picture means, in words: a schematic of a big factory is unreadable without it, and the game view has
+    /// no picture to carry the renderer's own legend. The ports are listed from the shown trial, numbered as the
+    /// picture numbers them.
+    fn legend_ui(&mut self, ui: &mut egui::Ui) {
+        egui::CollapsingHeader::new("Legend").default_open(false).show(ui, |ui| {
+            for line in [
+                "machine — a box with the recipe on it, in its blueprint footprint",
+                "belt, underground, splitter — one colour per item net, the arrows show which way items travel",
+                "inserter — a short arrow from where it picks up to where it drops",
+                "chest — a box marked as a sink, when the job sends products to chests",
+                "pole — a dot with its wire reach; pipe — a line, in the fluid's colour",
+                "port — a numbered marker on the tile; the list below says which item and how fast",
+                "red outline — a tile where validation failed",
+            ] {
+                ui.label(egui::RichText::new(format!("• {line}")).small());
+            }
+            let Some(trial) = &self.shown else {
+                return;
+            };
+            let ports = crate::viz::port_labels(&trial.sources, &trial.outputs);
+            if ports.is_empty() {
+                return;
+            }
+            ui.separator();
+            egui::ScrollArea::vertical().max_height(120.0).show(ui, |ui| {
+                for (number, port) in ports.iter().enumerate() {
+                    let way = if port.input { "in " } else { "out" };
+                    let lane = match port.lane {
+                        0 => " left lane",
+                        1 => " right lane",
+                        _ => "",
+                    };
+                    let fluid = if port.fluid { " (fluid)" } else { "" };
+                    ui.label(
+                        egui::RichText::new(format!(
+                            "{:>2} {way} {:<28} {:>6.2}/s at ({}, {}){lane}{fluid}",
+                            number + 1,
+                            port.item,
+                            port.rate,
+                            port.tile.x,
+                            port.tile.y
+                        ))
+                        .monospace()
+                        .small(),
+                    );
+                }
+            });
+        });
     }
 
     fn json_ui(&mut self, ui: &mut egui::Ui) {
