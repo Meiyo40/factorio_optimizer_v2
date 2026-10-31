@@ -105,7 +105,7 @@ fn search_run(data: &RootData, job: &Job, plan: &ProductionPlan, sink: &Sink, ca
     let mut search = Search::new(data, &job.config, &job.tuning, plan, job.out.as_path(), None)
         .with_cancel(Arc::clone(cancel))
         .with_on_improvement(move |fact, trial| {
-            let image = draw(trial, LIVE_PX, &[]).map_err(|e| format!("{e:#}")).ok();
+            let image = draw(trial, LIVE_PX, &[], false).map_err(|e| format!("{e:#}")).ok();
             if image.is_none() {
                 watch.send(Event::Log("the preview of this improvement could not be drawn".to_owned()));
             }
@@ -121,7 +121,7 @@ fn search_run(data: &RootData, job: &Job, plan: &ProductionPlan, sink: &Sink, ca
     // The last picture of the run is drawn at the full 32 px/tile, not the 12 the live previews use, and it names the
     // belt colours: the nets come from the plan, which the live pictures do not have.
     let nets: Vec<(i32, String)> = plan.nets.iter().enumerate().map(|(net, net_plan)| (net as i32, net_plan.item.clone())).collect();
-    let image = result.best.as_ref().and_then(|best| draw(best, FINAL_PX, &nets).ok());
+    let image = result.best.as_ref().and_then(|best| draw(best, FINAL_PX, &nets, false).ok());
     let how = if stopped { "stopped" } else { "finished" };
     Ok((format!("{how}: {} trials, best {best}", result.trials), image))
 }
@@ -133,23 +133,23 @@ fn factory_run(data: &RootData, job: &Job, plan: &ProductionPlan, cancel: &Arc<A
     };
     let verdict = if factory.success() { "valid".to_owned() } else { format!("{} validation errors", factory.errors.len()) };
     let title = format!("{}x{} score {}", factory.layout.w, factory.layout.h, fmt_fixed(factory.score, 1));
-    let image = picture(&factory.layout, &factory.sources, &factory.outputs, &factory.errors, title, FINAL_PX, &[]).ok();
+    let image = picture(&factory.layout, &factory.sources, &factory.outputs, &factory.errors, title, FINAL_PX, &[], false).ok();
     let how = if cancel.load(Ordering::Relaxed) { "stopped" } else { "finished" };
     let summary = format!("factory {how}: {}x{} score {}, {verdict}", factory.layout.w, factory.layout.h, fmt_fixed(factory.score, 1));
     Ok((summary, image))
 }
 
-fn draw(trial: &TrialResult, px: i32, nets: &[(i32, String)]) -> Result<Image> {
+fn draw(trial: &TrialResult, px: i32, nets: &[(i32, String)], symbols: bool) -> Result<Image> {
     let layout = trial.layout.as_ref().context("an improvement has a layout")?;
     let title = format!("{}x{} score {}", trial.w, trial.h, fmt_fixed(trial.score, 1));
-    picture(layout, &trial.sources, &trial.outputs, &trial.errors, title, px, nets)
+    picture(layout, &trial.sources, &trial.outputs, &trial.errors, title, px, nets, symbols)
 }
 
 /// A trial drawn at `px` picture pixels per tile, for the window to ask for again when the camera zooms: the live
 /// previews are deliberately coarse, and a picture drawn at the size it is shown at is the difference between a
 /// legible plan and a blurry one.
-pub fn picture_of(trial: &TrialResult, px: i32) -> Result<Image> {
-    draw(trial, px, &[])
+pub fn picture_of(trial: &TrialResult, px: i32, symbols: bool) -> Result<Image> {
+    draw(trial, px, &[], symbols)
 }
 
 /// The pixels per tile worth drawing at a zoom, capped so a 140x140 factory cannot eat memory: about 4M pixels,
@@ -168,6 +168,7 @@ fn picture(
     title: String,
     px: i32,
     nets: &[(i32, String)],
+    symbols: bool,
 ) -> Result<Image> {
     let options = RenderOptions {
         px,
@@ -176,6 +177,7 @@ fn picture(
         errors: errors.to_vec(),
         legend: true,
         nets: nets.to_vec(),
+        symbols,
         ..RenderOptions::default()
     };
     let pixmap = render_image(layout, &options)?;

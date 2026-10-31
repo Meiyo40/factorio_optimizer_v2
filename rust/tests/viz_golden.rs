@@ -81,6 +81,7 @@ fn options_of(o: &OptionsJson) -> RenderOptions {
         // The goldens are Kotlin's pictures, which carry no symbol legend.
         legend: false,
         nets: Vec::new(),
+        symbols: false,
     }
 }
 

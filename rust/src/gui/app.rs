@@ -91,6 +91,8 @@ pub struct GuiApp {
     history: Vec<Snapshot>,
     /// Which snapshot the preview is showing, when it is not simply the newest.
     picked: Option<usize>,
+    /// Draw one character per entity in the picture: the switch that settles "is that a belt or an inserter".
+    symbols: bool,
     /// Which run the window is on, for the history column.
     run_no: usize,
 }
@@ -144,6 +146,7 @@ impl GuiApp {
             test_total: 0,
             history: Vec::new(),
             picked: None,
+            symbols: false,
             run_no: 0,
         };
         app.resync_lists();
@@ -220,6 +223,19 @@ impl GuiApp {
         self.next_test();
     }
 
+    /// Draws what is on screen again, at the current zoom and with the current settings: the Symbols switch uses it,
+    /// because the picture the worker sent was drawn without the switch.
+    fn redraw(&mut self, ctx: &egui::Context) {
+        let Some(trial) = self.shown.clone() else {
+            return;
+        };
+        let px = worker::wanted_px(self.preview.zoom(), trial.w, trial.h);
+        match worker::picture_of(&trial, px, self.symbols) {
+            Ok(image) => self.preview.set(ctx, &image),
+            Err(e) => self.status = Some(Status::error(format!("{e:#}"))),
+        }
+    }
+
     /// Shows a snapshot again: its trial takes over the picture (redrawn at the current zoom) and Copy blueprint.
     fn pick(&mut self, index: usize, ctx: &egui::Context) {
         let Some(snapshot) = self.history.get(index) else {
@@ -232,7 +248,7 @@ impl GuiApp {
         // The picture is drawn from the trial, so a picked snapshot is as sharp as the live one.
         if let Some(layout) = self.shown.as_ref().and_then(|trial| trial.layout.as_ref()) {
             let px = worker::wanted_px(self.preview.zoom(), layout.w, layout.h);
-            if let Ok(image) = worker::picture_of(self.shown.as_ref().expect("just set"), px) {
+            if let Ok(image) = worker::picture_of(self.shown.as_ref().expect("just set"), px, self.symbols) {
                 self.preview.set(ctx, &image);
             }
         }
@@ -669,6 +685,16 @@ impl GuiApp {
             if let Some(blueprint) = &copyable {
                 ui.label(egui::RichText::new(format!("{} characters", blueprint.len())).small());
             }
+            ui.separator();
+            // Characters instead of the marks: F machine, B belt, U underground, S splitter, I inserter, C chest,
+            // P pole, R pipe, K and Q the infinity ones. The way to settle what a crowded plan is drawing.
+            if ui
+                .checkbox(&mut self.symbols, "Symbols")
+                .on_hover_text("one character per entity: F machine, B belt, U underground, S splitter, I inserter, C chest, P pole, R pipe")
+                .changed()
+            {
+                self.redraw(ui.ctx());
+            }
         });
         self.preview.ui(ui);
         // The live pictures are drawn at 12 px/tile to stay cheap; on screen the camera usually wants more, so the
@@ -677,7 +703,7 @@ impl GuiApp {
         if let Some(trial) = self.shown.clone() {
             let want = worker::wanted_px(zoom, trial.w, trial.h);
             if (want as f32 / self.preview.rendered_px().max(1.0) - 1.0).abs() > 0.2 {
-                match worker::picture_of(&trial, want) {
+                match worker::picture_of(&trial, want, self.symbols) {
                     Ok(image) => {
                         self.preview.set(ui.ctx(), &image);
                         ui.ctx().request_repaint();

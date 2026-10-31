@@ -53,6 +53,9 @@ pub struct RenderOptions {
     pub legend: bool,
     /// The nets the belts are coloured by, as (net id, item), so the legend can show the colour next to the item.
     pub nets: Vec<(i32, String)>,
+    /// Draw one character per entity instead of the shapes (F machine, I inserter, B belt, U underground,
+    /// S splitter, C chest, P pole, R pipe): the way to read a plan too crowded for its own marks.
+    pub symbols: bool,
 }
 
 /// The lines that legend adds, drawn under the title and above the ports. Each is preceded by a swatch drawn with the
@@ -68,7 +71,7 @@ pub const LEGEND: [&str; 6] = [
 
 impl Default for RenderOptions {
     fn default() -> Self {
-        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false, nets: Vec::new() }
+        Self { px: 32, show_supply: false, errors: Vec::new(), heat: None, title: None, ports: Vec::new(), legend: false, nets: Vec::new(), symbols: false }
     }
 }
 
@@ -423,6 +426,24 @@ pub fn render_image(layout: &Layout, opt: &RenderOptions) -> Result<Pixmap> {
         let (ex, ey, ew, eh) = (f64::from(e.x), f64::from(e.y), f64::from(e.w), f64::from(e.h));
         let (cx, cy) = (ex + ew / 2.0, ey + eh / 2.0);
         match e.kind {
+            _ if opt.symbols => {
+                let (letter, color) = match e.kind {
+                    Kind::Machine => ("F", rgb(60, 70, 100)),
+                    Kind::Belt => ("B", net_color(e)),
+                    Kind::UgIn | Kind::UgOut => ("U", net_color(e)),
+                    Kind::Splitter => ("S", net_color(e)),
+                    Kind::Inserter => ("I", rgb(200, 160, 0)),
+                    Kind::Chest => ("C", rgb(150, 100, 50)),
+                    Kind::Pole => ("P", rgb(80, 80, 80)),
+                    Kind::Pipe | Kind::PipeUg => ("R", fluid_color(e.fluid.as_deref())),
+                    Kind::InfinityChest => ("K", rgb(230, 90, 200)),
+                    Kind::InfinityPipe => ("Q", rgb(130, 60, 200)),
+                };
+                g.color = color;
+                let size = ((px_f * 0.7) as i32).max(8) as f32;
+                let lh = line_height(size);
+                g.draw_string(letter, sx(cx) - (size * 0.3) as i32, sy(cy) + lh / 3, size, true);
+            }
             Kind::Machine => {
                 g.color = rgb(200, 210, 230);
                 let (rx, ry, rw, rh) = (sx(ex + 0.08), sy(ey + 0.08), scaled(ew - 0.16), scaled(eh - 0.16));
