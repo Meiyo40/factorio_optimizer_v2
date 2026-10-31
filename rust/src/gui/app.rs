@@ -93,6 +93,8 @@ pub struct GuiApp {
     picked: Option<usize>,
     /// Draw one character per entity in the picture: the switch that settles "is that a belt or an inserter".
     symbols: bool,
+    /// Show the explanation of the window and how a run works.
+    help: bool,
     /// Which run the window is on, for the history column.
     run_no: usize,
 }
@@ -147,6 +149,7 @@ impl GuiApp {
             history: Vec::new(),
             picked: None,
             symbols: false,
+            help: false,
             run_no: 0,
         };
         app.resync_lists();
@@ -360,22 +363,12 @@ impl GuiApp {
                     }
                 });
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    if ui.button("?").on_hover_text("what this window does").clicked() {
+                        self.help = !self.help;
+                    }
                     if self.run.as_ref().is_some_and(|run| !run.done) {
-                        if ui.button("Stop").clicked() {
-                            self.stop();
-                        }
                         let elapsed = self.run.as_ref().map_or(0.0, |run| run.started.elapsed().as_secs_f32());
                         ui.label(format!("{elapsed:.1} s"));
-                    } else {
-                        let ready = self.form.validate().is_ok();
-                        let run = ui.add_enabled(ready, egui::Button::new("Run"));
-                        if run.on_disabled_hover_text("the job has to validate first").clicked() {
-                            self.start();
-                        }
-                        let test = ui.button("Test").on_hover_text("three small factories of growing size, 30 s in all");
-                        if test.clicked() {
-                            self.start_test();
-                        }
                     }
                 });
             });
@@ -397,14 +390,64 @@ impl GuiApp {
 
     fn left(&mut self, ui: &mut egui::Ui) {
         egui::Panel::left("job-form").resizable(true).default_size(390.0).min_size(320.0).show(ui, |ui| {
+            self.run_bar(ui);
+            if self.help {
+                egui::ScrollArea::vertical().max_height(320.0).show(ui, |ui| self.help_ui(ui));
+                ui.separator();
+            }
             egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
                 self.form_ui(ui);
             });
         });
     }
 
+    /// Run, Test and Stop, where the job is: a button this far from the form it starts is a button in the wrong place.
+    fn run_bar(&mut self, ui: &mut egui::Ui) {
+        let running = self.run.as_ref().is_some_and(|run| !run.done);
+        ui.add_space(4.0);
+        ui.horizontal(|ui| {
+            if running {
+                let stop = egui::Button::new(egui::RichText::new("Stop").size(18.0)).min_size(egui::vec2(120.0, 40.0));
+                if ui.add(stop).clicked() {
+                    self.stop();
+                }
+                let elapsed = self.run.as_ref().map_or(0.0, |run| run.started.elapsed().as_secs_f32());
+                ui.label(egui::RichText::new(format!("{elapsed:.1} s")).size(16.0));
+            } else {
+                let ready = self.form.validate().is_ok();
+                let run = egui::Button::new(egui::RichText::new("Run").size(20.0)).min_size(egui::vec2(140.0, 44.0));
+                if ui.add_enabled(ready, run).on_disabled_hover_text("the job has to validate first").clicked() {
+                    self.start();
+                }
+                let test = egui::Button::new(egui::RichText::new("Test").size(15.0)).min_size(egui::vec2(80.0, 32.0));
+                if ui.add(test).on_hover_text("three small factories of growing size, under a minute").clicked() {
+                    self.start_test();
+                }
+            }
+        });
+        ui.add_space(4.0);
+    }
+
+    /// The "?" page: what the window is for and what a run does, in the order a person meets it.
+    fn help_ui(&mut self, ui: &mut egui::Ui) {
+        for (heading, text) in [
+            ("What this is", "A window on the generator. It plans a factory from your targets, searches for a layout, and draws the best one it has found so far."),
+            ("The job", "Targets are what the block must produce: an item and how many per second. Everything below narrows the search: machine and belt tier, whether to split a big job into blocks, the time budget and the box it may grow to."),
+            ("Run", "Plans, then searches until the budget runs out or the extra rounds are done. Every better layout appears in the picture as it is found."),
+            ("Test", "Three small factories of growing size, randomised, one after another: a check that the whole chain works, in under a minute."),
+            ("Reading the picture", "Blue boxes are machines with their recipe, coloured arrows are belts (one colour per item net, arrow shows travel), tinted squares are inserters, numbered circles are ports. The legend under the picture says the rest; Symbols replaces every mark with a letter (F machine, B belt, I inserter, C chest, P pole, R pipe, U underground, S splitter) and is the quickest way to settle a doubt."),
+            ("Improvements", "Every improvement of this session is listed with its size and score. Click one to put it back on screen; Copy blueprint then copies that one, ready to paste into the game."),
+            ("Where it writes", "Each run writes what the command line writes: the blueprint string, its PNG, ports.json, the log, and plan.json. The path is shown above the picture."),
+        ] {
+            ui.label(egui::RichText::new(heading).strong());
+            ui.label(egui::RichText::new(text).small());
+            ui.add_space(6.0);
+        }
+    }
+
     fn form_ui(&mut self, ui: &mut egui::Ui) {
         ui.heading("Targets");
+        ui.label(egui::RichText::new("item, then how many per second it must make").small());
         self.targets_ui(ui);
         ui.add_space(8.0);
         ui.heading("Machines and belts");
@@ -436,7 +479,8 @@ impl GuiApp {
         for (i, target) in targets.iter_mut().enumerate() {
             ui.horizontal(|ui| {
                 choose(ui, &format!("target-{i}"), &mut target.name, items);
-                ui.add(egui::DragValue::new(&mut target.amount).speed(0.1).range(0.0..=1e6).fixed_decimals(2));
+                ui.add(egui::DragValue::new(&mut target.amount).speed(0.1).range(0.0..=1e6).fixed_decimals(2))
+                    .on_hover_text("how many per second this block must produce");
                 if ui.small_button("x").on_hover_text("remove this target").clicked() {
                     remove = Some(i);
                 }
