@@ -2,7 +2,7 @@
 //! G1 draws the form and the JSON tab; running a job and the live preview arrive with the worker in G2, which is why
 //! Run is present but disabled for now.
 
-use super::form::{EXAMPLE, JobForm};
+use super::form::JobForm;
 use super::preview::Preview;
 use super::worker::{self, Event, Job};
 use crate::config::run_configuration::{ConfigTarget, DEFAULT_TRICKS, RunConfiguration, UNIMPLEMENTED_TRICKS};
@@ -77,6 +77,8 @@ pub struct GuiApp {
     /// The run in progress, or the one that just ended.
     run: Option<Run>,
     preview: Preview,
+    /// Jobs the preset list offers, worked out once at startup.
+    presets: Vec<String>,
 }
 
 /// A run the window is watching: what the worker sent, and how to stop it.
@@ -97,8 +99,11 @@ impl GuiApp {
     pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         let data = Arc::new(load_root_data("recipes.json").expect("the built-in recipes.json parses"));
         let choices = Choices::new(&data);
-        let (form, status) = match JobForm::example() {
-            Ok(form) => (form, Some(Status::info("loaded the built-in example job"))),
+        let (form, status) = match JobForm::default_job() {
+            Ok(form) => {
+                let loaded = format!("loaded {}", form.path);
+                (form, Some(Status::info(loaded)))
+            }
             Err(e) => (JobForm::new(RunConfiguration::default()), Some(Status::error(format!("{e:#}")))),
         };
         let mut app = Self {
@@ -111,6 +116,7 @@ impl GuiApp {
             status,
             run: None,
             preview: Preview::default(),
+            presets: JobForm::presets(),
         };
         app.resync_lists();
         app
@@ -202,17 +208,17 @@ impl GuiApp {
                     }
                 }
                 Event::Finished { summary, image } => {
-                    run.summary = Some(summary.clone());
+                    run.summary = Some(summary);
                     run.done = true;
-                    *status = Some(Status::info(summary));
+                    *status = Some(Status::info("the run ended"));
                     if let Some(image) = image {
                         preview.set(ctx, &image);
                     }
                 }
                 Event::Failed(error) => {
-                    run.error = Some(error.clone());
+                    run.error = Some(error);
                     run.done = true;
-                    *status = Some(Status::error(error));
+                    *status = Some(Status::error("the run failed: why is under the preview"));
                 }
             }
         }
@@ -234,9 +240,15 @@ impl GuiApp {
                 if ui.button("Save").clicked() {
                     self.save();
                 }
-                if ui.button("Example").clicked() {
-                    self.load(EXAMPLE);
-                }
+                let presets = self.presets.clone();
+                egui::ComboBox::from_id_salt("presets").selected_text("Preset").width(210.0).show_ui(ui, |ui| {
+                    for path in &presets {
+                        let label = std::path::Path::new(path).file_name().map_or_else(|| path.clone(), |name| name.to_string_lossy().into_owned());
+                        if ui.selectable_label(false, label).clicked() {
+                            self.load(path);
+                        }
+                    }
+                });
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                     if self.run.as_ref().is_some_and(|run| !run.done) {
                         if ui.button("Stop").clicked() {

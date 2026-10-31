@@ -1,10 +1,13 @@
-//! The job form's own facts, without opening a window: what a new form holds, the built-in example, the presets in
-//! `docs/`, what the JSON tab does with text that is not a job, and that a saved job reloads as itself.
+//! The job form's own facts, without opening a window: what a new form holds, the job the window opens with, the
+//! presets in `docs/`, what the JSON tab does with text that is not a job, and that a saved job reloads as itself.
 
 mod common;
 
 use factorio_optimizer::config::run_configuration::RunConfiguration;
-use factorio_optimizer::gui::form::JobForm;
+use factorio_optimizer::config::tuning::Tuning;
+use factorio_optimizer::data::loader::load_root_data;
+use factorio_optimizer::gui::form::{DEFAULT, JobForm};
+use factorio_optimizer::plan::build_plan;
 use std::path::PathBuf;
 
 fn temp_dir(name: &str) -> PathBuf {
@@ -21,6 +24,34 @@ fn a_new_form_holds_the_default_job() {
     assert_eq!(back, RunConfiguration::default());
     assert!(!form.json_edited);
     assert!(form.json_error.is_none());
+}
+
+#[test]
+fn the_job_the_window_opens_with_can_be_planned() {
+    // The schema example loads and validates but has no feasible plan, so the window must not open on it: that is
+    // what a first Run showed.
+    let form = JobForm::default_job().expect("the window opens on a job");
+    let data = load_root_data("recipes.json").expect("the built-in data loads");
+    let plan = build_plan(&data, &form.config, &Tuning::defaults()).expect("the job the window opens with has a plan");
+    assert!(!plan.machines.is_empty(), "the plan has machines");
+    if std::path::Path::new(DEFAULT).exists() {
+        assert!(plan.machines.len() <= 60, "the default job is small enough to watch: {} machines", plan.machines.len());
+        assert_eq!(form.path, DEFAULT);
+    }
+}
+
+#[test]
+fn the_presets_are_the_jobs_in_docs_and_the_command_lines_default() {
+    let presets = JobForm::presets();
+    assert!(presets.iter().any(|path| path == "config.json"), "the command line's own job is offered");
+    assert!(presets.iter().any(|path| path.ends_with("red_green_science.json")), "the jobs in docs/examples are offered");
+    assert!(
+        !presets.iter().any(|path| path.ends_with("example_config.json")),
+        "the schema example cannot be planned, so it is not offered as a job"
+    );
+    for path in &presets {
+        JobForm::load(path).unwrap_or_else(|e| panic!("{path}: {e:#}"));
+    }
 }
 
 #[test]

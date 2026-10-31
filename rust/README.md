@@ -219,13 +219,20 @@ cargo run --features gui --bin gui
 
 `src/gui/form.rs` holds what the window edits — a `RunConfiguration`, the directory the result goes to, and the text of
 the JSON tab — and has no window types in it, so `tests/gui_form.rs` checks the round trip without opening one: a new
-form holds the default job, the built-in example loads and validates, every job in `docs/examples` and `docs/status`
-loads and validates, the JSON tab takes an edit, refuses text that is not a job and leaves the form alone, a saved job
-reloads as itself, and switching `blocks` on gives a section that validates and keeps its settings when switched on
-again. `src/gui/app.rs` draws it: the form on the left, the preview and the job's JSON on the right, the validation
-verdict in the status line. Dropdowns are filtered and built from the compiled-in data, and every widget writes
-straight into the `RunConfiguration`, so there is no second model to keep in step. A second binary makes a bare
-`cargo run` ambiguous, hence `default-run` in `Cargo.toml`.
+form holds the default job, every job in `docs/examples` and `docs/status` loads and validates, the JSON tab takes an
+edit, refuses text that is not a job and leaves the form alone, a saved job reloads as itself, and switching `blocks`
+on gives a section that validates and keeps its settings when switched on again. `src/gui/app.rs` draws it: the form on
+the left, the preview and the job's JSON on the right, the validation verdict in the status line. Dropdowns are
+filtered and built from the compiled-in data, and every widget writes straight into the `RunConfiguration`, so there is
+no second model to keep in step. A second binary makes a bare `cargo run` ambiguous, hence `default-run` in
+`Cargo.toml`.
+
+The window opens on `docs/examples/red_green_science.json` — ten machines, so a first run takes seconds — and falls
+back to the command line's `config.json` when the repository is not next to it. The preset list offers every job in
+`docs/examples` and `docs/status` plus that built-in one. `example_config.json` is deliberately not offered: it is the
+schema example, with every field in one place, and its fixed source tiles leave the LP infeasible, so it loads and
+validates but does not plan (the command line fails on it the same way). `tests/gui_form.rs` holds the window to that
+by planning the job it opens with.
 
 `src/gui/worker.rs` runs the job on its own thread and reports over a channel: the plan built, every log line as it is
 written (a tailer rather than a new hook, so `log.txt` and `factory.txt` stay the record), every improvement with the

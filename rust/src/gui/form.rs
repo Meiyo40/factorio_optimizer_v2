@@ -5,8 +5,16 @@ use crate::config::run_configuration::{BlocksConfig, RunConfiguration};
 use crate::data::loader::read_resource_or_file;
 use anyhow::{Context, Result, bail};
 
-/// The example job compiled in from `src/main/resources/example_config.json` (see `data/loader.rs`).
+/// The schema example compiled in from `src/main/resources/example_config.json`: every field in one place, for the
+/// JSON tab. It does not plan (its `forbidden_places` and fixed source tiles leave the LP infeasible), so it is not
+/// what the window opens with.
 pub const EXAMPLE: &str = "example_config.json";
+
+/// The six-science job the command line runs with no `--config`: 618 machines, too big to watch on a first run.
+pub const CONFIG: &str = "config.json";
+
+/// The job the window opens with when the repository is next to it: ten machines, so the first run takes seconds.
+pub const DEFAULT: &str = "../docs/examples/red_green_science.json";
 
 /// `BlocksConfig::max_machines` has no usable default (0 fails validation), so switching the section on picks one.
 const BLOCKS_MACHINES: i32 = 60;
@@ -37,9 +45,37 @@ impl JobForm {
         }
     }
 
-    /// The built-in example job.
+    /// The schema example: every field in one place. It loads and validates but does not plan, so it is there to be
+    /// looked at in the JSON tab, not run.
     pub fn example() -> Result<Self> {
         Self::load(EXAMPLE)
+    }
+
+    /// The job the window opens with: the small red-and-green job in the repository when it is there, else the job
+    /// the command line defaults to.
+    pub fn default_job() -> Result<Self> {
+        Self::load(DEFAULT).or_else(|_| Self::load(CONFIG))
+    }
+
+    /// Jobs the window offers without typing a path: the ones in `docs/`, then the command line's own default. The
+    /// schema example is deliberately not among them.
+    pub fn presets() -> Vec<String> {
+        let mut presets = Vec::new();
+        for dir in ["../docs/examples", "../docs/status"] {
+            let Ok(entries) = std::fs::read_dir(dir) else {
+                continue;
+            };
+            let mut found: Vec<String> = entries
+                .flatten()
+                .map(|entry| entry.path())
+                .filter(|path| path.extension().is_some_and(|ext| ext == "json"))
+                .map(|path| path.to_string_lossy().into_owned())
+                .collect();
+            found.sort();
+            presets.extend(found);
+        }
+        presets.push(CONFIG.to_owned());
+        presets
     }
 
     /// A job from a built-in resource name or a path. Validates, because `RunConfiguration::parse` does: text that
