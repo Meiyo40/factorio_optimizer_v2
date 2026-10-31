@@ -12,7 +12,7 @@ use crate::config::tuning::Tuning;
 use crate::data::data_model::RootData;
 use crate::data::game_constants as gc;
 use crate::data::loader::load_root_data;
-use crate::geom::Kind;
+use crate::geom::{Dir, Kind, PlacedEntity};
 use crate::search::search::Improvement;
 use crate::search::trial::TrialResult;
 use eframe::egui;
@@ -605,7 +605,22 @@ impl GuiApp {
                 return;
             };
             let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
-            for entity in &layout.entities {
+            // A belt's sprite spans two tiles each way and overlaps its neighbours, so the belt downstream has to be
+            // drawn last for the joint to land right: that is the order the game draws belts in. Everything else is an
+            // object and goes above the belts, lower rows over higher ones.
+            let (mut belts, mut objects): (Vec<&PlacedEntity>, Vec<&PlacedEntity>) =
+                layout.entities.iter().partition(|entity| entity.kind.belt_family());
+            belts.sort_by_key(|entity| {
+                let along = match entity.dir {
+                    Dir::N => -(entity.y),
+                    Dir::E => entity.x,
+                    Dir::S => entity.y,
+                    Dir::W => -(entity.x),
+                };
+                (entity.dir.ordinal(), along)
+            });
+            objects.sort_by_key(|entity| (entity.y, entity.x));
+            for entity in belts.into_iter().chain(objects) {
                 let (w, h) = data.entities.get(&entity.name).map_or((1, 1), |model| (model.width(), model.height()));
                 let footprint = (w as f32, h as f32);
                 // The game's own sheet when the table has one; the icon when it does not; nothing beyond that.
