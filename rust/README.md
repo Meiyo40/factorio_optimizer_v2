@@ -209,9 +209,9 @@ work) as one without.
 
 ## The window
 
-[`docs/GUI_PLAN.md`](../docs/GUI_PLAN.md) plans a window on the generator. G1 (the job form and the job's JSON tab)
-is in `src/gui`, behind a `gui` feature so that `cargo test`, the command line and the parity tests never build the GUI
-dependencies:
+[`docs/GUI_PLAN.md`](../docs/GUI_PLAN.md) plans a window on the generator. The job form (G1) and the run with its live
+preview (G2) are in `src/gui`, behind a `gui` feature so that `cargo test`, the command line and the parity tests never
+build the GUI dependencies:
 
 ```sh
 cargo run --features gui --bin gui
@@ -222,12 +222,24 @@ the JSON tab — and has no window types in it, so `tests/gui_form.rs` checks th
 form holds the default job, the built-in example loads and validates, every job in `docs/examples` and `docs/status`
 loads and validates, the JSON tab takes an edit, refuses text that is not a job and leaves the form alone, a saved job
 reloads as itself, and switching `blocks` on gives a section that validates and keeps its settings when switched on
-again. `src/gui/app.rs` draws it: the form on the left, the job's JSON on the right, the validation verdict in the
-status line. Dropdowns are filtered and built from the compiled-in data, and every widget writes straight into the
-`RunConfiguration`, so there is no second model to keep in step. A second binary makes a bare `cargo run` ambiguous,
-hence `default-run` in `Cargo.toml`.
+again. `src/gui/app.rs` draws it: the form on the left, the preview and the job's JSON on the right, the validation
+verdict in the status line. Dropdowns are filtered and built from the compiled-in data, and every widget writes
+straight into the `RunConfiguration`, so there is no second model to keep in step. A second binary makes a bare
+`cargo run` ambiguous, hence `default-run` in `Cargo.toml`.
 
-The preview and the run arrive with the worker (G2); Run is drawn but disabled until then.
+`src/gui/worker.rs` runs the job on its own thread and reports over a channel: the plan built, every log line as it is
+written (a tailer rather than a new hook, so `log.txt` and `factory.txt` stay the record), every improvement with the
+trial it came from and a picture drawn at 12 px/tile, and the end of the run with a last picture at 32. Two additive
+hooks carry it: `Search::with_on_improvement` (the search already wrote its files by the time it is called) and
+`Search::with_cancel`, which makes `time_left` false so the search ends at its next size boundary and logs `cancelled`;
+`run_factory_with_cancel` does the same for a factory by making its remaining budget negative. Files are still written
+exactly as the command line writes them, so any run from the window can be replayed from `solves/<stamp> - gui`.
+`tests/gui_worker.rs` drives it with no window: the event order, the files a run leaves, and that Stop ends a run and
+says so.
+
+The preview is a texture: `Pixmap::data()` is premultiplied RGBA, which is what `ColorImage::from_rgba_premultiplied`
+takes, so a picture reaches the screen without a PNG round trip. Icons (G4) and real sprites (G5) come later; see the
+plan.
 
 ## Calibration
 

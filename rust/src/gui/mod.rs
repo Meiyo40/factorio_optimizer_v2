@@ -6,6 +6,10 @@
 //! `gui` feature. The plan, and what each milestone adds, is `docs/GUI_PLAN.md`.
 
 pub mod form;
+pub mod worker;
 
 #[cfg(feature = "gui")]
 pub mod app;
+
+#[cfg(feature = "gui")]
+pub mod preview;

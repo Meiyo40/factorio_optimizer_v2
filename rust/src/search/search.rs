@@ -16,7 +16,7 @@ use serde_json::{Value, json};
 use std::collections::HashMap;
 use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 
 #[derive(Debug, Clone, PartialEq)]
@@ -40,6 +40,9 @@ pub struct SearchResult {
 
 /// What a search calls with every finished trial.
 type TrialHook<'a> = Box<dyn FnMut(&TrialResult) + Send + Sync + 'a>;
+
+/// What a search calls with every improvement: the improvement and the trial that made it (the one its files hold).
+type ImprovementHook<'a> = Box<dyn FnMut(&Improvement, &Arc<TrialResult>) + Send + Sync + 'a>;
 
 /// Every box tried so far, in order: tries, successes, best score and the closest failure.
 #[derive(Clone)]
@@ -82,6 +85,10 @@ pub struct Search<'a> {
     scores: Vec<ScorePoint>,
     /// Called for every finished trial (calibration collects routing statistics here).
     on_trial: Option<TrialHook<'a>>,
+    /// Called on every improvement, after its files are written (the window draws the new best).
+    on_improvement: Option<ImprovementHook<'a>>,
+    /// Set by a window's Stop: the search ends at its next size boundary and the log says "cancelled".
+    cancel: Option<Arc<AtomicBool>>,
 }
 
 /// `distinct()`: the first of each, in order.
@@ -127,6 +134,8 @@ impl<'a> Search<'a> {
             seeds_used: HashMap::new(),
             scores: Vec::new(),
             on_trial: None,
+            on_improvement: None,
+            cancel: None,
         }
     }
 
@@ -134,6 +143,22 @@ impl<'a> Search<'a> {
     pub fn with_on_trial(mut self, f: impl FnMut(&TrialResult) + Send + Sync + 'a) -> Self {
         self.on_trial = Some(Box::new(f));
         self
+    }
+
+    /// Calls `f` on every improvement, right after its files are written: the layout is the one `best.png` holds.
+    pub fn with_on_improvement(mut self, f: impl FnMut(&Improvement, &Arc<TrialResult>) + Send + Sync + 'a) -> Self {
+        self.on_improvement = Some(Box::new(f));
+        self
+    }
+
+    /// Ends the search at its next size boundary once `flag` is set; `run` then finishes with "cancelled".
+    pub fn with_cancel(mut self, flag: Arc<AtomicBool>) -> Self {
+        self.cancel = Some(flag);
+        self
+    }
+
+    fn cancelled(&self) -> bool {
+        self.cancel.as_ref().is_some_and(|flag| flag.load(Ordering::Relaxed))
     }
 
     fn item(&self, net: i32) -> String {
@@ -356,6 +381,11 @@ impl<'a> Search<'a> {
             t.seed
         ));
         self.best = Some(Arc::new(t));
+        if let Some(hook) = self.on_improvement.as_mut() {
+            if let Some(best) = self.best.clone() {
+                hook(&imp, &best);
+            }
+        }
         Ok(())
     }
 
@@ -403,7 +433,7 @@ impl<'a> Search<'a> {
     }
 
     fn time_left(&self) -> bool {
-        now_ms() < self.deadline
+        now_ms() < self.deadline && !self.cancelled()
     }
 
     /// Runs K fresh seeds at size s in parallel; true if any succeeded.
@@ -550,7 +580,13 @@ impl<'a> Search<'a> {
             }
             round += 1;
         }
-        let reason = if self.time_left() { "extra seed rounds done" } else { "time budget spent" };
+        let reason = if self.cancelled() {
+            "cancelled"
+        } else if self.time_left() {
+            "extra seed rounds done"
+        } else {
+            "time budget spent"
+        };
         Ok(self.finish(reason))
     }
 

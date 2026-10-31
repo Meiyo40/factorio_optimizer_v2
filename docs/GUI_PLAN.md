@@ -1,6 +1,9 @@
 # GUI for the Rust generator
 
-Status: **proposed, not started**. Nothing in the tree changes until this is agreed.
+Status: **in progress**. Built so far: G1 (the job form and its JSON tab) and G2 (the worker, the live preview and
+Stop). Next: G3 (inspect the result and take it out). Settled on review: eframe/egui for the window, preview levels
+A + B + C, live updating during the search, the v1 widget list. D4 (feature-gated bin), D6 (blocks path) and D7
+(outputs in `solves/`) stand as written unless someone objects.
 
 ## What is there to build on
 

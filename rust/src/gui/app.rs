@@ -3,12 +3,20 @@
 //! Run is present but disabled for now.
 
 use super::form::{EXAMPLE, JobForm};
+use super::preview::Preview;
+use super::worker::{self, Event, Job};
 use crate::config::run_configuration::{ConfigTarget, DEFAULT_TRICKS, RunConfiguration, UNIMPLEMENTED_TRICKS};
+use crate::config::tuning::Tuning;
 use crate::data::data_model::RootData;
 use crate::data::game_constants as gc;
 use crate::data::loader::load_root_data;
+use crate::search::search::Improvement;
 use eframe::egui;
+use std::path::PathBuf;
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::mpsc::Receiver;
 use std::sync::Arc;
+use std::time::Instant;
 
 const BAD: egui::Color32 = egui::Color32::from_rgb(220, 90, 90);
 const GOOD: egui::Color32 = egui::Color32::from_rgb(120, 190, 120);
@@ -66,6 +74,23 @@ pub struct GuiApp {
     machines: String,
     tab: Tab,
     status: Option<Status>,
+    /// The run in progress, or the one that just ended.
+    run: Option<Run>,
+    preview: Preview,
+}
+
+/// A run the window is watching: what the worker sent, and how to stop it.
+struct Run {
+    rx: Receiver<Event>,
+    cancel: Arc<AtomicBool>,
+    /// Where the run writes; the worker confirms it once the plan is built.
+    out: String,
+    started: Instant,
+    improvements: Vec<Improvement>,
+    log: Vec<String>,
+    summary: Option<String>,
+    error: Option<String>,
+    done: bool,
 }
 
 impl GuiApp {
@@ -76,7 +101,17 @@ impl GuiApp {
             Ok(form) => (form, Some(Status::info("loaded the built-in example job"))),
             Err(e) => (JobForm::new(RunConfiguration::default()), Some(Status::error(format!("{e:#}")))),
         };
-        let mut app = Self { data, choices, form, forbidden: String::new(), machines: String::new(), tab: Tab::Preview, status };
+        let mut app = Self {
+            data,
+            choices,
+            form,
+            forbidden: String::new(),
+            machines: String::new(),
+            tab: Tab::Preview,
+            status,
+            run: None,
+            preview: Preview::default(),
+        };
         app.resync_lists();
         app
     }
@@ -106,6 +141,83 @@ impl GuiApp {
         }
     }
 
+    /// Hands the job to a worker thread; the window keeps polling its events.
+    fn start(&mut self) {
+        let tuning = match Tuning::defaults().with_overrides(self.form.config.tuning.as_ref()) {
+            Ok(tuning) => tuning,
+            Err(e) => {
+                self.status = Some(Status::error(format!("{e:#}")));
+                return;
+            }
+        };
+        let stamp = chrono::Local::now().format("%Y-%m-%d_%H-%M-%S").to_string();
+        let out = self.form.out_dir(&stamp);
+        let job = Job { config: self.form.config.clone(), tuning, out: PathBuf::from(&out) };
+        let (tx, rx) = std::sync::mpsc::channel();
+        let cancel = Arc::new(AtomicBool::new(false));
+        worker::spawn(Arc::clone(&self.data), job, tx, Arc::clone(&cancel));
+        self.run = Some(Run {
+            rx,
+            cancel,
+            out,
+            started: Instant::now(),
+            improvements: Vec::new(),
+            log: Vec::new(),
+            summary: None,
+            error: None,
+            done: false,
+        });
+        self.status = Some(Status::info("running"));
+    }
+
+    fn stop(&mut self) {
+        if let Some(run) = &self.run {
+            run.cancel.store(true, Ordering::Relaxed);
+        }
+        self.status = Some(Status::info("stopping at the next size boundary"));
+    }
+
+    /// Drains what the worker sent since the last frame.
+    fn poll(&mut self, ctx: &egui::Context) {
+        let Self { run, preview, status, .. } = self;
+        let Some(run) = run.as_mut() else {
+            return;
+        };
+        while let Ok(event) = run.rx.try_recv() {
+            match event {
+                Event::Started { out, machines } => {
+                    run.out = out.clone();
+                    run.log.push(format!("plan: {machines} machines -> {out}"));
+                }
+                Event::Log(line) => {
+                    run.log.push(line);
+                    if run.log.len() > 2000 {
+                        run.log.drain(..500);
+                    }
+                }
+                Event::Improvement { fact, image, .. } => {
+                    run.improvements.push(fact);
+                    if let Some(image) = image {
+                        preview.set(ctx, &image);
+                    }
+                }
+                Event::Finished { summary, image } => {
+                    run.summary = Some(summary.clone());
+                    run.done = true;
+                    *status = Some(Status::info(summary));
+                    if let Some(image) = image {
+                        preview.set(ctx, &image);
+                    }
+                }
+                Event::Failed(error) => {
+                    run.error = Some(error.clone());
+                    run.done = true;
+                    *status = Some(Status::error(error));
+                }
+            }
+        }
+    }
+
     fn top(&mut self, ui: &mut egui::Ui) {
         egui::Panel::top("job-bar").show(ui, |ui| {
             ui.horizontal(|ui| {
@@ -126,9 +238,19 @@ impl GuiApp {
                     self.load(EXAMPLE);
                 }
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                    let ready = self.form.validate().is_ok();
-                    ui.add_enabled(ready, egui::Button::new("Run"))
-                        .on_disabled_hover_text("the worker arrives in G2, and the job has to validate first");
+                    if self.run.as_ref().is_some_and(|run| !run.done) {
+                        if ui.button("Stop").clicked() {
+                            self.stop();
+                        }
+                        let elapsed = self.run.as_ref().map_or(0.0, |run| run.started.elapsed().as_secs_f32());
+                        ui.label(format!("{elapsed:.1} s"));
+                    } else {
+                        let ready = self.form.validate().is_ok();
+                        let run = ui.add_enabled(ready, egui::Button::new("Run"));
+                        if run.on_disabled_hover_text("the job has to validate first").clicked() {
+                            self.start();
+                        }
+                    }
                 });
             });
         });
@@ -357,24 +479,69 @@ impl GuiApp {
     }
 
     fn preview_ui(&mut self, ui: &mut egui::Ui) {
-        ui.label("The live picture of the best layout arrives with the worker (G2). Until then, the job:");
-        ui.add_space(8.0);
-        egui::Grid::new("summary").num_columns(2).spacing([12.0, 4.0]).show(ui, |ui| {
-            let config = &self.form.config;
-            let data = &self.data;
-            summary(ui, "game data", format!("Factorio {}, {} items, {} recipes", data.game_version, data.items.len(), data.recipes.len()));
-            let targets = config.targets.iter().map(|t| format!("{} x{}", t.name, t.amount)).collect::<Vec<_>>().join(", ");
-            summary(ui, "targets", targets);
-            summary(ui, "quality", config.quality.clone());
-            summary(ui, "belt tier", config.belt_tier.clone());
-            let machines = match &config.machines {
-                Some(list) => list.join(", "),
-                None => config.machine.clone(),
-            };
-            summary(ui, "machines", machines);
-            summary(ui, "budget", format!("{} s", config.search.time_budget_s));
-            summary(ui, "output", self.form.out_dir("<stamp>"));
+        if self.run.as_ref().is_some_and(|run| !run.done) {
+            ui.ctx().request_repaint_after(std::time::Duration::from_millis(100));
+        }
+        if let Some(run) = &self.run {
+            if let Some(error) = &run.error {
+                ui.label(egui::RichText::new(error).color(BAD));
+            }
+            if let Some(summary) = &run.summary {
+                ui.label(egui::RichText::new(summary).color(GOOD));
+            }
+        }
+        egui::Panel::right("improvements").resizable(true).default_size(300.0).min_size(180.0).show(ui, |ui| {
+            ui.heading("Improvements");
+            match &self.run {
+                None => {
+                    ui.label("no run yet");
+                }
+                Some(run) if run.improvements.is_empty() => {
+                    ui.label("no improvement yet");
+                }
+                Some(run) => {
+                    egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+                        egui::Grid::new("improvement-rows").num_columns(4).striped(true).show(ui, |ui| {
+                            for title in ["#", "size", "score", "s"] {
+                                ui.label(egui::RichText::new(title).strong());
+                            }
+                            ui.end_row();
+                            for (n, fact) in run.improvements.iter().enumerate().rev() {
+                                ui.label(format!("{}", n + 1));
+                                ui.label(format!("{}x{}", fact.w, fact.h));
+                                ui.label(format!("{:.1}", fact.score));
+                                ui.label(format!("{:.0}", fact.elapsed_ms as f64 / 1000.0));
+                                ui.end_row();
+                            }
+                        });
+                    });
+                }
+            }
         });
+        egui::Panel::bottom("run-log").resizable(true).default_size(150.0).show(ui, |ui| {
+            egui::ScrollArea::vertical().stick_to_bottom(true).auto_shrink([false, false]).show(ui, |ui| {
+                match &self.run {
+                    Some(run) if !run.log.is_empty() => {
+                        for line in &run.log {
+                            ui.label(egui::RichText::new(line).monospace().small());
+                        }
+                    }
+                    _ => {
+                        ui.label(egui::RichText::new("the run's log shows up here").small());
+                    }
+                }
+            });
+        });
+        ui.horizontal(|ui| {
+            if ui.button("Fit").clicked() {
+                self.preview.fit();
+            }
+            ui.label(format!("{:.1} px/tile", self.preview.zoom()));
+            if let Some(run) = &self.run {
+                ui.label(egui::RichText::new(&run.out).small());
+            }
+        });
+        self.preview.ui(ui);
     }
 
     fn json_ui(&mut self, ui: &mut egui::Ui) {
@@ -414,6 +581,7 @@ impl GuiApp {
 
 impl eframe::App for GuiApp {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        self.poll(ui.ctx());
         self.form.sync_json();
         self.top(ui);
         self.bottom(ui);
@@ -458,12 +626,6 @@ fn optional_i32(ui: &mut egui::Ui, value: &mut Option<i32>, start: i32, range: s
     } else {
         ui.label(egui::RichText::new("auto").small());
     }
-}
-
-fn summary(ui: &mut egui::Ui, label: &str, value: String) {
-    ui.label(egui::RichText::new(label).strong());
-    ui.label(value);
-    ui.end_row();
 }
 
 fn parse_list(text: &str) -> Option<Vec<String>> {

@@ -23,6 +23,7 @@ use std::collections::{BTreeSet, HashMap, HashSet};
 use std::io::Write;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicBool, Ordering};
 
 /// A stitched factory: the combined layout, what validation found, and where its inputs and outputs are.
 pub struct Factory {
@@ -55,6 +56,8 @@ struct Run<'a> {
     log_file: PathBuf,
     started: i64,
     deadline: i64,
+    /// Set by a window's Stop (nothing else sets it): `left` goes negative and every budget and check winds down.
+    cancel: Option<Arc<AtomicBool>>,
     best: Option<Factory>,
 }
 
@@ -68,8 +71,11 @@ impl Run<'_> {
         }
     }
 
-    /// Seconds left of the time budget.
+    /// Seconds left of the time budget; negative as soon as a window's Stop has been pressed.
     fn left(&self) -> f64 {
+        if self.cancel.as_ref().is_some_and(|flag| flag.load(Ordering::Relaxed)) {
+            return -1.0;
+        }
         (self.deadline - now_ms()) as f64 / 1000.0
     }
 
@@ -152,6 +158,18 @@ impl Run<'_> {
 /// smaller. Every better factory is written to `out` (blueprint, render, ports.json; factory.txt logs it all), each block
 /// to `block_<n>`.
 pub fn run_factory(data: &RootData, config: &RunConfiguration, tuning: &Tuning, plan: &ProductionPlan, out: &Path) -> Result<Option<Factory>> {
+    run_factory_with_cancel(data, config, tuning, plan, out, None)
+}
+
+/// `run_factory` for a caller that wants to stop it (the window's Stop button); nothing else passes a flag.
+pub fn run_factory_with_cancel(
+    data: &RootData,
+    config: &RunConfiguration,
+    tuning: &Tuning,
+    plan: &ProductionPlan,
+    out: &Path,
+    cancel: Option<Arc<AtomicBool>>,
+) -> Result<Option<Factory>> {
     let cfg = config.blocks.as_ref().context("run_factory needs a blocks section")?;
     ensure!(
         plan.ports.iter().all(|p| p.specs.iter().all(|s| s.edge.is_some())),
@@ -161,7 +179,7 @@ pub fn run_factory(data: &RootData, config: &RunConfiguration, tuning: &Tuning, 
     let log_file = out.join("factory.txt");
     std::fs::write(&log_file, "")?;
     let started = now_ms();
-    let mut run = Run { data, config, tuning, plan, cfg, out, log_file, started, deadline: started + (config.search.time_budget_s * 1000.0) as i64, best: None };
+    let mut run = Run { data, config, tuning, plan, cfg, out, log_file, started, deadline: started + (config.search.time_budget_s * 1000.0) as i64, cancel, best: None };
     let tier = gc::belt_tier(&config.belt_tier)?;
     let mut split = split_plan(plan, cfg, tier.throughput);
     for w in &split.warnings {
