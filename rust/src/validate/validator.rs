@@ -261,7 +261,7 @@ fn add_all(dst: &mut IndexSet<String>, src: &IndexSet<String>) -> bool {
 }
 
 /// Does belt-family `f` take items pushed into it travelling in direction `d`?
-fn accepts(f: &PlacedEntity, d: Dir) -> bool {
+pub(crate) fn accepts(f: &PlacedEntity, d: Dir) -> bool {
     match f.kind {
         Kind::Belt | Kind::UgIn => d != f.dir.opposite(),
         Kind::UgOut => d.axis() != f.dir.axis(), // sides only; its back is underground, its front faces away

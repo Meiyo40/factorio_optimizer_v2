@@ -1,4 +1,5 @@
-//! The picture panel: a texture from the worker, zoom by scroll (around the pointer), pan by drag, fit on request.
+//! The picture panel: a texture from the worker, or a scene the in-game view paints, under one camera: zoom by
+//! scroll (around the pointer), pan by drag, fit on request.
 //! The camera counts screen pixels per tile rather than per picture pixel, so pictures drawn at different
 //! resolutions — the 12 px/tile live previews, the 32 px one that ends a run, or one the window asked for at the
 //! current zoom — show the same tiles at the same size.
@@ -66,16 +67,29 @@ impl Preview {
         self.px
     }
 
-    /// Draws the picture, then hands the painter, the picture's rectangle and the tile size to `overlay`, which draws
-    /// anything on top of it (the window's entity icons).
+    /// Draws the picture.
     pub fn ui(&mut self, ui: &mut egui::Ui) {
-        let Some(texture) = &self.texture else {
+        let Some(texture) = self.texture.as_ref().map(egui::TextureHandle::id) else {
             ui.centered_and_justified(|ui| ui.label("no picture yet: run a job and it appears here as it improves"));
             return;
         };
+        let (painter, drawn) = self.camera(ui, self.tiles);
+        let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
+        painter.image(texture, drawn, uv, egui::Color32::WHITE);
+    }
+
+    /// Hands a scene `tiles` big to `paint` under the same camera: the painter, the scene's rectangle on screen and
+    /// the screen pixels a tile takes. The in-game view draws itself this way.
+    pub fn ui_scene(&mut self, ui: &mut egui::Ui, tiles: egui::Vec2, paint: impl FnOnce(&egui::Painter, egui::Rect, f32)) {
+        let (painter, drawn) = self.camera(ui, tiles);
+        paint(&painter, drawn, self.zoom);
+    }
+
+    /// Fit, zoom and pan over a scene `tiles` big; the painter is clipped to the panel.
+    fn camera(&mut self, ui: &mut egui::Ui, tiles: egui::Vec2) -> (egui::Painter, egui::Rect) {
         let (rect, response) = ui.allocate_exact_size(ui.available_size(), egui::Sense::click_and_drag());
         if self.fit_next {
-            let fit = (rect.width() / self.tiles.x).min(rect.height() / self.tiles.y);
+            let fit = (rect.width() / tiles.x).min(rect.height() / tiles.y);
             self.zoom = fit.clamp(0.5, 128.0);
             self.offset = egui::Vec2::ZERO;
             self.fit_next = false;
@@ -92,8 +106,7 @@ impl Preview {
         if response.dragged() {
             self.offset += response.drag_delta();
         }
-        let drawn = egui::Rect::from_center_size(rect.center() + self.offset, self.tiles * self.zoom);
-        let uv = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(1.0, 1.0));
-        ui.painter_at(rect).image(texture.id(), drawn, uv, egui::Color32::WHITE);
+        let drawn = egui::Rect::from_center_size(rect.center() + self.offset, tiles * self.zoom);
+        (ui.painter_at(rect), drawn)
     }
 }

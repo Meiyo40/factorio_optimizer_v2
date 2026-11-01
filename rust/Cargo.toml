@@ -20,11 +20,11 @@ serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
 tiny-skia = "0.12"
 # The window (docs/GUI_PLAN.md). Optional so `cargo test`, the command line and the parity tests never build it.
 eframe = { version = "0.37", optional = true, default-features = false, features = ["glow", "default_fonts", "clipboard", "wayland", "x11"] }
-# Only the sprite probe needs it: it opens the game's PNGs to measure them. Not otherwise used by the window.
+# The in-game view decodes the game's PNGs with it (and `tests/gui_sheets.rs` measures them).
 image = { version = "0.25", optional = true, default-features = false, features = ["png"] }
 
 [features]
-gui = ["dep:eframe", "dep:image"]
+gui = ["dep:eframe", "dep:image", "serde_json/raw_value"]
 
 [[bin]]
 name = "gui"

@@ -1,8 +1,9 @@
 //! The window: the job form on the left, tabs in the middle (preview, job JSON), a status line at the bottom.
-//! The worker runs the job and reports what happens; the picture is drawn by the search's own renderer, with the
-//! game's icons on the machines when the install is there.
+//! The worker runs the job and reports what happens; the picture is the search's own schematic, or the same layout
+//! drawn with the game's pictures when the view is switched to In-game.
 
 use super::form::JobForm;
+use super::game_view::GameView;
 use super::preview::Preview;
 use super::worker::{self, Event, Job};
 use crate::config::run_configuration::{ConfigTarget, DEFAULT_TRICKS, RunConfiguration, UNIMPLEMENTED_TRICKS};
@@ -22,6 +23,13 @@ use std::time::Instant;
 
 const BAD: egui::Color32 = egui::Color32::from_rgb(220, 90, 90);
 const GOOD: egui::Color32 = egui::Color32::from_rgb(120, 190, 120);
+
+/// What the picture panel shows: the schematic the command line draws, or the layout in the game's own pictures.
+#[derive(Clone, Copy, PartialEq)]
+enum View {
+    Schematic,
+    Game,
+}
 
 #[derive(Clone, Copy, PartialEq)]
 enum Tab {
@@ -93,6 +101,8 @@ pub struct GuiApp {
     picked: Option<usize>,
     /// Draw one character per entity in the picture: the switch that settles "is that a belt or an inserter".
     symbols: bool,
+    view: View,
+    game: GameView,
     /// Show the explanation of the window and how a run works.
     help: bool,
     /// Which run the window is on, for the history column.
@@ -152,6 +162,8 @@ impl GuiApp {
             history: Vec::new(),
             picked: None,
             symbols: false,
+            view: View::Schematic,
+            game: GameView::default(),
             help: false,
             run_no: 0,
         };
@@ -439,6 +451,7 @@ impl GuiApp {
             ("The job", "Targets are what the block must produce: an item and how many per second. Everything below narrows the search: machine and belt tier, whether to split a big job into blocks, the time budget and the box it may grow to."),
             ("Run", "Plans, then searches until the budget runs out or the extra rounds are done. Every better layout appears in the picture as it is found."),
             ("Test", "Three small factories of growing size, randomised, one after another: a check that the whole chain works, in under a minute."),
+            ("In-game", "Switches the picture to the game's own sprites, read from your Factorio install and the prototype dump (factorio --dump-data): belts turn and end as they would in the game, hands wait over what they pick up, and each machine shows its product. Schematic switches back."),
             ("Reading the picture", "Blue boxes are machines with their recipe, coloured arrows are belts (one colour per item net, arrow shows travel), tinted squares are inserters, numbered circles are ports. The legend under the picture says the rest; Symbols replaces every mark with a letter (F machine, B belt, I inserter, C chest, P pole, R pipe, U underground, S splitter) and is the quickest way to settle a doubt."),
             ("Improvements", "Every improvement of this session is listed with its size and score. Click one to put it back on screen; Copy blueprint then copies that one, ready to paste into the game."),
             ("Where it writes", "Each run writes what the command line writes: the blueprint string, its PNG, ports.json, the log, and plan.json. The path is shown above the picture."),
@@ -734,16 +747,27 @@ impl GuiApp {
                 ui.label(egui::RichText::new(format!("{} characters", blueprint.len())).small());
             }
             ui.separator();
+            for (view, label) in [(View::Schematic, "Schematic"), (View::Game, "In-game")] {
+                if ui.selectable_value(&mut self.view, view, label).clicked() {
+                    self.preview.fit();
+                }
+            }
+            ui.separator();
             // Characters instead of the marks: F machine, B belt, U underground, S splitter, I inserter, C chest,
             // P pole, R pipe, K and Q the infinity ones. The way to settle what a crowded plan is drawing.
             if ui
-                .checkbox(&mut self.symbols, "Symbols")
+                .add_enabled_ui(self.view == View::Schematic, |ui| ui.checkbox(&mut self.symbols, "Symbols"))
+                .inner
                 .on_hover_text("one character per entity: F machine, B belt, U underground, S splitter, I inserter, C chest, P pole, R pipe")
                 .changed()
             {
                 self.redraw(ui.ctx());
             }
         });
+        if self.view == View::Game {
+            self.game_ui(ui);
+            return;
+        }
         self.preview.ui(ui);
         // The live pictures are drawn at 12 px/tile to stay cheap; on screen the camera usually wants more, so the
         // window draws the layout again at the size it is being shown at (bounded by `wanted_px`).
@@ -760,6 +784,43 @@ impl GuiApp {
                 }
             }
         }
+    }
+
+    /// The layout on screen in the game's pictures, under the schematic's camera. The pictures are read once, in the
+    /// background, the first time the view is asked for.
+    fn game_ui(&mut self, ui: &mut egui::Ui) {
+        let ready = self.game.ready(ui.ctx());
+        let Some(trial) = self.shown.clone().filter(|trial| trial.layout.is_some()) else {
+            ui.centered_and_justified(|ui| ui.label("no layout to draw yet: a block's improvements show here; a factory run sends only its picture, under Schematic"));
+            return;
+        };
+        match ready {
+            Err(e) => {
+                ui.label(egui::RichText::new(format!("the in-game view cannot draw: {e}")).color(BAD));
+                return;
+            }
+            Ok(false) => {
+                ui.horizontal(|ui| {
+                    ui.spinner();
+                    ui.label("reading the game's pictures (once per launch)");
+                });
+                ui.ctx().request_repaint_after(std::time::Duration::from_millis(100));
+                return;
+            }
+            Ok(true) => {}
+        }
+        if let Some(missing) = self.game.missing() {
+            ui.label(egui::RichText::new(format!("drawn as boxes, no picture for: {missing}")).small());
+        }
+        let layout = trial.layout.as_ref().expect("filtered above");
+        let b = layout.bounds();
+        // A tile of ground around the layout, where the lips of open belt ends hang.
+        let tiles = egui::vec2(b.w as f32 + 2.0, b.h as f32 + 2.0);
+        let Self { preview, game, data, .. } = self;
+        preview.ui_scene(ui, tiles, |painter, scene, zoom| {
+            let origin = scene.min + egui::vec2((1 - b.x) as f32, (1 - b.y) as f32) * zoom;
+            game.paint(painter, &trial, data, scene, origin, zoom);
+        });
     }
 
     fn json_ui(&mut self, ui: &mut egui::Ui) {

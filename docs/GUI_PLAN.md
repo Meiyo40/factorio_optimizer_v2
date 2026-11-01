@@ -1,7 +1,7 @@
 # GUI for the Rust generator
 
-Status: **in progress**. Built so far: G1 (the job form and its JSON tab) and G2 (the worker, the live preview and
-Stop). Next: G3 (inspect the result and take it out). Settled on review: eframe/egui for the window, preview levels
+Status: **in progress**. Built so far: G1 (the job form and its JSON tab), G2 (the worker, the live preview and
+Stop) and level C of the preview (the In-game switch, last section). Next: G3 (inspect the result and take it out). Settled on review: eframe/egui for the window, preview levels
 A + B + C, live updating during the search, the v1 widget list. D4 (feature-gated bin), D6 (blocks path) and D7
 (outputs in `solves/`) stand as written unless someone objects.
 
@@ -272,36 +272,58 @@ hit Stop, zoom in to check a belt run, copy the blueprint, paste it in game. Not
 every run leaves the same files behind that the CLI would have left.
 
 
-## Return of experience: the game-asset preview (tried, taken out)
+## The in-game view (level C)
 
-Between `8bbb025` and `09bbd0c` the window drew the game's own sprites for the belts, inserters, machines, poles,
-chests and pipes. It was removed in favour of the schematic; what it taught is worth keeping, because it is most of
-the work of trying again.
+The picture panel has a switch: **Schematic** (the default, the picture the command line draws) and **In-game**, the
+same layout drawn with the game's own sprites. It was tried once before (`8bbb025`..`09bbd0c`, removed in `56f8021`)
+and never got belts right; the second attempt started from the sheets themselves, and the cause turned out to be three
+misreadings, each of which on its own breaks a belt run.
 
-**What worked.** `factorio.exe --dump-data` is the only source of sprite geometry, and it has all of it: a sheet is
-`columns` frames wide (`line_length`, defaulting to `frame_count`) and one row per baked direction, with `width`,
-`height`/`size`, `scale` and `shift` per sprite. `src/bin/distil_sprites.rs` turns the 31 MB dump into a table of
-paths and geometry (35 prototypes, ~108 KB, no image data), and `src/bin/sprite_check.rs` measures a sheet's ink to
-check a reading of it. Both are kept. Three prototype shapes cover every entity: a belt bakes 16 directions into rows
-plus four endings (20 rows), a machine's animation is flat (`layers`) or keyed by side (`north: {layers}`), and a
-chest or pole bakes four directions across one row.
+**What the first attempt got wrong.**
 
-**What it got wrong.** Belts never looked right and the cause was never pinned down to a single thing:
+- It took the belt sheet's 20 rows for sixteen rotations, one every fourth row (`frame = dir * 4 * frame_count`). The
+  rows are the named indices of a `TransportBeltAnimationSetWithCorners`, so north drew the east row and east drew a
+  corner.
+- It drew one sprite per entity direction, so a belt coming in from the west and one coming in from the east, both
+  turning north, drew the same picture: the run broke at every turn. Open ends had no lip.
+- It drew every underground with the entrance sprite, in the entity's own column. An exit's hood stands behind it,
+  which is the opposite column.
 
-- a belt frame is 128x128 px at scale 0.5 (2x2 tiles of canvas) but holds only ~1 tile of ink (68x72 px measured), so
-  the canvas is mostly transparent padding and the visible piece is 0.15 tiles below the canvas centre;
-- every column of row 0 measured identical, so columns are animation frames and rows are directions — the mapping the
-  code used, yet belts still landed on the wrong tile or at the wrong angle relative to the schematic;
-- the sprite layer first drew from the picture's top-left, which is a margin plus a title strip, not tile (0,0). That
-  was a real bug and was fixed (`9bbcd8d`), and belts were still wrong afterwards.
+**What the sheets say** (measured on game 2.1.24; `rust/tests/gui_sheets.rs` measures it again on the install). A
+belt sheet has `frame_count` columns (16, 32, 32 and 64 for the four tiers) and 20 rows; frame 0 of a row is its first
+column, a 128 px canvas at scale 0.5, two tiles centred on the belt's tile. The dump overrides none of the default
+indices, and their names are side names:
 
-**What was not tried.** Aligning each sprite by its measured ink centre rather than its canvas centre; checking the
-frame order against a screenshot of the game itself; drawing one tile of belt canvas instead of two. Any of the three
-is a plausible next step, and `sprite_check` can measure the evidence for all of them.
+| Row | Name | Meaning |
+|-----|------|---------|
+| 0-3 | `east`, `west`, `north`, `south` | straight, travelling that way |
+| 4-11 | `X_to_Y` | a curve entering through side X and leaving through side Y, the belt's direction |
+| 12, 14, 16, 18 | `starting_X` | the lip behind a run's first belt, drawn on the tile on side X of it |
+| 13, 15, 17, 19 | `ending_X` | the lip past a run's last belt, drawn on the tile on side X of it |
 
-**What it cost.** A day of the session, an `image` dependency (kept, but only the probe uses it now), and a view
-switch that competed with the schematic for the same panel. The schematic answers "is the layout any good"; the game
-preview only answers "does it look like Factorio", which is worth having but not worth the uncertainty above.
+The evidence: a curve's ink leaves bare only the corner away from its two open sides; the texture moves two pixels a
+frame the way items travel, out through Y and in through X; a lip is a strip on the edge of its canvas that faces the
+belt, its rounded side away from it. Example: a belt travelling north fed from the east is `east_to_north` (row 4), fed
+from the west `west_to_north` (row 6).
 
-**If it is tried again**, start from `sprite_check` and a single belt: render one layout with one belt facing each of
-the four directions against a known-good reference, and do not draw a second entity kind until those four are right.
+The underground structure sheet holds 4 columns (north, east, south, west) and 4 rows of 192 px cells: exit, entrance,
+then the side-loading variants (east and west only). In column c the hood stands on side c and its mouth faces away;
+so an entrance travelling d takes column d, an exit travelling d column opposite(d). Pipe pictures are named after
+the sides they connect (`ending_up` reaches past the tile's top edge).
+
+**How a tile picks its picture** (`rust/src/gui/belts.rs`, no window needed, `rust/tests/gui_belts.rs`). A belt fed
+from behind is straight; otherwise one fed from exactly one side curves from that side; otherwise straight — the rule
+the validator models, with its own `accepts` deciding what feeds what. A straight belt, entrance or splitter lane not fed
+from behind gets a start lip; a belt, exit or splitter lane whose front tile does not take it gets an end lip, so a
+side-load has none. An underground draws only the half of the belt on its open side, under its hood.
+
+**Where the pictures come from** (`rust/src/gui/sprites.rs`). The geometry is read from the prototype dump
+(`factorio --dump-data`, `%APPDATA%\Factorio\script-output\data-raw-dump.json`, or `FACTORIO_DUMP`), the pixels from
+the install (`FACTORIO_DIR`); nothing is copied into the repository, and both come from the same game version. A
+background thread reads the dump once, cuts frame 0 of every picture the view can need out of the sheets, and the
+window uploads the cuts as textures with mipmaps. `rust/src/gui/game_view.rs` draws in the game's layers: belt surfaces,
+lips, shadows, objects north to south, inserter hands over their pickup tile, and each machine's product icon as in
+alt-mode. An entity with no picture is a box with its item icon: in 2.1 the logistic chests have none in the dump.
+
+**Not drawn:** copper wires, floor-tile markers, the error overlay (the schematic has them), and factory runs, which
+send only their picture.
